@@ -1,0 +1,17 @@
+database_type: SQLite
+mysql:
+  host: localhost
+  port: 3306
+  database: dbName
+  username: dbUser
+  password: dbPass
+prefix: "&e&lCollections &7"
+addons:
+  jetMinions: true
+  ultraMinions: true
+levelUPSound: "ENTITY_PLAYER_LEVELUP"
+xpGainSound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+xpToRank: 15
+rankPlaceholder: "&a%xp% &7(Top &e%top_percentage%%&e)"
+noRankPlaceholder: "&8N/A"
+debug: false

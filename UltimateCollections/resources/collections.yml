@@ -1,0 +1,3675 @@
+categories:
+  1:
+    name: farming
+    displayName: Farming
+  2:
+    name: mining
+    displayName: Mining
+  3:
+    name: fishing
+    displayName: Fishing
+  4:
+    name: foraging
+    displayName: Foraging
+  5:
+    name: combat
+    displayName: Combat
+collections:
+  BLUE_DYE:
+    name: "Lapis Lazuli"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BLUE_DYE"
+    slot: 15
+  REDSTONE:
+    name: "Redstone"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "REDSTONE"
+    slot: 19
+  COAL:
+    name: "Coal"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "COAL"
+    slot: 11
+  ENDER_PEARL:
+    name: "Ender Pearl"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "ENDER_PEARL"
+    slot: 15
+  CARROT:
+    name: "Carrot"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "CARROT"
+    slot: 11
+  ACACIA_LOG:
+    name: "Acacia Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "ACACIA_LOG"
+    slot: 14
+  SLIME_BALL:
+    name: "Slimeball"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SLIME_BALL"
+    slot: 19
+  BROWN_DYE:
+    name: "Cocoa Beans"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BROWN_DYE"
+    slot: 19
+  MELON_SLICE:
+    name: "Melon"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "MELON_SLICE"
+    slot: 14
+  QUARTZ:
+    name: "Nether Quartz"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "QUARTZ"
+    slot: 20
+  SAND:
+    name: "Sand"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SAND"
+    slot: 28
+  POTATO:
+    name: "Potato"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "POTATO"
+    slot: 12
+  CACTUS:
+    name: "Cactus"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "CACTUS"
+    slot: 20
+  SUGAR_CANE:
+    name: "Sugar Cane"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SUGAR_CANE"
+    slot: 21
+  MAGMA_CREAM:
+    name: "Magma Cream"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "MAGMA_CREAM"
+    slot: 21
+  GHAST_TEAR:
+    name: "Ghast Tear"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "GHAST_TEAR"
+    slot: 16
+  PUMPKIN:
+    name: "Pumpkin"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "PUMPKIN"
+    slot: 13
+  WHEAT:
+    name: "Wheat"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "WHEAT"
+    slot: 10
+  SEEDS:
+    name: "Seeds"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SEEDS"
+    slot: 15
+  JUNGLE_LOG:
+    name: "Jungle Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "JUNGLE_LOG"
+    slot: 15
+  NETHER_WART:
+    name: "Nether Wart"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "NETHER_WART"
+    slot: 30
+  GUNPOWDER:
+    name: "Gunpowder"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "GUNPOWDER"
+    slot: 14
+  IRON_INGOT:
+    name: "Iron Ingot"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "IRON_INGOT"
+    slot: 12
+  SPRUCE_LOG:
+    name: "Spruce Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SPRUCE_LOG"
+    slot: 11
+  SALMON:
+    name: "Raw Salmon"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SALMON"
+    slot: 11
+  PRISMARINE_SHARD:
+    name: "Prismarine Shard"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "PRISMARINE_SHARD"
+    slot: 14
+  RABBIT:
+    name: "Rabbit"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "RABBIT"
+    slot: 29
+  RED_MUSHROOM:
+    name: "Red Mushroom"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "RED_MUSHROOM"
+    slot: 16
+  MUTTON:
+    name: "Mutton"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "MUTTON"
+    slot: 28
+  LILY_PAD:
+    name: "Lily Pad"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "LILY_PAD"
+    slot: 19
+  ROTTEN_FLESH:
+    name: "Rotten Flesh"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "ROTTEN_FLESH"
+    slot: 10
+  OBSIDIAN:
+    name: "Obsidian"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "OBSIDIAN"
+    slot: 21
+  DIAMOND:
+    name: "Diamond"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "DIAMOND"
+    slot: 14
+  COBBLESTONE:
+    name: "Cobblestone"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "COBBLESTONE"
+    slot: 10
+  SPIDER_EYE:
+    name: "Spider Eye"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SPIDER_EYE"
+    slot: 13
+  GLOWSTONE_DUST:
+    name: "Glowstone Dust"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "GLOWSTONE_DUST"
+    slot: 22
+  GOLD_INGOT:
+    name: "Gold Ingot"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "GOLD_INGOT"
+    slot: 13
+  END_STONE:
+    name: "End Stone"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "END_STONE"
+    slot: 29
+  TROPICAL_FISH:
+    name: "Clownfish"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "TROPICAL_FISH"
+    slot: 12
+  GRAVEL:
+    name: "Gravel"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "GRAVEL"
+    slot: 23
+  CHICKEN:
+    name: "Chicken"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "CHICKEN"
+    slot: 25
+  COD:
+    name: "Raw Fish"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "COD"
+    slot: 10
+  LEATHER:
+    name: "Leather"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "LEATHER"
+    slot: 23
+  OAK_LOG:
+    name: "Oak Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "OAK_LOG"
+    slot: 10
+  BONE:
+    name: "Bone"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BONE"
+    slot: 11
+  PUFFERFISH:
+    name: "Pufferfish"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "PUFFERFISH"
+    slot: 13
+  EMERALD:
+    name: "Emerald"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "EMERALD"
+    slot: 16
+  BIRCH_LOG:
+    name: "Birch Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BIRCH_LOG"
+    slot: 12
+  BLACK_DYE:
+    name: "Ink Sack"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BLACK_DYE"
+    slot: 20
+  PORKCHOP:
+    name: "Porkchop"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "PORKCHOP"
+    slot: 24
+  PRISMARINE_CRYSTALS:
+    name: "Prismarine Crystals"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "PRISMARINE_CRYSTALS"
+    slot: 15
+  ICE:
+    name: "Ice"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "ICE"
+    slot: 24
+  CLAY_BALL:
+    name: "Clay"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "CLAY_BALL"
+    slot: 16
+  FEATHER:
+    name: "Feather"
+    category: farming
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "FEATHER"
+    slot: 22
+  NETHERRACK:
+    name: "Netherrack"
+    category: mining
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "NETHERRACK"
+    slot: 25
+  SPONGE:
+    name: "Sponge"
+    category: fishing
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "SPONGE"
+    slot: 21
+  BLAZE_ROD:
+    name: "Blaze Rod"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "BLAZE_ROD"
+    slot: 20
+  STRING:
+    name: "String"
+    category: combat
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "STRING"
+    slot: 12
+  DARK_OAK_LOG:
+    name: "Dark Oak Wood"
+    category: foraging
+    rewards:
+      1:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level I"
+      2:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level II"
+      3:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level III"
+      4:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IV"
+      5:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level V"
+      6:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VI"
+      7:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VII"
+      8:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level VIII"
+      9:
+        - "  &9Collection Minion &7Recipes"
+        - "  &9Dungeon Island &7Level IX"
+    requirements:
+      1: 150.0
+      2: 250.0
+      3: 350.0
+      4: 450.0
+      5: 550.0
+      6: 650.0
+      7: 750.0
+      8: 850.0
+      9: 950.0
+    commands:
+      1:
+        - "eco give %player% 1000"
+      2:
+        - "eco give %player% 1000"
+      3:
+        - "eco give %player% 1000"
+      4:
+        - "eco give %player% 1000"
+      5:
+        - "eco give %player% 1000"
+      6:
+        - "eco give %player% 1000"
+      7:
+        - "eco give %player% 1000"
+      8:
+        - "eco give %player% 1000"
+      9:
+        - "eco give %player% 1000"
+    key: "DARK_OAK_LOG"
+    slot: 13

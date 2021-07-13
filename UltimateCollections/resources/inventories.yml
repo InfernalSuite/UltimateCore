@@ -1,0 +1,474 @@
+backButtons: true
+mainMenu:
+  title: '&8Main Menu'
+  size: 54
+  items:
+    mainMenuItem:
+      material: PAINTING
+      amount: 1
+      title: '&aCollection'
+      lore:
+        - '&7View all of the items available'
+        - '&7in SkyBlock. Collect more of an'
+        - '&7item to unlock rewards on your'
+        - '&7way to becoming a master of'
+        - '&7SkyBlock.'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to show rankings!'
+      slot: 4
+      isGlowing: false
+    farming:
+      material: GOLDEN_HOE
+      amount: 1
+      title: '&eFarming Collection'
+      lore:
+        - '&7View your Farming Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to view!'
+      slot: 20
+      category: farming
+      isGlowing: false
+      command: collections submenu farming
+    mining:
+      material: STONE_PICKAXE
+      amount: 1
+      title: '&eMining Collection'
+      lore:
+        - '&7View your Mining Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to view!'
+      slot: 21
+      category: mining
+      isGlowing: false
+      command: collections submenu mining
+    combat:
+      amount: 1
+      material: STONE_SWORD
+      title: '&eCombat Collection'
+      lore:
+        - '&7View your Farming Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to view!'
+      slot: 22
+      category: combat
+      isGlowing: false
+      command: collections submenu combat
+    foraging:
+      amount: 1
+      title: '&eForaging Collection'
+      material: OAK_SAPLING
+      lore:
+        - '&7View your Foraging Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to view!'
+      slot: 23
+      category: foraging
+      isGlowing: false
+      command: collections submenu foraging
+    fishing:
+      amount: 1
+      title: '&eFishing Collection'
+      material: FISHING_ROD
+      lore:
+        - '&7View your Fishing Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to view!'
+      slot: 24
+      category: fishing
+      isGlowing: false
+      command: collections submenu fishing
+topMenu:
+  title: '&8Main Menu'
+  size: 54
+  items:
+    topMenuItem:
+      material: PAINTING
+      amount: 1
+      title: '&aCollection'
+      lore:
+        - '&7View all of the items available'
+        - '&7in SkyBlock. Collect more of an'
+        - '&7item to unlock rewards on your'
+        - '&7way to becoming a master of'
+        - '&7SkyBlock.'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&eClick to show rankings!'
+      slot: 4
+      isGlowing: false
+    farming:
+      material: GOLDEN_HOE
+      amount: 1
+      title: '&eFarming Collection'
+      lore:
+        - "&7View your Farming Collection"
+        - ""
+        - "&7Collection Unlocked: &e%progress_percentage%&6%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "&7Wheat: %WHEAT_RANK_PLACEHOLDER%"
+        - "&7Carrot: %CARROT_RANK_PLACEHOLDER%"
+        - "&7Potato: %POTATO_RANK_PLACEHOLDER%"
+        - "&7Pumpkin: %PUMPKIN_RANK_PLACEHOLDER%"
+        - "&7Melon: %MELON_SLICE_RANK_PLACEHOLDER%"
+        - "&7Seeds: %SEEDS_RANK_PLACEHOLDER%"
+        - "&7Mushroom: %RED_MUSHROOM_RANK_PLACEHOLDER%"
+        - "&7Cocoa Beans: %BROWN_DYE_RANK_PLACEHOLDER%"
+        - "&7Cactus: %CACTUS_RANK_PLACEHOLDER%"
+        - "&7Sugar Cane: %SUGAR_CANE_RANK_PLACEHOLDER%"
+        - "&7Feather: %FEATHER_RANK_PLACEHOLDER%"
+        - "&7Leather: %LEATHER_RANK_PLACEHOLDER%"
+        - "&7Raw Porkchop: %PORKCHOP_RANK_PLACEHOLDER%"
+        - "&7Raw Rabbit: %RABBIT_RANK_PLACEHOLDER%"
+        - "&7Nether Wart: %NETHER_WART_RANK_PLACEHOLDER%"
+        - ""
+        - "&8Rankings may take some time to refresh."
+        - "&8Requires 25k in collection to be ranked"
+        - ""
+        - "&eClick to view!"
+      slot: 20
+      category: farming
+      isGlowing: true
+      command: collections submenu farming
+    mining:
+      material: STONE_PICKAXE
+      amount: 1
+      title: '&eMining Collection'
+      lore:
+        - "&7View your Mining Collection"
+        - ""
+        - "&7Collection Unlocked: &e%progress_percentage%&6%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "&7Cobblestone: %COBBLESTONE_RANK_PLACEHOLDER%"
+        - "&7Coal: %COAL_RANK_PLACEHOLDER%"
+        - "&7Iron Ingot: %IRON_INGOT_RANK_PLACEHOLDER%"
+        - "&7Gold Ingot: %GOLD_INGOT_RANK_PLACEHOLDER%"
+        - "&7Diamond: %DIAMOND_RANK_PLACEHOLDER%"
+        - "&7Lapis: %BLUE_DYE_RANK_PLACEHOLDER%"
+        - "&7Emerald: %EMERALD_RANK_PLACEHOLDER%"
+        - "&7Redstone: %REDSTONE_RANK_PLACEHOLDER%"
+        - "&7Quartz: %QUARTZ_RANK_PLACEHOLDER%"
+        - "&7Obsidian: %OBSIDIAN_RANK_PLACEHOLDER%"
+        - "&7Glowstone Dust: %GLOWSTONE_DUST_RANK_PLACEHOLDER%"
+        - "&7Gravel Rank: %GRAVEL_RANK_PLACEHOLDER%"
+        - "&7Ice: %ICE_RANK_PLACEHOLDER%"
+        - "&7Netherrack: %NETHERRACK_RANK_PLACEHOLDER%"
+        - "&7Sand: %SAND_RANK_PLACEHOLDER%"
+        - "&7End Stone: %END_STONE_RANK_PLACEHOLDER%"
+        - ""
+        - "&8Rankings may take some time to refresh."
+        - "&8Requires 25k in collection to be ranked"
+        - ""
+        - "&eClick to view!"
+      slot: 21
+      category: mining
+      isGlowing: true
+      command: collections submenu mining
+    combat:
+      amount: 1
+      title: '&eCombat Collection'
+      material: STONE_SWORD
+      lore:
+        - "&7View your Farming Collection"
+        - ""
+        - "&7Collection Unlocked: &e%progress_percentage%&6%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "&7Rotten Flesh: %ROTTEN_FLESH_RANK_PLACEHOLDER%"
+        - "&7Bone: %BONE_RANK_PLACEHOLDER%"
+        - "&7String: %STRING_RANK_PLACEHOLDER%"
+        - "&7Spider Eye: %SPIDER_EYE_RANK_PLACEHOLDER%"
+        - "&7Gunpowder: %GUNPOWDER_RANK_PLACEHOLDER%"
+        - "&7Ender Pearl: %ENDER_PEARL_RANK_PLACEHOLDER%"
+        - "&7Ghast Tear: %GHAST_TEAR_RANK_PLACEHOLDER%"
+        - "&7Slimeball: %SLIME_BALL_RANK_PLACEHOLDER%"
+        - "&7Blaze Rod: %BLAZE_ROD_RANK_PLACEHOLDER%"
+        - "&7Magma Cream: %MAGMA_CREAM_RANK_PLACEHOLDER%"
+        - ""
+        - "&8Rankings may take some time to refresh."
+        - "&8Requires 25k in collection to be ranked"
+        - ""
+        - "&eClick to view!"
+      slot: 22
+      category: combat
+      isGlowing: true
+      command: collections submenu combat
+    foraging:
+      amount: 1
+      title: '&eForaging Collection'
+      material: OAK_SAPLING
+      lore:
+        - "&7View your Foraging Collection"
+        - ""
+        - "&7Collection Unlocked: &e%progress_percentage%&6%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "&7Oak Log: %OAK_LOG_RANK_PLACEHOLDER%"
+        - "&7Spruce Log: %SPRUCE_LOG_RANK_PLACEHOLDER%"
+        - "&7Birch Log: %BIRCH_LOG_RANK_PLACEHOLDER%"
+        - "&7Dark Oak Log: %DARK_OAK_LOG_RANK_PLACEHOLDER%"
+        - "&7Acacia Log: %ACACIA_LOG_RANK_PLACEHOLDER%"
+        - "&7Jungle Log: %JUNGLE_LOG_RANK_PLACEHOLDER%"
+        - ""
+        - "&8Rankings may take some time to refresh."
+        - "&8Requires 25k in collection to be ranked"
+        - ""
+        - "&eClick to view!"
+      slot: 23
+      category: foraging
+      isGlowing: true
+      command: collections submenu foraging
+    fishing:
+      amount: 1
+      title: '&eFishing Collection'
+      material: FISHING_ROD
+      lore:
+        - "&7View your Fishing Collection"
+        - ""
+        - "&7Collection Unlocked: &e%progress_percentage%&6%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "&7Cod: %COD_RANK_PLACEHOLDER%"
+        - "&7Salmon: %SALMON_RANK_PLACEHOLDER%"
+        - "&7Tropical Fish: %TROPICAL_FISH_RANK_PLACEHOLDER%"
+        - "&7Pufferfish: %PUFFERFISH_RANK_PLACEHOLDER%"
+        - "&7Prismarine Shard: %PRISMARINE_SHARD_RANK_PLACEHOLDER%"
+        - "&7Prismarine Crystals: %PRISMARINE_CRYSTALS_RANK_PLACEHOLDER%"
+        - "&7Clay Ball: %CLAY_BALL_RANK_PLACEHOLDER%"
+        - "&7Lily Pad: %LILY_PAD_RANK_PLACEHOLDER%"
+        - "&7Black Dye: %BLACK_DYE_RANK_PLACEHOLDER%"
+        - "&7Sponge: %SPONGE_RANK_PLACEHOLDER%"
+        - ""
+        - "&8Rankings may take some time to refresh."
+        - "&8Requires 25k in collection to be ranked"
+        - ""
+        - "&eClick to view!"
+      slot: 24
+      category: fishing
+      isGlowing: true
+      command: collections submenu fishing
+subMenu:
+  size: 54
+  titles:
+    farming: '&8Farming Collections'
+    combat: '&8Combat Collections'
+    fishing: '&8Fishing Collections'
+    foraging: '&8Foraging Collections'
+    mining: '&8Mining Collections'
+  items:
+    farming:
+      material: GOLDEN_HOE
+      amount: 1
+      title: '&eFarming Collection'
+      lore:
+        - '&7View your Farming Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+      slot: 4
+      isGlowing: false
+    combat:
+      material: STONE_SWORD
+      amount: 1
+      title: '&eCombat Collection'
+      lore:
+        - '&7View your Farming Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+      slot: 4
+      isGlowing: false
+    fishing:
+      material: FISHING_ROD
+      amount: 1
+      title: '&eFishing Collection'
+      lore:
+        - '&7View your Fishing Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+      slot: 4
+      isGlowing: false
+    foraging:
+      material: OAK_SAPLING
+      amount: 1
+      title: '&eForaging Collection'
+      lore:
+        - '&7View your Foraging Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+      slot: 4
+      isGlowing: false
+    mining:
+      material: STONE_PICKAXE
+      amount: 1
+      title: '&eMining Collection'
+      lore:
+        - '&7View your Mining Collection'
+        - ''
+        - '&7Collection Unlocked: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+      slot: 4
+      isGlowing: false
+    lockedItem:
+      material: GRAY_DYE
+      amount: 1
+      title: '&c%collection_name%'
+      lore:
+        - '&7Find this item to add it to your'
+        - '&7collection and unlock collection'
+        - '&7rewards!'
+      isGlowing: false
+    unlockedItem:
+      material: STONE
+      amount: 1
+      title: '&a%collection_name%'
+      lore:
+        - '&7View all your %collection_name% Collection'
+        - '&7progress and rewards!'
+        - ''
+        - '&7Progress to %collection_name% %next_level%: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&7%collection_name% %next_level% Rewards'
+        - '%level_rewards%'
+      isGlowing: false
+  decoration:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 18
+    - 27
+    - 36
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 44
+    - 35
+    - 26
+    - 17
+levelsMenu:
+  title: '&8%collection_name% Collection'
+  size: 54
+  itemsSlots:
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+  items:
+    lockedItem:
+      material: RED_STAINED_GLASS_PANE
+      amount: 1
+      title: '&c%collection_name% %next_level%'
+      lore:
+        - ''
+        - '&7Progress to %collection_name% %next_level%: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&7Reward:'
+        - '%level_rewards%'
+      isGlowing: false
+    unlockedItem:
+      material: LIME_STAINED_GLASS_PANE
+      amount: 1
+      title: '&a%collection_name% %next_level%'
+      lore:
+        - ''
+        - '&7Progress : &a100%'
+        - '&2-------------------- &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&7Reward:'
+        - '%level_rewards%'
+      isGlowing: false
+    progressItem:
+      material: YELLOW_STAINED_GLASS_PANE
+      amount: 1
+      title: '&e%collection_name% %next_level%'
+      lore:
+        - ''
+        - '&7Progress to %collection_name% %next_level%: &e%progress_percentage%&6%'
+        - '%progress_bar% &e%current_xp%&6/&e%max_xp%'
+        - ''
+        - '&7Reward:'
+        - '%level_rewards%'
+      isGlowing: false
+    infoItem:
+      material: STONE
+      amount: 1
+      title: '&e%collection_name% %level%'
+      lore:
+        - '&7View all your %collection_name% Collection'
+        - '&7Progress and rewards!'
+        - ''
+        - '&7Total Collected: &e%current_xp%'
+      slot: 4
+      isGlowing: false
+background:
+  material: BLACK_STAINED_GLASS_PANE
+  amount: 1
+  title: ' '
+  lore: [ ]
+  isGlowing: false
+closeButton:
+  material: BARRIER
+  amount: 1
+  title: '&cClose Menu'
+  lore: [ ]
+  slot: 49
+  isGlowing: false
+previousPage:
+  material: ARROW
+  amount: 1
+  title: '&ePrevious Page'
+  lore: [ ]
+  slot: 48
+  isGlowing: false
+main-menu-back:
+  enabled: true
+  material: ARROW
+  amount: 1
+  slot: 48
+  title: "&eBack"
+  lore:
+    - "&7Go back to main menu."
+  command: "hypercore mainmenu"
