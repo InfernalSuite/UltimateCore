@@ -1,5 +1,5 @@
 name: UltimateCore
-description: UltimateCore plugin
+description: UltimateCore's Helper plugin
 main: mc.ultimatecore.helper.UltimatePlugin
 version: ${version}
 api-version: ${minecraft.api.version}
