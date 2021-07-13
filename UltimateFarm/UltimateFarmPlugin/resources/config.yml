@@ -1,0 +1,58 @@
+# -------------[HyperRegions]-------------#
+# #Guardian Particle
+#  - EXPLOSION_NORMAL
+#  - EXPLOSION_LARGE
+#  - EXPLOSION_HUGE
+#  - FIREWORKS_SPARK
+#  - WATER_BUBBLE
+#  - WATER_SPLASH
+#  - WATER_WAKE
+#  - SUSPENDED:
+#  - SUSPENDED_DEPTH:
+#  - CRIT:
+#  - CRIT_MAGIC:
+#  - SMOKE_NORMAL:
+#  - SMOKE_LARGE:
+#  - SPELL:
+#  - SPELL_INSTANT:
+#  - SPELL_MOB:
+#  - SPELL_MOB_AMBIENT:
+#  - SPELL_WITCH:
+#  - DRIP_WATER:
+#  - VILLAGER_ANGRY:
+#  - VILLAGER_HAPPY:
+#  - TOWN_AURA:
+#  - NOTE:
+#  - PORTAL:
+#  - ENCHANTMENT_TABLE:
+#  - FLAME:
+#  - LAVA:
+#  - FOOTSTEP:
+#  - CLOUD:
+#  - REDSTONE:
+#  - SNOWBALL:
+#  - SNOW_SHOVEL:
+#  - HEART:
+#  - BARRIER:
+#  - ITEM_CRACK:
+#  - BLOCK_CRACK:
+#  - BLOCK_DUST:
+#  - WATER_DROP:
+#  - ITEM_TAKE:
+#  - MOB_APPEARANCE:
+#  - DRAGON_BREATH:
+#  - END_ROD:
+#  - DAMAGE_INDICATOR:
+#  - SWEEP_ATTACK:
+#  - FALLING_DUST:
+#  - TOTEM:
+#  - SPIT:
+# ----------------------------------------#
+prefix: "&e&lHyper Farm &7"
+guardianTexture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI2NWY5NmY1NGI3ODg4NWM0NmU3ZDJmODZiMWMxZGJmZTY0M2M2MDYwZmM3ZmNjOTgzNGMzZTNmZDU5NTEzNSJ9fX0="
+byPassWorldGuard: false
+upAndDownGuardians: true
+useDefaultPluginRegions: true
+guardian_particle: "FIREWORKS_SPARK"
+priorityLevel: 1
+debug: false

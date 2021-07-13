@@ -1,0 +1,12 @@
+name: UltimateCore-Farm
+description: UltimateCore's Farm plugin
+main: mc.ultimatecore.farm.HyperRegions
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ UltimateCore, WorldEdit, WorldGuard, Multiverse-Core, Residence, UltraRegions ]
+commands:
+  hyperregions:
+    aliases: [ "hregions", "regregions" ]
+    description: UltimateCore's Farm main command

@@ -1,0 +1,249 @@
+##LEGACY
+# -------------[HyperRegions]-------------#
+# regenTime: if min and max is not equals
+# it'll select a random number between
+# min and max.
+# ----------------------------------------#
+regRegions:
+  BIRCH_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG
+      data: 2
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG
+        data: 2
+        chance: 100
+  CARROTS:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: CARROT
+      data: 7
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: CARROT
+        data: 7
+        chance: 100
+  SUGAR_CANE:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: SUGAR_CANE
+      data: 0
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: SUGAR_CANE
+        data: 0
+        chance: 100
+  POTATOES:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: POTATO
+      data: 7
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: POTATO
+        data: 7
+        chance: 100
+  PUMPKIN:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: PUMPKIN
+      data: 0
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: PUMPKIN
+        data: 0
+        chance: 100
+  WHEAT:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: CROPS
+      data: 7
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: CROPS
+        data: 7
+        chance: 100
+  MELON:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: MELON
+      data: 0
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: MELON
+        data: 0
+        chance: 100
+  ACACIA_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG_2
+      data: 0
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG_2
+        data: 0
+        chance: 100
+  IRON_ORE:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: IRON_ORE
+      data: 0
+    blockWhileRegen:
+      material: BEDROCK
+      data: 0
+    blocksAfter:
+      '1':
+        material: IRON_ORE
+        data: 0
+        chance: 60
+      '2':
+        material: STONE
+        data: 0
+        chance: 60
+  JUNGLE_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG
+      data: 3
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG
+        data: 3
+        chance: 100
+  NETHER_WART:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: false
+    blockBroken:
+      material: NETHER_WARTS
+      data: 3
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: NETHER_WARTS
+        data: 3
+        chance: 100
+  SPRUCE_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG
+      data: 1
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG
+        data: 1
+        chance: 100
+  OAK_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG
+      data: 0
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG
+        data: 0
+        chance: 100
+  DARK_OAK_LOG:
+    regions: [ ]
+    regenTime:
+      min: 5
+      max: 5
+    isTripleBlock: true
+    blockBroken:
+      material: LOG_2
+      data: 1
+    blockWhileRegen:
+      material: AIR
+      data: 0
+    blocksAfter:
+      '1':
+        material: LOG_2
+        data: 1
+        chance: 100
