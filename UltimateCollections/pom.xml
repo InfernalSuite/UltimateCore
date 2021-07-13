@@ -68,7 +68,7 @@
         <dependency>
             <groupId>mc.ultimatecore.helper</groupId>
             <artifactId>UltimateHelper</artifactId>
-            <version>4.1.9-STABLE</version>
+            <version>4.2.0-STABLE</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
