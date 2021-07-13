@@ -1,0 +1,14 @@
+tiaSystem:
+  soulsToClaim: 5
+  messages:
+    - ""
+    - "  &d&lFAIRY SOUL EXCHANGE"
+    - "  &fYou gained permanent stat boosts!"
+    - ""
+    - "  &8+&a1 &c✿ Strength"
+    - "  &8+&a4 HP &c❤ Health"
+    - "  &8+&a1 ❈ Defense"
+  rewards:
+    - "skills addability %player% Strength 1"
+    - "skills addability %player% Health 4"
+    - "skills addability %player% Defense 1"

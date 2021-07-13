@@ -1,0 +1,85 @@
+tiaGUI:
+  title: "&8Fairy"
+  size: 54
+  items:
+    decoration:
+      material: BLACK_STAINED_GLASS_PANE
+      amount: 1
+      title: " "
+      lore: [ ]
+    claimItem:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&aExchange Fairy Souls"
+      headData: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjk2OTIzYWQyNDczMTAwMDdmNmFlNWQzMjZkODQ3YWQ1Mzg2NGNmMTZjMzU2NWExODFkYzhlNmIyMGJlMjM4NyJ9fX0="
+      lore:
+        - "&7Find &dFairy Souls &7around the"
+        - "&7world and bring them back to me"
+        - "&7and I will rewards you with"
+        - "&7permanent stat boosts!"
+        - ""
+        - "&7FairySouls: &d%to_exchange%&7/&d%to_claim%"
+        - ""
+        - "%exchange_placeholder%"
+      slot: 22
+    closeButton:
+      material: BARRIER
+      amount: 1
+      title: "&cClose"
+      lore: [ ]
+      slot: 49
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53

@@ -1,0 +1,11 @@
+name: UltimateSouls
+description: UltimateCore's Souls plugin
+main: mc.ultimatecore.souls.HyperSouls
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ UltimateCore, PlaceholderAPI, MVdWPlaceholderAPI, Vault, Multiverse-Core ]
+commands:
+  souls:
+    description: UltimateCore's Souls main command
