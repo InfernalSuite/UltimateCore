@@ -13,12 +13,6 @@
     <artifactId>UltimateHelper</artifactId>
     <version>4.2.0-STABLE</version>
 
-    <repositories>
-        <repository>
-            <id>ess-repo</id>
-            <url>https://ci.ender.zone/plugin/repository/everything/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.spigot</groupId>
