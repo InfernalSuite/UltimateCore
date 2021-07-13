@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UltimateCollections/UltimateCollections.iml" filepath="$PROJECT_DIR$/UltimateCollections/UltimateCollections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/UltimateCore.iml" filepath="$PROJECT_DIR$/.idea/UltimateCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateHelper/UltimateHelper.iml" filepath="$PROJECT_DIR$/UltimateHelper/UltimateHelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateSkills/UltimateSkills.iml" filepath="$PROJECT_DIR$/UltimateSkills/UltimateSkills.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateSouls/UltimateSouls.iml" filepath="$PROJECT_DIR$/UltimateSouls/UltimateSouls.iml" />
+    </modules>
+  </component>
+</project>

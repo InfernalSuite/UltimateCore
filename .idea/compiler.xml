@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for UltimateCore" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
+        </processorPath>
+        <module name="UltimateHelper" />
+        <module name="UltimateCollections" />
+        <module name="UltimateSkills" />
+        <module name="UltimateSouls" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="UltimateCollections" target="8" />
+      <module name="UltimateCore" target="8" />
+      <module name="UltimateHelper" target="8" />
+      <module name="UltimateSkills" target="8" />
+      <module name="UltimateSouls" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
