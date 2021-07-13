@@ -1,0 +1,41 @@
+categories:
+  farming:
+    enabled: true
+    displayname: "Farming"
+    item: GOLDEN_HOE
+    slot: 20
+  mining:
+    enabled: true
+    displayname: "Mining"
+    item: STONE_PICKAXE
+    slot: 21
+  combat:
+    enabled: true
+    displayname: "Combat"
+    item: STONE_SWORD
+    slot: 22
+  fishing:
+    enabled: true
+    displayname: "Fishing"
+    item: FISHING_ROD
+    slot: 23
+  foraging:
+    enabled: true
+    displayname: "Foraging"
+    item: OAK_SAPLING
+    slot: 24
+  enchanting:
+    enabled: true
+    displayname: "Enchanting"
+    item: ENCHANTMENT_TABLE
+    slot: 29
+  alchemy:
+    enabled: true
+    displayname: "Alchemy"
+    item: BREWING_STAND
+    slot: 30
+  carpentry:
+    enabled: true
+    displayname: "Carpentry"
+    item: CRAFTING_TABLE
+    slot: 31

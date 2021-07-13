@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_16">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -22,14 +22,15 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="module" module-name="v1_8_R3 (1) (mc.ultimatecore.crafting.nms.v1_8_R3)" />
-    <orderEntry type="module" module-name="v1_12_R1 (1) (mc.ultimatecore.crafting.nms.v1_12_R1)" />
-    <orderEntry type="module" module-name="v1_14_R1 (1) (mc.ultimatecore.crafting.nms.v1_14_R1)" />
-    <orderEntry type="module" module-name="v1_15_R1 (1) (mc.ultimatecore.crafting.nms.v1_15_R1)" />
-    <orderEntry type="module" module-name="v1_16_R3 (1) (mc.ultimatecore.crafting.nms.v1_16_R3)" />
-    <orderEntry type="module" module-name="v1_17_R1 (1) (mc.ultimatecore.crafting.nms.v1_17_R1)" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_8_R3" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_12_R1" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_14_R1" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_15_R1" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_16_R3" />
+    <orderEntry type="module" module-name="UltimateCraftingNMS-v1_17_R1" />
     <orderEntry type="module" module-name="UltimateCraftingNMS" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jetbrains:annotations:19.0.0" level="project" />
   </component>
 </module>

@@ -1,0 +1,10 @@
+name: UltimateCore-Crafting
+description: UltimateCore's Crafting plugin
+main: mc.ultimatecore.crafting.HyperCrafting
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+commands:
+  hypercrafting:
+    description: UltimateCore's Crafting main command

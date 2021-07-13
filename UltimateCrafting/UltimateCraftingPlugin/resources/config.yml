@@ -1,0 +1,4 @@
+prefix: "&e&lHyperCrafting &7"
+mainCommandPerm: ''
+setAsDefaultCraftingTable: true
+showAvailableRecipes: true

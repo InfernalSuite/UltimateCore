@@ -1,0 +1,309 @@
+mainMenu:
+  title: "&8Crafting Table"
+  size: 54
+  recipeNotFound:
+    material: BARRIER
+    amount: 1
+    title: "&cRecipe not found"
+    lore: []
+    slot: 23
+  recipeNoPermission:
+    material: BARRIER
+    amount: 1
+    title: "&cYou haven't unlock this yet!"
+    lore: []
+    slot: 23
+  previewCraftItem:
+    amount: 1
+    title: "%item_title%"
+    lore:
+      - "%item_lore%"
+      - "&8&m▬▬▬▬▬▬▬▬▬▬"
+      - "&7This is the item you are"
+      - "&7crafting."
+    slot: 23
+  successItem:
+    material: LIME_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  emptyItem:
+    material: RED_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 22
+    - 24
+    - 25
+    - 26
+    - 27
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+  craftingSlots:
+    - 10
+    - 11
+    - 12
+    - 19
+    - 20
+    - 21
+    - 28
+    - 29
+    - 30
+  successSlots:
+    - 48
+    - 50
+    - 51
+    - 52
+    - 53
+    - 45
+    - 46
+    - 47
+  availableRecipesSlots:
+    - 16
+    - 25
+    - 34
+recipePreviewGUI:
+  title: "&8Recipe Preview"
+  size: 54
+  decorationItem:
+    material: CRAFTING_TABLE
+    amount: 1
+    title: "&aCrafting Table"
+    lore:
+      - "&7Craft this item by using"
+      - "&7a crafting table."
+    slot: 23
+  resultItemSlot: 25
+  recipeSlots:
+    - 10
+    - 11
+    - 12
+    - 19
+    - 20
+    - 21
+    - 28
+    - 29
+    - 30
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 11
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 20
+    - 22
+    - 24
+    - 26
+    - 27
+    - 29
+    - 31
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+recipeBookGUI:
+  title: "&8Recipe Book"
+  size: 54
+  recipeBook:
+    material: BOOK
+    amount: 1
+    title: "&aRecipe Book"
+    lore:
+      - "&7Through your adventure, you will"
+      - "&7unlock recipes for all kings of"
+      - "&7special items! You can view how"
+      - "&7to craft these items here."
+      - ""
+      - "&7Recipe Book Unlocked: &e%percentage%&6%"
+      - "%progress_bar% &e%current%&6/&e%total%"
+    slot: 4
+  categoryItem:
+    amount: 1
+    title: "&a%category% Recipes"
+    lore:
+      - "&7View all of the %category% Recipes"
+      - "&7that you have unlocked!"
+      - ""
+      - "&7Recipes Unlocked: &e%percentage%&6%"
+      - "%progress_bar% &e%current%&6/&e%total%"
+      - ""
+      - "&aClick to view!"
+  backMainMenu:
+    enabled: true
+    material: ARROW
+    amount: 1
+    title: "&aGo Back"
+    lore:
+      - "&7To SkyBlock Menu"
+    slot: 48
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+  decoration:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  decoration_slots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 25
+    - 26
+    - 27
+    - 28
+    - 32
+    - 33
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 50
+    - 51
+    - 52
+    - 53
+recipesGUI:
+  title: "&8%category% Table"
+  size: 54
+  recipeLocked:
+    material: GRAY_DYE
+    amount: 1
+    title: "&c???"
+    lore:
+      - "&7This recipe is currently"
+      - "&7locked."
+  recipeUnlocked:
+    amount: 1
+    title: "%item_name%"
+    lore:
+      - "%item_lore%"
+      - ""
+      - "&eClick to view recipe"
+  nextPageButton:
+    amount: 1
+    title: "%item_title%"
+    lore:
+      - "%item_lore%"
+      - "&8&m▬▬▬▬▬▬▬▬▬▬"
+      - "&7This is the item you are"
+      - "&7crafting."
+    slot: 23
+  backPageButton:
+    amount: 1
+    title: "%item_title%"
+    lore:
+      - "%item_lore%"
+      - "&8&m▬▬▬▬▬▬▬▬▬▬"
+      - "&7This is the item you are"
+      - "&7crafting."
+    slot: 23
+buttons:
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+  backMainMenu:
+    amount: 1
+    title: "%item_title%"
+    lore:
+      - "%item_lore%"
+      - "&8&m▬▬▬▬▬▬▬▬▬▬"
+      - "&7This is the item you are"
+      - "&7crafting."
+    slot: 23
+    command: hypercore mainmen
