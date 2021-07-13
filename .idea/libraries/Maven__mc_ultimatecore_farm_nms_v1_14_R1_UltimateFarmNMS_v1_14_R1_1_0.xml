@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: mc.ultimatecore.farm.nms.v1_14_R1:UltimateFarmNMS-v1_14_R1:1.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/mc/ultimatecore/farm/nms/v1_14_R1/UltimateFarmNMS-v1_14_R1/1.0/UltimateFarmNMS-v1_14_R1-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/mc/ultimatecore/farm/nms/v1_14_R1/UltimateFarmNMS-v1_14_R1/1.0/UltimateFarmNMS-v1_14_R1-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/mc/ultimatecore/farm/nms/v1_14_R1/UltimateFarmNMS-v1_14_R1/1.0/UltimateFarmNMS-v1_14_R1-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
