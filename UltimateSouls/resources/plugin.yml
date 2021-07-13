@@ -1,4 +1,4 @@
-name: UltimateSouls
+name: UltimateCore-Souls
 description: UltimateCore's Souls plugin
 main: mc.ultimatecore.souls.HyperSouls
 version: ${version}
