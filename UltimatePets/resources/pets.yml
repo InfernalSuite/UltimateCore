@@ -7,7 +7,7 @@
 pets:
   Enderman:
     displayName: "Enderman"
-    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    entityName: "&7[Lvl %pet_level% Tier %pet_tier%] &9%player%'s %pet_name%"
     description:
       - "&8Combat"
       - "&cCrit Damage: &a+%pet_crit_damage%"
@@ -25,7 +25,7 @@ pets:
         seconds: 60
   Lion:
     displayName: "Lion"
-    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    entityName: "&7[Lvl %pet_level% Tier %pet_tier%] &9%player%'s %pet_name%"
     description:
       - "&8Combat"
       - "&cCrit Damage: &a+%pet_crit_damage%"
@@ -38,7 +38,7 @@ pets:
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjcyZTQ5ZDVlNGFmNDczNTcxZTdlMDc4YWI3OGMzZTgzOTY4ZDJmZTEwOWRhOTUyNDRjNWQwY2I3ZDIyYjQ2YiJ9fX0==="
   Tiger:
     displayName: "Tiger"
-    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    entityName: "&7[Lvl %pet_level% Tier %pet_tier%] &9%player%'s %pet_name%"
     description:
       - "&8Combat"
       - "&cCrit Damage: &a+%pet_crit_damage%"
