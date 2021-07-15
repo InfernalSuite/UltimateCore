@@ -10,13 +10,22 @@
     <version>1.0</version>
 
     <modules>
+        <module>UltimateAlchemy</module>
+        <module>UltimateAnvil</module>
         <module>UltimateCollections</module>
-        <module>UltimateHelper</module>
-        <module>UltimateSouls</module>
-        <!--        <module>UltimatePets</module>-->
-        <module>UltimateFarm</module>
-        <module>UltimateTrades</module>
+        <module>UltimateCoreMenu</module>
         <module>UltimateCrafting</module>
+        <module>UltimateDragon</module>
+        <module>UltimateEnchantment</module>
+        <module>UltimateFarm</module>
+        <module>UltimateHelper</module>
+        <module>UltimatePets</module>
+        <module>UltimateReforge</module>
+        <module>UltimateRunes</module>
+        <module>UltimateSkills</module>
+        <module>UltimateSouls</module>
+        <module>UltimateTalismans</module>
+        <module>UltimateTrades</module>
     </modules>
 
     <!--Repositories & Dependencies-->
@@ -49,6 +58,10 @@
         <repository>
             <id>ess-repo</id>
             <url>https://ci.ender.zone/plugin/repository/everything/</url>
+        </repository>
+        <repository>
+            <id>headdatabase-api</id>
+            <url>https://mvn.intellectualsites.com/content/repositories/thirdparty/</url>
         </repository>
     </repositories>
     <dependencies>
