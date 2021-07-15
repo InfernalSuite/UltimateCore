@@ -44,6 +44,7 @@
                             <artifact>*:*</artifact>
                             <excludes>
                                 <exclude>META-INF/maven/**</exclude>
+                                <exclude>LICENSE</exclude>
                             </excludes>
                         </filter>
                     </filters>

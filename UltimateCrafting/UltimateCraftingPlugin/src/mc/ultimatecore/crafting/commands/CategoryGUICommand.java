@@ -2,13 +2,11 @@ package mc.ultimatecore.crafting.commands;
 
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.gui.CategoryRecipeGUI;
-import mc.ultimatecore.crafting.gui.RecipeBookGUI;
 import mc.ultimatecore.crafting.objects.Category;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;

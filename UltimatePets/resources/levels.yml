@@ -1,0 +1,798 @@
+levels:
+  Enderman:
+    Unique:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+        petStats:
+          Health: 10.0
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Rare:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Ultimate:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Legendary:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Godly:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-6:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-7:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+  Lion:
+    Unique:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Rare:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Ultimate:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Legendary:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Godly:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-6:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-7:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+  Tiger:
+    Unique:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Rare:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Ultimate:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Legendary:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+    Godly:
+      level-1:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-2:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-3:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-4:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-5:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-6:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"
+      level-7:
+        xpRequired: 25
+        rewards:
+          - "eco give %player% 100"
+        petAbilities:
+          Defense: 0.0
+          Crit_Damage: 10.0
+        petPotions:
+          - "DAMAGE_RESISTANCE:1"
+          - "REGENERATION:1"

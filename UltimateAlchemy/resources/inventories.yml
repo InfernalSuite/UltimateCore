@@ -1,0 +1,136 @@
+mainMenu:
+  title: "&8Brewing Stand"
+  size: 54
+  items:
+    normalItem:
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      amount: 1
+      title: "&7Place Water Bottles or Potions"
+      lore:
+      - "&7below to brew."
+    brewingItem:
+      amount: 1
+      title: "&a%brewing_time%s"
+      lore: []
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 25
+    - 26
+    - 27
+    - 28
+    - 30
+    - 32
+    - 34
+    - 35
+    - 36
+    - 37
+    - 39
+    - 41
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 50
+    - 51
+    - 52
+    - 53
+recipePreviewGUI:
+  title: "&8Recipe Preview"
+  size: 54
+  mainIngredientSlot: 13
+  secondaryIngredientSlots:
+    - 38
+    - 40
+    - 42
+  specialDecoration:
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: [ ]
+  specialDecorationSlots:
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 29
+    - 31
+    - 33
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 25
+    - 26
+    - 27
+    - 28
+    - 30
+    - 32
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    - 48
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+buttons:
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49

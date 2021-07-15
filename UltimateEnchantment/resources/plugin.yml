@@ -1,0 +1,11 @@
+name: UltimateCore-Enchantment
+description: UltimateCore's Enchantment plugin
+main: mc.ultimatecore.enchantment.EnchantmentsPlugin
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ PlaceholderAPI, MVdWPlaceholderAPI, Vault, AdvancedEnchantments, EcoEnchants ]
+commands:
+  hyperenchants:
+    description: UltimateCore's Enchantment main command

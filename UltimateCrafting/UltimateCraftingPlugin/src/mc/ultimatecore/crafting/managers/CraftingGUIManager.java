@@ -1,12 +1,11 @@
 package mc.ultimatecore.crafting.managers;
 
-import com.cryptomorin.xseries.XMaterial;
 import lombok.Getter;
 import lombok.Setter;
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.api.events.HyperCraftEvent;
-import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import mc.ultimatecore.crafting.objects.AutoReturn;
+import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import mc.ultimatecore.crafting.utils.InventoryUtils;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.Bukkit;

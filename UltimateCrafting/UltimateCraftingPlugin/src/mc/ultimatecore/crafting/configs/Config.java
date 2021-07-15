@@ -4,7 +4,7 @@ import mc.ultimatecore.crafting.HyperCrafting;
 
 public class Config extends YAMLFile{
 
-    public String prefix = "&e&lHyperCrafting &7";
+    public String prefix = "&e&lUltimateCore-Crafting &7";
     public String mainCommandPerm = "";
     public boolean setAsDefaultCraftingTable = true;
     public boolean showAvailableRecipes = true;
@@ -22,7 +22,7 @@ public class Config extends YAMLFile{
 
 
     private void loadDefaults(){
-        prefix = getConfig().getString("prefix", "&e&lHyperCrafting &7");
+        prefix = getConfig().getString("prefix", "&e&lUltimateCore-Crafting &7");
         mainCommandPerm = getConfig().getString("mainCommandPerm", "");
         setAsDefaultCraftingTable = getConfig().getBoolean("setAsDefaultCraftingTable");
         showAvailableRecipes = getConfig().getBoolean("showAvailableRecipes");

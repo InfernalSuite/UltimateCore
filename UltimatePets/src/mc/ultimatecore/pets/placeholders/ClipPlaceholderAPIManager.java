@@ -1,0 +1,34 @@
+package mc.ultimatecore.pets.placeholders;
+
+import mc.ultimatecore.pets.HyperPets;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.entity.Player;
+
+public class ClipPlaceholderAPIManager extends PlaceholderExpansion {
+
+    @Override
+    public String getIdentifier() {
+        return "pets";
+    }
+
+    @Override
+    public String getAuthor() {
+        return "reb4ck";
+    }
+
+    @Override
+    public String getVersion() {
+        return HyperPets.getInstance().getDescription().getVersion();
+    }
+
+    @Override
+    public String onPlaceholderRequest(Player player, String placeholder) {
+        if (player == null || placeholder == null) {
+            return "";
+        }
+        switch (placeholder) {
+
+        }
+        return null;
+    }
+}

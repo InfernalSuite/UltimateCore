@@ -2,7 +2,6 @@ package mc.ultimatecore.crafting.commands;
 
 import com.cryptomorin.xseries.XMaterial;
 import mc.ultimatecore.crafting.HyperCrafting;
-import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import mc.ultimatecore.crafting.utils.InventoryUtils;
 import mc.ultimatecore.crafting.utils.Placeholder;
 import mc.ultimatecore.crafting.utils.Utils;
@@ -16,8 +15,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class GiveItemCommand extends Command {
 

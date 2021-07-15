@@ -1,0 +1,20 @@
+messages:
+  invalidCommand: "%prefix% &7Invalid Command!"
+  invalidArguments: "%prefix% &7Invalid Arguments!"
+  unknownCommand: "%prefix% &7This command doesn't exist!"
+  mustBeAPlayer: "%prefix% &7This command can be executed only for players"
+  invalidPlayer: "%prefix% &7Invalid Player"
+  offlinePlayer: "%prefix% That player is offline!"
+  reloaded: "%prefix% &7Configuration Files has been reloaded."
+  noPermission: "%prefix% &7You don't have permission for that."
+  helpMessage: "&7%command% - &e%description%"
+  helpHeader: "      &6&lUltimateCore-Reforge   "
+  helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
+  previousPage: '<<'
+  nextPage: ">>"
+  helpPageHoverMessage: "Click to go to page %page%"
+  itemToPickup: "&cThere is a item to pickup in the anvil"
+  moneyErrorMessage: "&cYou do not have the required money to do this!"
+errorInformation:
+  incompatibleItems:
+    - "&7You cannot combine those items!"

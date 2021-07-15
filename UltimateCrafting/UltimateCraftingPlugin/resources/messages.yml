@@ -11,7 +11,7 @@ messages:
   reloaded: "%prefix% &7Configuration reloaded."
   noPermission: "%prefix% &7You don't have permission for that."
   helpMessage: "&7%command% - &e%description%"
-  helpHeader: "      &6&lHyperCrafting   "
+  helpHeader: "      &6&lUltimateCore-Crafting   "
   helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
   previousPage: '<<'
   nextPage: ">>"

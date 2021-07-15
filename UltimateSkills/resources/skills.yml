@@ -1,0 +1,180 @@
+skills:
+  Carpentry:
+    item: CRAFTING_TABLE
+    slot: 31
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Carpentry"
+    description:
+      - "&7Craft items and prepare"
+      - "&7recipes to earn Carpentry XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Social:
+    item: EMERALD
+    slot : 29
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Social"
+    description:
+      - "&7Explore your social abilities"
+      - "&7to earn Social XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Farming:
+    item: GOLDEN_HOE
+    slot : 19
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Farming"
+    description:
+      - "&7Harvest crops and shear sheep to"
+      - "&7earn Farming XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Mining:
+    item: STONE_PICKAXE
+    slot: 20
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Mining"
+    description:
+      - "&7Spelunk islands for ores and"
+      - "&7valuable materials to earn"
+      - "&7Mining XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Taming:
+    item: ZOMBIE_SPAWN_EGG
+    slot: 32
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Taming"
+    description:
+      - "&7Level up pets to earn Taming XP!"
+      - "&7recipes to earn Carpentry XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Combat:
+    item: STONE_SWORD
+    slot: 21
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Combat"
+    description:
+      - "&7Fight mobs and players to"
+      - "&7earn Combat XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Runecrafting:
+    item: MAGMA_CREAM
+    slot: 30
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Runecrafting"
+    description:
+      - "&7Slain bosses, runic mobs & fuse"
+      - "&7runes to earn Runecrafting XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Enchanting:
+    item: ENCHANTING_TABLE
+    slot: 24
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Enchanting"
+    description:
+      - "&7Enchant items to earn Enchanting"
+      - "&7XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Dungeoneering:
+    item: PLAYER_HEAD
+    slot: 33
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Dungeoneering"
+    description:
+      - "&7Level up pets to earn Taming XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Foraging:
+    item: OAK_SAPLING
+    slot: 22
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Foraging"
+    description:
+      - "&7Cut trees and forage for other"
+      - "&7plants to earn Foraging XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Alchemy:
+    item: BREWING_STAND
+    slot: 25
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Alchemy"
+    description:
+      - "&7Brew potions to earn Alchemy XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion
+  Fishing:
+    item: FISHING_ROD
+    slot: 23
+    enabled: true
+    xpInCreative: true
+    multiplierEnabled: true
+    displayName: "Fishing"
+    description:
+      - "&7Visit your local pond to fish"
+      - "&7and earn Fishing XP!"
+    blockedWorlds:
+      - world_end
+      - world_nether
+    blockedRegions:
+      - testRegion

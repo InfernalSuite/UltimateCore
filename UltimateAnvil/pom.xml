@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>UltimateCore</artifactId>
+        <groupId>mc.ultimatecore</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>mc.ultimatecore.anvil</groupId>
+    <artifactId>UltimateAnvil</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>UltimateAnvilNMS</module>
+        <module>UltimateAnvilNMS-v1_8_R3</module>
+        <module>UltimateAnvilNMS-v1_12_R1</module>
+        <module>UltimateAnvilNMS-v1_14_R1</module>
+        <module>UltimateAnvilNMS-v1_15_R1</module>
+        <module>UltimateAnvilNMS-v1_16_R3</module>
+        <module>UltimateAnvilNMS-v1_17_R1</module>
+        <module>UltimateAnvilPlugin</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/maven/**</exclude>
+                                <exclude>LICENSE</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                    <relocations>
+                        <relocation>
+                            <pattern>de.tr7zw</pattern>
+                            <shadedPattern>mc.ultimatecore.anvil.libs.de.tr7zw</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.cryptomorin.xseries</pattern>
+                            <shadedPattern>mc.ultimatecore.anvil.libs.com.cryptomorin.xseries</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <sourceDirectory>src</sourceDirectory>
+    </build>
+</project>

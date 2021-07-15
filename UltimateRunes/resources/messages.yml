@@ -1,0 +1,30 @@
+messages:
+  invalidCommand: "%prefix% &7Invalid Command!"
+  invalidArguments: "%prefix% &7Invalid Arguments!"
+  unknownCommand: "%prefix% &7This command doesn't exist!"
+  mustBeAPlayer: "%prefix% &7This command can be executed only for players"
+  invalidPlayer: "%prefix% &7Invalid Player"
+  offlinePlayer: "%prefix% That player is offline!"
+  reloaded: "%prefix% &7Configuration Files has been reloaded."
+  noPermission: "%prefix% &7You don't have permission for that."
+  helpMessage: "&7%command% - &e%description%"
+  helpHeader: "      &6&lUltimateCore-Runes   "
+  helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
+  previousPage: '<<'
+  nextPage: ">>"
+  helpPageHoverMessage: "Click to go to page %page%"
+  invalidRune: "%prefix% &7Invalid Rune"
+  itemToPickup: "&cThere is a item to pickup in the rune pedestal"
+errorInformation:
+  noRequiredLevel:
+    - "&7Applying this rune requires a"
+    - "&7higher Runecrafting level!"
+  incompatibleItemAndRune:
+    - "&7You cannot add that rune to that"
+    - "&7item!"
+  incompatibleRunesType:
+    - "&7Both runes must be of the same"
+    - "&7type to combine!"
+  incompatibleRunesTier:
+    - "&7Both runes must be of the same"
+    - "&7tier to combine"

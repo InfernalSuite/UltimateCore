@@ -1,0 +1,8 @@
+prefix: "&e&lUltimateCore-Menu &7"
+successTradeSound: ENTITY_EXPERIENCE_ORB_PICKUP
+failTradeSound: ENTITY_VILLAGER_NO
+mainCommandPerm: ''
+doTradesBackup: true
+deleteBackupsAfterDays: 7
+backupIntervalMinutes: 60
+translatePAPIPlaceholders: false

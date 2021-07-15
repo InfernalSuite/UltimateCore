@@ -1,12 +1,8 @@
 package mc.ultimatecore.crafting.configs;
 
-import com.cryptomorin.xseries.XMaterial;
 import lombok.Getter;
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.objects.CraftingRecipe;
-import mc.ultimatecore.crafting.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

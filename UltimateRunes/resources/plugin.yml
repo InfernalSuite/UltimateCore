@@ -1,0 +1,11 @@
+name: UltimateCore-Runes
+description: UltimateCore's Runes plugin
+main: mc.ultimatecore.runes.HyperRunes
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ UltimateCore-Skills ]
+commands:
+  hyperrunes:
+    description: UltimateCore's Runes main command

@@ -1,0 +1,73 @@
+DEBUG: false
+database_type: SQLite #Specify which type of database will you use
+mysql:
+  host: localhost
+  port: 3306
+  database: dbName
+  username: dbUser
+  password: dbPass
+prefix: "&e&lPets &7"
+upAndDownPets: true
+petLevelUPSound: "ENTITY_PLAYER_LEVELUP"
+mainCommandPerm: ""
+selectedPetName: "&a%pet_name%"
+selectedPetNone: "&cNone"
+xp:
+  skillsPoints: 2
+  blockBreak: 2
+petItems:
+  Ultimate:
+    material: "PLAYER_HEAD"
+    amount: 1
+    title: "&7[Lvl %pet_level%] %pet_name%"
+    lore:
+      - "%pet_description%"
+      - ""
+      - "&eRight-click to add this pet to"
+      - "&eyour pet menu!"
+      - ""
+      - "%tier%"
+  Rare:
+    material: "PLAYER_HEAD"
+    amount: 1
+    title: "&7[Lvl %pet_level%] %pet_name%"
+    lore:
+      - "%pet_description%"
+      - ""
+      - "&eRight-click to add this pet to"
+      - "&eyour pet menu!"
+      - ""
+      - "%tier%"
+  Legendary:
+    material: "PLAYER_HEAD"
+    amount: 1
+    title: "&7[Lvl %pet_level%] %pet_name%"
+    lore:
+      - "%pet_description%"
+      - ""
+      - "&eRight-click to add this pet to"
+      - "&eyour pet menu!"
+      - ""
+      - "%tier%"
+  Unique:
+    material: "PLAYER_HEAD"
+    amount: 1
+    title: "&7[Lvl %pet_level%] %pet_name%"
+    lore:
+      - "%pet_description%"
+      - ""
+      - "&eRight-click to add this pet to"
+      - "&eyour pet menu!"
+      - ""
+      - "%tier%"
+  Godly:
+    material: "PLAYER_HEAD"
+    amount: 1
+    title: "&7[Lvl %pet_level%] %pet_name%"
+    lore:
+      - "%pet_description%"
+      - ""
+      - "&eRight-click to add this pet to"
+      - "&eyour pet menu!"
+      - ""
+      - "%tier%"

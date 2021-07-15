@@ -1,0 +1,104 @@
+# -------------[HyperTalismans]-------------#
+# #TYPES
+#  - ABILITY
+#  - PERK
+#  - ABILITY_REGION
+#  - PERK_REGION
+#  - TIMER
+#  - HEALING
+#  - HEALING
+#  - IMMUNITY:
+#    • POISON
+#    • LAVA
+#    • FALL
+#    • FIRE
+# ----------------------------------------#
+talismans:
+  strength_talisman:
+    type: "ABILITY"
+    displayName: "&7Training Weight"
+    lore:
+      - "&7Gives &a+30 &c✿ Strength &7when"
+      - "&7held."
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFmZDA1YmU4M2ViYjZiZDY5OWIxZjQxYjJjYWQ5NjgxNmM4MmM2ZTBhN2E4YWM4OGU1ZDkwNmVkNGVmNjA0OSJ9fX0=
+    abilities:
+      - "Strength:30"
+  speed_talisman:
+    type: "ABILITY"
+    displayName: "&7Speed Talisman"
+    lore:
+      - "&7Gives &a+1 &f✦ Speed &7when"
+      - "&7held."
+      - ""
+      - "&a&lUNCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODYyNGJhY2I1ZjE5ODZlNjQ3N2FiY2U0YWU3ZGNhMTgyMGE1MjYwYjYyMzNiNTViYTFkOWJhOTM2Yzg0YiJ9fX0=
+    abilities:
+      - "Speed:0.1"
+  emerald_ring:
+    type: "TIMER"
+    displayName: "&aEmerald Ring"
+    lore:
+      - "&7Get &6+1 Coin &7every minute!"
+      - ""
+      - "&a&lUNCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM2YjgyMWMxYWZkZDVhNWQxNGUzYjNiZDBhMzIyNjNjOGRmNWRmNWRiNmUxZTg4YmY2NWU5N2IyN2E4NTMwIn19fQ==
+    command: "skills silentmoney %player% 1"
+    seconds: 60
+  farming_talisman:
+    type: "ABILITY_REGION"
+    displayName: "&fFarming Talisman"
+    lore:
+      - "&7Increases your &f✦ Speed &7by"
+      - "&a+0.1 &7while held in the"
+      - "&bFarm&7, &bThe Barn&7, and"
+      - "&eMushroom Desert&7."
+      - ""
+      - "&a&lUNCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWFmMzI4Yzg3YjA2ODUwOWFjYTk4MzRlZmFjZTE5NzcwNWZlNWQ0ZjA4NzE3MzFiN2IyMWNkOTliOWZkZGMifX19
+    abilities:
+      - "Speed:0.1"
+    regions:
+      - thebarn
+      - mushroomdesert
+  healing_talisman:
+    type: "HEALING"
+    displayName: "&fHealing Talisman"
+    lore:
+      - "&7Increases healing by &a10.0%"
+      - ""
+      - "&f&lCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjYyY2ZhOWNkMDY4NTZjZDk0N2VhY2FiNzBjYjQ1OWUzYjE3YTIxY2E0NDc1NTVhYmNiNzczOWJlN2Y1M2UzMiJ9fX0=
+    amount: 10.0
+  lava_talisman:
+    type: "IMMUNITY"
+    displayName: "&fLava Talisman"
+    lore:
+      - "&7Reduces &a100% &7Lava Damage while"
+      - "&7held."
+      - ""
+      - "&f&lCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ1NDI3YTgzNTQwYTA4YTNmYTJlNjU1YzI5NjRhMDcyNDM1MTQ1ODRhNzFlYzM1ZDZiOWUxODRkZmJlMzE4In19fQ==
+    immunities:
+      - "LAVA:100.2"
+  poison_talisman:
+    type: "IMMUNITY"
+    displayName: "&fAnti Poison"
+    lore:
+      - "&7Reduces &a85.2% &7Poison Damage while"
+      - "&7held."
+      - ""
+      - "&f&lCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzNmYTkxZGUzMWUyZGRkYTI5Y2E0MTljMDhiMzRhNWEyZDZiNGIxYTFiNTliMjM2Y2RjMTRjYjEzMWRjYjgwNyJ9fX0=
+    immunities:
+      - "POISON:85.2"
+  feather_talisman:
+    type: "IMMUNITY"
+    displayName: "&fFeather Talisman"
+    lore:
+      - "&7Reduces &a65.0% &7Fall Damage while"
+      - "&7held."
+      - ""
+      - "&f&lCOMMON ACCESSORY"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzZmMzNiMjk3YTk4MWI1MjdiZWMzOTMxNjg0MDFkOGEyZWNhZGViOWYxNjAzYmE1ZTI3NmY0MmQ2NDQ3NTExNiJ9fX0=
+    immunities:
+      - "FALL:65.0"

@@ -1,6 +1,5 @@
 package mc.ultimatecore.crafting.gui;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.objects.Category;

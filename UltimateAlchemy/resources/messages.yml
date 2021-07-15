@@ -1,0 +1,18 @@
+messages:
+  invalidCommand: "%prefix% &7Invalid Command!"
+  invalidArguments: "%prefix% &7Invalid Arguments!"
+  filesReloaded: "%prefix% &7All files has been reloaded"
+  itemInHand: "%prefix% &7You must have an item in your hand!"
+  recipeCreated: "%prefix% &7You has created a new recipe &a%recipe_name%&7!"
+  recipeRemoved: "%prefix% &7You has removed recipe &a%recipe_name%&7!"
+  notCreated: "%prefix% &7This recipe is not created!"
+  alreadyCreated: "%prefix% &7This recipe is already created!"
+  recipeCanceled: "%prefix% &7There aren't items to create this recipe!"
+  reloaded: "%prefix% &7Configuration reloaded."
+  noPermission: "%prefix% &7You don't have permission for that."
+  helpMessage: "&7%command% - &e%description%"
+  helpHeader: "      &6&lUltimateCore-Alchemy   "
+  helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
+  previousPage: '<<'
+  nextPage: ">>"
+  helpPageHoverMessage: "Click to go to page %page%"

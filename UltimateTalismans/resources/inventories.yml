@@ -1,0 +1,26 @@
+talismansBag:
+  title: "&8Accessory Bag"
+  size: 36
+  items:
+    close_button:
+      material: BARRIER
+      amount: 1
+      title: "&cClose"
+      lore:
+        - "&7Click to close menu"
+      slot: 31
+    decoration:
+      material: BLACK_STAINED_GLASS_PANE
+      amount: 1
+      title: ""
+      lore:
+        - ""
+  decoration_slots:
+    - 27
+    - 28
+    - 29
+    - 30
+    - 32
+    - 33
+    - 34
+    - 35

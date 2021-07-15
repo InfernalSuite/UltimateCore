@@ -1,0 +1,11 @@
+name: UltimateCore-Pets
+description: UltimateCore's Pets plugin
+main: mc.ultimatecore.pets.HyperPets
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ UltimateCore, PlaceholderAPI, MVdWPlaceholderAPI, Vault, Multiverse-Core, UltimateCore-Skills ]
+commands:
+  pets:
+    description: UltimateCore's Pets main command

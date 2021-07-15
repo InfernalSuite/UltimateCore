@@ -1,0 +1,89 @@
+backButtons: true
+runeTableGUI:
+  size: 54
+  title: "&8Rune Table"
+  items:
+    errorItem:
+      material: BARRIER
+      amount: 1
+      title: "&cError"
+      lore:
+        - "%error_information%"
+      isGlowing: false
+    infoItem:
+      material: BARRIER
+      amount: 1
+      title: "&cRunic Pedestal"
+      lore:
+      - "&7Place a target item in the left"
+      - "&7slot and sacrifice rune in the"
+      - "&7right slot to add the runes"
+      - "&7effects to the item or add two"
+      - "&7runes to attempt to fuse them!"
+      isGlowing: false
+    runeButton:
+      material: END_PORTAL_FRAME
+      amount: 1
+      title: "&aApply a Rune or Fuse Two Runes"
+      lore:
+      - "&7Add the rune to your"
+      - "&7provided item or provided"
+      - "&7two runes to attempt to"
+      - "&7fuse them."
+      isGlowing: false
+    runeButtonToFuse:
+      material: END_PORTAL_FRAME
+      amount: 1
+      title: "&aApply a Rune or Fuse Two Runes"
+      lore:
+      - "&7By providing two runes of the"
+      - "&7same type you can attempt to"
+      - "&7fuse them into a single rune and"
+      - "&7upgrade the tier."
+      - ''
+      - "&cWARNING: if you fail to fuse"
+      - "&ctwo runes one of your rune will"
+      - "&cdissolve!"
+      - ''
+      - "&7Succed Chance: &a%success_chance%"
+      - "&7Fail Chance: &c%fail_chance%"
+      - ''
+      - "&eAttempt to Fuse Runes!"
+      isGlowing: false
+    runeTableGlass:
+      material: WHITE_STAINED_GLASS_PANE
+      amount: 1
+      title: " "
+      lore: []
+      isGlowing: false
+runesGui:
+  size: 54
+  title: "&8Runes"
+buttons:
+  nextPage:
+    material: ARROW
+    amount: 1
+    title: "&eNext Page"
+    lore: []
+    slot: 50
+    isGlowing: false
+  previousPage:
+    material: ARROW
+    amount: 1
+    title: "&ePrevious Page"
+    lore: []
+    slot: 48
+    isGlowing: false
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+    isGlowing: false
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+    isGlowing: false

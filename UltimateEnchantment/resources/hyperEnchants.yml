@@ -1,0 +1,407 @@
+# -------------[HyperEnchanting]-------------#
+# #HOOK INTO ADVANCED ENCHANTMENTS EXAMPLE
+#  obsidianshield: // The name must be the same that is in enchantments.yml from AE
+#    displayName: '&7Obsidian Shield' // This is the name that will appear in menus
+#    advancedEnchantment: true // If the enchantment in from AE add this option in true
+#    useMoney: false
+#    requiredBookShelf: 0
+#    requiredMoney:
+#    - 1:100.0
+#    requiredLevel:
+#    - 1:5
+# #HOOK INTO ECO ENCHANTS EXAMPLE
+#  arcanic: // The name must be the same that the id in ECOEnchants
+#    displayName: '&7Arcanic' // This is the name that will appear in menus
+#    ecoEnchant: true // If the enchantment in from ECOEnchants add this option in true
+#    useMoney: false
+#    requiredBookShelf: 0
+#    requiredMoney:
+#    - 1:100.0
+#    requiredLevel:
+#    - 1:5
+# ----------------------------------------#
+hyperEnchantments:
+  THORNS:
+    enabled: true
+    displayName: Thorns
+    useMoney: false
+    description: "Attackers are damaged on hit"
+    requiredBookShelf: 5
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  DAMAGE_ALL:
+    enabled: true
+    displayName: Sharpness
+    useMoney: false
+    description: "Increases melee damage dealt"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  ARROW_DAMAGE:
+    enabled: true
+    displayName: Arrow Damage
+    useMoney: false
+    description: "Increases bows damage"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  ARROW_FIRE:
+    enabled: true
+    displayName: Arrow Fire
+    useMoney: false
+    description: "Ignite enemies with arrows"
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  ARROW_INFINITE:
+    enabled: true
+    displayName: Arrow Infinite
+    useMoney: false
+    description: "Shoot infinity times."
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  ARROW_KNOCKBACK:
+    enabled: true
+    displayName: Arrow Knockback
+    useMoney: false
+    description: "Increases Arrow's Knockback"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+    requiredMoney:
+      - 1:100.0
+  BINDING_CURSE:
+    enabled: true
+    displayName: Binding
+    useMoney: false
+    description: "Prevents removal of a item\nfrom its slot."
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  CHANNELING:
+    enabled: true
+    displayName: Channeling
+    useMoney: false
+    description: "Lightning when mob is hit by trident"
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  DAMAGE_ARTHROPODS:
+    enabled: true
+    displayName: Damage Arthropods
+    useMoney: false
+    description: "Increases damage to arthropod mobs"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  DAMAGE_UNDEAD:
+    enabled: true
+    displayName: Damage Undead
+    useMoney: false
+    description: "Increases the damage to undead mobs."
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  DEPTH_STRIDER:
+    enabled: true
+    displayName: Depth Strider
+    useMoney: false
+    description: "Increases underwater movement speed."
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  DIG_SPEED:
+    enabled: true
+    displayName: Efficiency
+    useMoney: false
+    description: "Make your items more fastest"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  DURABILITY:
+    enabled: true
+    displayName: Durability
+    useMoney: false
+    description: "Add more durability to your items"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  FIRE_ASPECT:
+    enabled: true
+    displayName: Fire Aspect
+    useMoney: false
+    description: "Ignites your enemies"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+    requiredMoney:
+      - 1:100.0
+  FROST_WALKER:
+    enabled: true
+    displayName: Frost Walker
+    useMoney: false
+    description: "Frost when you walk"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+    requiredMoney:
+      - 1:100.0
+  IMPALING:
+    enabled: true
+    displayName: Impaling
+    useMoney: false
+    description: "Increases your damage to sea mobs"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+      - '4:20'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+      - 4:400.0
+  KNOCKBACK:
+    enabled: true
+    displayName: Knockback
+    useMoney: false
+    description: "Increases Sword's Knockback"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+    requiredMoney:
+      - 1:100.0
+  LOOT_BONUS_BLOCKS:
+    enabled: true
+    displayName: Fortune
+    useMoney: false
+    description: "More chance to get double ores"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  LOOT_BONUS_MOBS:
+    enabled: true
+    displayName: Looting
+    useMoney: false
+    description: "Make mobs to drop more items"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  LOYALTY:
+    enabled: true
+    displayName: Loyalty
+    useMoney: false
+    description: "Make your trident get back to your hands"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  LUCK:
+    enabled: true
+    displayName: Luck of the Sea
+    useMoney: false
+    description: "Increases luck by fishing"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  LURE:
+    enabled: true
+    displayName: Lure
+    useMoney: false
+    description: "Decreases the wait time for catching something"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  MENDING:
+    enabled: true
+    displayName: Mending
+    useMoney: false
+    description: "Restore item durability"
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  MULTISHOT:
+    enabled: true
+    displayName: Multishoot
+    useMoney: false
+    description: "More chance to shoot multi arrows at once"
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []
+  OXYGEN:
+    enabled: true
+    displayName: Oxygen
+    useMoney: false
+    description: "Get more resistance underwater"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+  PIERCING:
+    enabled: true
+    displayName: Piercing
+    useMoney: false
+    description: "Make your arrows pierce shields"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  PROTECTION_ENVIRONMENTAL:
+    enabled: true
+    displayName: Protection
+    useMoney: false
+    description: "Grants protection against everything"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  PROTECTION_EXPLOSIONS:
+    enabled: true
+    displayName: Blast Protection
+    useMoney: false
+    description: "Grants protection against explosions."
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  PROTECTION_FIRE:
+    enabled: true
+    displayName: Fire Protection
+    useMoney: false
+    description: "Grants protection against fire and lava"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  PROTECTION_FALL:
+    enabled: true
+    displayName: Feather Falling
+    useMoney: false
+    description: "Decreases fall damage"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  PROTECTION_PROJECTILE:
+    enabled: true
+    displayName: Projectile Protection
+    useMoney: false
+    description: "Grants protection against projectiles"
+    requiredBookShelf: 0
+    requiredLevel:
+      - '1:5'
+      - '2:10'
+      - '3:15'
+    requiredMoney:
+      - 1:100.0
+      - 2:200.0
+      - 3:300.0
+  SILK_TOUCH:
+    enabled: true
+    displayName: Silk Touch
+    useMoney: false
+    description: "Allows you to collect unobtainable drops."
+    requiredBookShelf: 0
+    requiredLevel: []
+    requiredMoney: []

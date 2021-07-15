@@ -1,0 +1,61 @@
+# -------------[HyperEnchanting]-------------#
+# #SETTINGS EXPLANATION
+#  prefix: prefix that will be used in messages
+#  mainCommandPerm: main command permission
+#  setAsDefaultEnchantingTable: Sets if players will be able to open GUI though Vanilla Enchantment Table
+#  addInfoOnEnchant: Sets if info will be added to items on enchant
+#  infoToEnchantedItem: information added to the item
+#  hideOriginalEnchant: this hide vanilla enchantments in lore
+#  addSpaceBetweenEnchantments: add a space between enchantments in the lore
+#  byPassEnchantmentRestrictions: this will bypass enchantments restrictions by example between fire protection and protection
+#  loadAllEcoEnchants: this will load all EcoEnchants
+#  loadAllAdvancedEnchants: this will load all AdvancededEnchants
+#  removeIncompatibleEnchants: this will remove a enchantments if its incompatible with the item (a warning appear before enchant)
+#  disabledWorlds: worlds where plugin doesn't work
+#  advancedSettings:
+#    limit: is the limit of enchants before put them in the same line
+#    line: line that will added
+#    perLine: amount of enchants per line
+#  loreSettings:
+#    type: where lore will be added
+#      - BOTTOM
+#      - TOP
+#      - SPECIFIC_LINE
+#    line: line where lore will be added (only apply if type is SPECIFIC_LINE)
+# ----------------------------------------#
+prefix: "&e&lUltimateCore-Enchantments &7"
+mainCommandPerm: ''
+setAsDefaultEnchantingTable: true
+addInfoOnEnchant: true
+infoToEnchantedItem:
+  - "&9%enchant_name% %enchant_level%"
+  - "&7%enchant_description%"
+hideOriginalEnchant: true
+byPassEnchantmentRestrictions: false
+loadAllEcoEnchants: false
+loadAllAdvancedEnchants: false
+removeIncompatibleEnchants: true
+disabledWorlds:
+  - testWorld
+advancedSettings:
+  limit: 5
+  perLine: 2
+  line: "&9%enchant_name% %enchant_level%"
+loreSettings:
+  type: BOTTOM
+  line: 2
+bookItem:
+  material: ENCHANTED_BOOK
+  amount: 1
+  title: "&bEnchanted Book"
+  lore:
+    - ""
+    - "%apply_cost%"
+    - ""
+    - "&7Use this on an item in an Anvil"
+    - "&7to apply it!"
+    - ""
+    - "&f&lCOMMON"
+aurelliumSkills:
+  xp: 2
+  skill: "ENCHANTING"

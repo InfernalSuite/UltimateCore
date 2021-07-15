@@ -1,0 +1,9 @@
+prefix: "&e&lUltimateCore-Anvil &7"
+setAsDefaultAnvil: true
+anvilFuseSound: BLOCK_ANVIL_USE
+nameTagCreateCost: 5
+nameTagFuseCost: 1
+allowColorsInNameTag: true
+aurelliumSkills:
+  xp: 2
+  skill: "REFORGING"

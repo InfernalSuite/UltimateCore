@@ -1,0 +1,16 @@
+messages:
+  invalidCommand: "%prefix% &7Invalid Command!"
+  invalidArguments: "%prefix% &7Invalid Arguments!"
+  unknownCommand: "%prefix% &7This command doesn't exist!"
+  mustBeAPlayer: "%prefix% &7This command can be executed only for players"
+  invalidPlayer: "%prefix% &7Invalid Player"
+  invalidTalisman: "%prefix% &7Invalid Talisman!"
+  reloaded: "%prefix% &7Configuration Files has been reloaded."
+  noPermission: "%prefix% &7You don't have permission for that."
+  helpMessage: "&7%command% - &e%description%"
+  helpHeader: "      &6&lUltimateCore-Talismans   "
+  helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
+  previousPage: '<<'
+  nextPage: ">>"
+  helpPageHoverMessage: "Click to go to page %page%"
+  noTalisman: "&cYou cannot put this item in the Accessory Bag"

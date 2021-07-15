@@ -1,0 +1,110 @@
+mainMenu:
+  title: "&8Main Menu"
+  size: 54
+  items:
+    profile:
+      material: PLAYER_HEAD
+      amount: 1
+      headOwner: "%player%"
+      title: "&aYour Skyblock Profile"
+      lore:
+        - "&c❤ Health: %health%"
+        - "&a❈ Defense: &7%defense%"
+        - "&9✯ Crit Chance: &7%crit_chance%"
+        - "&9☣ Crit Damage: &7%crit_damage%"
+        - "&c✿ Strength: &7%strength%"
+        - "&b✎ Inteligence: &7%intelligence%"
+        - "&d⎊ Pet Luck: &7%pet_luck%"
+        - "&f⎐ Speed: &7%speed%"
+      slot: 13
+      command: "skills profile"
+    skills:
+      material: DIAMOND_SWORD
+      amount: 1
+      title: "&aYour Skills"
+      lore:
+        - "&7View your Skill progression and"
+        - "&7rewards."
+        - ""
+        - "&eClick to view!"
+      slot: 20
+      command: "skills mainmenu"
+    collections:
+      material: PAINTING
+      amount: 1
+      title: "&aCollection"
+      lore:
+        - "&7View all of the items available"
+        - "&7in SkyBlock. Collect more of an"
+        - "&7item to unlock rewards on yours"
+        - "&7way to becoming a master of"
+        - "&7SkyBlock!"
+        - ""
+        - "&eClick to view!"
+      slot: 21
+      command: "collections mainmenu"
+    trades:
+      material: EMERALD
+      amount: 1
+      title: "&aTrades"
+      lore:
+        - "&7View your available trades."
+        - "&7These trades are always"
+        - "&7available and accessible through"
+        - "&7the SkyBlock Menu."
+        - ""
+        - "&eClick to view!"
+      slot: 22
+      command: "hypertrades mainmenu"
+    quest:
+      material: WRITABLE_BOOK
+      amount: 1
+      title: "&aQuest Log"
+      lore:
+        - "&7View yout active quest,"
+        - "&7progress, and rewards."
+        - ""
+        - "&eClick to open!"
+      slot: 23
+      command: "quest"
+    pets:
+      material: BONE
+      amount: 1
+      title: "&aPets"
+      lore:
+        - "&7View and manage all of your"
+        - "&7Pets"
+        - ""
+        - "&7Level up your pets faster by"
+        - "&7gaining xp in their favorite"
+        - "&7skill!"
+        - ""
+        - "&7Selected pet: &e%current_pet%"
+        - ""
+        - "&eClick to view!"
+      slot: 24
+      command: "pets menu"
+    crafting:
+      material: CRAFTING_TABLE
+      amount: 1
+      title: "&aCrafting Table"
+      lore:
+        - "&7Opens the crafting grid."
+        - ""
+        - "&eClick to open!"
+      slot: 31
+      command: "hypercrafting mainmenu"
+  excludedSlots:
+    - 49
+buttons:
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []

@@ -2,7 +2,6 @@ package mc.ultimatecore.crafting.commands;
 
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.gui.RecipeBookGUI;
-import mc.ultimatecore.crafting.playerdata.User;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

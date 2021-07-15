@@ -1,0 +1,20 @@
+Unique:
+  displayName: "&2&lUNIQUE"
+  tierValue: 0
+  enabled: true
+Rare:
+  displayName: "&9&lRARE"
+  tierValue: 1
+  enabled: true
+Ultimate:
+  displayName: "&d&lULTIMATE"
+  tierValue: 2
+  enabled: true
+Legendary:
+  displayName: "&b&lLEGENDARY"
+  tierValue: 3
+  enabled: true
+Godly:
+  displayName: "&e&lGODLY"
+  tierValue: 4
+  enabled: true

@@ -1,0 +1,171 @@
+backButtons: true
+petsGUI:
+  size: 54
+  title: "&8Pets"
+  items:
+    petItemInGUI:
+      material: "PLAYER_HEAD"
+      amount: 1
+      title: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+      lore:
+        - "%pet_description%"
+        - ""
+        - "&7Progress to Level %next_level%: &e%current_percentage%%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ""
+        - "%equip_message%"
+    petInfo:
+      material: "BONE"
+      amount: 1
+      title: "&aPets"
+      lore:
+        - "&7View and manage all of your"
+        - "&7Pets."
+        - ""
+        - "&7Level up your pets faster by"
+        - "&7gaining xp their favorite"
+        - "&7skill!"
+        - ""
+        - "&7Selected pet: %selected_pet%"
+      slot: 4
+    convertItemEnabled:
+      material: "LIME_DYE"
+      amount: 1
+      title: "&aConvert Pet to an Item"
+      lore:
+        - "&7Enable this setting and"
+        - "&7click any pet to convert it"
+        - "&7to an item."
+        - ""
+        - "&aEnabled"
+      slot: 50
+    convertItemDisabled:
+      material: "GRAY_DYE"
+      amount: 1
+      title: "&aConvert Pet to an Item"
+      lore:
+        - "&7Enable this setting and"
+        - "&7click any pet to convert it"
+        - "&7to an item."
+        - ""
+        - "&cDisabled"
+      slot: 50
+    hidePetsEnabled:
+      material: "STONE_BUTTON"
+      amount: 1
+      title: "&cHide Pets"
+      lore:
+        - "&7Hide all pets which are"
+        - "&7little heads from being"
+        - "&7visible in the world."
+        - ""
+        - "&7Pet effects remain active."
+        - ""
+        - "&7Currently: &cPets Hidden!"
+        - "&7Selected pet: %selected_pet%"
+        - ""
+        - "&eClick to show!"
+      slot: 51
+    hidePetsDisabled:
+      material: "STONE_BUTTON"
+      amount: 1
+      title: "&aHide Pets"
+      lore:
+        - "&7Hide all pets which are"
+        - "&7little heads from being"
+        - "&7visible in the world."
+        - ""
+        - "&7Pet effects remain active."
+        - ""
+        - "&7Currently: &aPets Shown!"
+        - "&7Selected pet: %selected_pet%"
+        - ""
+        - "&eClick to hide!"
+      slot: 51
+  excludedSlots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+  petSlots:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 19
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+buttons:
+  nextPage:
+    material: "ARROW"
+    amount: 1
+    title: "&eNext Page"
+    slot: 50
+  previousPage:
+    material: "ARROW"
+    amount: 1
+    title: "&ePrevious Page"
+    slot: 48
+  background:
+    material: "BLACK_STAINED_GLASS_PANE"
+    amount: 1
+    title: " "
+  closeButton:
+    material: "BARRIER"
+    amount: 1
+    title: "&cClose Menu"
+    slot: 49
+main-menu-back:
+  enabled: true
+  material: ARROW
+  amount: 1
+  slot: 48
+  title: "&eBack"
+  lore:
+    - "&7Go back to main menu."
+  command: "hypercore mainmenu"

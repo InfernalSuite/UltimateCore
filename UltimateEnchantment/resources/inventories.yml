@@ -1,0 +1,150 @@
+mainMenu:
+  title: "&8Main Menu"
+  size: 54
+  items:
+    enchantingTable:
+      material: ENCHANTING_TABLE
+      amount: 1
+      title: "&aEnchant Item"
+      lore:
+      - "&7Add an item to the slot above to"
+      - "&7view enchantment options"
+      slot: 28
+    emptyItem:
+      material: GRAY_DYE
+      amount: 1
+      title: "&cEnchant Item"
+      lore:
+      - "&7Place an item in the open slot"
+      - "&7to enchant it"
+    errorItem:
+      material: RED_DYE
+      amount: 1
+      title: "&cCannot Enchant Item!"
+      lore:
+      - "%error_placeholder%"
+    bookShelfItem:
+      material: BOOKSHELF
+      amount: 1
+      title: "&dBookshelf Power"
+      lore:
+      - "&7Stronger enchantments require"
+      - "&7more bookshelf power which can"
+      - "&7be increased by placing"
+      - "&7bookshelves nearby."
+      - ''
+      - "&7Current Bookshelf Power: &d%bookshelf_power%"
+      slot: 48
+    availableBook:
+      material: ENCHANTED_BOOK
+      amount: 1
+      title: "&a%enchant_name%"
+      lore:
+      - "&7%enchant_description%"
+      - ''
+      - "&eClick to view!"
+    notAvailableBook:
+      material: ENCHANTED_BOOK
+      amount: 1
+      title: "&c%enchant_name%"
+      lore:
+      - "&7%enchant_description%"
+      - ''
+      - "&cRequires %bookshelf_required% power!"
+  bookSlots:
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 21
+    - 22
+    - 23
+    - 24
+    - 25
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+subMenu:
+  items:
+    levelEnchantBook:
+      material: ENCHANTED_BOOK
+      amount: 1
+      title: "&fEnchanted Book"
+      lore:
+      - "&9%enchant_name% %enchant_level%"
+      - "&7%enchant_description%"
+      - ''
+      - "&7Cost: &3%enchant_cost%"
+      - ''
+      - '%enchant_incompatibility%'
+      - "%state%"
+    moneyEnchantBook:
+      material: ENCHANTED_BOOK
+      amount: 1
+      title: "&fEnchanted Book"
+      lore:
+      - "&9%enchant_name% %enchant_level%"
+      - "&7%enchant_description%"
+      - ''
+      - "&7Cost: &3%enchant_cost%$"
+      - ''
+      - '%enchant_incompatibility%'
+      - "%state%"
+  levelSlots:
+    '1':
+    - 22
+    '2':
+    - 21
+    - 22
+    '3':
+    - 20
+    - 21
+    - 22
+    '4':
+    - 20
+    - 21
+    - 22
+    - 23
+    '5':
+    - 20
+    - 21
+    - 22
+    - 23
+    - 24
+buttons:
+  previousPage:
+    material: ARROW
+    amount: 1
+    title: "&ePrevious Page"
+    lore: []
+    slot: 48
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+  backPageButton:
+    material: PLAYER_HEAD
+    headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTRhNTY2N2VmNzI4NWM5MjI1ZmMyNjdkNDUxMTdlYWI1NDc4Yzc4NmJkNWFmMGExOTljMjlhMmMxNGMxZiJ9fX0=
+    amount: 1
+    title: "&aBack Page"
+    lore:
+      - "&8Page %previous_page%"
+    slot: 17
+  nextPageButton:
+    material: PLAYER_HEAD
+    headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFiNjJkYjVjMGEzZmExZWY0NDFiZjcwNDRmNTExYmU1OGJlZGY5YjY3MzE4NTNlNTBjZTkwY2Q0NGZiNjkifX19
+    amount: 1
+    title: "&aNext Page"
+    lore:
+      - "&8Page %next_page%"
+    slot: 35

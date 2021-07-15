@@ -1,0 +1,9 @@
+prefix: "&e&lUltimateCore-Talismans &7"
+DEBUG: false
+database_type: SQLite
+mysql:
+  host: localhost
+  port: 3306
+  database: dbName
+  username: dbUser
+  password: dbPass

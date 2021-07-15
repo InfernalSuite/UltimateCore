@@ -1,0 +1,55 @@
+DEBUG: false
+database_type: SQLite
+mysql:
+  host: localhost
+  port: 3306
+  database: dbName
+  username: dbUser
+  password: dbPass
+damageIndicators:
+  normal:
+    enabled: true
+    colorDegrade: true
+    indicator: "&f%damage%"
+  critic:
+    enabled: true
+    colorDegrade: true
+    indicator: "&f✧%damage%&f✧"
+  blacklist:
+    - ZOMBIE
+translatePAPIPlaceholders: false
+prefix: "&e&lSkills &7"
+useDefaultSkillsXP: true #This will load default skillspoints from plugin
+maxSkillLevel: 50
+refreshRankingMinutes: 60
+levelToRank: 15
+byPassWorldGuard: false
+upAndDownPets: true
+manaSystem: true
+actionBar: true
+actionBarXP: true
+healthSystem: true
+openMenuWithSkills: true
+talismanSystem: true
+resetDataConfirm: true
+resetDataMessage: true
+getXPInCreative: true
+rankInformation:
+  UNRANKED:
+    - "&7Rankings requires skill level 15"
+  RANKED:
+    - "&7#&b%rank_position% &7out of &a%total_players% &7players"
+    - "&7You are within the top &6%rank_percentage%% &7of players!"
+petLevelUPSound: ENTITY_PLAYER_LEVELUP
+levelUPSound: ENTITY_PLAYER_LEVELUP
+gainXPSound: ENTITY_EXPERIENCE_ORB_PICKUP
+scaledHealth: true
+initialAbilities:
+  Defense: 0
+  Max_Intelligence: 100
+manaSettings:
+  percentagePerSecond: 2
+  second: 1
+addons:
+  jetMinions: true
+  ultraMinions: true

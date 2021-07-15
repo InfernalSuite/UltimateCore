@@ -1,0 +1,11 @@
+name: UltimateCore-Menu
+description: UltimateCore's Menu plugin
+main: mc.ultimatecore.menu.HyperCore
+version: ${version}
+api-version: ${minecraft.api.version}
+authors: [ EduardWayland, ZubeySweet ]
+load: POSTWORLD
+softdepend: [ UltimateCore-Crafting, UltimateCore-Skills, UltimateCore-Pets, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault ]
+commands:
+  hypercore:
+    description: UltimateCore's Menu main command

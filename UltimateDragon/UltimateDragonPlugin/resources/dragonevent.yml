@@ -1,0 +1,91 @@
+events:
+  kid_dragon:
+    1:
+      general:
+        type: "DRAGON_FIREBALLS"
+        duration: 60
+        freezeDragon: false
+        dragonSpeed: 20
+        repeatEvery: 10
+      settings:
+        ballsPerSecond: 2
+    2:
+      general:
+        type: "NORMAL_FIREBALLS"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        ballsPerSecond: 2
+        damage: 100
+        particle: true
+    3:
+      general:
+        type: "LIGHTNING"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        damage: 100
+  normal_dragon:
+    1:
+      general:
+        type: "DRAGON_FIREBALLS"
+        duration: 60
+        freezeDragon: false
+        dragonSpeed: 20
+        repeatEvery: 10
+      settings:
+        ballsPerSecond: 2
+    2:
+      general:
+        type: "NORMAL_FIREBALLS"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        ballsPerSecond: 2
+        damage: 100
+        particle: true
+    3:
+      general:
+        type: "LIGHTNING"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        damage: 100
+  ancient_dragon:
+    1:
+      general:
+        type: "DRAGON_FIREBALLS"
+        duration: 60
+        freezeDragon: false
+        dragonSpeed: 20
+        repeatEvery: 10
+      settings:
+        ballsPerSecond: 2
+    2:
+      general:
+        type: "NORMAL_FIREBALLS"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        ballsPerSecond: 2
+        damage: 100
+        particle: true
+    3:
+      general:
+        type: "LIGHTNING"
+        duration: 10
+        freezeDragon: true
+        dragonSpeed: 0
+        repeatEvery: 11
+      settings:
+        damage: 100

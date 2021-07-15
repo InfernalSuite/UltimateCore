@@ -1,0 +1,51 @@
+#
+# Pet Command Types
+# • TIMER - This command is executed every configured amount of time (seconds).
+# • SUMMON - This command is executed when you summon a pet.
+# • DESPAWN - This command is execute when you despawn a pet.
+#
+pets:
+  Enderman:
+    displayName: "Enderman"
+    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    description:
+      - "&8Combat"
+      - "&cCrit Damage: &a+%pet_crit_damage%"
+      - ""
+      - "&6Enderian"
+      - "&7Take &a0.3%&7 less damage from end monsters"
+      - ""
+      - "&6Bulk"
+      - "&7Gain &a+%pet_defense%❈ Defense"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzgxOTNkOWExOTY1ZjBkNGM5NDI2NzdmMWZjNjAwYjQxYzFkZmNjZGU1YmI2OGVlZGY2ODQ2NTA3MzFjY2RjNyJ9fX0==="
+    petCommands:
+      1:
+        command: "eco give %player% 100"
+        type: TIMER
+        seconds: 60
+  Lion:
+    displayName: "Lion"
+    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    description:
+      - "&8Combat"
+      - "&cCrit Damage: &a+%pet_crit_damage%"
+      - ""
+      - "&6Enderian"
+      - "&7Take &a0.3%&7 less damage from end monsters"
+      - ""
+      - "&6Bulk"
+      - "&7Gain &a+%pet_defense%❈ Defense"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjcyZTQ5ZDVlNGFmNDczNTcxZTdlMDc4YWI3OGMzZTgzOTY4ZDJmZTEwOWRhOTUyNDRjNWQwY2I3ZDIyYjQ2YiJ9fX0==="
+  Tiger:
+    displayName: "Tiger"
+    entityName: "&7[Lvl %pet_level%] &9%player%'s %pet_name%"
+    description:
+      - "&8Combat"
+      - "&cCrit Damage: &a+%pet_crit_damage%"
+      - ""
+      - "&6Enderian"
+      - "&7Take &a0.3%&7 less damage from end monsters"
+      - ""
+      - "&6Bulk"
+      - "&7Gain &a+%pet_defense%❈ Defense"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM4MTM3ZWEzMTI4NmJiMGEyNGI4YTZkYjkxZmMwMWVlMGJiYWQ4NTFkNWUxOGFmMGViZTI5YTk3ZTcifX19"

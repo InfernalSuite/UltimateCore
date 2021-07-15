@@ -1,0 +1,83 @@
+backButtons: true
+reforgeGUI:
+  size: 45
+  title: "&8Reforge Item"
+  items:
+    errorItem:
+      material: BARRIER
+      amount: 1
+      title: "&cError"
+      lore:
+        - "%error_placeholder%"
+      isGlowing: false
+    emptyItem:
+      material: RED_STAINED_GLASS_PANE
+      amount: 1
+      title: ""
+    successItem:
+      material: LIME_STAINED_GLASS_PANE
+      amount: 1
+      title: ""
+    emptyAnvil:
+      material: ANVIL
+      amount: 1
+      title: "&eReforge Item"
+      lore:
+        - "&7Place an item above to reforge"
+        - "&7it! Reforging items adds a"
+        - "&7random modifier to the item that"
+        - "&7grants stat boosts."
+      isGlowing: false
+    toReforgeAnvil:
+      material: ANVIL
+      amount: 1
+      title: "&aReforge Item"
+      lore:
+        - "&7Reforges the above item, giving"
+        - "&7it a random item modifier that"
+        - "&7boosts its stats."
+        - ""
+        - "&7Cost"
+        - "&6%cost% Coins"
+        - ""
+        - "&7Click to reforge!"
+      isGlowing: false
+  successSlots:
+  - 0
+  - 9
+  - 18
+  - 27
+  - 36
+  - 8
+  - 17
+  - 26
+  - 35
+  - 44
+buttons:
+  nextPage:
+    material: ARROW
+    amount: 1
+    title: "&eNext Page"
+    lore: []
+    slot: 50
+    isGlowing: false
+  previousPage:
+    material: ARROW
+    amount: 1
+    title: "&ePrevious Page"
+    lore: []
+    slot: 48
+    isGlowing: false
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+    isGlowing: false
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 40
+    isGlowing: false

@@ -1,0 +1,14 @@
+stats:
+  armors:
+    DIAMOND_CHESTPLATE:
+      abilities:
+      - "Defense:10"
+    DIAMOND_HELMET:
+      abilities:
+      - "Defense:10"
+    DIAMOND_LEGGINGS:
+      abilities:
+      - "Defense:10"
+    DIAMOND_BOOTS:
+      abilities:
+      - "Defense:10"

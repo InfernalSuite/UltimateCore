@@ -1,0 +1,19 @@
+dragons:
+  kid_dragon:
+    enabled: true
+    displayName: "&7[Lvl 1] &cYoung Dragon"
+    health: 150
+    xp: 25
+    chance: 80
+  normal_dragon:
+    enabled: true
+    displayName: "&7[Lvl 10] &eNormal Dragon"
+    health: 550
+    chance: 40
+    xp: 25
+  ancient_dragon:
+    enabled: true
+    displayName: "&7[Lvl 50] &dAncient Dragon"
+    health: 1050
+    chance: 20
+    xp: 25

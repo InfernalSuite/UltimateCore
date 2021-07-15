@@ -1,0 +1,260 @@
+runes:
+  smokey:
+    runeName: Smokey_Rune
+    displayName: "&7♦ Smokey Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkOGE4ZDUyN2Y2NWE0ZjQzNGY4OTRmN2VlNDJlYjg0MzAxNWJkYTc5MjdjNjNjNmVhOGE3NTRhZmU5YmIxYiJ9fX0=
+    effect: SMOKE
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Bows"
+      - ''
+      - "&7Create a burnt trail behind"
+      - "&7your arrows!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: BOW
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  magical:
+    runeName: Magical_Rune
+    displayName: "&d♦ Magical Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ0ODBlMzllYTYzZTM0N2QyNjhkZTgzMDkwZDA5OTg0YmYzNDM5NDExODg0ODM0OGJmNGViNTc0OTBjZTlkMiJ9fX0=
+    effect: MAGICAL
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Bows"
+      - ''
+      - "&7Your arrows have a magical"
+      - "&7shine!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: BOW
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  lava:
+    runeName: Lava_Rune
+    displayName: "&4♦ Lava Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjEzZDkwM2Y2MDEwMzRhYzM0MDBkMjYyNWZlZjEwNGU5YjA5NDA3NDZjNTU0MTkzZjZkOWU4NWE4NGE5NjZhMSJ9fX0=
+    effect: LAVA
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Bows"
+      - ''
+      - "&7Shoot magma arrows!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: BOW
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  gem:
+    runeName: Gem_Rune
+    displayName: "&2♦ Gem Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNhMWFkNGZjYzQyZmI2M2M2ODEzMjhlNDJkNjNjODNjYTE5M2IzMzNhZjJhNDI2NzI4YTI1YThjYzYwMDY5MiJ9fX0=
+    effect: GEM
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Bows"
+      - ''
+      - "&7Create a gem effect behind your"
+      - "&7arrows!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: BOW
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  golden:
+    runeName: Golden_Rune
+    displayName: "&e♦ Golden Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzVmNDg2MWFhNWIyMmVlMjhhOTBlNzVkYWI0NWQyMjFlZmQxNGMwYjFlY2M4ZWU5OThmYjY3ZTQzYmI4ZjNkZSJ9fX0=
+    effect: GOLD
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Bows"
+      - ''
+      - "&7Flaunt your wealth with"
+      - "&7golden arrows!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: WEAPON
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  blood:
+    runeName: Blood_Rune
+    displayName: "&c♦ Blood Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdhN2E4OTQwNTdkNGExZmYyMmExNjFkNzY2MDBmNzE5ZGE1NzkxNjYzM2Y2ODM4MDhjZjRkMzU4YmI3M2EyMSJ9fX0
+    effect: BLOOD
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Weapons"
+      - ''
+      - "&7Create a blood effect when you"
+      - "&7kill mobs!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: WEAPON
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  lighting:
+    runeName: Lightning_Rune
+    displayName: "&9♦ Lightning Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg1YmNmN2Y4MmQzNGRiODlhOTVhZGRmOGU1MzI1M2UyZDk1NTRjNmZkMmYyZTM5ZTI0MzYyZDI0M2EwY2NmNyJ9fX0=
+    effect: LIGHTNING
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Weapons"
+      - ''
+      - "&7Chance to strike lightning on"
+      - "&7the enemies you defeat!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: WEAPON
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  hearts:
+    runeName: Hearts_Rune
+    displayName: "&d♦ Hearts Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmMxYzE3OWFkNTE5NTVmMTUyMmM0OGVhOTkzMWYwOWMxNjI3NDFiNDVlMjJlOWQzZmViNjgyYzdlNWVkODI3NCJ9fX0=
+    effect: HEARTS
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Weapons"
+      - ''
+      - "&7Shower you enemies in love!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: WEAPON
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10
+  music:
+    runeName: Music_Rune
+    displayName: "&b♦ Music Rune %rune_level%"
+    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2I0ODFjMzFkYzY4M2JkY2I3ZDM3NWE3YzVkYjdhYzdhZGY5ZTlmZThiNmMwNGE2NDkzMTYxM2UyOWZlNDcwZSJ9fX0=
+    effect: MUSIC
+    lore:
+      - "&8Requires level %required_level%"
+      - "&8Weapons"
+      - ''
+      - "&7Put monsters out of there misery"
+      - "&7with sweet tunes!"
+      - ''
+      - "&7Apply this rune to weapons or"
+      - "&7fuse two together at the Runic"
+      - "&7Pedestal"
+      - ''
+      - "&f&lCOMMON"
+    level: 1
+    runeType: WEAPON
+    requiredRunnecraftingLevel:
+      '1': 2
+      '2': 4
+      '3': 6
+      '4': 8
+    successChance:
+      '1': 70
+      '2': 50
+      '3': 25
+      '4': 10

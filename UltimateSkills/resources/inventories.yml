@@ -1,0 +1,509 @@
+backButtons: true
+mainMenu:
+  title: "&8Main Menu"
+  size: 54
+  items:
+    skillItem:
+      amount: 1
+      title: "&a%displayname% %level%"
+      lore:
+        - "%description%"
+        - ''
+        - "&7Progress to Level %next_level%: &e%current_percentage%%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ''
+        - "&7Level %next_level% Rewards:"
+        - "%level_rewards%"
+        - ''
+        - "&eClick to View"
+      slot: 25
+      isGlowing: false
+    showranking:
+      material: DIAMOND_SWORD
+      amount: 1
+      title: "&eYour Skills"
+      lore:
+        - "&7View your Skill progression"
+        - "&7and rewards!"
+        - ''
+        - "&eClick to show rankings!"
+      slot: 4
+      isGlowing: false
+      command: skills ranking
+    statsItem:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&e%player%'s profile"
+      headOwner: "%player%"
+      lore:
+        - ''
+        - "&c❤ Health: %health%"
+        - "&a❈ Defense: &7%defense%"
+        - "&9✯ Crit Chance: &7%crit_chance%"
+        - "&9☣ Crit Damage: &7%crit_damage%"
+        - "&c✿ Strength: &7%strength%"
+        - "&b✎ Inteligence: &7%intelligence%"
+        - "&d⎊ Pet Luck: &7%pet_luck%"
+        - "&f⎐ Speed: &7%speed%"
+      slot: 45
+      isGlowing: false
+topMenu:
+  title: "&8Top Menu"
+  size: 54
+  items:
+    skillItem:
+      amount: 1
+      title: "&e%displayname% %level%"
+      lore:
+        - "%description%"
+        - ''
+        - "&7Progress to Level %next_level%: &e%current_percentage%%"
+        - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+        - ''
+        - "&7Level %next_level% Rewards:"
+        - "%level_rewards%"
+        - ''
+        - "%ranking_information%"
+        - "&8Rankings may take some time to refresh"
+        - ''
+        - "&eClick to View"
+      slot: 19
+      isGlowing: true
+    hideranking:
+      material: DIAMOND_SWORD
+      amount: 1
+      title: "&eYour Skills"
+      lore:
+        - "&7View your Skill progression"
+        - "&7and rewards!"
+        - ''
+        - "&eClick to go hide rankings!"
+      slot: 4
+      isGlowing: false
+      command: skills mainmenu
+    statsItem:
+      material: PLAYER_HEAD
+      headOwner: "%player%"
+      amount: 1
+      title: "&e%player%'s profile"
+      lore:
+      - ''
+      - "&c❤ Health: %health%"
+      - "&a❈ Defense: &7%defense%"
+      - "&9✯ Crit Chance: &7%crit_chance%"
+      - "&9☣ Crit Damage: &7%crit_damage%"
+      - "&c✿ Strength: &7%strength%"
+      - "&b✎ Inteligence: &7%intelligence%"
+      - "&d⎊ Pet Luck: &7%pet_luck%"
+      - "&f⎐ Speed: &7%speed%"
+      slot: 45
+      isGlowing: false
+submenu:
+  titles:
+    Carpentry: "&8Carpentry Skill"
+    Social: "&8Social Skill"
+    Farming: "&8Farming Skill"
+    Mining: "&8Mining Skill"
+    Taming: "&8Taming Skill"
+    Combat: "&8Combat Skill"
+    Runecrafting: "&8Runecrafting Skill"
+    Enchanting: "&8Enchanting Skill"
+    Dungeoneering: "&8Dungeoneering Skill"
+    Foraging: "&8Foraging Skill"
+    Alchemy: "&8Alchemy Skill"
+    Fishing: "&8Fishing Skill"
+  size: 54
+  items:
+    infoItem:
+      amount: 1
+      title: "&a%displayname% Skill"
+      lore:
+      - "%description%"
+      - ''
+      - "&7Progress to Level %next_level%: &e%current_percentage%%"
+      - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+      - ''
+      slot: 0
+      isGlowing: false
+    progressItem:
+      material: YELLOW_STAINED_GLASS_PANE
+      amount: 1
+      title: "&e%displayname% %next_level%"
+      lore:
+      - "&7Rewards:"
+      - "%level_rewards%"
+      - ''
+      - "&7Progress: &e%current_percentage%%"
+      - "%progress_bar% &e%current_xp%&6/&e%max_xp%"
+      - ''
+      isGlowing: false
+    lockedItem:
+      material: RED_STAINED_GLASS_PANE
+      amount: 1
+      title: "&c%displayname% %next_level%"
+      lore:
+      - "&7Rewards"
+      - "%level_rewards%"
+      isGlowing: false
+    unlockedItem:
+      material: LIME_STAINED_GLASS_PANE
+      amount: 1
+      title: "&a%displayname% %next_level%"
+      lore:
+      - "&7Rewards:"
+      - "%level_rewards%"
+      - ''
+      - "&aUNLOCKED"
+      isGlowing: false
+  slots:
+  - 9
+  - 18
+  - 27
+  - 28
+  - 29
+  - 20
+  - 11
+  - 2
+  - 3
+  - 4
+  - 13
+  - 22
+  - 31
+  - 32
+  - 33
+  - 24
+  - 15
+  - 6
+  - 7
+  - 8
+  - 17
+  - 26
+  - 35
+  - 44
+  - 53
+buttons:
+  nextPage:
+    material: ARROW
+    amount: 1
+    title: "&eNext Page"
+    lore: []
+    slot: 50
+    isGlowing: false
+  previousPage:
+    material: ARROW
+    amount: 1
+    title: "&ePrevious Page"
+    lore: []
+    slot: 48
+    isGlowing: false
+  background:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: []
+    isGlowing: false
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: []
+    slot: 49
+    isGlowing: false
+  multiplierItem:
+    material: DIAMOND
+    amount: 1
+    title: "&bXP Multiplier"
+    lore:
+    - ''
+    - "&7Get XP Multiplier acquiring ranks"
+    - "&7in the store!"
+    - ''
+    - "&a&lVIP &7: &f1.1x XP"
+    - "&e&lVIP&c&l+ &7: &f1.5x XP"
+    - "&d&lMVIP &7: &f2.5x XP"
+    - "&b&lMVIP&c&l+ &7: &f3.0x XP"
+    - "&6&lMVIP&c&l++ &7: &f4.0x XP"
+    - ''
+    - "&eYour Multiplier: &6%multiplier%x"
+    - ''
+    - "&aClick to purchase ranks!"
+    slot: 45
+    isGlowing: false
+    command: msg %player% &astore.server.com
+profileGui:
+  title: "&8Your Skyblock Profile"
+  size: 54
+  items:
+    health:
+      material: GOLDEN_APPLE
+      amount: 1
+      title: "&c❤ Health &f%total_health%"
+      lore:
+      - "&7Health is your total maximum"
+      - "&7health."
+      - ''
+      - "&7Base Health: &a%simple_health%"
+      - "  &8Increase your base Health by"
+      - "  &8leveling your Farming and"
+      - "  &8Fishing Skills and contributing"
+      - "  &8to the &dFairy&8!"
+      - ''
+      - "&7Bonus Health: &8+&e%bonus_health%"
+      - "  &8Increase your bonus Health"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing accesories in your"
+      - "  &8inventory."
+      slot: 19
+      isGlowing: false
+    defense:
+      material: IRON_CHESTPLATE
+      amount: 1
+      title: "&a❈ Defense  &f%total_defense%"
+      lore:
+      - "&7Defense reduces the damage that"
+      - "&7you take from enemies."
+      - ''
+      - "&7Base Defense: &a%simple_defense%"
+      - "  &8Increase your base Defense"
+      - "  &8by leveling your Mining Skill"
+      - "  &8and contributing to the &dFairy&8!"
+      - ''
+      - "&7Bonus Defense: &8+&e%bonus_defense%"
+      - "  &8Increase your bonus Defense"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing accesories in your"
+      - "  &8inventory."
+      slot: 20
+      isGlowing: false
+    strength:
+      material: BLAZE_POWDER
+      amount: 1
+      title: "&c❈ Strength  &f%total_strength%"
+      lore:
+      - "&7Strength increases your base"
+      - "&7melee damage, including punching"
+      - "&7and weapons."
+      - ''
+      - "&7Base Strength: &a%simple_strength%"
+      - "  &8Increase your base Strength"
+      - "  &8by leveling your Foraging Skill"
+      - "  &8and contributing to the &dFairy&8!"
+      - ''
+      - "&7Bonus Strength: &8+&e%bonus_strength%"
+      - "  &8Increase your bonus Strength"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing accesories in your"
+      - "  &8inventory."
+      slot: 21
+      isGlowing: false
+    speed:
+      material: SUGAR
+      amount: 1
+      title: "&f⎐ Speed  &f%total_speed%"
+      lore:
+      - "&7Speed increases your walk speed."
+      - ''
+      - "&7Base Speed: &a%simple_speed%"
+      - "  &8Increase your base Speed"
+      - "  &8by leveling your Foraging Skill"
+      - "  &8and contributing to the &dFairy&8!"
+      - ''
+      - "&7Bonus Speed: &8+&e%bonus_speed%"
+      - "  &8Increase your bonus Speed"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing accesories in your"
+      - "  &8inventory."
+      slot: 22
+      isGlowing: false
+    critchance:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&9✯ Crit Chance  &f%total_crit_chance%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2U0ZjQ5NTM1YTI3NmFhY2M0ZGM4NDEzM2JmZTgxYmU1ZjJhNDc5OWE0YzA0ZDlhNGRkYjcyZDgxOWVjMmIyYiJ9fX0=
+      lore:
+      - "&7Crit chance is your chance to"
+      - "&7deal extra damage on enemies"
+      - ''
+      - "&7Base Crit Chance: &a%simple_crit_chance%"
+      - "  &8Increase your base Crit"
+      - "  &8Chance by leveling your Combat"
+      - "  &8Skill."
+      - ''
+      - "&7Bonus Crit Chance: &8+&e%bonus_crit_chance%"
+      - "  &8Increase your bonus Crit"
+      - "  &8Chance by equipping items and "
+      - "  &8armor, and storing accesories"
+      - "  &8in your inventory."
+      slot: 23
+      isGlowing: false
+    critdamage:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&9☣ Crit Damage  &f%total_crit_damage%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRhZmIyM2VmYzU3ZjI1MTg3OGU1MzI4ZDExY2IwZWVmODdiNzljODdiMjU0YTdlYzcyMjk2ZjkzNjNlZjdjIn19fQ==
+      lore:
+      - "&7Crit Damage is the amount of"
+      - "&7extra damage your deal when"
+      - "&7landing a critical hit"
+      - ''
+      - "&7Base Crit Damage: &a%simple_crit_damage%"
+      - "  &8Increase your base Crit"
+      - "  &8Damage by exploring the world!"
+      - ''
+      - "&7Bonus Crit Damage: &8+&e%bonus_crit_damage%"
+      - "  &8Increase your bonus Crit"
+      - "  &8Chance by equipping items and "
+      - "  &8armor, and storing accesories"
+      - "  &8in your inventory."
+      slot: 24
+      isGlowing: false
+    intelligence:
+      material: ENCHANTED_BOOK
+      amount: 1
+      title: "&b✎ Intelligence  &f%total_intelligence%"
+      lore:
+      - "&7Intelligence allows you to use items"
+      - "&7that requires mana."
+      - ''
+      - "&7Base Intelligence: &a%simple_intelligence%"
+      - "  &8Increase your base Damage"
+      - "  &8Damage by leveling your"
+      - "  &8Enchanting and Alchemy Skills."
+      - ''
+      - "&7Bonus Intelligence: &8+&e%bonus_intelligence%"
+      - "  &8Increase your bonus"
+      - "  &8Intelligence by equipping items "
+      - "  &8and armor, and storing"
+      - "  &8accesories in your inventory."
+      slot: 25
+      isGlowing: false
+    petluck:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&d⎊ Pet Luck &f%total_pet_luck%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNjOGFhM2ZkZTI5NWZhOWY5YzI3ZjczNGJkYmFiMTFkMzNhMmU0M2U4NTVhY2NkNzQ2NTM1MjM3NzQxM2IifX19
+      lore:
+      - "&7Pet Luck increase how many pets"
+      - "&7you find and gives you better"
+      - "&7luck when crafting pets."
+      - ''
+      - "&7Base Pet Luck: &a%simple_pet_luck%"
+      - "  &8Increase your base Pet Luck"
+      - "  &8by leveling your Taming Skill"
+      - ''
+      - "&7Bonus Pet Luck: &8+&e%bonus_pet_luck%"
+      - "  &8Increase your bonus Pet Luck"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing &8accesories in your"
+      - "  &8inventory."
+      slot: 28
+      isGlowing: false
+    orechance:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&6☘ Mining Fortune &f%total_ore_chance%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGIzYmNjMWE2NjhmYjMzOTc1MDczNTk2NzQxMjhhNDJjMjZmMzQ0OTc0MTg5ZWMzMjJhMzNkMTMxNjg0MjhlYSJ9fX0=
+      lore:
+      - "&7Mining Fortune is the chance to"
+      - "&7gain double drops from ores,"
+      - "&7with a chance for triple drops"
+      - "&7at values greater than 100."
+      - ''
+      - "&7Base Mining Fortune: &a%simple_ore_chance%"
+      - "  &8Increase your base Mining Fortune"
+      - "  &8by leveling your Mining Skill"
+      - ''
+      - "&7Bonus Mining Fortune: &8+&e%bonus_ore_chance%"
+      - "  &8Increase your bonus Mining Fortune"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing &8accesories in your"
+      - "  &8inventory."
+      - ''
+      - "&7Chance for &adouble &7drops: &a%total_ore_chance%%"
+      slot: 29
+      isGlowing: false
+    farmingfortune:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&6☘ Farming Fortune &f%total_crop_chance%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTVkNTNlZjQyOGIzNjlmZDVjY2U5NGNlMjA1ZDBkMmQ3YjA5NWZhZDY3NmE5YjM4Mzk3MWVlMTA0OWUzNjdhZCJ9fX0=
+      lore:
+      - "&7Farming Fortune is the chance to"
+      - "&7gain double drops from crops,"
+      - "&7with a chance for triple crops"
+      - "&7at values greater than 100."
+      - ''
+      - "&7Base Farming Fortune: &a%simple_crop_chance%"
+      - "  &8Increase your base Farming Fortune"
+      - "  &8by leveling your Farming Skill"
+      - ''
+      - "&7Bonus Farming Fortune: &8+&e%bonus_crop_chance%"
+      - "  &8Increase your bonus Farming Fortune"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing &8accesories in your"
+      - "  &8inventory."
+      - ''
+      - "&7Chance for &adouble &7drops: &a%total_crop_chance%%"
+      slot: 30
+      isGlowing: false
+    foragingfortune:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&6☘ Foraging Fortune &f%total_log_chance%"
+      headData: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWYxZTE4Y2Q5ZjlkMzgyMjE5NmYwY2NmMWE4ZTA3MWQ4N2JiMzJhYjUwZGY0ZDZjZmVkOTNhMWE5NDg4MzVjYSJ9fX0=
+      lore:
+      - "&7Foraging Fortune is the chance to"
+      - "&7gain double drops from logs,"
+      - "&7with a chance for triple logs"
+      - "&7at values greater than 100."
+      - ''
+      - "&7Base Foraging Fortune: &a%simple_log_chance%"
+      - "  &8Increase your base Foraging Fortune"
+      - "  &8by leveling your Farming Skill"
+      - ''
+      - "&7Bonus Foraging Fortune: &8+&e%bonus_log_chance%"
+      - "  &8Increase your bonus Foraging Fortune"
+      - "  &8by equipping items and armor,"
+      - "  &8and storing &8accesories in your"
+      - "  &8inventory."
+      - ''
+      - "&7Chance for &adouble &7drops: &a%total_log_chance%%"
+      slot: 31
+      isGlowing: false
+    backButton:
+      material: ARROW
+      amount: 1
+      slot: 48
+      title: "&aGo Back"
+      lore:
+      - "&7To Skills Menu"
+      isGlowing: false
+    stats:
+      material: PLAYER_HEAD
+      amount: 1
+      title: "&e%player%'s profile"
+      headOwner: "%player%"
+      lore:
+      - ''
+      - "&c❤ Health: %total_health%"
+      - "&a❈ Defense: &7%total_defense%"
+      - "&9✯ Crit Chance: &7%total_crit_chance%"
+      - "&9☣ Crit Damage: &7%total_crit_damage%"
+      - "&c✿ Strength: &7%total_strength%"
+      - "&b✎ Inteligence: &7%total_intelligence%"
+      - "&d⎊ Pet Luck: &7%total_pet_luck%"
+      - "&f⎐ Speed: &7%total_speed%"
+      - "&6☘ Mining Fortune: &7%total_ore_chance%"
+      - "&6☘ Foraging Fortune: &7%total_log_chance%"
+      - "&6☘ Farming Fortune: &7%total_crop_chance%"
+      slot: 4
+      isGlowing: false
+main-menu-back:
+  enabled: true
+  material: ARROW
+  amount: 1
+  slot: 48
+  title: "&eBack"
+  lore:
+    - "&7Go back to main menu."
+  command: "hypercore mainmenu"

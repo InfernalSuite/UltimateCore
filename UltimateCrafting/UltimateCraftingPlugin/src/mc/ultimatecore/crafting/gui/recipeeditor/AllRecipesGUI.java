@@ -2,7 +2,6 @@ package mc.ultimatecore.crafting.gui.recipeeditor;
 
 
 import mc.ultimatecore.crafting.HyperCrafting;
-import mc.ultimatecore.crafting.gui.GUI;
 import mc.ultimatecore.crafting.gui.SimpleGUI;
 import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import mc.ultimatecore.crafting.utils.InventoryUtils;
@@ -10,8 +9,6 @@ import mc.ultimatecore.crafting.utils.Placeholder;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
