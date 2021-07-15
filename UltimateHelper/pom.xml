@@ -11,7 +11,7 @@
 
     <groupId>mc.ultimatecore.helper</groupId>
     <artifactId>UltimateHelper</artifactId>
-    <version>4.2.0-STABLE</version>
+    <version>4.2.0</version>
 
     <dependencies>
         <dependency>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>8.0.0</version>
+            <version>8.2.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -79,6 +79,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <minimizeJar>true</minimizeJar>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>

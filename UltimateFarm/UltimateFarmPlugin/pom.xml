@@ -11,12 +11,6 @@
 
     <artifactId>UltimateFarmPlugin</artifactId>
 
-    <repositories>
-        <repository>
-            <id>headdatabase-api</id>
-            <url>https://mvn.intellectualsites.com/content/repositories/thirdparty/</url>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.spigot</groupId>
@@ -42,7 +36,7 @@
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>8.0.0</version>
+            <version>8.2.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -90,7 +84,7 @@
         <dependency>
             <groupId>mc.ultimatecore.helper</groupId>
             <artifactId>UltimateHelper</artifactId>
-            <version>4.2.0-STABLE</version>
+            <version>4.2.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
