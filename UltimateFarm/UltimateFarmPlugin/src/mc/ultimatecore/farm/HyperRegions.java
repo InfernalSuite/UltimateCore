@@ -96,14 +96,12 @@ public class HyperRegions extends UltimatePlugin {
     }
     
     public void reloadConfigs() {
-        guardians.reload();
-        farmManager.reload();
-        configuration.reload();
+        if (guardians != null) guardians.reload();
+        if (farmManager != null) farmManager.reload();
+        if (configuration != null) configuration.reload();
     }
     
     public void saveConfigs() {
-        guardians.save();
+        if (guardians != null) guardians.save();
     }
-    
-    
 }
