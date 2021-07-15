@@ -24,12 +24,6 @@
         <module>UltimateFarmNMS-v1_17_R1</module>
     </modules>
 
-    <repositories>
-        <repository>
-            <id>headdatabase-api</id>
-            <url>https://mvn.intellectualsites.com/content/repositories/thirdparty/</url>
-        </repository>
-    </repositories>
     <build>
         <plugins>
             <plugin>
@@ -50,6 +44,7 @@
                             <artifact>*:*</artifact>
                             <excludes>
                                 <exclude>META-INF/maven/**</exclude>
+                                <exclude>LICENSE</exclude>
                             </excludes>
                         </filter>
                     </filters>

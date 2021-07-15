@@ -1,6 +1,5 @@
 package mc.ultimatecore.farm.utils;
 
-import com.bekvon.bukkit.residence.commands.material;
 import com.cryptomorin.xseries.XMaterial;
 import mc.ultimatecore.farm.configs.Inventories;
 import mc.ultimatecore.farm.objects.blocks.RegionBlock;

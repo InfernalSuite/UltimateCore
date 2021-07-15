@@ -3,7 +3,6 @@ package mc.ultimatecore.farm.guardians.implementations;
 import mc.ultimatecore.farm.HyperRegions;
 import mc.ultimatecore.farm.guardians.Guardian;
 import mc.ultimatecore.farm.particle.EnumParticle;
-import mc.ultimatecore.farm.particle.Particle;
 import mc.ultimatecore.farm.skullcreator.SkullCreator;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;

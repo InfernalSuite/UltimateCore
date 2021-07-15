@@ -3,10 +3,8 @@ package mc.ultimatecore.farm.objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import mc.ultimatecore.farm.objects.blocks.ChanceBlock;
 import mc.ultimatecore.farm.objects.blocks.RegionBlock;
 
-import java.util.List;
 import java.util.Set;
 
 @Getter

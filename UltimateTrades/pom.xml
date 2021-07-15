@@ -18,7 +18,7 @@
             <artifactId>spigot</artifactId>
             <version>1.16.5</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../libs/spigots/spigot-1.16.5.jar</systemPath>
+            <systemPath>${pom.basedir}/../libs/spigots/spigot-1.16.5.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>de.tr7zw</groupId>
@@ -77,6 +77,7 @@
                             <artifact>*:*</artifact>
                             <excludes>
                                 <exclude>META-INF/maven/**</exclude>
+                                <exclude>LICENSE</exclude>
                             </excludes>
                         </filter>
                     </filters>

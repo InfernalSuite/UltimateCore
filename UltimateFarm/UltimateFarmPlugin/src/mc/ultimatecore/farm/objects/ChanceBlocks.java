@@ -1,9 +1,7 @@
 package mc.ultimatecore.farm.objects;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import mc.ultimatecore.farm.objects.blocks.ChanceBlock;
-import mc.ultimatecore.farm.objects.blocks.RegionBlock;
 
 import java.util.Comparator;
 import java.util.List;

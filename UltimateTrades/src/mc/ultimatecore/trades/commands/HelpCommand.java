@@ -1,11 +1,11 @@
 package mc.ultimatecore.trades.commands;
 
 import mc.ultimatecore.trades.HyperTrades;
+import mc.ultimatecore.trades.utils.StringUtils;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import mc.ultimatecore.trades.utils.StringUtils;
 
 import java.util.Collections;
 import java.util.List;

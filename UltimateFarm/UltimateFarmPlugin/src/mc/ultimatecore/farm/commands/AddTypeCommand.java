@@ -1,20 +1,11 @@
 package mc.ultimatecore.farm.commands;
 
 import mc.ultimatecore.farm.HyperRegions;
-import mc.ultimatecore.farm.objects.ChanceBlocks;
-import mc.ultimatecore.farm.objects.HyperRegion;
-import mc.ultimatecore.farm.objects.RegenTime;
-import mc.ultimatecore.farm.objects.Textures;
-import mc.ultimatecore.farm.objects.blocks.ChanceBlock;
-import mc.ultimatecore.farm.objects.blocks.RegionBlock;
 import mc.ultimatecore.farm.utils.Utils;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 
 public class AddTypeCommand extends Command {

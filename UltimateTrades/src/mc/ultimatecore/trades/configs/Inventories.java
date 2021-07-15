@@ -6,7 +6,10 @@ import mc.ultimatecore.trades.Item;
 import mc.ultimatecore.trades.utils.Utils;
 import org.bukkit.configuration.ConfigurationSection;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Inventories extends YAMLFile{
 

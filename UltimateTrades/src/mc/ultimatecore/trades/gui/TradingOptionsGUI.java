@@ -1,8 +1,5 @@
 package mc.ultimatecore.trades.gui;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import mc.ultimatecore.trades.HyperTrades;
 import mc.ultimatecore.trades.Item;
 import mc.ultimatecore.trades.objects.TradeObject;
@@ -15,6 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TradingOptionsGUI implements GUI {
     private final TradeObject tradeObject;

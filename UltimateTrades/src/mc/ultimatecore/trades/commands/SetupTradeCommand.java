@@ -3,7 +3,6 @@ package mc.ultimatecore.trades.commands;
 import mc.ultimatecore.trades.HyperTrades;
 import mc.ultimatecore.trades.objects.TradeObject;
 import mc.ultimatecore.trades.utils.StringUtils;
-import mc.ultimatecore.trades.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

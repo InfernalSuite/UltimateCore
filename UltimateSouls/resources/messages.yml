@@ -19,7 +19,7 @@ messages:
   firstSoulFound: "&e&kw&a>>  &aArchivement Unlocked: &6Fairy Soul  &a<<&e&kw"
   allSoulsFound: "&6&lFairy Souls &7» &e&lCONGRATS YOU HAVE FOUND ALL SOULS!"
   soulToPlaceName: "&aSoul &e(Right-Click to Place)"
-  helpHeader: "      &6&lSouls   "
+  helpHeader: "      &6&lUltimateCore-Souls   "
   helpPageHoverMessage: "Click to go to page %page%"
   helpfooter: "&e<< &6Page %page% of %maxpage% &e>>"
   helpMessage: "&7%command% - &e%description%"

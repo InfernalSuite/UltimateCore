@@ -3,8 +3,9 @@ package mc.ultimatecore.trades;
 import lombok.Getter;
 import mc.ultimatecore.trades.commands.CommandManager;
 import mc.ultimatecore.trades.configs.*;
-import mc.ultimatecore.trades.gui.*;
-import mc.ultimatecore.trades.listeners.*;
+import mc.ultimatecore.trades.gui.TradingOptionsGUI;
+import mc.ultimatecore.trades.listeners.InventoryClickListener;
+import mc.ultimatecore.trades.listeners.TradeSetupListener;
 import mc.ultimatecore.trades.objects.TradeObject;
 import mc.ultimatecore.trades.utils.StringUtils;
 import net.milkbowl.vault.economy.Economy;
@@ -13,7 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.*;
+import java.util.HashMap;
 
 @Getter
 public class HyperTrades extends JavaPlugin {

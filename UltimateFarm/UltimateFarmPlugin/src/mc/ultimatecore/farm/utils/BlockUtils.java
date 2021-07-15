@@ -1,7 +1,6 @@
 package mc.ultimatecore.farm.utils;
 
 import mc.ultimatecore.farm.HyperRegions;
-import mc.ultimatecore.farm.objects.ChanceBlocks;
 import mc.ultimatecore.farm.objects.WrappedBlockData;
 import mc.ultimatecore.farm.objects.blocks.BlockAfter;
 import mc.ultimatecore.farm.objects.blocks.ChanceBlock;

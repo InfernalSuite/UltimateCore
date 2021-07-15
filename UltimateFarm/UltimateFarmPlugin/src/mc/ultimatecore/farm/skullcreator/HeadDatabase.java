@@ -1,9 +1,9 @@
 package mc.ultimatecore.farm.skullcreator;
 
 
+import mc.ultimatecore.farm.HyperRegions;
 import me.arcaniax.hdb.api.DatabaseLoadEvent;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
-import mc.ultimatecore.farm.HyperRegions;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

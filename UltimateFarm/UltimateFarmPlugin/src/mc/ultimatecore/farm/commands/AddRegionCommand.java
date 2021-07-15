@@ -1,7 +1,6 @@
 package mc.ultimatecore.farm.commands;
 
 import mc.ultimatecore.farm.HyperRegions;
-import mc.ultimatecore.farm.objects.HyperRegion;
 import mc.ultimatecore.farm.utils.Utils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

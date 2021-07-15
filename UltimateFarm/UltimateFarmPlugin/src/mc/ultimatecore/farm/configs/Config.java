@@ -26,7 +26,7 @@ public class Config extends YamlConfig {
 
     private void loadDefaults() {
         //------------------------------------------------//
-        prefix = getConfig().getString("prefix", "&e&lHyper Regions &7");
+        prefix = getConfig().getString("prefix", "&e&lUltimateCore-Farm &7");
         guardianTexture = getConfig().getString("guardianTexture", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTI2NWY5NmY1NGI3ODg4NWM0NmU3ZDJmODZiMWMxZGJmZTY0M2M2MDYwZmM3ZmNjOTgzNGMzZTNmZDU5NTEzNSJ9fX0=");
         byPassWorldGuard = getConfig().getBoolean("byPassWorldGuard", false);
         upAndDownGuardians = getConfig().getBoolean("upAndDownGuardians", true);

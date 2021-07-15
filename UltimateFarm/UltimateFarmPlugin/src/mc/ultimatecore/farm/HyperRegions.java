@@ -3,7 +3,6 @@ package mc.ultimatecore.farm;
 import com.cryptomorin.xseries.XMaterial;
 import lombok.Getter;
 import mc.ultimatecore.farm.commands.CommandManager;
-import mc.ultimatecore.farm.commands.DragonManager;
 import mc.ultimatecore.farm.configs.Config;
 import mc.ultimatecore.farm.configs.Guardians;
 import mc.ultimatecore.farm.configs.Inventories;
@@ -13,9 +12,9 @@ import mc.ultimatecore.farm.listeners.CropBreakListener;
 import mc.ultimatecore.farm.listeners.InventoryClickListener;
 import mc.ultimatecore.farm.managers.AddonsManager;
 import mc.ultimatecore.farm.managers.RegionsManager;
+import mc.ultimatecore.farm.nms.NMS;
 import mc.ultimatecore.farm.utils.Utils;
 import mc.ultimatecore.helper.UltimatePlugin;
-import mc.ultimatecore.farm.nms.NMS;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.Listener;
@@ -32,7 +31,6 @@ public class HyperRegions extends UltimatePlugin {
     private CommandManager commandManager;
     private Guardians guardians;
     private NMS nms;
-    private DragonManager dragonManager;
     
     public static HyperRegions getInstance() {
         return instance;
@@ -52,7 +50,6 @@ public class HyperRegions extends UltimatePlugin {
         registerListeners(new InventoryClickListener(), new CropBreakListener(this));
         
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::saveConfigs, 1000L, 1900L);
-        dragonManager = new DragonManager();
         commandManager = new CommandManager("hyperregions");
         commandManager.registerCommands();
         

@@ -20,31 +20,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_8_R3:UltimateFarmNMS-v1_8_R3:1.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_12_R1:UltimateFarmNMS-v1_12_R1:1.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_14_R1:UltimateFarmNMS-v1_14_R1:1.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_15_R1:UltimateFarmNMS-v1_15_R1:1.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_16_R3:UltimateFarmNMS-v1_16_R3:1.0" level="project" />
-    <orderEntry type="library" name="Maven: mc.ultimatecore.farm.nms.v1_17_R1:UltimateFarmNMS-v1_17_R1:1.0" level="project" />
-    <orderEntry type="module" module-name="UltimateFarmNMS" />
-    <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-simple:2.0.0-alpha0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codemc.worldguardwrapper:worldguardwrapper:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.Milkbowl:VaultAPI:1.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.13.1-R0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: junit:junit:4.10" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:21.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.21" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: me.arcaniax:HeadDatabase-API:1.0.0" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: me.TechsCode.UltraRegions:UltraRegions:1.4.2">
         <CLASSES>
@@ -63,6 +38,31 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_8_R3" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_12_R1" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_14_R1" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_15_R1" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_16_R3" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_17_R1" />
+    <orderEntry type="module" module-name="UltimateFarmNMS" />
+    <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-simple:2.0.0-alpha0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codemc.worldguardwrapper:worldguardwrapper:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.Milkbowl:VaultAPI:1.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.13.1-R0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:21.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.21" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: me.arcaniax:HeadDatabase-API:1.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jetbrains:annotations:19.0.0" level="project" />
   </component>

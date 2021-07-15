@@ -25,7 +25,7 @@ public class Config extends YAMLFile{
     }
 
     private void loadDefaults() {
-        prefix = getConfig().get().getString("prefix", "&e&lHyper Trades &7");
+        prefix = getConfig().get().getString("prefix", "&e&lUltimateCore-Trades &7");
         successTradeSound = getConfig().get().getString("successTradeSound", "ENTITY_EXPERIENCE_ORB_PICKUP");
         failTradeSound = getConfig().get().getString("failTradeSound", "ENTITY_VILLAGER_NO");
         mainCommandPerm = getConfig().get().getString("mainCommandPerm", "");

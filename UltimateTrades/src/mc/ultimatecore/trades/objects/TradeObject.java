@@ -3,7 +3,6 @@ package mc.ultimatecore.trades.objects;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import mc.ultimatecore.trades.gui.SelectItemMenu;
 import mc.ultimatecore.trades.gui.TradesSetupGUI;
 import mc.ultimatecore.trades.gui.TradingOptionsGUI;
 import org.bukkit.inventory.ItemStack;

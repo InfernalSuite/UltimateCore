@@ -9,21 +9,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 
-
 public class UltimatePlugin extends JavaPlugin {
-    
-    private static UltimatePlugin INSTANCE;
     
     @Override
     public void onLoad() {
         super.onLoad();
-        INSTANCE = this;
     }
     
     @Override
     public void onEnable() {
         super.onEnable();
-        INSTANCE = this;
     }
     
     @Override
@@ -42,7 +37,7 @@ public class UltimatePlugin extends JavaPlugin {
     }
     
     public static UltimatePlugin getInstance() {
-        return INSTANCE;
+        return UltimatePlugin.getPlugin(UltimatePlugin.class);
     }
     
     public String getPluginName() {

@@ -26,6 +26,20 @@
             <systemPath>${pom.basedir}/../../libs/spigots/spigot-1.16.5.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>me.TechsCode.UltraRegions</groupId>
+            <artifactId>UltraRegions</artifactId>
+            <version>1.4.2</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../../libs/plugins/UltraRegions-1.4.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.bekvon.bukkit.residence</groupId>
+            <artifactId>Residence</artifactId>
+            <version>5.0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../../libs/plugins/Residence-5.0.0.0.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
             <version>8.0.0</version>
@@ -90,20 +104,6 @@
             <artifactId>HeadDatabase-API</artifactId>
             <version>1.0.0</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>me.TechsCode.UltraRegions</groupId>
-            <artifactId>UltraRegions</artifactId>
-            <version>1.4.2</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/../../libs/plugins/UltraRegions-1.4.2.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.bekvon.bukkit.residence</groupId>
-            <artifactId>Residence</artifactId>
-            <version>5.0.0.0</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/../../libs/plugins/Residence-5.0.0.0.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

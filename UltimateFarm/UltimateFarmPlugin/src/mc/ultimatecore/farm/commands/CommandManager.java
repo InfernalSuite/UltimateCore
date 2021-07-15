@@ -12,13 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandManager implements CommandExecutor, TabCompleter {
+    
     public List<mc.ultimatecore.farm.commands.Command> commands = new ArrayList<>();
-
+    
     public CommandManager(String command) {
         HyperRegions.getInstance().getCommand(command).setExecutor(this);
         HyperRegions.getInstance().getCommand(command).setTabCompleter(this);
     }
-
+    
     public void registerCommands() {
         registerCommand(new MainMenuCommand());
         registerCommand(new HelpCommand());
@@ -31,18 +32,16 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         registerCommand(new AddTypeCommand());
         registerCommand(new RemoveTypeCommand());
         registerCommand(new ReloadCommand());
-        registerCommand(new ParticleCommand());
-
     }
-
+    
     public void registerCommand(mc.ultimatecore.farm.commands.Command command) {
         commands.add(command);
     }
-
+    
     public void unRegisterCommand(mc.ultimatecore.farm.commands.Command command) {
         commands.remove(command);
     }
-
+    
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String s, String[] args) {
         try {
@@ -71,7 +70,6 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 }
             } else {
                 if (cs instanceof Player) {
-
                     return true;
                 }
             }
@@ -81,7 +79,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         }
         return true;
     }
-
+    
     @Override
     public List<String> onTabComplete(CommandSender cs, Command cmd, String s, String[] args) {
         try {
