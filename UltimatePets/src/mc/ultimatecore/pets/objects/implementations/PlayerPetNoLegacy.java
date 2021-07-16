@@ -27,92 +27,97 @@ import java.util.Collections;
 import java.util.UUID;
 
 public class PlayerPetNoLegacy extends PlayerPet implements Listener {
-
+    
     public PlayerPetNoLegacy(UUID petOwner, int petUUID) {
         super(petOwner, petUUID);
         this.count = 20;
         HyperPets.getInstance().registerListeners(this);
-
+        
     }
-
+    
     @Override
     public void spawnStand() {
         User user = HyperPets.getInstance().getUserManager().getUser(petOwner);
-        if(user == null) return;
-        if(user.isHidePets()) return;
+        if (user == null) return;
+        if (user.isHidePets()) return;
         Pet pet = getPet();
         ItemStack head = Utils.makeItem(new Item(XMaterial.PLAYER_HEAD, 1, pet.getTexture(), 1, "", Collections.singletonList("")));
-        if(head == null) return;
+        if (head == null) return;
         createPetStand(head, pet);
     }
-
+    
     @Override
     public void removeStand() {
-        if(nameEntity != null)
+        if (nameEntity != null)
             nameEntity.remove();
-        if(petEntity != null)
+        if (petEntity != null)
             petEntity.remove();
     }
-
-    public void reloadPet(){
+    
+    public void reloadPet() {
         Pet pet = getPet();
-        if(pet == null) return;
-        if(petData == null) return;
+        if (pet == null) return;
+        if (petData == null) return;
         Player player = getPlayer();
         pet.removeStats(player, petData.getTier().getName(), petData.getLevel() - 1);
         pet.applyNewStats(player, petData.getTier().getName(), petData.getLevel());
-        if(nameEntity != null)
-            nameEntity.setCustomName(Utils.color(pet.getEntityName().replaceAll("%pet_name%", getPet().getDisplayName()).replaceAll("%player%", getPlayer().getName()).replaceAll("%pet_level%", String.valueOf(petData.getLevel()))));
+        if (nameEntity != null)
+            nameEntity.setCustomName(Utils.color(pet.getEntityName()
+                                                    .replaceAll("%pet_name%", pet.getDisplayName())
+                                                    .replaceAll("%player%", getPlayer().getName())
+                                                    .replaceAll("%pet_level%", String.valueOf(petData.getLevel()))
+                                                    .replaceAll("%pet_tier%", petData.getTier().getDisplayName())
+            ));
     }
-
-    public void createPet(){
+    
+    public void createPet() {
         Player player = getPlayer();
         User user = HyperPets.getInstance().getUserManager().getUser(player);
         Bukkit.getServer().getPluginManager().callEvent(new PetSpawnEvent(player, getPet(), petData));
         user.spawnedID = petData.getPetUUID();
         Pet pet = getPet();
         spawnStand();
-        if(pet == null) return;
-
+        if (pet == null) return;
+        
         //Applying Abilities and Potions
         pet.applyNewStats(player, petData.getTier().getName(), petData.getLevel());
-
+        
         pet.getPetCommands().apply(player, EquipPetType.EQUIP);
         initPet();
     }
-
-    public void removePet(boolean serverClose){
+    
+    public void removePet(boolean serverClose) {
         Player player = getPlayer();
         removeStand();
         User user = HyperPets.getInstance().getUserManager().getUser(player);
-        if(taskID != null) Bukkit.getScheduler().cancelTask(taskID);
+        if (taskID != null) Bukkit.getScheduler().cancelTask(taskID);
         user.removePetManager();
-        if(!serverClose) user.spawnedID = -1;
+        if (!serverClose) user.spawnedID = -1;
         Pet pet = getPet();
-
+        
         pet.removeStats(player, petData.getTier().getName(), petData.getLevel());
-
+        
         pet.getPetCommands().apply(player, EquipPetType.UNEQUIP);
         Bukkit.getServer().getPluginManager().callEvent(new PetDespawnEvent(player, getPet(), petData));
     }
-
-    private void initPet(){
+    
+    private void initPet() {
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         Player player = getPlayer();
         this.taskID = scheduler.scheduleSyncRepeatingTask(HyperPets.getInstance(), () -> {
             if (!movePet(player))
-                if(taskID != null)
+                if (taskID != null)
                     scheduler.cancelTask(taskID);
         }, 0L, 3L);
     }
-
-
-    private boolean movePet(Player player){
-        if(petEntity != null && nameEntity != null){
-            if(player == null || !player.isOnline()) return false;
+    
+    
+    private boolean movePet(Player player) {
+        if (petEntity != null && nameEntity != null) {
+            if (player == null || !player.isOnline()) return false;
             Vector currentLocation = player.getLocation().toVector();
-            if(last != null && last.equals(currentLocation)){
-                if(HyperPets.getInstance().getConfiguration().upAndDownPets)
+            if (last != null && last.equals(currentLocation)) {
+                if (HyperPets.getInstance().getConfiguration().upAndDownPets)
                     tpAFK();
                 return true;
             }
@@ -128,8 +133,8 @@ public class PlayerPetNoLegacy extends PlayerPet implements Listener {
         }
         return true;
     }
-
-    private void tpAFK(){
+    
+    private void tpAFK() {
         if (count > 16) {
             petEntity.teleport(petEntity.getLocation().add(0.0D, 0.2D, 0.0D));
             nameEntity.teleport(nameEntity.getLocation().add(0.0D, 0.2D, 0.0D));
@@ -141,10 +146,10 @@ public class PlayerPetNoLegacy extends PlayerPet implements Listener {
         if (count == 5)
             count = 27;
     }
-
-    private void createPetStand(ItemStack head, Pet pet){
+    
+    private void createPetStand(ItemStack head, Pet pet) {
         Player player = Bukkit.getPlayer(petOwner);
-        if(player == null) return;
+        if (player == null) return;
         Location playerLocation = player.getLocation();
         petEntity = player.getWorld().spawn(playerLocation, ArmorStand.class);
         petEntity.setVisible(false);
@@ -156,35 +161,40 @@ public class PlayerPetNoLegacy extends PlayerPet implements Listener {
         nameEntity.setVisible(false);
         nameEntity.setGravity(false);
         nameEntity.setCustomNameVisible(true);
-        nameEntity.setCustomName(Utils.color(pet.getEntityName().replaceAll("%pet_name%", getPet().getDisplayName()).replaceAll("%player%", getPlayer().getName()).replaceAll("%pet_level%", String.valueOf(petData.getLevel()))));
+        nameEntity.setCustomName(Utils.color(pet.getEntityName()
+                                                .replaceAll("%pet_name%", pet.getDisplayName())
+                                                .replaceAll("%player%", getPlayer().getName())
+                                                .replaceAll("%pet_level%", String.valueOf(petData.getLevel()))
+                                                .replaceAll("%pet_tier%", petData.getTier().getDisplayName())
+        ));
     }
-
+    
     public PetData getPetData() {
         return petData;
     }
-
-    public Pet getPet(){
+    
+    public Pet getPet() {
         return HyperPets.getInstance().getPets().getPetByID(petData.getPetName());
     }
-
-    public Player getPlayer(){
+    
+    public Player getPlayer() {
         return Bukkit.getPlayer(petOwner);
     }
-
+    
     @EventHandler
-    public void onInteract(PlayerArmorStandManipulateEvent e){
-        if(petEntity != null && e.getRightClicked().equals(petEntity))
+    public void onInteract(PlayerArmorStandManipulateEvent e) {
+        if (petEntity != null && e.getRightClicked().equals(petEntity))
             e.setCancelled(true);
-        if(nameEntity != null && e.getRightClicked().equals(nameEntity))
+        if (nameEntity != null && e.getRightClicked().equals(nameEntity))
             e.setCancelled(true);
     }
-
+    
     @EventHandler
-    public void onBurn(EntityDamageEvent e){
-        if(e.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK || e.getCause() == EntityDamageEvent.DamageCause.FIRE || e.getCause() == EntityDamageEvent.DamageCause.LAVA) {
-            if(petEntity != null && e.getEntity().equals(petEntity))
+    public void onBurn(EntityDamageEvent e) {
+        if (e.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK || e.getCause() == EntityDamageEvent.DamageCause.FIRE || e.getCause() == EntityDamageEvent.DamageCause.LAVA) {
+            if (petEntity != null && e.getEntity().equals(petEntity))
                 e.getEntity().setFireTicks(0);
-            if(nameEntity != null && e.getEntity().equals(nameEntity))
+            if (nameEntity != null && e.getEntity().equals(nameEntity))
                 e.getEntity().setFireTicks(0);
         }
     }

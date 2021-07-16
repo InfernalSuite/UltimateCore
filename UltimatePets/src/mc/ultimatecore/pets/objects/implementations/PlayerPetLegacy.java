@@ -66,8 +66,11 @@ public class PlayerPetLegacy extends PlayerPet implements Listener {
         pet.applyNewStats(player, petData.getTier().getName(), petData.getLevel());
         if (nameEntity != null)
             nameEntity.setCustomName(Utils.color(pet.getEntityName()
-                                                    .replaceAll("%pet_name%", getPet().getDisplayName()).replaceAll("%player%", getPlayer().getName())
-                                                    .replaceAll("%pet_level%", String.valueOf(petData.getLevel()))));
+                                                    .replaceAll("%pet_name%", pet.getDisplayName())
+                                                    .replaceAll("%player%", getPlayer().getName())
+                                                    .replaceAll("%pet_level%", String.valueOf(petData.getLevel()))
+                                                    .replaceAll("%pet_tier%", petData.getTier().getDisplayName())
+            ));
     }
     
     public void createPet() {
