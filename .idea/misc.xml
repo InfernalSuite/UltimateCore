@@ -5,7 +5,6 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/UltimateCoreMenu/pom.xml" />
-        <option value="$PROJECT_DIR$/UltimateCoreMenu/dependency-reduced-pom.xml" />
       </list>
     </option>
   </component>

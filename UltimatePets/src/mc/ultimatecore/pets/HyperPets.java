@@ -74,8 +74,7 @@ public class HyperPets extends UltimatePlugin {
         
         registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener());
         
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
         
     }
     

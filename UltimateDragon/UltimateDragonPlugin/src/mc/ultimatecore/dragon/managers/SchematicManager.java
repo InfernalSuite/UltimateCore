@@ -35,7 +35,7 @@ public class SchematicManager extends CoreManagerImpl {
         Arrays.stream(schematicsFolder.listFiles()).iterator().forEachRemaining(this::loadSchematic);
         
         if(!getSchematic(HyperDragons.getInstance().getConfiguration().schematic).isPresent())
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&c[HyperDragon] Schematic "+HyperDragons.getInstance().getConfiguration().schematic)+" wasn't found!");
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&c[UltimateCore-Dragon] Schematic "+HyperDragons.getInstance().getConfiguration().schematic)+" wasn't found!");
     }
 
 
@@ -45,7 +45,7 @@ public class SchematicManager extends CoreManagerImpl {
             String name = fileName.replace(".schematic", "").replace(".schem", "");
             WorldEditSchematic worldEditSchematic = new WorldEditSchematic(name, fileName);
             schematics.add(worldEditSchematic);
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &aSuccessfully loaded WorldEdit Schematic "+name+"!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &aSuccessfully loaded WorldEdit Schematic "+name+"!"));
         }
     }
 

@@ -59,8 +59,7 @@ public class HyperTalismans extends UltimatePlugin {
         this.commandManager = new CommandManager(this);
         this.talismanManager = new TalismanManager(this);
         registerListeners(new PlayerJoinLeaveListener(this), new HealthListener(), new DamageListener(), new BlockPlaceListener());
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
     
     private void setupSkills() {

@@ -42,6 +42,6 @@ public class Rewards extends YAMLFile {
             loaded++;
         }
         if(loaded == 0) return;
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &aSuccessfully loaded "+loaded+" rewards!"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &aSuccessfully loaded "+loaded+" rewards!"));
     }
 }

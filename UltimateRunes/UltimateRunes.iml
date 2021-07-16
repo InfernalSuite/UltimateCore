@@ -22,7 +22,7 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.2.0" level="project" />
     <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />

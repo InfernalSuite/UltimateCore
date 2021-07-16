@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Various me.reb4ck.utils for modifying Strings.
+ * Various me.UltimateCore.utils for modifying Strings.
  */
 public class StringUtils {
 

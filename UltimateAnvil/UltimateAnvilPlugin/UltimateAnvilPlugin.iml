@@ -22,7 +22,7 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.2.0" level="project" />
     <orderEntry type="module" module-name="UltimateAnvilNMS-v1_8_R3" />
     <orderEntry type="module" module-name="UltimateAnvilNMS-v1_12_R1" />
     <orderEntry type="module" module-name="UltimateAnvilNMS-v1_14_R1" />

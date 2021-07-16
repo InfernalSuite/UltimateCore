@@ -10,7 +10,7 @@ import mc.ultimatecore.dragon.listeners.InventoryClickListener;
 import mc.ultimatecore.dragon.listeners.PlayerJoinListener;
 import mc.ultimatecore.dragon.listeners.PlayerListener;
 import mc.ultimatecore.dragon.managers.*;
-import mc.ultimatecore.dragon.nms.NMS;
+import mc.ultimatecore.dragon.nms.*;
 import mc.ultimatecore.dragon.objects.others.DebugType;
 import mc.ultimatecore.dragon.utils.StringUtils;
 import mc.ultimatecore.helper.UltimatePlugin;
@@ -25,6 +25,21 @@ import java.util.Arrays;
 
 @Getter
 public class HyperDragons extends UltimatePlugin {
+    
+    /*
+     * This block prevents the Maven Shade plugin to remove the specified classes
+     */
+    static {
+        @SuppressWarnings("unused") Class<?>[] classes = new Class<?>[]{
+                v1_8_R3.class,
+                v1_12_R1.class,
+                v1_14_R1.class,
+                v1_15_R1.class,
+                v1_16_R3.class,
+                v1_17_R1.class,
+        };
+    }
+    
     //Files
     private Configuration configuration;
     private Messages messages;
@@ -38,17 +53,18 @@ public class HyperDragons extends UltimatePlugin {
     private DragonEvents dragonEvents;
     private DragonGuardians dragonGuardians;
     private SetupManager setupManager;
-
+    
     //Managers
     private AddonsManager addonsManager;
     private DragonManager dragonManager;
     private SchematicManager schematicManager;
     private CommandsManager commandsManager;
     private DatabaseManager databaseManager;
-    public static HyperDragons getInstance(){
+    
+    public static HyperDragons getInstance() {
         return INSTANCE;
     }
-
+    
     @Override
     public void onEnable() {
         INSTANCE = this;
@@ -58,7 +74,7 @@ public class HyperDragons extends UltimatePlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
-
+        
         //Files
         loadFiles();
         //Database
@@ -74,18 +90,17 @@ public class HyperDragons extends UltimatePlugin {
         dragonManager.setPlayMode();
         //Listeners
         registerListeners(new DragonListener(this), new PlayerListener(this), new PlayerJoinListener(this), new InventoryClickListener());
-        sendConsoleMessage("Has been enabled! &fVersion: " + getDescription().getVersion(), MessageType.COLORED);
-        sendConsoleMessage("Thanks for using my plugin!  &f~Reb4ck", MessageType.COLORED);
+        sendConsoleMessage("Has been enabled!", MessageType.COLORED);
     }
-
-
+    
+    
     public void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getPluginManager().registerEvents(listener, this));
     }
-
-
+    
+    
     private NMS setupNMS() {
-        String version = Bukkit.getServer().getClass().getPackage().getName().toUpperCase().split("\\.")[3];
+        String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         try {
             return (NMS) Class.forName("mc.ultimatecore.dragon.nms." + version).newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
@@ -95,17 +110,17 @@ public class HyperDragons extends UltimatePlugin {
         }
         return null;
     }
-
-
+    
+    
     @Override
-    public void onDisable(){
+    public void onDisable() {
         Bukkit.getOnlinePlayers().forEach(Player::closeInventory);
         schematicManager.save();
         structures.save();
         dragonGuardians.save();
         databaseManager.disable();
     }
-
+    
     public void reloadFiles() {
         rewards.reload();
         dragonGuardians.reload();
@@ -115,31 +130,31 @@ public class HyperDragons extends UltimatePlugin {
         dragons.reload();
         structures.reload();
     }
-
-    public void loadFiles(){
+    
+    public void loadFiles() {
         rewards = new Rewards(this, "rewards", true, false);
         dragonGuardians = new DragonGuardians(this, "guardians", true, false);
         dragonEvents = new DragonEvents(this, "dragonevent", false, false);
-
-
+        
+        
         inventories = new Inventories();
-
+        
         configuration = new Configuration(this, "config", true, false);
         messages = new Messages(this, "messages", true, false);
         dragons = new Dragons(this, "dragons", false, false);
         structures = new Structures(this, "structures", true, true);
     }
-
-    public void sendDebug(String message, DebugType debugType){
-        if(!configuration.debug) return;
-        if(debugType == DebugType.LOG)
+    
+    public void sendDebug(String message, DebugType debugType) {
+        if (!configuration.debug) return;
+        if (debugType == DebugType.LOG)
             getLogger().info(message);
         else
             Bukkit.getConsoleSender().sendMessage(StringUtils.color(message));
     }
-
+    
     @Override
-    public String getPluginName(){
+    public String getPluginName() {
         return getDescription().getName();
     }
 }

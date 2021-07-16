@@ -94,7 +94,7 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.2.0" level="project" />
     <orderEntry type="module" module-name="UltimateEnchantment" scope="PROVIDED" />
     <orderEntry type="module-library">
       <library name="Maven: net.advancedplugins.ae:AdvancedEnchantments:8.4.9">

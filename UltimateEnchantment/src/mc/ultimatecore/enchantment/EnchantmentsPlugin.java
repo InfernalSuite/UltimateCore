@@ -66,8 +66,7 @@ public class EnchantmentsPlugin extends JavaPlugin {
 
         api = new HyperEnchantsAPIImpl(this);
 
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e"+getDescription().getName()+" Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e"+ getDescription().getName() +" Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(Utils.color("&e"+getDescription().getName()+" Has been enabled!"));
         setupEconomy();
     }
 

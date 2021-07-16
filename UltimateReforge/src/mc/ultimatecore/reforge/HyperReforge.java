@@ -43,9 +43,7 @@ public class HyperReforge extends JavaPlugin {
         this.hyperEnchants = Bukkit.getPluginManager().getPlugin("UltimateCore-Enchantment") != null;
         registerListeners(new PlayerJoinLeaveListener());
         setupEconomy();
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Thanks for using my plugin!  &f~Reb4ck"));
-        
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Has been enabled!"));
     }
     
     @Override

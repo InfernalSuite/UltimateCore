@@ -13,7 +13,7 @@ public class ClipPlaceholderAPIManager extends PlaceholderExpansion {
 
     @Override
     public String getAuthor() {
-        return "reb4ck";
+        return "UltimateCore";
     }
 
     @Override

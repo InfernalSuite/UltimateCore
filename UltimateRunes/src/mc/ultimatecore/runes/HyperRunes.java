@@ -45,8 +45,7 @@ public class HyperRunes extends JavaPlugin {
         runesGUI = new RuneGUI();
         hyperSkills = Bukkit.getPluginManager().getPlugin("UltimateCore-Skills") != null;
         registerListeners(new ArrowEffects(), new SwordEffects(), new RuneTableListener(), new PlayerJoinLeaveListener());
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + getDescription().getName() + "] Has been enabled!"));
         
     }
     

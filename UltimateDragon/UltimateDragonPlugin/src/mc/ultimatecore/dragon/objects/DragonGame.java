@@ -55,7 +55,7 @@ public class DragonGame {
         if(spawn == null) spawn = dragonStructure.getSpawnLocation();
         hyperDragon = plugin.getConfiguration().randomDragon.getDragon();
         if(hyperDragon == null){
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cInvalid dragon, check dragon to spawn!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cInvalid dragon, check dragon to spawn!"));
             return;
         }
         startEvent(spawn);
@@ -184,7 +184,7 @@ public class DragonGame {
     private void startEvent(Location location){
         Optional<SchematicImpl> worldEditSchematic = HyperDragons.getInstance().getSchematicManager().getSchematic(plugin.getConfiguration().schematic);
         if(!worldEditSchematic.isPresent()) {
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&c[HyperDragon] Schematic "+plugin.getConfiguration().schematic+" wasn't found!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&c[UltimateCore-Dragon] Schematic "+plugin.getConfiguration().schematic+" wasn't found!"));
             startTimer();
             return;
         }

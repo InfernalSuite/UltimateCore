@@ -50,7 +50,7 @@ public class DragonEvents extends YAMLFile {
                     else if(type.equals("LIGHTNING"))
                         addLightning(dragon, key);
                 }catch (Exception e){
-                    Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError Adding event " + key + " for Dragon " + dragon+" | Invalid Type"));
+                    Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError Adding event " + key + " for Dragon " + dragon+" | Invalid Type"));
                 }
             }
         }
@@ -72,7 +72,7 @@ public class DragonEvents extends YAMLFile {
             events.put(position, dragonBallEvent);
             this.events.put(dragon, events);
         }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError Adding event " + key + " for Dragon " + dragon));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError Adding event " + key + " for Dragon " + dragon));
         }
     }
 
@@ -91,7 +91,7 @@ public class DragonEvents extends YAMLFile {
             events.put(position, dragonBallEvent);
             this.events.put(dragon, events);
         }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError Adding event " + key + " for Dragon " + dragon));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError Adding event " + key + " for Dragon " + dragon));
         }
     }
 
@@ -108,7 +108,7 @@ public class DragonEvents extends YAMLFile {
             events.put(position, dragonBallEvent);
             this.events.put(dragon, events);
         }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError Adding event " + key + " for Dragon " + dragon));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError Adding event " + key + " for Dragon " + dragon));
         }
     }
 
@@ -127,7 +127,7 @@ public class DragonEvents extends YAMLFile {
             events.put(position, guardianEvent);
             this.events.put(dragon, events);
         }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError Adding event " + key + " for Dragon " + dragon));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError Adding event " + key + " for Dragon " + dragon));
         }
     }
 

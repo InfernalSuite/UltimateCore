@@ -26,8 +26,8 @@
         <module name="UltimateFarmNMS-v1_12_R1" />
         <module name="UltimateTalismans" />
         <module name="UltimatePets" />
-        <module name="UltimateAnvilNMS-v1_17_R1" />
         <module name="UltimateCraftingNMS-v1_16_R3" />
+        <module name="UltimateAnvilNMS-v1_17_R1" />
         <module name="UltimateCraftingNMS-v1_14_R1" />
         <module name="UltimateHelper" />
         <module name="UltimateDragonNMS" />
@@ -38,10 +38,10 @@
         <module name="UltimateFarmPlugin" />
         <module name="UltimateCoreMenu" />
         <module name="UltimateFarmNMS-v1_17_R1" />
-        <module name="UltimateDragonNMS-v1_14_R1" />
-        <module name="UltimateAnvilNMS-v1_12_R1" />
         <module name="UltimateCraftingNMS-v1_8_R3" />
         <module name="UltimateCraftingPlugin" />
+        <module name="UltimateDragonNMS-v1_14_R1" />
+        <module name="UltimateAnvilNMS-v1_12_R1" />
         <module name="UltimateFarmNMS-v1_15_R1" />
         <module name="UltimateAnvilNMS-v1_14_R1" />
         <module name="UltimateFarmNMS" />
@@ -50,8 +50,8 @@
         <module name="UltimateTrades" />
         <module name="UltimateSouls" />
         <module name="UltimateCraftingNMS-v1_15_R1" />
-        <module name="UltimateAnvilNMS-v1_16_R3" />
         <module name="UltimateCraftingNMS-v1_17_R1" />
+        <module name="UltimateAnvilNMS-v1_16_R3" />
         <module name="UltimateReforge" />
       </profile>
     </annotationProcessing>

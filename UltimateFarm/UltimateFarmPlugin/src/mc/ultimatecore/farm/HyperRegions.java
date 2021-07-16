@@ -12,7 +12,7 @@ import mc.ultimatecore.farm.listeners.CropBreakListener;
 import mc.ultimatecore.farm.listeners.InventoryClickListener;
 import mc.ultimatecore.farm.managers.AddonsManager;
 import mc.ultimatecore.farm.managers.RegionsManager;
-import mc.ultimatecore.farm.nms.NMS;
+import mc.ultimatecore.farm.nms.*;
 import mc.ultimatecore.farm.utils.Utils;
 import mc.ultimatecore.helper.UltimatePlugin;
 import org.bukkit.Bukkit;
@@ -21,6 +21,20 @@ import org.bukkit.event.Listener;
 
 @Getter
 public class HyperRegions extends UltimatePlugin {
+    
+    /*
+     * This block prevents the Maven Shade plugin to remove the specified classes
+     */
+    static {
+        @SuppressWarnings("unused") Class<?>[] classes = new Class<?>[]{
+                v1_8_R3.class,
+                v1_12_R1.class,
+                v1_14_R1.class,
+                v1_15_R1.class,
+                v1_16_R3.class,
+                v1_17_R1.class,
+        };
+    }
     
     private static HyperRegions instance;
     private Config configuration;
@@ -53,10 +67,7 @@ public class HyperRegions extends UltimatePlugin {
         commandManager = new CommandManager("hyperregions");
         commandManager.registerCommands();
         
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " &a[Important] Since version 4.1.12 Plugin can be configured only through config file"));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " &a            this allow you to load regions easily with /HyperRegions reload."));
+        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
         
         
     }

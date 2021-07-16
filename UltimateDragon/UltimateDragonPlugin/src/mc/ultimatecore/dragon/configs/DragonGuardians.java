@@ -47,7 +47,7 @@ public class DragonGuardians extends YAMLFile {
                     DragonGuardian dragonGuardian = new DragonGuardian(key, displayName, health, damage, guardianArmor, entity);
                     guardianMap.put(key, dragonGuardian);
                 }catch (Exception e){
-                    Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cError loading guardian "+key+"!"));
+                    Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cError loading guardian "+key+"!"));
                 }
             }
 

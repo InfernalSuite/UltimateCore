@@ -8,7 +8,7 @@ import mc.ultimatecore.crafting.listeners.CraftingTableListener;
 import mc.ultimatecore.crafting.listeners.InventoryClickListener;
 import mc.ultimatecore.crafting.listeners.PlayerJoinLeaveListener;
 import mc.ultimatecore.crafting.managers.PlayersDataManager;
-import mc.ultimatecore.crafting.nms.NMS;
+import mc.ultimatecore.crafting.nms.*;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -17,6 +17,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 public class HyperCrafting extends JavaPlugin {
+    
+    /*
+     * This block prevents the Maven Shade plugin to remove the specified classes
+     */
+    static {
+        @SuppressWarnings("unused") Class<?>[] classes = new Class<?>[]{
+                v1_8_R3.class,
+                v1_12_R1.class,
+                v1_14_R1.class,
+                v1_15_R1.class,
+                v1_16_R3.class,
+                v1_17_R1.class,
+        };
+    }
     
     private static HyperCrafting instance;
     private Config configuration;
@@ -52,13 +66,12 @@ public class HyperCrafting extends JavaPlugin {
         
         playersData = new PlayersDataManager();
         
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
     
     
     private NMS setupNMS() {
-        String version = Bukkit.getServer().getClass().getPackage().getName().toUpperCase().split("\\.")[3];
+        String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         try {
             return (NMS) Class.forName("mc.ultimatecore.crafting.nms." + version).newInstance();
         } catch (InstantiationException | IllegalAccessException e) {

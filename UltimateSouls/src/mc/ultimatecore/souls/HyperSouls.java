@@ -62,8 +62,7 @@ public class HyperSouls extends UltimatePlugin {
         
         registerListeners(new InventoryClickListener(), new SoulCollectListener(this), new SoulPlaceListener(), new SoulRemoveListener(), new PlayerJoinLeaveListener(this));
         
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled!"));
         soulEditGUI = new SoulEditGUI();
         allSoulsGUI = new HashMap<>();
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::addPages, 0L, 1200L);

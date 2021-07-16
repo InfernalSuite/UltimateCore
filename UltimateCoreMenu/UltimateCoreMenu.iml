@@ -22,14 +22,86 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.2.0" level="project" />
     <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-simple:2.0.0-alpha0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codemc.worldguardwrapper:worldguardwrapper:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: mc.ultimatecore.skills:UltimateSkills:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: mc.ultimatecore.pets:UltimatePets:1.0" level="project" />
+    <orderEntry type="module" module-name="UltimateSkills" scope="PROVIDED" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.willfp.ecoenchants:EcoEnchants:7.4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/EcoEnchants-7.4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.bekvon.bukkit.residence:Residence:5.0.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/Residence-5.0.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: me.TechsCode.UltraRegions:UltraRegions:1.4.2">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/UltraRegions-1.4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: io.lumine.xikage.mythicmobs:MythicMobs:4.12.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/MythicMobs-4.12.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: io.lumine.mythic.lib:MythicLib:1.1.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/MythicLib-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: net.Indyuce.mmoitems:MMOItems:6.5.4">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/MMOItems-6.5.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: me.jet315.minions:JetsMinions:7.1.12">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/JetsMinions-7.1.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: io.github.Leonardo0013YT:UltraMinions:5.7.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../UltimateSkills/../libs/plugins/UltraMinions-5.7.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="UltimatePets" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.MilkBowl:VaultAPI:1.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.13.1-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />

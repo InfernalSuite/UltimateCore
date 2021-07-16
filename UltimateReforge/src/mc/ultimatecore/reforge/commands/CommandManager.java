@@ -49,7 +49,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         }
 
         for (mc.ultimatecore.reforge.commands.Command command : commands) {
-            // We don't want to execute other me.reb4ck.commands or ones that are disabled
+            // We don't want to execute other me.UltimateCore.commands or ones that are disabled
             if (!(command.aliases.contains(args[0]) && command.enabled)) {
                 continue;
             }

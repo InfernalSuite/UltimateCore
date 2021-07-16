@@ -43,6 +43,6 @@ public class Dragons extends YAMLFile {
             loaded++;
         }
         if(loaded == 0) return;
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &aSuccessfully loaded "+loaded+" dragons!"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &aSuccessfully loaded "+loaded+" dragons!"));
     }
 }

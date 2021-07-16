@@ -38,7 +38,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.cryptomorin:XSeries:8.2.0" level="project" />
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_8_R3" />
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_12_R1" />
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_14_R1" />

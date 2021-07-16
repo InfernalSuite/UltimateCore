@@ -38,8 +38,7 @@ public class HyperTrades extends JavaPlugin {
 
         registerListeners(new InventoryClickListener(), new TradeSetupListener());
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::saveTradesManager, 0L, (1200 * 60));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled!"));
 
         if (Bukkit.getPluginManager().getPlugin("Vault") != null){
             RegisteredServiceProvider<Economy> rsp = Bukkit.getServicesManager().getRegistration(Economy.class);

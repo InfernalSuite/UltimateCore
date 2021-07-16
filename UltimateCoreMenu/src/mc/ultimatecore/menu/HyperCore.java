@@ -37,8 +37,7 @@ public class HyperCore extends JavaPlugin {
         pets = Bukkit.getPluginManager().getPlugin("UltimateCore-Pets") != null;
         
         registerListeners(new InventoryClickListener(), new PlayerJoinLeaveListener());
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled! &fVersion: " + getDescription().getVersion()));
-        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Thanks for using my plugin!  &f~Reb4ck"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
     
     @Override

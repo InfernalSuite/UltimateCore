@@ -26,7 +26,7 @@ public class AddonsManager extends CoreManagerImpl {
         if(isPlugin("WorldEdit") || isPlugin("FastAsyncWorldEdit") || isPlugin("AsyncWorldEdit"))
             worldEdit = XMaterial.getVersion() > 13 ? new WorldEdit7("WorldEdit") : new WorldEdit6("WorldEdit");
         else
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[HyperDragon] &cWaning WorldEdit is not installed!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cWaning WorldEdit is not installed!"));
         if(isPlugin("MythicMobs"))
             mythicMobs = new MythicMobsAddon();
     }

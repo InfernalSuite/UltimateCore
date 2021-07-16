@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- * Abstract me.reb4ck.commands used to easily create subcommands.
+ * Abstract me.UltimateCore.commands used to easily create subcommands.
  */
 @Getter
 public abstract class Command {
