@@ -19,9 +19,9 @@ import org.bukkit.projectiles.ProjectileSource;
 
 @RequiredArgsConstructor
 public class DragonListener implements Listener {
-
+    
     private final HyperDragons plugin;
-
+    
     @EventHandler
     public void DragonTarget(EntityTargetEvent e) {
         Entity Dragon = e.getEntity();
@@ -36,16 +36,16 @@ public class DragonListener implements Listener {
             fireball.setYield(0);
         }
     }
-
+    
     @EventHandler
-    public void onSpawn(EntitySpawnEvent event){
-        if(event.getEntity() instanceof DragonFireball){
+    public void onSpawn(EntitySpawnEvent event) {
+        if (event.getEntity() instanceof Fireball) { //changed from dragonfireball
             IDragonEvent iDragonEvent = plugin.getDragonManager().getDragonGame().getDragonEvent().getCurrentEvent();
-            if(iDragonEvent != null && !(iDragonEvent instanceof DragonBallEvent))
+            if (iDragonEvent != null && !(iDragonEvent instanceof DragonBallEvent))
                 event.setCancelled(true);
         }
     }
-
+    
     @EventHandler
     public void onDragonRegen(EntityRegainHealthEvent e) {
         if ((e.getEntity() instanceof EnderDragon || e.getEntity() instanceof EnderDragonPart)) {
@@ -54,79 +54,79 @@ public class DragonListener implements Listener {
                 plugin.getDragonManager().getDragonGame().removePlayersDamage(e.getAmount());
         }
     }
-
+    
     @EventHandler
     public void onDragonBlock(EntityChangeBlockEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             e.setCancelled(true);
     }
-
+    
     @EventHandler
     public void onDragonBlock(EntityExplodeEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             e.setCancelled(true);
     }
-
+    
     @EventHandler
     public void stopDragonDamage(EntityExplodeEvent event) {
         Entity e = event.getEntity();
-        if(e instanceof EnderDragonPart)
-            e = ((EnderDragonPart)e).getParent();
-        if(e instanceof EnderDragon)
+        if (e instanceof EnderDragonPart)
+            e = ((EnderDragonPart) e).getParent();
+        if (e instanceof EnderDragon)
             event.setCancelled(true);
     }
-
-
+    
+    
     @EventHandler
     public void onDragonBlock(EntityRegainHealthEvent e) {
         if (e.getEntity() instanceof EnderDragon && ((EnderDragon) e.getEntity()).getHealth() < 2)
             e.setCancelled(true);
     }
-
+    
     @EventHandler
     public void onDragonBlock(EntityDeathEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             plugin.getDragonManager().finish();
     }
-
+    
     @EventHandler(priority = EventPriority.LOWEST)
-    public void onExplode(EntityExplodeEvent e){
-        if(e.getEntity() instanceof Fireball){
+    public void onExplode(EntityExplodeEvent e) {
+        if (e.getEntity() instanceof Fireball) {
             Fireball fireball = (Fireball) e.getEntity();
             e.setCancelled(true);
             Location location = fireball.getLocation().clone();
             fireball.remove();
-            if(location.getWorld() != null)
+            if (location.getWorld() != null)
                 location.getWorld().createExplosion(location.getX(), location.getY(), location.getZ(), 5, false, false);
         }
     }
-
-
+    
+    
     @EventHandler
-    public void onExplode(EntityDamageEvent e){
-        if(e.getEntity() instanceof EnderCrystal){
-            if(plugin.getDragonManager().getCrystals().contains(e.getEntity()) && plugin.getConfiguration().inmortalCrystals)
+    public void onExplode(EntityDamageEvent e) {
+        if (e.getEntity() instanceof EnderCrystal) {
+            if (plugin.getDragonManager().getCrystals().contains(e.getEntity()) && plugin.getConfiguration().inmortalCrystals)
                 e.setCancelled(true);
-        }else if(e.getEntity() instanceof EnderDragon){
-            if(e.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION)
+        } else if (e.getEntity() instanceof EnderDragon) {
+            if (e.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION)
                 e.setCancelled(true);
         }
-
+        
     }
-
-
+    
+    
     @EventHandler(priority = EventPriority.LOW)
-    public void onExplode(EntityDamageByEntityEvent e){
-        if(e.getEntity() instanceof EnderDragon){
-            if(e.getDamager() instanceof DragonFireball){
+    public void onExplode(EntityDamageByEntityEvent e) {
+        if (e.getEntity() instanceof EnderDragon) {
+            if (e.getDamager() instanceof Fireball) { //changed from dragonfireball
                 e.setCancelled(true);
-            }else{
+            } else {
                 Player player = null;
-                if(e.getDamager() instanceof Player)
+                if (e.getDamager() instanceof Player)
                     player = (Player) e.getDamager();
-                else if(e.getDamager() instanceof Arrow && ((Arrow)e.getDamager()).getShooter() instanceof Player)
+                else if (e.getDamager() instanceof Arrow && ((Arrow) e.getDamager()).getShooter() instanceof Player)
                     player = (Player) ((Arrow) e.getDamager()).getShooter();
-                if(player == null) return;
+                if (player == null) return;
                 double damage = e.getDamage();
                 IHyperDragon hyperDragon = plugin.getDragonManager().getDragonGame().getHyperDragon();
                 EnderDragon enderDragon = plugin.getDragonManager().getDragonGame().getEnderDragon().get();
@@ -135,7 +135,7 @@ public class DragonListener implements Listener {
                 //Managing last player
                 plugin.getDragonManager().setLast(player.getUniqueId());
                 //Managing Dragon Health
-                if(hyperDragon instanceof HyperDragon){
+                if (hyperDragon instanceof HyperDragon) {
                     if (enderDragon.getHealth() > 0.0D) {
                         e.setCancelled(true);
                         enderDragon.setHealth(Utils.getNewHealth(hyperDragon.getHealth(), enderDragon.getHealth(), damage));
