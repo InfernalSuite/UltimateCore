@@ -18,25 +18,25 @@ import java.util.Collections;
 
 @AllArgsConstructor
 public class RecipePreviewGUI extends SimpleGUI {
-
+    
     private final HyperCrafting plugin;
-
+    
     private final CraftingRecipe craftingRecipe;
-
+    
     public void onInventoryClick(InventoryClickEvent e) {
-        Player player = (Player)e.getWhoClicked();
+        Player player = (Player) e.getWhoClicked();
         int slot = e.getSlot();
         e.setCancelled(true);
-        if(slot == plugin.getInventories().closeButton.slot){
+        if (slot == plugin.getInventories().closeButton.slot) {
             player.closeInventory();
-        }else if(slot == plugin.getInventories().previewbackPageButton.slot && plugin.getInventories().previewbackPageButton.enabled){
-            if(craftingRecipe.getCategory() == null) return;
+        } else if (slot == plugin.getInventories().previewbackPageButton.slot && plugin.getInventories().previewbackPageButton.enabled) {
+            if (craftingRecipe.getCategory() == null) return;
             Category category = plugin.getCategories().getCategory(craftingRecipe.getCategory());
-            if(category == null) return;
+            if (category == null) return;
             new CategoryRecipeGUI(plugin, category, 1).openInventory(player);
         }
     }
-
+    
     @Override
     public void openInventory(Player player) {
         Inventory inventory = Bukkit.createInventory(this, plugin.getInventories().recipePreviewSize, Utils.color(plugin.getInventories().recipePreviewTitle));
@@ -47,12 +47,12 @@ public class RecipePreviewGUI extends SimpleGUI {
         inventory.setItem(plugin.getInventories().closeButton.slot, InventoryUtils.makeItem(plugin.getInventories().closeButton));
         Category category = plugin.getCategories().getCategory(craftingRecipe.getCategory() != null ? craftingRecipe.getCategory() : "");
         inventory.setItem(plugin.getInventories().previewbackPageButton.slot, InventoryUtils.makeItem(plugin.getInventories().previewbackPageButton, Collections.singletonList(new Placeholder("category", category != null ? category.getDisplayName() : "NONE"))));
-        for(int i = 0; i<9; i++)
-            if(craftingRecipe.getRecipeItems().containsKey(i))
+        for (int i = 0; i < 9; i++)
+            if (craftingRecipe.getRecipeItems().containsKey(i))
                 inventory.setItem(plugin.getInventories().recipePreviewSlots.get(i), craftingRecipe.getRecipeItems().get(i));
         player.openInventory(inventory);
     }
-
+    
     @NotNull
     @Override
     public Inventory getInventory() {
