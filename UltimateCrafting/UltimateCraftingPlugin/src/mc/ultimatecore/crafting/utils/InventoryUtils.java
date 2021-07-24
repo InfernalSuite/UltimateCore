@@ -18,17 +18,18 @@ import java.util.List;
 import java.util.UUID;
 
 public class InventoryUtils {
+    
     public static ItemStack makeItem(ItemStack item, String name, List<String> lore) {
         ItemMeta m = item.getItemMeta();
-        if(item.getItemMeta() == null)
+        if (item.getItemMeta() == null)
             return null;
-        if(lore != null)
+        if (lore != null)
             m.setLore(Utils.color(lore));
         m.setDisplayName(Utils.color(name));
         item.setItemMeta(m);
         return item;
     }
-
+    
     public static ItemStack makeItem(XMaterial material, int amount, String name, List<String> lore) {
         ItemStack item = material.parseItem();
         if (item == null)
@@ -36,21 +37,21 @@ public class InventoryUtils {
         item.setAmount(amount);
         ItemMeta m = item.getItemMeta();
         m.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-        if(lore != null && lore.size() > 0)
+        if (lore != null && lore.size() > 0)
             m.setLore(Utils.color(lore));
         m.setDisplayName(Utils.color(name == null ? " " : name));
         item.setItemMeta(m);
         return item;
     }
-
+    
     public static ItemStack makeItem(Item item, ItemStack it, String nbt) {
         try {
             ItemStack itemStack = it.clone();
             ItemMeta meta = itemStack.getItemMeta();
             String title = getNewTitle(item.title, meta);
             List<String> lore = new ArrayList<String>() {{
-                for(String line : item.lore) {
-                    if(line.contains("%item_lore%"))
+                for (String line : item.lore) {
+                    if (line.contains("%item_lore%"))
                         addAll(meta == null || !meta.hasLore() ? new ArrayList<>() : meta.getLore());
                     else
                         add(line);
@@ -78,12 +79,12 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-
-    public static String getNewTitle(String title, ItemMeta meta){
-        if(meta == null || !meta.hasDisplayName()) return "";
+    
+    public static String getNewTitle(String title, ItemMeta meta) {
+        if (meta == null || !meta.hasDisplayName()) return "";
         return title.replace("%item_title%", meta.getDisplayName());
     }
-
+    
     public static ItemStack makeItem(Item item) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, item.title, item.lore);
@@ -106,7 +107,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-
+    
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders, Category category) {
         try {
             XMaterial material = XMaterial.valueOf(category.getMaterial());
@@ -130,7 +131,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-
+    
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
@@ -153,8 +154,8 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-
-
+    
+    
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders, Material material) {
         try {
             item.material = XMaterial.matchXMaterial(material);
@@ -178,7 +179,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-
+    
     public static ItemStack makeItemHidden(Item item) {
         try {
             ItemStack itemstack = makeItemHidden(item.material, item.amount, item.title, item.lore);
@@ -202,8 +203,8 @@ public class InventoryUtils {
             return makeItemHidden(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-
-
+    
+    
     public static ItemStack makeItemHidden(XMaterial material, int amount, String name, List<String> lore) {
         ItemStack item = material.parseItem();
         if (item == null)

@@ -27,7 +27,7 @@ categories:
   enchanting:
     enabled: true
     displayname: "Enchanting"
-    item: ENCHANTMENT_TABLE
+    item: ENCHANTING_TABLE
     slot: 29
   alchemy:
     enabled: true

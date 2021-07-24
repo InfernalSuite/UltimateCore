@@ -50,6 +50,7 @@ public class Utils {
         int xp = statsMap.getUnlockedPlayer().getOrDefault(category.getKey(), 0);
         int maxXP = statsMap.getTotalAmount().getOrDefault(category.getKey(), 0);
         double currentPercentage = getCurrentPercentage(xp, maxXP);
+        
         return Arrays.asList(
                 new Placeholder("category", category.getDisplayName()),
                 new Placeholder("percentage", String.valueOf(round(currentPercentage))),

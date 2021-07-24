@@ -5,13 +5,13 @@ mainMenu:
     material: BARRIER
     amount: 1
     title: "&cRecipe not found"
-    lore: []
+    lore: [ ]
     slot: 23
   recipeNoPermission:
     material: BARRIER
     amount: 1
     title: "&cYou haven't unlock this yet!"
-    lore: []
+    lore: [ ]
     slot: 23
   previewCraftItem:
     amount: 1
@@ -26,12 +26,12 @@ mainMenu:
     material: LIME_STAINED_GLASS_PANE
     amount: 1
     title: " "
-    lore: []
+    lore: [ ]
   emptyItem:
     material: RED_STAINED_GLASS_PANE
     amount: 1
     title: " "
-    lore: []
+    lore: [ ]
   decorationSlots:
     - 0
     - 1
@@ -102,6 +102,14 @@ recipePreviewGUI:
       - "&7Craft this item by using"
       - "&7a crafting table."
     slot: 23
+  backPageButton:
+    material: ARROW
+    enabled: true
+    amount: 1
+    title: "&aGo Back"
+    lore:
+      - "&e%category% Recipes Menu"
+    slot: 48
   resultItemSlot: 25
   recipeSlots:
     - 10
@@ -124,19 +132,16 @@ recipePreviewGUI:
     - 7
     - 8
     - 9
-    - 11
     - 13
     - 14
     - 15
     - 16
     - 17
     - 18
-    - 20
     - 22
     - 24
     - 26
     - 27
-    - 29
     - 31
     - 32
     - 33
@@ -199,13 +204,13 @@ recipeBookGUI:
     material: BARRIER
     amount: 1
     title: "&cClose Menu"
-    lore: []
+    lore: [ ]
     slot: 49
   decoration:
     material: BLACK_STAINED_GLASS_PANE
     amount: 1
     title: " "
-    lore: []
+    lore: [ ]
   decoration_slots:
     - 0
     - 1
@@ -250,9 +255,21 @@ recipeBookGUI:
     - 51
     - 52
     - 53
-recipesGUI:
-  title: "&8%category% Table"
+categoryGUI:
+  title: "&8(%page%/%max_page%) %category% Recipes"
   size: 54
+  categoryItem:
+    amount: 1
+    title: "&a%category% Recipes"
+    lore:
+      - "&7View all of the %category% Recipes"
+      - "&7that you have unlocked!"
+      - ""
+      - "&7Recipes Unlocked: &e%percentage%&6%"
+      - "%progress_bar% &e%current%&6/&e%total%"
+      - ""
+      - "&aClick to view!"
+    slot: 4
   recipeLocked:
     material: GRAY_DYE
     amount: 1
@@ -262,40 +279,81 @@ recipesGUI:
       - "&7locked."
   recipeUnlocked:
     amount: 1
-    title: "%item_name%"
+    title: "%item_title%"
     lore:
       - "%item_lore%"
       - ""
       - "&eClick to view recipe"
-  nextPageButton:
-    amount: 1
-    title: "%item_title%"
-    lore:
-      - "%item_lore%"
-      - "&8&m▬▬▬▬▬▬▬▬▬▬"
-      - "&7This is the item you are"
-      - "&7crafting."
-    slot: 23
   backPageButton:
+    material: ARROW
     amount: 1
-    title: "%item_title%"
+    title: "&aBack Page"
     lore:
-      - "%item_lore%"
-      - "&8&m▬▬▬▬▬▬▬▬▬▬"
-      - "&7This is the item you are"
-      - "&7crafting."
-    slot: 23
+      - "&ePage %previous_page%"
+    slot: 45
+  nextPageButton:
+    material: ARROW
+    amount: 1
+    title: "&aNext Page"
+    lore:
+      - "&ePage %next_page%"
+    slot: 53
+  backMainMenuButton:
+    material: ARROW
+    amount: 1
+    enabled: true
+    title: "&aGo Back"
+    lore:
+      - "&7To Recipe Book"
+    slot: 48
+    command: "hypercrafting recipebook"
+  closeButton:
+    material: BARRIER
+    amount: 1
+    title: "&cClose Menu"
+    lore: [ ]
+    slot: 49
+  decoration:
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    title: " "
+    lore: [ ]
+  decorationSlots:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 17
+    - 18
+    - 26
+    - 27
+    - 35
+    - 36
+    - 44
+    - 45
+    - 46
+    - 47
+    - 50
+    - 51
+    - 52
+    - 53
 buttons:
   background:
     material: BLACK_STAINED_GLASS_PANE
     amount: 1
     title: " "
-    lore: []
+    lore: [ ]
   closeButton:
     material: BARRIER
     amount: 1
     title: "&cClose Menu"
-    lore: []
+    lore: [ ]
     slot: 49
   backMainMenu:
     amount: 1
