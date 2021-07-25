@@ -201,7 +201,7 @@ public class CraftingGUIManager {
             removeRecipeItems();
         if (!shift) {
             Bukkit.getServer().getPluginManager().callEvent(new HyperCraftEvent(player, itemStack));
-            player.getInventory().addItem(itemStack);
+            player.getInventory().addItem(itemStack).forEach((k, v) -> player.getWorld().dropItemNaturally(player.getLocation(), v));
 //            Bukkit.getScheduler().runTask(plugin, () -> player.setItemOnCursor(itemStack));
         }
         inventory.setItem(23, null);
