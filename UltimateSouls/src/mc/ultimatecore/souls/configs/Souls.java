@@ -41,12 +41,13 @@ public class Souls extends YAMLFile {
             for (String str : configurationSection.getKeys(false))
                 getConfig().set("souls." + str, null);
         }
-        super.save();
-        for (Soul soul : souls.values()) {
-            getConfig().set("souls." + soul.getId() + ".particle", soul.getParticle().particleName());
-            getConfig().set("souls." + soul.getId() + ".moneyReward", soul.getMoneyReward());
-            getConfig().set("souls." + soul.getId() + ".commandRewards", soul.getCommandRewards());
-            Utils.saveLoc(getConfig(), "souls." + soul.getId() + ".location", soul.getLocation());
+        if (souls != null && !souls.isEmpty()) {
+            for (Soul soul : souls.values()) {
+                getConfig().set("souls." + soul.getId() + ".particle", soul.getParticle() == null ? null : soul.getParticle().particleName());
+                getConfig().set("souls." + soul.getId() + ".moneyReward", soul.getMoneyReward());
+                getConfig().set("souls." + soul.getId() + ".commandRewards", soul.getCommandRewards());
+                Utils.saveLoc(getConfig(), "souls." + soul.getId() + ".location", soul.getLocation());
+            }
         }
         super.save();
     }
