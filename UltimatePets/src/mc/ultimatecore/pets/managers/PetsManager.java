@@ -28,15 +28,17 @@ public class PetsManager {
     
     public void savePetDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all pet data", DebugType.LOG);
-        List<Integer> petsIds = new ArrayList<>(petsCache.keySet());
-        petsIds.forEach(id -> savePetData(id, false));
-        for (Integer id : petsIds) {
-            this.plugin.getPluginDatabase().setPetLevel(id, petsCache.get(id).getLevel());
-            this.plugin.getPluginDatabase().setPetXP(id, petsCache.get(id).getXp());
-            this.plugin.getPluginDatabase().setPetName(id, petsCache.get(id).getPetName());
-            this.plugin.getPluginDatabase().setPetTier(id, petsCache.get(id).getTier().getName());
+        if (this.plugin.getPluginDatabase() != null) {
+            List<Integer> petsIds = new ArrayList<>(petsCache.keySet());
+            petsIds.forEach(id -> savePetData(id, false));
+            for (Integer id : petsIds) {
+                this.plugin.getPluginDatabase().setPetLevel(id, petsCache.get(id).getLevel());
+                this.plugin.getPluginDatabase().setPetXP(id, petsCache.get(id).getXp());
+                this.plugin.getPluginDatabase().setPetName(id, petsCache.get(id).getPetName());
+                this.plugin.getPluginDatabase().setPetTier(id, petsCache.get(id).getTier().getName());
+            }
+            petsCache.clear();
         }
-        petsCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all pet data to database", DebugType.LOG);
     }
     
