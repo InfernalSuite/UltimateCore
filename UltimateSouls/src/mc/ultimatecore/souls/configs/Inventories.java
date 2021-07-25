@@ -24,7 +24,7 @@ public class Inventories extends YAMLFile {
     public String soulEditGUITitle = "&8Edit Soul:";
     
     //SELECT AN ATRIBUTTE GUI
-    public Item soulLocation = new Item(XMaterial.BEACON, 4, 1, "&6&nSoul Location", Arrays.asList("", "&7World: &6%world%", "&7X: &6%z%", "&7Y: &6%y%", "&7Z: &6%z%", "", "&eClick to teleport!"));
+    public Item soulLocation = new Item(XMaterial.BEACON, 4, 1, "&6&nSoul Location", Arrays.asList("", "&7World: &6%world%", "&7X: &6%x%", "&7Y: &6%y%", "&7Z: &6%z%", "", "&eClick to teleport!"));
     public Item soulEffect = new Item(XMaterial.SPAWNER, 21, 1, "&6&nSoul Effect", Arrays.asList("", "&eClick to Change Soul Effect!"));
     public Item soulDelete = new Item(XMaterial.REDSTONE_TORCH, 23, 1, "&6&nDelete", Arrays.asList("", "&eClick to delete Soul #%soul_id%"));
     public Item addCommand = new Item(XMaterial.MAP, 38, 1, "&6&nAdd Command Rewards", Arrays.asList("", "&eClick to add Commands as Reward!"));

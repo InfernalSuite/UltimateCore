@@ -45,7 +45,7 @@ public class SoulEditGUI extends GUI implements Listener {
         
         setItem(4, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().soulLocation, Utils.getSoulEditGUIPlaceHolders(soul.get())));
         setItem(21, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().soulEffect));
-        setItem(23, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().soulDelete, Collections.singletonList(new Placeholder("soul_id", String.valueOf(soul.get())))));
+        setItem(23, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().soulDelete, Collections.singletonList(new Placeholder("soul_id", String.valueOf(soul.get().getId())))));
         setItem(38, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().addCommand));
         setItem(42, InventoryUtils.makeItem(HyperSouls.getInstance().getInventories().addMoney));
         
