@@ -3,6 +3,7 @@ soulTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3J
 firstSoulFoundSound: ENTITY_PLAYER_LEVELUP
 soulFoundSound: ENTITY_EXPERIENCE_ORB_PICKUP
 tiaClaimSound: ENTITY_FIREWORK_ROCKET_BLAST
+soulAlreadyFoundSound: BLOCK_NOTE_BLOCK_FLUTE
 mainCommandPerm: ''
 allSoulsFound_Reward:
   - pex user %player% group set king

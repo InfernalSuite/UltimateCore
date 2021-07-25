@@ -58,6 +58,7 @@ public class SoulCollectListener implements Listener {
             }
         } else {
             player.sendMessage(StringUtils.color(HyperSouls.getInstance().getMessages().getMessage("alreadyFound")));
+            Utils.playSound(player, plugin.getConfiguration().soulAlreadyFoundSound);
         }
     }
 }

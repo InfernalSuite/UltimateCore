@@ -13,6 +13,7 @@ public class Config extends YAMLFile {
     public String firstSoulFoundSound = "ENTITY_PLAYER_LEVELUP";
     public String soulFoundSound = "ENTITY_EXPERIENCE_ORB_PICKUP";
     public String tiaClaimSound = "ENTITY_FIREWORK_ROCKET_BLAST";
+    public String soulAlreadyFoundSound = "BLOCK_NOTE_BLOCK_FLUTE";
     
     public String mainCommandPerm = "";
     public List<String> allSoulsFound_Reward = new ArrayList<String>() {{
@@ -37,6 +38,7 @@ public class Config extends YAMLFile {
         soulTexture = getConfig().getString("soulTexture");
         firstSoulFoundSound = getConfig().getString("firstSoulFoundSound");
         soulFoundSound = getConfig().getString("soulFoundSound");
+        soulAlreadyFoundSound = getConfig().getString("soulAlreadyFoundSound");
         mainCommandPerm = getConfig().getString("mainCommandPerm");
         allSoulsFound_Reward = getConfig().getStringList("allSoulsFound_Reward");
         tiaClaimSound = getConfig().getString("tiaClaimSound");
