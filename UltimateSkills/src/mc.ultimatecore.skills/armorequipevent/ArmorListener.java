@@ -19,16 +19,18 @@ import org.bukkit.inventory.ItemStack;
 import java.util.List;
 
 public class ArmorListener implements Listener {
+    
     private final List<String> blockedMaterials;
-
+    
     public ArmorListener(List<String> blockedMaterials) {
         this.blockedMaterials = blockedMaterials;
+        this.blockedMaterials.add("TRAPDOOR");
     }
-
+    
     public static boolean isAirOrNull(ItemStack item) {
         return item == null || item.getType().equals(Material.AIR);
     }
-
+    
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public final void inventoryClick(final InventoryClickEvent e) {
         boolean shift = false, numberkey = false;
@@ -96,7 +98,7 @@ public class ArmorListener implements Listener {
             }
         }
     }
-
+    
     @EventHandler(priority = EventPriority.HIGHEST)
     public void playerInteractEvent(PlayerInteractEvent e) {
         if (e.useItemInHand().equals(Result.DENY)) return;
@@ -107,7 +109,7 @@ public class ArmorListener implements Listener {
                 if (e.getClickedBlock() != null && e.getAction() == Action.RIGHT_CLICK_BLOCK && !player.isSneaking()) {// Having both of these checks is useless, might as well do it though.
                     Material mat = e.getClickedBlock().getType();
                     for (String s : blockedMaterials) {
-                        if (mat.name().equalsIgnoreCase(s)) return;
+                        if (mat.name().equalsIgnoreCase(s) || mat.name().contains(s.toUpperCase())) return;
                     }
                 }
             }
@@ -124,7 +126,7 @@ public class ArmorListener implements Listener {
             }
         }
     }
-
+    
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void inventoryDrag(InventoryDragEvent event) {
         ArmorType type = ArmorType.matchType(event.getOldCursor());
@@ -138,7 +140,7 @@ public class ArmorListener implements Listener {
             }
         }
     }
-
+    
     @SuppressWarnings("deprecation")
     @EventHandler
     public void itemBreakEvent(PlayerItemBreakEvent e) {
@@ -163,7 +165,7 @@ public class ArmorListener implements Listener {
             }
         }
     }
-
+    
     @EventHandler
     public void playerDeathEvent(PlayerDeathEvent e) {
         Player p = e.getEntity();
