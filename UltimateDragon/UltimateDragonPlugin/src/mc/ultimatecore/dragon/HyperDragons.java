@@ -115,10 +115,10 @@ public class HyperDragons extends UltimatePlugin {
     @Override
     public void onDisable() {
         Bukkit.getOnlinePlayers().forEach(Player::closeInventory);
-        schematicManager.save();
-        structures.save();
-        dragonGuardians.save();
-        databaseManager.disable();
+        if (schematicManager != null) schematicManager.save();
+        if (structures != null) structures.save();
+        if (dragonGuardians != null) dragonGuardians.save();
+        if (databaseManager != null) databaseManager.disable();
     }
     
     public void reloadFiles() {
