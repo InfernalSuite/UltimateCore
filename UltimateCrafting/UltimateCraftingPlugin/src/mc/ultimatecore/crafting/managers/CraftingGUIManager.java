@@ -87,6 +87,10 @@ public class CraftingGUIManager {
                 inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, craftingRecipe.get().getResult(), "temporalCraft"));
             } else {
                 if (viewItem != null && viewItem.getType() != Material.AIR && !plugin.getBlackList().itemIsBlackListed(viewItem)) {
+                    // Fixing usage of custom items for vanilla items
+                    if (getItemStackMap().values().stream().anyMatch(itemStack -> itemStack.hasItemMeta() || (itemStack.getItemMeta() != null && (itemStack.getItemMeta().hasEnchants() || itemStack.getItemMeta().hasDisplayName() || itemStack.getItemMeta().hasLore()))))
+                        return;
+                    
                     displayItem = viewItem;
                     inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, viewItem, "temporalCraft"));
                     colorizeSlots(true);
@@ -97,8 +101,6 @@ public class CraftingGUIManager {
                 }
             }
         }, 0L);
-        
-        
     }
     
     public AutoReturn makeAutoCraft(Player player, CraftingRecipe craftingRecipe) {
