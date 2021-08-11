@@ -19,9 +19,9 @@ import org.bukkit.projectiles.ProjectileSource;
 
 @RequiredArgsConstructor
 public class DragonListener implements Listener {
-    
+
     private final HyperDragons plugin;
-    
+
     @EventHandler
     public void DragonTarget(EntityTargetEvent e) {
         Entity Dragon = e.getEntity();
@@ -36,16 +36,20 @@ public class DragonListener implements Listener {
             fireball.setYield(0);
         }
     }
-    
+
     @EventHandler
     public void onSpawn(EntitySpawnEvent event) {
         if (event.getEntity() instanceof Fireball) { //changed from dragonfireball
-            IDragonEvent iDragonEvent = plugin.getDragonManager().getDragonGame().getDragonEvent().getCurrentEvent();
-            if (iDragonEvent != null && !(iDragonEvent instanceof DragonBallEvent))
-                event.setCancelled(true);
+            if (((Fireball) event.getEntity()).getShooter() instanceof EnderDragon) {
+                if (plugin.getDragonManager().getDragonGame() == null) return;
+                if (plugin.getDragonManager().getDragonGame().getDragonEvent() == null) return;
+                IDragonEvent iDragonEvent = plugin.getDragonManager().getDragonGame().getDragonEvent().getCurrentEvent();
+                if (iDragonEvent != null && !(iDragonEvent instanceof DragonBallEvent))
+                    event.setCancelled(true);
+            }
         }
     }
-    
+
     @EventHandler
     public void onDragonRegen(EntityRegainHealthEvent e) {
         if ((e.getEntity() instanceof EnderDragon || e.getEntity() instanceof EnderDragonPart)) {
@@ -54,19 +58,19 @@ public class DragonListener implements Listener {
                 plugin.getDragonManager().getDragonGame().removePlayersDamage(e.getAmount());
         }
     }
-    
+
     @EventHandler
     public void onDragonBlock(EntityChangeBlockEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             e.setCancelled(true);
     }
-    
+
     @EventHandler
     public void onDragonBlock(EntityExplodeEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             e.setCancelled(true);
     }
-    
+
     @EventHandler
     public void stopDragonDamage(EntityExplodeEvent event) {
         Entity e = event.getEntity();
@@ -75,33 +79,37 @@ public class DragonListener implements Listener {
         if (e instanceof EnderDragon)
             event.setCancelled(true);
     }
-    
-    
+
+
     @EventHandler
     public void onDragonBlock(EntityRegainHealthEvent e) {
         if (e.getEntity() instanceof EnderDragon && ((EnderDragon) e.getEntity()).getHealth() < 2)
             e.setCancelled(true);
     }
-    
+
     @EventHandler
     public void onDragonBlock(EntityDeathEvent e) {
         if (e.getEntity() instanceof EnderDragon)
             plugin.getDragonManager().finish();
     }
-    
+
     @EventHandler(priority = EventPriority.LOWEST)
     public void onExplode(EntityExplodeEvent e) {
         if (e.getEntity() instanceof Fireball) {
-            Fireball fireball = (Fireball) e.getEntity();
-            e.setCancelled(true);
-            Location location = fireball.getLocation().clone();
-            fireball.remove();
-            if (location.getWorld() != null)
-                location.getWorld().createExplosion(location.getX(), location.getY(), location.getZ(), 5, false, false);
+            if (((Fireball) e.getEntity()).getShooter() instanceof EnderDragon) {
+                if (plugin.getDragonManager().getDragonGame() == null) return;
+                if (plugin.getDragonManager().getDragonGame().getDragonEvent() == null) return;
+                Fireball fireball = (Fireball) e.getEntity();
+                e.setCancelled(true);
+                Location location = fireball.getLocation().clone();
+                fireball.remove();
+                if (location.getWorld() != null)
+                    location.getWorld().createExplosion(location.getX(), location.getY(), location.getZ(), 5, false, false);
+            }
         }
     }
-    
-    
+
+
     @EventHandler
     public void onExplode(EntityDamageEvent e) {
         if (e.getEntity() instanceof EnderCrystal) {
@@ -111,10 +119,10 @@ public class DragonListener implements Listener {
             if (e.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION)
                 e.setCancelled(true);
         }
-        
+
     }
-    
-    
+
+
     @EventHandler(priority = EventPriority.LOW)
     public void onExplode(EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof EnderDragon) {
