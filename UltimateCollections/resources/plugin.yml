@@ -5,7 +5,7 @@ version: ${version}
 api-version: ${minecraft.api.version}
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
-softdepend: [ JetsMinions, UltraMinions, PlaceholderAPI, MVdWPlaceholderAPI, Vault, Multiverse-Core ]
+softdepend: [ UltimateCore, JetsMinions, UltraMinions, PlaceholderAPI, MVdWPlaceholderAPI, Vault, Multiverse-Core ]
 commands:
   collections:
     description: UltimateCore's Collections main command
