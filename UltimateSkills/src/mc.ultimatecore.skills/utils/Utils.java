@@ -111,7 +111,7 @@ public final class Utils {
         return item;
     }
 
-    public static String getUpperValue(String str){
+    public static String getUpperValue(String str) {
         return str.toUpperCase().replaceAll(" ", "_");
     }
 
@@ -135,51 +135,51 @@ public final class Utils {
                 new Placeholder("intelligence", roundStr(api.getTotalAbility(uuid, Ability.Intelligence)))));
     }
 
-    private static String roundStr(Double d) {
+    public static String roundStr(Double d) {
         return new DecimalFormat("#.#").format(d);
     }
 
     public static float calculateSpeed(double speed) {
-        if(!HyperSkills.getInstance().getAddonsManager().isMMOItems())
-            return (float)Math.min((200.0D+(speed+0.1))*0.0010000000474974513D,1.0D);
+        if (!HyperSkills.getInstance().getAddonsManager().isMMOItems())
+            return (float) Math.min((200.0D + (speed + 0.1)) * 0.0010000000474974513D, 1.0D);
         else
-            return (float)Math.min((200.0D+speed)*0.0010000000474974513D,1.0D);
+            return (float) Math.min((200.0D + speed) * 0.0010000000474974513D, 1.0D);
 
     }
 
     public static List<Placeholder> getStatsPlaceholders(UUID uuid) {
-        return new ArrayList<Placeholder>(){{
+        return new ArrayList<Placeholder>() {{
             add(new Placeholder("player", Bukkit.getOfflinePlayer(uuid).getName()));
-            for(Ability ability : Ability.values()) {
+            for (Ability ability : Ability.values()) {
                 double base = HyperSkills.getInstance().getApi().getSimpleAbility(uuid, ability);
                 double extra = HyperSkills.getInstance().getApi().getExtraAbility(uuid, ability);
                 double total = HyperSkills.getInstance().getApi().getTotalAbility(uuid, ability);
                 String abilityName = formattedName(ability.toString());
-                add(new Placeholder("total_"+abilityName, roundStr(total)));
-                add(new Placeholder("simple_"+abilityName, roundStr(base)));
-                add(new Placeholder("bonus_"+abilityName, roundStr(extra)));
+                add(new Placeholder("total_" + abilityName, roundStr(total)));
+                add(new Placeholder("simple_" + abilityName, roundStr(base)));
+                add(new Placeholder("bonus_" + abilityName, roundStr(extra)));
             }
-            for(Perk perk : Arrays.asList(Perk.Ore_Chance, Perk.Crop_Chance, Perk.Log_Chance, Perk.Sea_Creature_Chance)){
+            for (Perk perk : Arrays.asList(Perk.Ore_Chance, Perk.Crop_Chance, Perk.Log_Chance, Perk.Sea_Creature_Chance)) {
                 double simple = HyperSkills.getInstance().getApi().getSimplePerk(uuid, perk);
                 double total = HyperSkills.getInstance().getApi().getTotalPerk(uuid, perk);
                 double armorValue = total - simple;
                 String abilityName = formattedName(perk.toString());
-                add(new Placeholder("total_"+abilityName, roundStr(total)));
-                add(new Placeholder("simple_"+abilityName, roundStr(simple)));
-                add(new Placeholder("bonus_"+abilityName, roundStr(armorValue)));
+                add(new Placeholder("total_" + abilityName, roundStr(total)));
+                add(new Placeholder("simple_" + abilityName, roundStr(simple)));
+                add(new Placeholder("bonus_" + abilityName, roundStr(armorValue)));
             }
         }};
     }
 
-    private static String formattedName(String text){
+    private static String formattedName(String text) {
         return text.toLowerCase().replaceAll(" ", "_");
     }
 
-    public static String getKey(String string){
+    public static String getKey(String string) {
         return string.toUpperCase().replace(" ", "_");
     }
 
-    public static int getBlockQuantity(Block bl, Material material){
+    public static int getBlockQuantity(Block bl, Material material) {
         int numBroken = 0;
         Block blockUP = bl.getRelative(BlockFace.UP);
         Block secondBlockUP = blockUP.getRelative(BlockFace.UP);
@@ -246,7 +246,7 @@ public final class Utils {
                 new Placeholder("max_xp", String.valueOf(maxXP))));
     }
 
-    public static Double round(double value){
+    public static Double round(double value) {
         return Math.round(value * 10) / 10D;
     }
 
@@ -271,33 +271,34 @@ public final class Utils {
         return false;
     }
 
-    public static String translatedDegradeText(DamageIndicator damageIndicator, double damage){
-        if(!damageIndicator.isDegrade()) return StringUtils.color(damageIndicator.getIndicator().replace("%damage%", roundToInt(damage)));
+    public static String translatedDegradeText(DamageIndicator damageIndicator, double damage) {
+        if (!damageIndicator.isDegrade())
+            return StringUtils.color(damageIndicator.getIndicator().replace("%damage%", roundToInt(damage)));
         return getDegradedText(damageIndicator, roundToInt(damage));
     }
 
-    public static String roundToInt(double value){
+    public static String roundToInt(double value) {
         return String.valueOf((int) value);
     }
 
-    private static String getDegradedText(DamageIndicator damageIndicator, String damage){
+    private static String getDegradedText(DamageIndicator damageIndicator, String damage) {
         String[] split = damage.split("");
         StringBuilder finalText = new StringBuilder();
         int index = 0;
-        for(int i= 0; i<split.length; i++, index++){
-            if(index == COLOR.size()) index = 0;
+        for (int i = 0; i < split.length; i++, index++) {
+            if (index == COLOR.size()) index = 0;
             finalText.append(COLOR.get(index)).append(split[i]);
         }
         return StringUtils.color(damageIndicator.getIndicator().replace("%damage%", finalText.toString()));
     }
 
-    public static int getRandom(int max){
+    public static int getRandom(int max) {
         return new Random().nextInt(max);
     }
 
 
     public static boolean isInBlockedRegion(Location location, SkillType skill) {
-        if(HyperSkills.getInstance().getAddonsManager().getRegionPlugin() == null) return false;
+        if (HyperSkills.getInstance().getAddonsManager().getRegionPlugin() == null) return false;
         return HyperSkills.getInstance().getAddonsManager().getRegionPlugin().isInRegion(location, HyperSkills.getInstance().getSkills().getAllSkills().get(skill).getBlockedRegions());
     }
 
@@ -337,7 +338,7 @@ public final class Utils {
         return bar.toString();
     }
 
-    public static boolean hasInventoryFull(Player player){
+    public static boolean hasInventoryFull(Player player) {
         Inventory inv = player.getInventory();
         return inv.firstEmpty() == -1;
     }
@@ -349,34 +350,34 @@ public final class Utils {
         return Math.nextUp(Math.min(health * perHeart, totalHealth));
     }
 
-    public static double getDamage(double defense, double health, double damage){
+    public static double getDamage(double defense, double health, double damage) {
         return damage / (defense * 0.009D + 1.0D + Math.max(0, health - 100) * 0.007D);
     }
 
-    public static double getScale(double health){
+    public static double getScale(double health) {
         return 20 + Math.max(1.5 + ((health - 100) * 0.021D), 0);
     }
 
-    public static void sendActionBar(Player player, String actionBar){
-        if(HyperSkills.getInstance().getConfiguration().translatePAPIPlaceholders)
+    public static void sendActionBar(Player player, String actionBar) {
+        if (HyperSkills.getInstance().getConfiguration().translatePAPIPlaceholders)
             ActionBar.sendActionBar(player, PAPIUtils.translatePAPIPlaceholders(player, actionBar));
         else
             ActionBar.sendActionBar(player, actionBar);
     }
 
-    public static boolean hasEffectInHand(ItemStack itemStack){
-        if(itemStack == null || itemStack.getType() == Material.AIR) return false;
+    public static boolean hasEffectInHand(ItemStack itemStack) {
+        if (itemStack == null || itemStack.getType() == Material.AIR) return false;
         NBTItem nbtItem = new NBTItem(itemStack);
         return nbtItem.hasKey("inHand");
     }
 
 
-    public static void openGUIAsync(Player player, UltimateItem ultimateItem){
-        Bukkit.getScheduler().scheduleSyncDelayedTask(HyperSkills.getInstance(), () -> player.openInventory(new ArmorEditGUI(ultimateItem).getInventory()),3L);
+    public static void openGUIAsync(Player player, UltimateItem ultimateItem) {
+        Bukkit.getScheduler().scheduleSyncDelayedTask(HyperSkills.getInstance(), () -> player.openInventory(new ArmorEditGUI(ultimateItem).getInventory()), 3L);
     }
 
-    public static void openGUIAttributeAsync(Player player, UltimateItem ultimateItem){
-        Bukkit.getScheduler().scheduleSyncDelayedTask(HyperSkills.getInstance(), () -> player.openInventory(new AttributeEditGUI(ultimateItem).getInventory()),3L);
+    public static void openGUIAttributeAsync(Player player, UltimateItem ultimateItem) {
+        Bukkit.getScheduler().scheduleSyncDelayedTask(HyperSkills.getInstance(), () -> player.openInventory(new AttributeEditGUI(ultimateItem).getInventory()), 3L);
     }
 
 
