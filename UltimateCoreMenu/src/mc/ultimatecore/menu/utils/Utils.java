@@ -3,7 +3,6 @@ package mc.ultimatecore.menu.utils;
 import com.cryptomorin.xseries.XMaterial;
 import mc.ultimatecore.menu.HyperCore;
 import mc.ultimatecore.menu.Item;
-
 import mc.ultimatecore.pets.HyperPets;
 import mc.ultimatecore.pets.objects.PetData;
 import mc.ultimatecore.skills.HyperSkills;
@@ -28,9 +27,9 @@ public class Utils {
     public static List<Placeholder> getPlaceholders(UUID uuid) {
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
         String currentPet = "&c✘";
-        if(HyperCore.getInstance().isPets()){
+        if (HyperCore.getInstance().isPets()) {
             PetData petData = HyperPets.getInstance().getApi().getPetData(uuid);
-            if(petData != null)
+            if (petData != null && HyperPets.getInstance().getApi().getPet(petData) != null)
                 currentPet = HyperPets.getInstance().getApi().getPet(petData).getDisplayName();
         }
         HyperSkillsAPI api = HyperSkills.getInstance().getApi();
@@ -50,21 +49,22 @@ public class Utils {
                 new Placeholder("intelligence", round(api.getTotalAbility(uuid, Ability.Intelligence)))));
     }
 
-    private static String round(double str){
+    private static String round(double str) {
         return String.valueOf(Math.round(str));
     }
 
-    public static Item getItemFromConfig(YamlConfiguration yamlConfig, String path){
+    public static Item getItemFromConfig(YamlConfiguration yamlConfig, String path) {
         Item item = new Item();
-        if(yamlConfig.contains(path+".material")) item.material = XMaterial.valueOf(yamlConfig.getString(path+".material"));
-        if(yamlConfig.contains(path+".title")) item.title = yamlConfig.getString(path+".title");
-        if(yamlConfig.contains(path+".lore")) item.lore = yamlConfig.getStringList(path+".lore");
-        if(yamlConfig.contains(path+".slot")) item.slot = yamlConfig.getInt(path+".slot");
-        if(yamlConfig.contains(path+".headOwner")) item.headOwner = yamlConfig.getString(path+".headOwner");
-        if(yamlConfig.contains(path+".headData")) item.headData = yamlConfig.getString(path+".headData");
-        if(yamlConfig.contains(path+".isGlowing")) item.isGlowing = yamlConfig.getBoolean(path+".isGlowing");
-        if(yamlConfig.contains(path+".amount")) item.amount = yamlConfig.getInt(path+".amount");
-        if(yamlConfig.contains(path+".command")) item.command = yamlConfig.getString(path+".command");
+        if (yamlConfig.contains(path + ".material"))
+            item.material = XMaterial.valueOf(yamlConfig.getString(path + ".material"));
+        if (yamlConfig.contains(path + ".title")) item.title = yamlConfig.getString(path + ".title");
+        if (yamlConfig.contains(path + ".lore")) item.lore = yamlConfig.getStringList(path + ".lore");
+        if (yamlConfig.contains(path + ".slot")) item.slot = yamlConfig.getInt(path + ".slot");
+        if (yamlConfig.contains(path + ".headOwner")) item.headOwner = yamlConfig.getString(path + ".headOwner");
+        if (yamlConfig.contains(path + ".headData")) item.headData = yamlConfig.getString(path + ".headData");
+        if (yamlConfig.contains(path + ".isGlowing")) item.isGlowing = yamlConfig.getBoolean(path + ".isGlowing");
+        if (yamlConfig.contains(path + ".amount")) item.amount = yamlConfig.getInt(path + ".amount");
+        if (yamlConfig.contains(path + ".command")) item.command = yamlConfig.getString(path + ".command");
         return item;
     }
 
