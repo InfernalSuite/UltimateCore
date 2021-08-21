@@ -16,7 +16,7 @@ public class AnvilListener implements Listener {
         if (!HyperAnvil.getInstance().getConfiguration().setAsDefaultAnvil) return;
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
         Block bl = e.getClickedBlock();
-        if (bl == null || (!bl.getType().equals(XMaterial.ANVIL.parseMaterial()) && !bl.getType().equals(XMaterial.DAMAGED_ANVIL.parseMaterial())))
+        if (bl == null || (!bl.getType().equals(XMaterial.ANVIL.parseMaterial()) && !bl.getType().equals(XMaterial.DAMAGED_ANVIL.parseMaterial()) && !bl.getType().equals(XMaterial.CHIPPED_ANVIL.parseMaterial())))
             return;
         e.setCancelled(true);
         Player p = e.getPlayer();
