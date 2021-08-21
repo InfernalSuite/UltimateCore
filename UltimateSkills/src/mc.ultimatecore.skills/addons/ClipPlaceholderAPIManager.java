@@ -52,41 +52,41 @@ public class ClipPlaceholderAPIManager extends PlaceholderExpansion {
 
     @Override
     public String onPlaceholderRequest(Player player, @NotNull String identifier) {
-        if (player == null || identifier == null) {
+        if (player == null) {
             return "";
         }
         HyperSkillsAPI api = HyperSkills.getInstance().getApi();
         UUID uuid = player.getUniqueId();
-        if(identifier.equals("current_health"))
-            return Utils.getHealth(player) + "";
-        for(SkillType skillType : SkillType.values()){
-            if(identifier.equals(skillType.getLowName()+"_level"))
+        if (identifier.equals("current_health"))
+            return Utils.roundStr(Utils.getHealth(player)) + "";
+        for (SkillType skillType : SkillType.values()) {
+            if (identifier.equals(skillType.getLowName() + "_level"))
                 return api.getLevel(uuid, skillType) + "";
-            if(identifier.equals(skillType.getLowName()+"_level_roman"))
+            if (identifier.equals(skillType.getLowName() + "_level_roman"))
                 return Utils.toRoman(api.getLevel(uuid, skillType)) + "";
-            if(identifier.equals(skillType.getLowName()+"_xp"))
+            if (identifier.equals(skillType.getLowName() + "_xp"))
                 return api.getXP(uuid, skillType) + "";
-            if(identifier.equals(skillType.getLowName()+"_rank"))
+            if (identifier.equals(skillType.getLowName() + "_rank"))
                 return api.getRank(uuid, skillType) + "";
-            if(identifier.equals(skillType.getLowName()+"_progressbar"))
+            if (identifier.equals(skillType.getLowName() + "_progressbar"))
                 return Utils.getProgressBar(uuid, skillType);
-            if(identifier.equals(skillType.getLowName()+"_xp_left"))
+            if (identifier.equals(skillType.getLowName() + "_xp_left"))
                 return (plugin.getRequirements().getLevelRequirement(skillType, api.getLevel(uuid, skillType)) - api.getXP(uuid, skillType)) + "";
         }
-        for(Ability ability : Ability.values()){
-            if(identifier.equals(ability.getLowName()+"_total"))
+        for (Ability ability : Ability.values()) {
+            if (identifier.equals(ability.getLowName() + "_total"))
                 return api.getTotalAbility(player.getUniqueId(), ability) + "";
-            if(identifier.equals(ability.getLowName()+"_extra"))
+            if (identifier.equals(ability.getLowName() + "_extra"))
                 return api.getExtraAbility(player.getUniqueId(), ability) + "";
-            if(identifier.equals(ability.getLowName()+"_simple"))
+            if (identifier.equals(ability.getLowName() + "_simple"))
                 return api.getSimpleAbility(player.getUniqueId(), ability) + "";
         }
-        for(Perk perk : Perk.values()){
-            if(identifier.equals(perk.getLowName()+"_total"))
+        for (Perk perk : Perk.values()) {
+            if (identifier.equals(perk.getLowName() + "_total"))
                 return api.getTotalPerk(player.getUniqueId(), perk) + "";
-            if(identifier.equals(perk.getLowName()+"_extra"))
+            if (identifier.equals(perk.getLowName() + "_extra"))
                 return api.getExtraPerk(player.getUniqueId(), perk) + "";
-            if(identifier.equals(perk.getLowName()+"_simple"))
+            if (identifier.equals(perk.getLowName() + "_simple"))
                 return api.getSimplePerk(player.getUniqueId(), perk) + "";
         }
         return null;
