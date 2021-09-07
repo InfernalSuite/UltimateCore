@@ -33,26 +33,22 @@ public class ArmorEditGUI implements GUI {
             Player player = (Player) e.getWhoClicked();
             if (e.getSlot() == 49) {
                 player.closeInventory();
-            } else if (e.isShiftClick()) {
-                if (e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR) return;
-                ultimateItem.setItemStack(e.getCurrentItem());
-                player.openInventory(new ArmorEditGUI(ultimateItem).getInventory());
             } else if (e.getSlot() == HyperSkills.getInstance().getInventories().manaCost.slot) {
                 player.sendMessage(StringUtils.color("&a► Type a number in chat to set the as new amount! Type &fstop &ato cancel the slot change."));
                 HyperSkills.getInstance().getUltimateItems().setSetupMode(player.getUniqueId(), ultimateItem.getId(), "ManaCost");
                 player.closeInventory();
             } else if (e.getSlot() == HyperSkills.getInstance().getInventories().displayName.slot) {
-                player.sendMessage(StringUtils.color("&a► Type a name in chat to set the as new name! Type &fstop &ato cancel the slot change."));
+                player.sendMessage(StringUtils.color("&a► Type a name in chat to set the new name! Type &fstop &ato cancel the name change."));
                 HyperSkills.getInstance().getUltimateItems().setSetupMode(player.getUniqueId(), ultimateItem.getId(), "Name");
                 player.closeInventory();
             } else if (e.getSlot() == HyperSkills.getInstance().getInventories().giveItem.slot) {
                 player.getInventory().addItem(ultimateItem.getItem());
             } else if (e.getSlot() == HyperSkills.getInstance().getInventories().loreItem.slot) {
-                if(e.isLeftClick()){
+                if (e.isLeftClick()) {
                     player.sendMessage(StringUtils.color("&a► Type a new line in chat to set the add a lore line! Type &fstop &ato cancel the lore change."));
                     HyperSkills.getInstance().getUltimateItems().setSetupMode(player.getUniqueId(), ultimateItem.getId(), "Lore");
                     player.closeInventory();
-                }else if(e.isRightClick()){
+                } else if (e.isRightClick()) {
                     ultimateItem.setItemStack(getLoredItem());
                     player.openInventory(new ArmorEditGUI(ultimateItem).getInventory());
                 }
@@ -92,12 +88,12 @@ public class ArmorEditGUI implements GUI {
         return inventory;
     }
 
-    private void switchGlow(){
+    private void switchGlow() {
         ItemStack newItem = ultimateItem.getItemStack();
         ItemMeta meta = newItem.getItemMeta();
-        if(meta.getEnchants().containsKey(Enchantment.LURE)){
+        if (meta.getEnchants().containsKey(Enchantment.LURE)) {
             meta.removeEnchant(Enchantment.LURE);
-        }else {
+        } else {
             meta.addEnchant(Enchantment.LURE, 1, false);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }
@@ -105,10 +101,10 @@ public class ArmorEditGUI implements GUI {
         ultimateItem.setItemStack(newItem);
     }
 
-    private ItemStack getLoredItem(){
+    private ItemStack getLoredItem() {
         ItemStack newItem = ultimateItem.getItemStack();
         ItemMeta meta = newItem.getItemMeta();
-        if(!meta.hasLore()) return newItem;
+        if (!meta.hasLore()) return newItem;
         List<String> lore = meta.getLore();
         lore.remove(lore.size() - 1);
         meta.setLore(lore);

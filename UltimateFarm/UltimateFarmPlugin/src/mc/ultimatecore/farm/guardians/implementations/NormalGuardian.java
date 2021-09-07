@@ -38,6 +38,7 @@ public class NormalGuardian extends Guardian {
 
     @Override
     public Location getLocation() {
+        if (armorStand == null) return null;
         return armorStand.getLocation();
     }
 

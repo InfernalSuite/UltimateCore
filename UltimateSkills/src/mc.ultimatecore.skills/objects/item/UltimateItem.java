@@ -31,55 +31,56 @@ public class UltimateItem {
 
     private final HashMap<Perk, Double> perksMap;
 
-    public UltimateItem(String id, ItemStack itemStack){
+    public UltimateItem(String id, ItemStack itemStack) {
         this.id = id;
         this.itemStack = itemStack;
         this.abilitiesMap = new HashMap<>();
         this.perksMap = new HashMap<>();
     }
 
-    public ItemStack getItemStack(){
+    public ItemStack getItemStack() {
         return itemStack.clone();
     }
 
-    public ItemStack getItem(){
+    public ItemStack getItem() {
         NBTItem nbtItem = new NBTItem(itemStack.clone());
-        if(effectInHand) nbtItem.setBoolean("inHand", true);
-        if(manaCost > 0) nbtItem.setDouble("manaCost", manaCost);
+        if (effectInHand) nbtItem.setBoolean("inHand", true);
+        if (manaCost > 0) nbtItem.setDouble("manaCost", manaCost);
         abilitiesMap.forEach((ability, aDouble) -> nbtItem.setDouble(ability.toString(), aDouble));
         perksMap.forEach((perk, aDouble) -> nbtItem.setDouble(perk.toString(), aDouble));
         return nbtItem.getItem();
     }
 
-    public double getAbility(Ability ability){
+    public double getAbility(Ability ability) {
         return abilitiesMap.getOrDefault(ability, 0d);
     }
 
-    public double getPerk(Perk perk){
+    public double getPerk(Perk perk) {
         return perksMap.getOrDefault(perk, 0d);
     }
 
-    public void setAbility(Ability ability, Double amount){
+    public void setAbility(Ability ability, Double amount) {
         abilitiesMap.put(ability, amount);
     }
 
-    public void setPerk(Perk ability, Double amount){
+    public void setPerk(Perk ability, Double amount) {
         perksMap.put(ability, amount);
     }
 
-    public void setDisplayName(String displayName){
+    public void setDisplayName(String displayName) {
         try {
             ItemMeta meta = itemStack.getItemMeta();
             meta.setDisplayName(StringUtils.color(displayName));
-        }catch (NullPointerException ignored){
+            itemStack.setItemMeta(meta);
+        } catch (NullPointerException ignored) {
         }
     }
 
-    public String getDisplayName(){
+    public String getDisplayName() {
         try {
             ItemMeta meta = itemStack.getItemMeta();
             return meta.getDisplayName();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return "NONE";
         }
     }

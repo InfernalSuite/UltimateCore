@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class BlackList extends YAMLFile{
+public class BlackList extends YAMLFile {
     @Getter
     private Set<String> blockedCrafts;
 
@@ -22,34 +22,34 @@ public class BlackList extends YAMLFile{
     }
 
     @Override
-    public void reload(){
+    public void reload() {
         super.reload();
         loadDefaults();
     }
 
-    private void loadDefaults(){
+    private void loadDefaults() {
         blockedCrafts = new HashSet<>();
         try {
             blockedCrafts = new HashSet<>(getConfig().getStringList("disabledcrafts"));
-        }catch (Exception ignored){
+        } catch (Exception ignored) {
         }
     }
 
-    public boolean itemIsBlackListed(ItemStack itemStack){
-        if(itemStack == null || itemStack.getType() == Material.AIR) return false;
+    public boolean itemIsBlackListed(ItemStack itemStack) {
+        if (itemStack == null || itemStack.getType() == Material.AIR) return false;
         String key = itemStack.getType().toString();
-        if(XMaterial.getVersion() > 13){
+        if (XMaterial.getVersion() > 13) {
             return blockedCrafts
                     .contains(key);
-        }else{
-            for(String mat : blockedCrafts){
+        } else {
+            for (String mat : blockedCrafts) {
                 try {
                     XMaterial material = XMaterial.valueOf(mat);
                     String legacy = material.getLegacy().length > 0 ? material.getLegacy()[0] : material.toString();
-                    if(key.equals(legacy) && itemStack.getData().getData() == material.getData())
+                    if (key.equals(legacy) && itemStack.getData().getData() == material.getData())
                         return true;
-                }catch (Exception e){
-                    Bukkit.getConsoleSender().sendMessage(Utils.color("&e[HyperCrafting] &cError unknown blacklisted item "+mat+"!"));
+                } catch (Exception e) {
+                    Bukkit.getConsoleSender().sendMessage(Utils.color("&e[UltimateCrafting] &cError unknown blacklisted item " + mat + "!"));
                 }
             }
             return false;

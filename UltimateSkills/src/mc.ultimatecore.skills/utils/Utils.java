@@ -159,7 +159,8 @@ public final class Utils {
                 add(new Placeholder("simple_" + abilityName, roundStr(base)));
                 add(new Placeholder("bonus_" + abilityName, roundStr(extra)));
             }
-            for (Perk perk : Arrays.asList(Perk.Ore_Chance, Perk.Crop_Chance, Perk.Log_Chance, Perk.Sea_Creature_Chance)) {
+
+            for (Perk perk : Perk.values()) {
                 double simple = HyperSkills.getInstance().getApi().getSimplePerk(uuid, perk);
                 double total = HyperSkills.getInstance().getApi().getTotalPerk(uuid, perk);
                 double armorValue = total - simple;

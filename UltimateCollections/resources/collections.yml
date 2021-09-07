@@ -15,7 +15,7 @@ categories:
     name: combat
     displayName: Combat
 collections:
-  BLUE_DYE:
+  LAPIS_LAZULI:
     name: "Lapis Lazuli"
     category: mining
     rewards:

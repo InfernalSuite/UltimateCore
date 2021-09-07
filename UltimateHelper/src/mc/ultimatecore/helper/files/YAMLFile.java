@@ -9,15 +9,15 @@ import java.nio.charset.StandardCharsets;
 
 @Getter
 public class YAMLFile {
-    
+
     private final YamlConfiguration config;
-    
+
     private final File file;
-    
+
     private final String name;
-    
+
     private final boolean save;
-    
+
     public YAMLFile(UltimatePlugin plugin, String name, boolean defaults, boolean save) {
         this.name = name;
         this.file = new File(plugin.getDataFolder(), name + ".yml");
@@ -43,7 +43,7 @@ public class YAMLFile {
         } catch (IOException | org.bukkit.configuration.InvalidConfigurationException ignored) {
         }
     }
-    
+
     public void reload() {
         try {
             this.config.load(this.file);
@@ -51,14 +51,15 @@ public class YAMLFile {
             e.printStackTrace();
         }
     }
-    
+
     public void save() {
         try {
             this.config.save(this.file);
         } catch (IOException ignored) {
+            ignored.printStackTrace();
         }
     }
-    
+
     public YamlConfiguration get() {
         return config;
     }

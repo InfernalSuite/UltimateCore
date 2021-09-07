@@ -16,8 +16,8 @@ import java.util.*;
 @Getter
 public class Inventories extends YAMLFile {
     //ARMOR MENU
-    public Item armorItem = new Item(XMaterial.STONE, 4, 1, "&a%item_id%", Arrays.asList(
-            "%item_title%", "", "%item_lore%", "", "&e ► Click + Shift above an item to switch"));
+    public Item armorItem = new Item(XMaterial.STONE, 4, 1, "&aIdentifier: %item_id%", Arrays.asList(
+            "&7Display Name: %item_title%", "", "&7Lore:", "%item_lore%"));
     public Item allArmorItem = new Item(XMaterial.STONE, 4, 1, "&a%item_id%", Arrays.asList(
             "%item_title%", "", "%item_lore%", "", "&e ► Left-Click to Edit item", "&e ► Right-Click to remove item"));
     public Set<Integer> armorDecorationSlots = new HashSet<>(Arrays.asList(0, 1, 9, 7, 8, 17, 36, 46, 52, 53, 45, 49));
@@ -28,8 +28,8 @@ public class Inventories extends YAMLFile {
             "", "&e ► Click to edit item attributes"));
     public Item effectInHand = new Item(XMaterial.SLIME_BALL, 25, 1, "&aEffect In Hand: &e%effect_hand%", Arrays.asList(
             "&7If it's true it'll give stats", "&7when held in hand.", "", "&e ► Click to switch"));
-    public Item displayName = new Item(XMaterial.NAME_TAG, 31, 1, "&aDisplayName: &e%displayname%", Arrays.asList(
-            "&7If it's true it'll give stats", "&7when held in hand.", "", "&e ► Click to switch"));
+    public Item displayName = new Item(XMaterial.NAME_TAG, 31, 1, "&aDisplayName: &e%displayName%", Arrays.asList(
+            "&e ► Click to change the display name"));
     public Item giveItem = new Item(XMaterial.GUNPOWDER, 40, 1, "&aGet Item", Arrays.asList(
             "", "&e ► Click to get item!"));
     public Item armorDecoration = new Item(XMaterial.LIME_STAINED_GLASS_PANE, 1, "", Collections.singletonList(""));
@@ -50,18 +50,18 @@ public class Inventories extends YAMLFile {
             "", "&7 ► Click to confirm"));
 
 
-    public final Map<Ability, Integer> attributesMap = new HashMap<Ability, Integer>(){{
+    public final Map<Ability, Integer> attributesMap = new HashMap<Ability, Integer>() {{
         int slot = 18;
-        for(Ability ability : Ability.values()){
+        for (Ability ability : Ability.values()) {
             put(ability, slot);
             slot++;
         }
     }};
 
-    public final Map<Perk, Integer> perksMap = new HashMap<Perk, Integer>(){{
+    public final Map<Perk, Integer> perksMap = new HashMap<Perk, Integer>() {{
         int slot = 27;
-        for(Perk perk : Perk.values()){
-            if(slot == 31) slot++;
+        for (Perk perk : Perk.values()) {
+            if (slot == 31) slot++;
             put(perk, slot);
             slot++;
         }
@@ -119,12 +119,12 @@ public class Inventories extends YAMLFile {
     }
 
     @Override
-    public void reload(){
+    public void reload() {
         super.reload();
         loadDefaults();
     }
 
-    private void loadDefaults(){
+    private void loadDefaults() {
         subMenuTitles = new HashMap<>();
         profileGUIItems = new ArrayList<>();
 
@@ -156,8 +156,8 @@ public class Inventories extends YAMLFile {
         topMenuStatsItem = Utils.getItemFromConfig(getConfig(), "topMenu.items.statsItem");
         //SUB MENU
         subMenuSize = getConfig().getInt("submenu.size");
-        for(SkillType skillType : SkillType.values())
-            subMenuTitles.put(skillType, getConfig().getString("submenu.titles."+skillType.toString()));
+        for (SkillType skillType : SkillType.values())
+            subMenuTitles.put(skillType, getConfig().getString("submenu.titles." + skillType.toString()));
         subMenuSlots = getConfig().getIntegerList("submenu.slots");
         subMenuInfoItem = Utils.getItemFromConfig(getConfig(), "submenu.items.infoItem");
         subMenuLockedItem = Utils.getItemFromConfig(getConfig(), "submenu.items.lockedItem");
@@ -177,12 +177,12 @@ public class Inventories extends YAMLFile {
         mainMenuBackEnabled = getConfig().getBoolean("main-menu-back.enabled");
 
         ConfigurationSection configurationSection = getConfig().getConfigurationSection("profileGui.items");
-        if(configurationSection == null) return;
+        if (configurationSection == null) return;
         for (String item : configurationSection.getKeys(false)) {
-            if(item.equals("backButton"))
-                profileBackButton = Utils.getItemFromConfig(getConfig(), "profileGui.items."+item);
+            if (item.equals("backButton"))
+                profileBackButton = Utils.getItemFromConfig(getConfig(), "profileGui.items." + item);
             else
-                profileGUIItems.add(Utils.getItemFromConfig(getConfig(), "profileGui.items."+item));
+                profileGUIItems.add(Utils.getItemFromConfig(getConfig(), "profileGui.items." + item));
         }
     }
 }

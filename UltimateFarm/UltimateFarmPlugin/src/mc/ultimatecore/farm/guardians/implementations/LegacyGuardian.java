@@ -146,6 +146,7 @@ public class LegacyGuardian extends Guardian {
 
     @Override
     public Location getLocation() {
+        if(armorStand == null) return null;
         return armorStand.getLocation();
     }
 }

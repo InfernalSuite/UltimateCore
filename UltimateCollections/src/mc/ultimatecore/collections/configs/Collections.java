@@ -51,7 +51,7 @@ public class Collections extends YAMLFile {
                 i++;
             }
             if (i > 0)
-                HyperCollections.getInstance().sendDebug("&e[HyperCollections] &aSuccessfully loaded " + i + " categories!", DebugType.COLORED);
+                HyperCollections.getInstance().sendDebug("&e[UltimateCollections] &aSuccessfully loaded " + i + " categories!", DebugType.COLORED);
         }
         YamlConfiguration cf = getConfig();
         
@@ -67,7 +67,7 @@ public class Collections extends YAMLFile {
                 String displayName = getConfig().getString("collections." + key + ".name");
                 int slot = getConfig().getInt("collections." + key + ".slot");
                 if (getConfig().contains("collections." + key + ".categorie")) {
-                    HyperCollections.getInstance().sendDebug("&e[HyperCollections] &cError collection " + key + " contains 'categorie' replace it with 'category'!", DebugType.COLORED);
+                    HyperCollections.getInstance().sendDebug("&e[UltimateCollections] &cError collection " + key + " contains 'categorie' replace it with 'category'!", DebugType.COLORED);
                     continue;
                 }
                 Optional<Category> optionalCategory = getCategory(getConfig().getString("collections." + key + ".category"));

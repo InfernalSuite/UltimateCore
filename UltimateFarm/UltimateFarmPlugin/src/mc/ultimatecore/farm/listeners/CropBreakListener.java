@@ -29,36 +29,36 @@ public class CropBreakListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOW)
     public void onCropBreakLow(BlockBreakEvent e) {
-        if(plugin.getConfiguration().priorityLevel == 1) execute(e);
+        if (plugin.getConfiguration().priorityLevel == 1) execute(e);
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
     public void onCropBreakNormal(BlockBreakEvent e) {
-        if(plugin.getConfiguration().priorityLevel == 2) execute(e);
+        if (plugin.getConfiguration().priorityLevel == 2) execute(e);
     }
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onCropBreakHigh(BlockBreakEvent e) {
-        if(plugin.getConfiguration().priorityLevel == 3) execute(e);
+        if (plugin.getConfiguration().priorityLevel == 3) execute(e);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onCropBreakHighest(BlockBreakEvent e) {
-        if(plugin.getConfiguration().priorityLevel == 4) execute(e);
+        if (plugin.getConfiguration().priorityLevel == 4) execute(e);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onCropBreakMonitor(BlockBreakEvent e) {
-        if(plugin.getConfiguration().priorityLevel == 5) execute(e);
+        if (plugin.getConfiguration().priorityLevel == 5) execute(e);
     }
 
-    private void execute(BlockBreakEvent e){
+    private void execute(BlockBreakEvent e) {
+        if (e.isCancelled() && !plugin.getConfiguration().byPassWorldGuard) return;
         Block bl = e.getBlock();
         Material material = bl.getType();
         String key = material.toString().toUpperCase();
         WrappedBlockData wrappedBlockData = new WrappedBlockData(bl);
-        if (plugin.getConfiguration().debug)
-            Bukkit.getConsoleSender().sendMessage("Material: "+key+" | Id: "+wrappedBlockData.getLegacyData());
+        if (plugin.getConfiguration().debug) Bukkit.getConsoleSender().sendMessage("Material: " + key + " | Id: " + wrappedBlockData.getLegacyData());
         if (plugin.getFarmManager().regenBlock(bl, key, wrappedBlockData)) {
             HyperBlockBreakEvent event = new HyperBlockBreakEvent(e.getPlayer(), bl);
             Bukkit.getServer().getPluginManager().callEvent(event);
@@ -79,20 +79,20 @@ public class CropBreakListener implements Listener {
     }
 
     @EventHandler
-    public void playerJoin(PlayerJoinEvent event){
+    public void playerJoin(PlayerJoinEvent event) {
         plugin.getGuardians().getGuardians().stream()
                 .filter(Guardian::isNotEnabled)
                 .forEach(Guardian::enable);
     }
 
     @EventHandler
-    public void unload(ChunkUnloadEvent e){
+    public void unload(ChunkUnloadEvent e) {
         List<String> names = Arrays.stream(e.getChunk().getEntities())
                 .filter(entity -> entity instanceof ArmorStand)
                 .filter(entity -> entity.getName() != null && entity.getName().contains("guardian_"))
                 .map(Entity::getName)
                 .collect(Collectors.toList());
-        if(names.isEmpty()) return;
+        if (names.isEmpty()) return;
         names.forEach(name -> plugin.getGuardians().getGuardian(name.replace("guardian_", "")).ifPresent(Guardian::remove));
     }
 }

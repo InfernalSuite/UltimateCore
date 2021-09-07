@@ -31,11 +31,11 @@ import java.util.UUID;
 
 @AllArgsConstructor
 public class CollectionsListener implements Listener {
-    
+
     private final HyperCollections plugin;
-    
+
     private final HashMap<UUID, Long> countdown = new HashMap<>();
-    
+
     @EventHandler
     public void onChest(BlockBreakEvent e) {
         Player p = e.getPlayer();
@@ -46,7 +46,7 @@ public class CollectionsListener implements Listener {
         if (e.getBlock().hasMetadata("COLLECTED"))
             setMetadataAround(p);
     }
-    
+
     @EventHandler
     public void onDeath(EntityDeathEvent e) {
         if (e.getEntity() instanceof Player) {
@@ -60,32 +60,33 @@ public class CollectionsListener implements Listener {
             setMetadataAround(e.getEntity());
         }
     }
-    
+
     @EventHandler
     public void onFrame(EntityDamageByEntityEvent e) {
         if (e.getEntity() instanceof org.bukkit.entity.ItemFrame)
             preventDupe(e.getEntity().getLocation());
     }
-    
+
     @EventHandler
     public void onEnter(VehicleDestroyEvent e) {
         if (e.getAttacker() instanceof Player && e.getVehicle() instanceof org.bukkit.inventory.InventoryHolder)
             setMetadataAround(e.getVehicle());
     }
-    
+
     @EventHandler
     public void onPlayerDrop(PlayerDropItemEvent e) {
         Item bt = e.getItemDrop();
         setMetadata(bt);
     }
-    
+
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
         e.getBlock().setMetadata("COLLECTED", new FixedMetadataValue(this.plugin, "UUID"));
     }
-    
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
+
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onPickUp(PlayerPickupItemEvent e) {
+        if (e.isCancelled()) return;
         ItemStack item = e.getItem().getItemStack();
         Player p = e.getPlayer();
         if (!checkHas(e.getItem())) return;
@@ -100,7 +101,7 @@ public class CollectionsListener implements Listener {
         Player player = e.getPlayer();
         plugin.getCollectionsManager().addXP(player, key, item.getAmount());
     }
-    
+
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public void onExtractItem(FurnaceExtractEvent e) {
         String key = Utils.getKey(XMaterial.matchXMaterial(e.getItemType()).toString());
@@ -108,17 +109,17 @@ public class CollectionsListener implements Listener {
         Player player = e.getPlayer();
         plugin.getCollectionsManager().addXP(player, key, e.getItemAmount());
     }
-    
+
     @EventHandler
     public void onDispense(BlockDispenseEvent e) {
         preventDupe(e.getBlock().getLocation());
     }
-    
+
     @EventHandler
     public void onPiston(BlockPistonExtendEvent e) {
         preventDupe(e.getBlock().getLocation());
     }
-    
+
     private void preventDupe(Location block) {
         for (Entity entity : block.getWorld().getNearbyEntities(block, 3.0D, 3.0D, 3.0D)) {
             if (entity instanceof Player) {
@@ -128,11 +129,11 @@ public class CollectionsListener implements Listener {
         }
         setMetadataAround(block);
     }
-    
+
     public void setMetadataAround(Entity p) {
         setMetadataAround(p.getLocation());
     }
-    
+
     public void setMetadataAround(final Location l) {
         (new BukkitRunnable() {
             public void run() {
@@ -146,13 +147,13 @@ public class CollectionsListener implements Listener {
             }
         }).runTaskLater(this.plugin, 1L);
     }
-    
+
     public void setMetadata(Item i) {
         i.setMetadata("COLLECTED", new FixedMetadataValue(plugin, "UUID"));
     }
-    
+
     public boolean checkHas(Item i) {
         return !i.hasMetadata("COLLECTED");
     }
-    
+
 }

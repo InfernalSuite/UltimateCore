@@ -27,7 +27,6 @@ public class Guardians extends YamlConfig {
             for (String str : configurationSection.getKeys(false))
                 getConfig().set("guardians." + str, null);
         }
-        super.save();
         guardians.values().stream()
                 .filter(Objects::nonNull)
                 .filter(guardian -> guardian.getLocation() != null)
@@ -45,7 +44,7 @@ public class Guardians extends YamlConfig {
             amount++;
         }
         if (amount > 0)
-            Bukkit.getConsoleSender().sendMessage(Utils.color("&e[HyperRegions] &b" + amount + " Guardian" + (amount > 1 ? "s" : "") + " " + (amount > 1 ? "were" : "was") + " successfully loaded!"));
+            Bukkit.getConsoleSender().sendMessage(Utils.color("&e[UltimateFarm] &b" + amount + " Guardian" + (amount > 1 ? "s" : "") + " " + (amount > 1 ? "were" : "was") + " successfully loaded!"));
     }
 
     public boolean addGuardian(String guardianName, Location location, boolean enable) {
