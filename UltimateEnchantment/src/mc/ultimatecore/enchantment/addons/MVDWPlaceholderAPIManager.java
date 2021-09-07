@@ -10,8 +10,8 @@ public class MVDWPlaceholderAPIManager {
         HyperEnchantments hyperEnchantments = plugin.getHyperEnchantments();
         hyperEnchantments.enchantments
                 .forEach((name, hyperEnchantment) -> {
-                    PlaceholderAPI.registerPlaceholder(plugin, "hyperenchants_lore_" + name, e -> hyperEnchantment.getDescription() + "");
-                    PlaceholderAPI.registerPlaceholder(plugin, "hyperenchants_name_" + name, e -> hyperEnchantment.getDisplayName() + "");
+                    PlaceholderAPI.registerPlaceholder(plugin, "ultimateenchantment_lore_" + name, e -> String.join(" ",hyperEnchantment.getDescription()) + "");
+                    PlaceholderAPI.registerPlaceholder(plugin, "ultimateenchantment_name_" + name, e -> hyperEnchantment.getDisplayName() + "");
                 });
     }
 }
