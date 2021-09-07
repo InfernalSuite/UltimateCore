@@ -10,7 +10,7 @@ import java.util.List;
 public class MainMenuCommand extends Command {
 
     public MainMenuCommand() {
-        super(Collections.singletonList("mainmenu"), "Opens the farm main menu", "hyperregions.mainmenu", true);
+        super(Collections.singletonList("mainmenu"), "Opens the farm main menu", "ultimatefarm.mainmenu", true);
     }
 
     @Override

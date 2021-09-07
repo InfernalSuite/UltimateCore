@@ -12,7 +12,7 @@ import java.util.List;
 public class RegionListCommand extends Command {
 
     public RegionListCommand() {
-        super(Collections.singletonList("regionlist"), "Show all regions availables", "hyperregions.regionlist", true);
+        super(Collections.singletonList("regionlist"), "Show all regions availables", "ultimatefarm.regionlist", true);
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.List;
 public class ReloadCommand extends Command {
 
     public ReloadCommand() {
-        super(Collections.singletonList("reload"), "Reload all Config Files", "hyperregions.reload", false);
+        super(Collections.singletonList("reload"), "Reload all Config Files", "ultimatefarm.reload", false);
     }
 
     @Override

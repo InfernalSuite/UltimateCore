@@ -11,7 +11,7 @@ import java.util.List;
 public class TypeListCommand extends Command {
 
     public TypeListCommand() {
-        super(Collections.singletonList("typelist"), "To see all types of regions", "hyperregions.typeregions", true);
+        super(Collections.singletonList("typelist"), "To see all types of regions", "ultimatefarm.typeregions", true);
     }
 
     @Override

@@ -7,6 +7,6 @@ authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore, WorldEdit, WorldGuard, Multiverse-Core, Residence, UltraRegions ]
 commands:
-  hyperregions:
-    aliases: [ "hregions", "regregions" ]
+  ultimatefarm:
+    aliases: [ "ucfarm" ]
     description: UltimateCore's Farm main command

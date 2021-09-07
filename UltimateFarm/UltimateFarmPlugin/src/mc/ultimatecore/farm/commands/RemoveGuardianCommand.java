@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class RemoveGuardianCommand extends Command {
 
     public RemoveGuardianCommand() {
-        super(Collections.singletonList("delguardian"), "Remove a guardian", "hyperregions.delguardian", true);
+        super(Collections.singletonList("delguardian"), "Remove a guardian", "ultimatefarm.delguardian", true);
     }
 
     @Override

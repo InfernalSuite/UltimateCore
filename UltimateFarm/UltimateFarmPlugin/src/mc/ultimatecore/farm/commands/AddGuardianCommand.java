@@ -14,7 +14,7 @@ import java.util.Set;
 public class AddGuardianCommand extends Command {
 
     public AddGuardianCommand() {
-        super(Collections.singletonList("addguardian"), "Add a new guardian", "hyperregions.addguardian", true);
+        super(Collections.singletonList("addguardian"), "Add a new guardian", "ultimatefarm.addguardian", true);
     }
 
     @Override

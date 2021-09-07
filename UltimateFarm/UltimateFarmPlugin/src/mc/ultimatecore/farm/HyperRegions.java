@@ -21,7 +21,7 @@ import org.bukkit.event.Listener;
 
 @Getter
 public class HyperRegions extends UltimatePlugin {
-    
+
     /*
      * This block prevents the Maven Shade plugin to remove the specified classes
      */
@@ -35,7 +35,7 @@ public class HyperRegions extends UltimatePlugin {
                 v1_17_R1.class,
         };
     }
-    
+
     private static HyperRegions instance;
     private Config configuration;
     private Messages messages;
@@ -45,33 +45,35 @@ public class HyperRegions extends UltimatePlugin {
     private CommandManager commandManager;
     private Guardians guardians;
     private NMS nms;
-    
+
     public static HyperRegions getInstance() {
         return instance;
     }
-    
+
     @Override
     public void onEnable() {
         instance = this;
         loadNMS();
-        if (nms == null)
-            Bukkit.getPluginManager().disablePlugin(this);
-        
+        if (nms == null) {
+            setEnabled(false);
+            return;
+        }
+
         addonsManager = new AddonsManager(this);
-        
+
         loadConfigs();
-        
+
         registerListeners(new InventoryClickListener(), new CropBreakListener(this));
-        
+
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::saveConfigs, 1000L, 1900L);
-        commandManager = new CommandManager("hyperregions");
+        commandManager = new CommandManager("ultimatefarm");
         commandManager.registerCommands();
-        
+
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
-        
-        
+
+
     }
-    
+
     private void loadNMS() {
         try {
             nms = (NMS) Class.forName("mc.ultimatecore.farm.nms." + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]).newInstance();
@@ -79,7 +81,7 @@ public class HyperRegions extends UltimatePlugin {
             getLogger().info("Unsupported Version Detected: " + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]);
         }
     }
-    
+
     @Override
     public void onDisable() {
         if (guardians != null) guardians.getGuardians().forEach(Guardian::remove);
@@ -88,16 +90,16 @@ public class HyperRegions extends UltimatePlugin {
         Bukkit.getOnlinePlayers().forEach(HumanEntity::closeInventory);
         getLogger().info(getDescription().getName() + " Disabled!");
     }
-    
+
     public void sendErrorMessage(Exception e) {
         e.printStackTrace();
     }
-    
+
     public void registerListeners(Listener... listener) {
         for (Listener l : listener)
             Bukkit.getPluginManager().registerEvents(l, this);
     }
-    
+
     public void loadConfigs() {
         configuration = new Config(this, "config", true);
         guardians = new Guardians(this, "guardians", false);
@@ -105,13 +107,13 @@ public class HyperRegions extends UltimatePlugin {
         inventories = new Inventories();
         messages = new Messages();
     }
-    
+
     public void reloadConfigs() {
         if (guardians != null) guardians.reload();
         if (farmManager != null) farmManager.reload();
         if (configuration != null) configuration.reload();
     }
-    
+
     public void saveConfigs() {
         if (guardians != null) guardians.save();
     }
