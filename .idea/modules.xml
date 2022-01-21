@@ -4,14 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UltimateAlchemy/UltimateAlchemy.iml" filepath="$PROJECT_DIR$/UltimateAlchemy/UltimateAlchemy.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvil.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvil.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS/UltimateAnvilNMS.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS/UltimateAnvilNMS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_12_R1/UltimateAnvilNMS-v1_12_R1.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_12_R1/UltimateAnvilNMS-v1_12_R1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_14_R1/UltimateAnvilNMS-v1_14_R1.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_14_R1/UltimateAnvilNMS-v1_14_R1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_15_R1/UltimateAnvilNMS-v1_15_R1.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_15_R1/UltimateAnvilNMS-v1_15_R1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_16_R3/UltimateAnvilNMS-v1_16_R3.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_16_R3/UltimateAnvilNMS-v1_16_R3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_17_R1/UltimateAnvilNMS-v1_17_R1.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_17_R1/UltimateAnvilNMS-v1_17_R1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_8_R3/UltimateAnvilNMS-v1_8_R3.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_8_R3/UltimateAnvilNMS-v1_8_R3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilPlugin/UltimateAnvilPlugin.iml" filepath="$PROJECT_DIR$/UltimateAnvil/UltimateAnvilPlugin/UltimateAnvilPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCollections/UltimateCollections.iml" filepath="$PROJECT_DIR$/UltimateCollections/UltimateCollections.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCore.iml" filepath="$PROJECT_DIR$/UltimateCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCoreMenu/UltimateCoreMenu.iml" filepath="$PROJECT_DIR$/UltimateCoreMenu/UltimateCoreMenu.iml" />
@@ -22,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_15_R1/UltimateCraftingNMS-v1_15_R1.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_15_R1/UltimateCraftingNMS-v1_15_R1.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_16_R3/UltimateCraftingNMS-v1_16_R3.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_16_R3/UltimateCraftingNMS-v1_16_R3.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_17_R1/UltimateCraftingNMS-v1_17_R1.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_17_R1/UltimateCraftingNMS-v1_17_R1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_18_R1/UltimateCraftingNMS-v1_18_R1.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_18_R1/UltimateCraftingNMS-v1_18_R1.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_8_R3/UltimateCraftingNMS-v1_8_R3.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_8_R3/UltimateCraftingNMS-v1_8_R3.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingPlugin/UltimateCraftingPlugin.iml" filepath="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingPlugin/UltimateCraftingPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateDragon/UltimateDragon.iml" filepath="$PROJECT_DIR$/UltimateDragon/UltimateDragon.iml" />
@@ -41,6 +34,7 @@
       <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_15_R1/UltimateFarmNMS-v1_15_R1.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_15_R1/UltimateFarmNMS-v1_15_R1.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_16_R3/UltimateFarmNMS-v1_16_R3.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_16_R3/UltimateFarmNMS-v1_16_R3.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_17_R1/UltimateFarmNMS-v1_17_R1.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_17_R1/UltimateFarmNMS-v1_17_R1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_18_R1/UltimateFarmNMS-v1_18_R1.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_18_R1/UltimateFarmNMS-v1_18_R1.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_8_R3/UltimateFarmNMS-v1_8_R3.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_8_R3/UltimateFarmNMS-v1_8_R3.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmPlugin/UltimateFarmPlugin.iml" filepath="$PROJECT_DIR$/UltimateFarm/UltimateFarmPlugin/UltimateFarmPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/UltimateHelper/UltimateHelper.iml" filepath="$PROJECT_DIR$/UltimateHelper/UltimateHelper.iml" />

@@ -13,20 +13,17 @@
         <module name="UltimateFarmNMS-v1_14_R1" />
         <module name="UltimateDragonNMS-v1_15_R1" />
         <module name="UltimateDragonPlugin" />
-        <module name="UltimateAnvilNMS-v1_15_R1" />
+        <module name="UltimateFarmNMS-v1_18_R1" />
         <module name="UltimateEnchantment" />
+        <module name="UltimateAnvil" />
         <module name="UltimateFarmNMS-v1_8_R3" />
-        <module name="UltimateAnvilNMS" />
         <module name="UltimateRunes" />
-        <module name="UltimateAnvilPlugin" />
         <module name="UltimateAlchemy" />
         <module name="UltimateCraftingNMS" />
         <module name="UltimateDragonNMS-v1_17_R1" />
-        <module name="UltimateAnvilNMS-v1_8_R3" />
         <module name="UltimateFarmNMS-v1_12_R1" />
         <module name="UltimateTalismans" />
         <module name="UltimatePets" />
-        <module name="UltimateAnvilNMS-v1_17_R1" />
         <module name="UltimateCraftingNMS-v1_16_R3" />
         <module name="UltimateCraftingNMS-v1_14_R1" />
         <module name="UltimateHelper" />
@@ -34,16 +31,15 @@
         <module name="UltimateCollections" />
         <module name="UltimateCraftingNMS-v1_12_R1" />
         <module name="UltimateDragonNMS-v1_12_R1" />
-        <module name="UltimateFarmPlugin" />
         <module name="UltimateDragonNMS-v1_8_R3" />
+        <module name="UltimateFarmPlugin" />
         <module name="UltimateCoreMenu" />
         <module name="UltimateFarmNMS-v1_17_R1" />
-        <module name="UltimateCraftingNMS-v1_8_R3" />
-        <module name="UltimateFarmNMS-v1_15_R1" />
-        <module name="UltimateDragonNMS-v1_14_R1" />
-        <module name="UltimateAnvilNMS-v1_12_R1" />
         <module name="UltimateCraftingPlugin" />
-        <module name="UltimateAnvilNMS-v1_14_R1" />
+        <module name="UltimateCraftingNMS-v1_8_R3" />
+        <module name="UltimateCraftingNMS-v1_18_R1" />
+        <module name="UltimateDragonNMS-v1_14_R1" />
+        <module name="UltimateFarmNMS-v1_15_R1" />
         <module name="UltimateFarmNMS" />
         <module name="UltimateDragonNMS-v1_16_R3" />
         <module name="UltimateSkills" />
@@ -51,7 +47,6 @@
         <module name="UltimateSouls" />
         <module name="UltimateCraftingNMS-v1_15_R1" />
         <module name="UltimateCraftingNMS-v1_17_R1" />
-        <module name="UltimateAnvilNMS-v1_16_R3" />
         <module name="UltimateReforge" />
       </profile>
     </annotationProcessing>
@@ -64,6 +59,7 @@
       <module name="UltimateAnvilNMS-v1_15_R1" target="8" />
       <module name="UltimateAnvilNMS-v1_16_R3" target="8" />
       <module name="UltimateAnvilNMS-v1_17_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_18_R1" target="8" />
       <module name="UltimateAnvilNMS-v1_8_R3" target="8" />
       <module name="UltimateAnvilPlugin" target="8" />
       <module name="UltimateCollections" target="8" />
@@ -83,6 +79,7 @@
       <module name="UltimateCraftingNMS-v1_16_R3 (1)" target="8" />
       <module name="UltimateCraftingNMS-v1_17_R1" target="8" />
       <module name="UltimateCraftingNMS-v1_17_R1 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_18_R1" target="8" />
       <module name="UltimateCraftingNMS-v1_8_R3" target="8" />
       <module name="UltimateCraftingPlugin" target="8" />
       <module name="UltimateDragon" target="8" />
@@ -102,6 +99,7 @@
       <module name="UltimateFarmNMS-v1_15_R1" target="8" />
       <module name="UltimateFarmNMS-v1_16_R3" target="8" />
       <module name="UltimateFarmNMS-v1_17_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_18_R1" target="8" />
       <module name="UltimateFarmNMS-v1_8_R3" target="8" />
       <module name="UltimateFarmPlugin" target="8" />
       <module name="UltimateHelper" target="8" />

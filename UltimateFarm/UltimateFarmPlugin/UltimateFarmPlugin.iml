@@ -55,9 +55,10 @@
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_15_R1" />
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_16_R3" />
     <orderEntry type="module" module-name="UltimateFarmNMS-v1_17_R1" />
+    <orderEntry type="module" module-name="UltimateFarmNMS-v1_18_R1" />
     <orderEntry type="module" module-name="UltimateFarmNMS" />
     <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:item-nbt-api:2.9.0-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />

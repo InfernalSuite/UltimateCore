@@ -3,15 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/UltimateAlchemy/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateAlchemy/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_12_R1/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_14_R1/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_15_R1/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_16_R3/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_17_R1/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS-v1_8_R3/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilNMS/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilPlugin/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/UltimateAnvil/UltimateAnvilPlugin/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UltimateAnvil/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UltimateAnvil/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCollections/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCollections/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCoreMenu/resources" charset="UTF-8" />
@@ -21,6 +14,7 @@
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_15_R1/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_16_R3/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_17_R1/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_18_R1/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_8_R3/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateCrafting/UltimateCraftingPlugin/resources" charset="UTF-8" />
@@ -41,6 +35,7 @@
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_15_R1/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_16_R3/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_17_R1/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_18_R1/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_8_R3/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS/src" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UltimateFarm/UltimateFarmPlugin/resources" charset="UTF-8" />
