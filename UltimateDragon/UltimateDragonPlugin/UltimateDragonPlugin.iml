@@ -47,6 +47,7 @@
     <orderEntry type="module" module-name="UltimateDragonNMS-v1_15_R1" />
     <orderEntry type="module" module-name="UltimateDragonNMS-v1_16_R3" />
     <orderEntry type="module" module-name="UltimateDragonNMS-v1_17_R1" />
+    <orderEntry type="module" module-name="UltimateDragonNMS-v1_18_R1" />
     <orderEntry type="module" module-name="UltimateDragonNMS" />
     <orderEntry type="module" module-name="UltimateHelper" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />

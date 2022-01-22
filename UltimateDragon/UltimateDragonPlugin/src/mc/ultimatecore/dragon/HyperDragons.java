@@ -37,6 +37,7 @@ public class HyperDragons extends UltimatePlugin {
                 v1_15_R1.class,
                 v1_16_R3.class,
                 v1_17_R1.class,
+                v1_18_R1.class
         };
     }
     
