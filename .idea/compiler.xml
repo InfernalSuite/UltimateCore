@@ -40,6 +40,7 @@
         <module name="UltimateCraftingNMS-v1_18_R1" />
         <module name="UltimateDragonNMS-v1_14_R1" />
         <module name="UltimateFarmNMS-v1_15_R1" />
+        <module name="UltimateDragonNMS-v1_18_R1" />
         <module name="UltimateFarmNMS" />
         <module name="UltimateDragonNMS-v1_16_R3" />
         <module name="UltimateSkills" />
@@ -89,6 +90,7 @@
       <module name="UltimateDragonNMS-v1_15_R1" target="8" />
       <module name="UltimateDragonNMS-v1_16_R3" target="8" />
       <module name="UltimateDragonNMS-v1_17_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_18_R1" target="8" />
       <module name="UltimateDragonNMS-v1_8_R3" target="8" />
       <module name="UltimateDragonPlugin" target="8" />
       <module name="UltimateEnchantment" target="8" />
