@@ -28,6 +28,14 @@
         <module>UltimateTrades</module>
     </modules>
 
+    <!--Repo to use snapshot shade plugin-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>apache.snapshots</id>
+            <url>https://repository.apache.org/snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <!--Repositories & Dependencies-->
     <repositories>
         <!--NMS Repo-->
