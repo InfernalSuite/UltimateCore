@@ -1,9 +1,11 @@
 package mc.ultimatecore.farm.utils;
 
 import com.cryptomorin.xseries.XMaterial;
+import de.tr7zw.changeme.nbtapi.NBTCompound;
+import de.tr7zw.changeme.nbtapi.NBTItem;
+import de.tr7zw.changeme.nbtapi.NBTListCompound;
 import mc.ultimatecore.farm.configs.Inventories;
 import mc.ultimatecore.farm.objects.blocks.RegionBlock;
-import mc.ultimatecore.farm.skullcreator.SkullCreator;
 import org.bukkit.*;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemFlag;
@@ -11,10 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Utils {
@@ -50,10 +49,10 @@ public class Utils {
     public static ItemStack makeItem(Inventories.Item item) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, item.title, item.lore);
-            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta();
-                return changeItemMeta(SkullCreator.getSkull(item.headData), meta);
-            } else if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
+            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null)
+                return getSkull(itemstack, item.headData);
+
+            if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
                 m.setOwner(item.headOwner);
                 itemstack.setItemMeta(m);
@@ -67,12 +66,9 @@ public class Utils {
     public static ItemStack makeItem(Inventories.Item item, List<Placeholder> placeholders) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, processMultiplePlaceholders(item.title, placeholders), processMultiplePlaceholders(item.lore, placeholders));
-            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta().clone();
-                itemstack = SkullCreator.getSkull(item.headData);
-                itemstack.setItemMeta(meta);
-                return itemstack;
-            }
+            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null)
+                return getSkull(itemstack, item.headData);
+
             if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
                 m.setOwner(processMultiplePlaceholders(item.headOwner, placeholders));
@@ -92,12 +88,9 @@ public class Utils {
             ItemStack itemstack = mat == Material.AIR ?
                     makeItem(XMaterial.WHITE_STAINED_GLASS_PANE, item.amount, processMultiplePlaceholders(item.title, placeholders), processMultiplePlaceholders(item.lore, placeholders)) :
                     makeItem(mat, item.amount, processMultiplePlaceholders(item.title, placeholders), processMultiplePlaceholders(item.lore, placeholders));
-            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta().clone();
-                itemstack = SkullCreator.getSkull(item.headData);
-                itemstack.setItemMeta(meta);
-                return itemstack;
-            }
+            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null)
+                return getSkull(itemstack, item.headData);
+
             if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
                 m.setOwner(processMultiplePlaceholders(item.headOwner, placeholders));
@@ -112,12 +105,9 @@ public class Utils {
     public static ItemStack makeItemHidden(Inventories.Item item) {
         try {
             ItemStack itemstack = makeItemHidden(item.material, item.amount, item.title, item.lore);
-            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta().clone();
-                itemstack = SkullCreator.getSkull(item.headData);
-                itemstack.setItemMeta(meta);
-                return itemstack;
-            }
+            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null)
+                return getSkull(itemstack, item.headData);
+
             if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
                 m.setOwner(item.headOwner);
@@ -133,10 +123,9 @@ public class Utils {
     public static ItemStack makeItemHidden(Inventories.Item item, List<Placeholder> placeholders) {
         try {
             ItemStack itemstack = makeItemHidden(item.material, item.amount, processMultiplePlaceholders(item.title, placeholders), color(processMultiplePlaceholders(item.lore, placeholders)));
-            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta();
-                return changeItemMeta(SkullCreator.getSkull(item.headData), meta);
-            }
+            if (item.material == XMaterial.PLAYER_HEAD && item.headData != null)
+                return getSkull(itemstack, item.headData);
+
             if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
                 m.setOwner(item.headOwner);
@@ -154,8 +143,7 @@ public class Utils {
             item.headData = texture;
             ItemStack itemstack = makeItemHidden(item.material, item.amount, processMultiplePlaceholders(item.title, placeholders), color(processMultiplePlaceholders(item.lore, placeholders)));
             if (item.material == XMaterial.PLAYER_HEAD && item.headData != null) {
-                ItemMeta meta = itemstack.getItemMeta();
-                return changeItemMeta(SkullCreator.getSkull(item.headData), meta);
+
             }
             if (item.material == XMaterial.PLAYER_HEAD && item.headOwner != null) {
                 SkullMeta m = (SkullMeta) itemstack.getItemMeta();
@@ -167,6 +155,20 @@ public class Utils {
             e.printStackTrace();
             return makeItemHidden(XMaterial.STONE, item.amount, processMultiplePlaceholders(item.title, placeholders), color(processMultiplePlaceholders(item.lore, placeholders)));
         }
+    }
+
+    public static ItemStack getSkull(String headData){
+        return getSkull(XMaterial.PLAYER_HEAD.parseItem(), headData);
+    }
+
+    public static ItemStack getSkull(ItemStack itemstack, String headData){
+        NBTItem nbtItem = new NBTItem(itemstack);
+        NBTCompound skull = nbtItem.addCompound("SkullOwner");
+        skull.setString("Name", "tr7zw");
+        skull.setString("Id", UUID.randomUUID().toString());
+        NBTListCompound text = skull.addCompound("Properties").getCompoundList("textures").addCompound();
+        text.setString("Value", headData);
+        return nbtItem.getItem();
     }
 
     public static ItemStack makeItemHidden(XMaterial material, int amount, String name, List<String> lore) {

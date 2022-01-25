@@ -3,7 +3,7 @@ package mc.ultimatecore.farm.guardians.implementations;
 import mc.ultimatecore.farm.HyperRegions;
 import mc.ultimatecore.farm.guardians.Guardian;
 import mc.ultimatecore.farm.particle.EnumParticle;
-import mc.ultimatecore.farm.skullcreator.SkullCreator;
+import mc.ultimatecore.farm.utils.Utils;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -79,7 +79,7 @@ public class LegacyGuardian extends Guardian {
         this.armorStand.setRemoveWhenFarAway(false);
         this.armorStand.setCustomName("guardian_" + name);
         this.armorStand.setCustomNameVisible(false);
-        this.armorStand.setHelmet(SkullCreator.getSkull(HyperRegions.getInstance().getConfiguration().guardianTexture));
+        this.armorStand.setHelmet(Utils.getSkull(HyperRegions.getInstance().getConfiguration().guardianTexture));
         this.floatTask = (new BukkitRunnable() {
 
             final double maxY = 0.25D;
