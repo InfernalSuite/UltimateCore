@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Annotation profile for UltimateCore" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
-        </processorPath>
-        <module name="UltimateFarmNMS-v1_16_R3" />
-        <module name="UltimateFarmNMS-v1_14_R1" />
-        <module name="UltimateFarmNMS-v1_18_R1" />
-        <module name="UltimateDragonNMS-v1_15_R1" />
-        <module name="UltimateDragonPlugin" />
-        <module name="UltimateEnchantment" />
-        <module name="UltimateRunes" />
-        <module name="UltimateFarmNMS-v1_8_R3" />
-        <module name="UltimateAnvil" />
-        <module name="UltimateAlchemy" />
-        <module name="UltimateCraftingNMS" />
-        <module name="UltimateDragonNMS-v1_17_R1" />
-        <module name="UltimateFarmNMS-v1_12_R1" />
-        <module name="UltimateTalismans" />
-        <module name="UltimatePets" />
-        <module name="UltimateCraftingNMS-v1_16_R3" />
-        <module name="UltimateHelper" />
-        <module name="UltimateCraftingNMS-v1_14_R1" />
-        <module name="UltimateDragonNMS" />
-        <module name="UltimateCollections" />
-        <module name="UltimateCraftingNMS-v1_12_R1" />
-        <module name="UltimateDragonNMS-v1_12_R1" />
-        <module name="UltimateDragonNMS-v1_8_R3" />
-        <module name="UltimateFarmPlugin" />
-        <module name="UltimateCoreMenu" />
-        <module name="UltimateFarmNMS-v1_17_R1" />
-        <module name="UltimateCraftingPlugin" />
-        <module name="UltimateCraftingNMS-v1_8_R3" />
-        <module name="UltimateCraftingNMS-v1_18_R1" />
-        <module name="UltimateDragonNMS-v1_14_R1" />
-        <module name="UltimateFarmNMS-v1_15_R1" />
-        <module name="UltimateDragonNMS-v1_18_R1" />
-        <module name="UltimateFarmNMS" />
-        <module name="UltimateSkills" />
-        <module name="UltimateDragonNMS-v1_16_R3" />
-        <module name="UltimateTrades" />
-        <module name="UltimateSouls" />
-        <module name="UltimateCraftingNMS-v1_15_R1" />
-        <module name="UltimateCraftingNMS-v1_17_R1" />
-        <module name="UltimateReforge" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="UltimateAlchemy" target="8" />
       <module name="UltimateAnvil" target="8" />
