@@ -55,6 +55,10 @@
                             <pattern>com.cryptomorin.xseries</pattern>
                             <shadedPattern>mc.ultimatecore.farm.libs.com.cryptomorin.xseries</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>de.tr7zw</pattern>
+                            <shadedPattern>mc.ultimatecore.farm.libs.de.tr7zw</shadedPattern>
+                        </relocation>
                     </relocations>
                 </configuration>
             </plugin>

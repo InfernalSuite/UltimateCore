@@ -1,25 +1,25 @@
 package mc.ultimatecore.farm.managers;
 
 import mc.ultimatecore.farm.HyperRegions;
-import mc.ultimatecore.farm.configs.YamlConfig;
 import mc.ultimatecore.farm.objects.*;
 import mc.ultimatecore.farm.objects.blocks.BlockAfter;
 import mc.ultimatecore.farm.objects.blocks.ChanceBlock;
 import mc.ultimatecore.farm.objects.blocks.RegionBlock;
+import mc.ultimatecore.helper.files.YAMLFile;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.*;
 
-public class RegionsManager extends YamlConfig {
+public class RegionsManager extends YAMLFile {
 
     private final HyperRegions plugin;
     public Map<String, HyperRegion> hyperRegions;
     public Set<BlockRegen> blockRegenCache = new HashSet<>();
 
     public RegionsManager(HyperRegions plugin, String name, boolean defaults) {
-        super(plugin, name, defaults);
+        super(plugin, name, defaults, false);
         this.plugin = plugin;
         loadDefaults();
     }

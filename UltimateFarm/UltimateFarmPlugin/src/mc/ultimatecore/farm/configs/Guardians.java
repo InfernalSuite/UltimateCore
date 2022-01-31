@@ -6,18 +6,19 @@ import mc.ultimatecore.farm.guardians.Guardian;
 import mc.ultimatecore.farm.guardians.implementations.LegacyGuardian;
 import mc.ultimatecore.farm.guardians.implementations.NormalGuardian;
 import mc.ultimatecore.farm.utils.Utils;
+import mc.ultimatecore.helper.files.YAMLFile;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.*;
 
-public class Guardians extends YamlConfig {
+public class Guardians extends YAMLFile {
 
     private final Map<String, Guardian> guardians = new HashMap<>();
 
     public Guardians(HyperRegions plugin, String name, boolean defaults) {
-        super(plugin, name, defaults);
+        super(plugin, name, defaults, false);
         loadDefaults();
     }
 

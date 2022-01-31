@@ -23,7 +23,7 @@
     <orderEntry type="module-library">
       <library name="Maven: org.spigot:spigot:1.16.5">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/spigots/spigot-1.16.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../libs/spigots/spigot-1.16.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

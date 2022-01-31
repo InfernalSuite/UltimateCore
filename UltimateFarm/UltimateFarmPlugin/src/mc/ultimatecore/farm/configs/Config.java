@@ -1,8 +1,9 @@
 package mc.ultimatecore.farm.configs;
 
 import mc.ultimatecore.farm.HyperRegions;
+import mc.ultimatecore.helper.files.YAMLFile;
 
-public class Config extends YamlConfig {
+public class Config extends YAMLFile {
     public String prefix;
     public String guardianTexture;
 
@@ -14,7 +15,7 @@ public class Config extends YamlConfig {
     public String particle;
 
     public Config(HyperRegions plugin, String name, boolean defaults) {
-        super(plugin, name, defaults);
+        super(plugin, name, defaults, false);
         loadDefaults();
     }
 

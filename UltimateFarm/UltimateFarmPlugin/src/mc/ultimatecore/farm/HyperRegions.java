@@ -19,6 +19,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.Listener;
 
+import java.util.Optional;
+
 @Getter
 public class HyperRegions extends UltimatePlugin {
 
@@ -54,7 +56,9 @@ public class HyperRegions extends UltimatePlugin {
     @Override
     public void onEnable() {
         instance = this;
+
         loadNMS();
+
         if (nms == null) {
             setEnabled(false);
             return;
@@ -67,7 +71,9 @@ public class HyperRegions extends UltimatePlugin {
         registerListeners(new InventoryClickListener(), new CropBreakListener(this));
 
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::saveConfigs, 1000L, 1900L);
+
         commandManager = new CommandManager("ultimatefarm");
+
         commandManager.registerCommands();
 
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
@@ -85,10 +91,14 @@ public class HyperRegions extends UltimatePlugin {
 
     @Override
     public void onDisable() {
-        if (guardians != null) guardians.getGuardians().forEach(Guardian::remove);
-        if (farmManager != null) farmManager.blockRegenCache.forEach(blockRegen -> blockRegen.disableRegen(true));
+        Optional.ofNullable(guardians).ifPresent(guardians1 -> guardians.getGuardians().forEach(Guardian::remove));
+
+        Optional.ofNullable(farmManager).ifPresent(manager -> manager.blockRegenCache.forEach(blockRegen -> blockRegen.disableRegen(true)));
+
         saveConfigs();
+
         Bukkit.getOnlinePlayers().forEach(HumanEntity::closeInventory);
+
         getLogger().info(getDescription().getName() + " Disabled!");
     }
 
@@ -110,12 +120,12 @@ public class HyperRegions extends UltimatePlugin {
     }
 
     public void reloadConfigs() {
-        if (guardians != null) guardians.reload();
-        if (farmManager != null) farmManager.reload();
-        if (configuration != null) configuration.reload();
+        Optional.ofNullable(guardians).ifPresent(Guardians::reload);
+        Optional.ofNullable(farmManager).ifPresent(RegionsManager::reload);
+        Optional.ofNullable(configuration).ifPresent(Config::reload);
     }
 
     public void saveConfigs() {
-        if (guardians != null) guardians.save();
+        Optional.ofNullable(guardians).ifPresent(Guardians::reload);
     }
 }
