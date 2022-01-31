@@ -75,7 +75,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         }
         for (HyperCommand command : commands) {
             // We don't want to execute other commands or ones that are disabled
-            if (!(command.aliases.contains(args[0]) && command.enabled)) {
+            if (command.aliases.size() >= 1 && !(command.aliases.contains(args[0]) && command.enabled)) {
                 continue;
             }
 

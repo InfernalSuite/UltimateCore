@@ -13,11 +13,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigot</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.16.5</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/../../libs/spigots/spigot-1.16.5.jar</systemPath>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.18.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>de.tr7zw</groupId>

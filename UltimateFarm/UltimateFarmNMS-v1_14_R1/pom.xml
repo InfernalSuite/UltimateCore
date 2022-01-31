@@ -14,11 +14,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigot</groupId>
+            <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.14.4</version>
-            <scope>system</scope>
-            <systemPath>${pom.basedir}/../../libs/spigots/spigot-1.14.4.jar</systemPath>
+            <version>1.14-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>mc.ultimatecore.farm.nms</groupId>
