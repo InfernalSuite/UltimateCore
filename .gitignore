@@ -1,6 +1,6 @@
 # IntelliJ
 .idea
-/*.iml
+*.iml
 
 # Java #
 *.class
@@ -19,3 +19,4 @@ buildNumber.properties
 
 # Building #
 RELEASES/
+/.idea/
