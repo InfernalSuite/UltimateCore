@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import mc.ultimatecore.collections.HyperCollections;
 import mc.ultimatecore.collections.utils.Utils;
 import me.jet315.minions.events.MinerBlockBreakEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -19,9 +20,9 @@ public class JetMinionsListener implements Listener {
     
     @EventHandler(priority = EventPriority.LOW)
     public void jetMinionsEvent(MinerBlockBreakEvent e) {
-        if (e.getMinion() == null || e.getMinion().getPlayer() == null || e.getBlock() == null)
+        if (e.getMinion() == null || e.getMinion().getPlayerUUID() == null || e.getBlock() == null)
             return;
-        Player player = e.getMinion().getPlayer();
+        Player player = Bukkit.getPlayer(e.getMinion().getPlayerUUID());
         for (ItemStack item : e.getBlock().getDrops()) {
             if (item == null || item.getType() == Material.AIR) continue;
             String key = Utils.getKey(XMaterial.matchXMaterial(item).toString());
