@@ -9,7 +9,7 @@ import mc.ultimatecore.enchantment.enchantments.hooks.HyperEcoEnchant;
 import mc.ultimatecore.enchantment.utils.AEUtils;
 import mc.ultimatecore.enchantment.utils.EcoUtils;
 import mc.ultimatecore.enchantment.utils.Utils;
-import n3kas.ae.api.AEAPI;
+import net.advancedplugins.ae.api.AEAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
