@@ -12,8 +12,5 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("me.clip:placeholderapi:2.10.9")
-    compileOnly("be.maximvdw:MVdWPlaceholderAPI:3.1.1-SNAPSHOT"){
-        isTransitive = false
-    }
     compileOnly(project(":UltimateHelper"))
 }
