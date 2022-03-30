@@ -6,7 +6,7 @@ repositories {
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")
-    implementation("de.tr7zw:item-nbt-api:2.9.0-SNAPSHOT")
+    implementation("de.tr7zw:item-nbt-api:2.9.2")
 
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")

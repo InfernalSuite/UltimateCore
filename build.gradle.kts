@@ -10,6 +10,7 @@ buildscript {
     }
     dependencies {
         classpath("io.freefair.gradle:lombok-plugin:6.3.0")
+        classpath("gradle.plugin.com.github.johnrengelman:shadow:7.1.2")
     }
 }
 
@@ -26,6 +27,7 @@ allprojects {
         mavenCentral()
 
         maven("https://repo.codemc.io/repository/nms/")
+        maven("https://repo.codemc.org/repository/maven-public/")
         maven("https://repo.rapture.pw/repository/maven-releases/")
         maven("https://repo.glaremasters.me/repository/concuncan/")
         maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")

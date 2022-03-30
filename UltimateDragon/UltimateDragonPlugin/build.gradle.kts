@@ -2,7 +2,7 @@ version = "4.0.0"
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")
-    implementation("de.tr7zw:item-nbt-api:2.9.0-SNAPSHOT")
+    implementation("de.tr7zw:item-nbt-api:2.9.2")
 
     implementation(project(":UltimateDragon:UltimateDragonNMS"))
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_8_R3"))
