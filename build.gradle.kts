@@ -2,8 +2,6 @@ plugins {
     `java-library`
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
     id("com.sedmelluq.mass-relocator") version "1.0.0" apply false
-
-
 }
 
 buildscript {
@@ -13,7 +11,6 @@ buildscript {
     dependencies {
         classpath("io.freefair.gradle:lombok-plugin:6.3.0")
     }
-
 }
 
 allprojects {

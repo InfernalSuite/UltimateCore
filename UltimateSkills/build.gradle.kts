@@ -14,7 +14,7 @@ dependencies {
     compileOnly("be.maximvdw:MVdWPlaceholderAPI:3.1.1-SNAPSHOT"){
         isTransitive = false
     }
-    compileOnly("com.zaxxer:HikariCP:4.0.3")
+    compileOnly("com.zaxxer:HikariCP:5.0.1")
     compileOnly(project(":UltimateHelper"))
     compileOnly(project(":UltimateEnchantment"))
     compileOnly(project(":UltimateCrafting:UltimateCraftingPlugin"))

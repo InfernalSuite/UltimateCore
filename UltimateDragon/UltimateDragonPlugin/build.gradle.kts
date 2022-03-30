@@ -13,7 +13,7 @@ dependencies {
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_17_R1"))
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_18_R1"))
 
-    compileOnly("com.zaxxer:HikariCP:4.0.3")
+    compileOnly("com.zaxxer:HikariCP:5.0.1")
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
     compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.0-SNAPSHOT")
 
