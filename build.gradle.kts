@@ -36,7 +36,7 @@ allprojects {
 
 
     dependencies {
-        implementation(fileTree("libs").matching {
+        compileOnly(fileTree("libs").matching {
             include("**/*.jar")
         })
         implementation("org.jetbrains:annotations:23.0.0")
