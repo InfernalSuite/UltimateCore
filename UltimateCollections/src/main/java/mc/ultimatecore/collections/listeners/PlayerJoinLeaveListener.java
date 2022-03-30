@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerJoinLeaveListener implements Listener {
-    
+
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         try {
@@ -17,9 +17,9 @@ public class PlayerJoinLeaveListener implements Listener {
             HyperCollections.getInstance().sendErrorMessage(e);
         }
     }
-    
+
     @EventHandler
-    public void onJoin(PlayerQuitEvent event) {
+    public void onQuit(PlayerQuitEvent event) {
         try {
             HyperCollections.getInstance().getCollectionsManager().savePlayerData(event.getPlayer(), true, true);
         } catch (Exception e) {
