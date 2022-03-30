@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="ultimatecore.UltimateTrades.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_18_R1.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_15_R1.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_18_R1.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_16_R3.main" />
+        <module name="ultimatecore.UltimateAlchemy.main" />
+        <module name="ultimatecore.UltimateTalismans.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_17_R1.test" />
+        <module name="ultimatecore.UltimateFarm.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmPlugin.main" />
+        <module name="ultimatecore.UltimatePets.main" />
+        <module name="ultimatecore.main" />
+        <module name="ultimatecore.UltimateEnchantment.main" />
+        <module name="ultimatecore.UltimateCollections.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_12_R1.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_12_R1.test" />
+        <module name="ultimatecore.UltimateAnvil.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_17_R1.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_8_R3.main" />
+        <module name="ultimatecore.UltimateHelper.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_15_R1.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_14_R1.main" />
+        <module name="ultimatecore.UltimateReforge.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_15_R1.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_16_R3.test" />
+        <module name="ultimatecore.UltimateSouls.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_8_R3.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_16_R3.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingPlugin.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_12_R1.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_18_R1.main" />
+        <module name="ultimatecore.test" />
+        <module name="ultimatecore.UltimateCrafting.main" />
+        <module name="ultimatecore.UltimateDragon.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_8_R3.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_17_R1.main" />
+        <module name="ultimatecore.UltimateCrafting.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_17_R1.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_15_R1.test" />
+        <module name="ultimatecore.UltimateAnvil.main" />
+        <module name="ultimatecore.UltimateCoreMenu.main" />
+        <module name="ultimatecore.UltimateRunes.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_14_R1.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonPlugin.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_17_R1.main" />
+        <module name="ultimatecore.UltimateCollections.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_12_R1.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_17_R1.test" />
+        <module name="ultimatecore.UltimateSkills.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_15_R1.main" />
+        <module name="ultimatecore.UltimateFarm.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_12_R1.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_16_R3.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_18_R1.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_8_R3.test" />
+        <module name="ultimatecore.UltimatePets.test" />
+        <module name="ultimatecore.UltimateSouls.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_16_R3.test" />
+        <module name="ultimatecore.UltimateRunes.test" />
+        <module name="ultimatecore.UltimateTrades.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_15_R1.main" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmPlugin.test" />
+        <module name="ultimatecore.UltimateCoreMenu.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_14_R1.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_14_R1.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonPlugin.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_18_R1.main" />
+        <module name="ultimatecore.UltimateEnchantment.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingPlugin.test" />
+        <module name="ultimatecore.UltimateDragon.test" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_16_R3.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_12_R1.main" />
+        <module name="ultimatecore.UltimateCrafting.UltimateCraftingNMS-v1_8_R3.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS-v1_14_R1.test" />
+        <module name="ultimatecore.UltimateTalismans.main" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_18_R1.test" />
+        <module name="ultimatecore.UltimateFarm.UltimateFarmNMS.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_8_R3.main" />
+        <module name="ultimatecore.UltimateAlchemy.test" />
+        <module name="ultimatecore.UltimateDragon.UltimateDragonNMS-v1_14_R1.main" />
+        <module name="ultimatecore.UltimateSkills.test" />
+        <module name="ultimatecore.UltimateHelper.main" />
+        <module name="ultimatecore.UltimateReforge.test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="UltimateAlchemy" target="8" />
+      <module name="UltimateAnvil" target="8" />
+      <module name="UltimateAnvilNMS" target="8" />
+      <module name="UltimateAnvilNMS-v1_12_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_14_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_15_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_16_R3" target="8" />
+      <module name="UltimateAnvilNMS-v1_17_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_18_R1" target="8" />
+      <module name="UltimateAnvilNMS-v1_8_R3" target="8" />
+      <module name="UltimateAnvilPlugin" target="8" />
+      <module name="UltimateCollections" target="8" />
+      <module name="UltimateCore" target="8" />
+      <module name="UltimateCoreMenu" target="8" />
+      <module name="UltimateCoreMenu (1)" target="8" />
+      <module name="UltimateCrafting" target="8" />
+      <module name="UltimateCraftingNMS" target="8" />
+      <module name="UltimateCraftingNMS (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_12_R1" target="8" />
+      <module name="UltimateCraftingNMS-v1_12_R1 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_14_R1" target="8" />
+      <module name="UltimateCraftingNMS-v1_14_R1 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_15_R1" target="8" />
+      <module name="UltimateCraftingNMS-v1_15_R1 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_16_R3" target="8" />
+      <module name="UltimateCraftingNMS-v1_16_R3 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_17_R1" target="8" />
+      <module name="UltimateCraftingNMS-v1_17_R1 (1)" target="8" />
+      <module name="UltimateCraftingNMS-v1_18_R1" target="8" />
+      <module name="UltimateCraftingNMS-v1_8_R3" target="8" />
+      <module name="UltimateCraftingPlugin" target="8" />
+      <module name="UltimateDragon" target="8" />
+      <module name="UltimateDragonNMS" target="8" />
+      <module name="UltimateDragonNMS-v1_12_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_14_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_15_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_16_R3" target="8" />
+      <module name="UltimateDragonNMS-v1_17_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_18_R1" target="8" />
+      <module name="UltimateDragonNMS-v1_8_R3" target="8" />
+      <module name="UltimateDragonPlugin" target="8" />
+      <module name="UltimateEnchantment" target="8" />
+      <module name="UltimateFarm" target="8" />
+      <module name="UltimateFarmNMS" target="8" />
+      <module name="UltimateFarmNMS-v1_12_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_14_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_15_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_16_R3" target="8" />
+      <module name="UltimateFarmNMS-v1_17_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_18_R1" target="8" />
+      <module name="UltimateFarmNMS-v1_8_R3" target="8" />
+      <module name="UltimateFarmPlugin" target="8" />
+      <module name="UltimateHelper" target="8" />
+      <module name="UltimatePets" target="8" />
+      <module name="UltimateReforge" target="8" />
+      <module name="UltimateRunes" target="8" />
+      <module name="UltimateSkills" target="8" />
+      <module name="UltimateSouls" target="8" />
+      <module name="UltimateTalismans" target="8" />
+      <module name="UltimateTrades" target="8" />
+      <module name="v1_12_R1" target="8" />
+      <module name="v1_12_R1 (1) (mc.ultimatecore.crafting.nms.v1_12_R1)" target="8" />
+      <module name="v1_12_R1 (2) (mc.ultimatecore.farm.nms.v1_12_R1)" target="8" />
+      <module name="v1_14_R1" target="8" />
+      <module name="v1_14_R1 (1) (mc.ultimatecore.crafting.nms.v1_14_R1)" target="8" />
+      <module name="v1_14_R1 (2) (mc.ultimatecore.farm.nms.v1_14_R1)" target="8" />
+      <module name="v1_15_R1" target="8" />
+      <module name="v1_15_R1 (1) (mc.ultimatecore.crafting.nms.v1_15_R1)" target="8" />
+      <module name="v1_15_R1 (2) (mc.ultimatecore.farm.nms.v1_15_R1)" target="8" />
+      <module name="v1_16_R3" target="8" />
+      <module name="v1_16_R3 (1) (mc.ultimatecore.crafting.nms.v1_16_R3)" target="8" />
+      <module name="v1_16_R3 (2) (mc.ultimatecore.farm.nms.v1_16_R3)" target="8" />
+      <module name="v1_17_R1" target="8" />
+      <module name="v1_17_R1 (1) (mc.ultimatecore.crafting.nms.v1_17_R1)" target="8" />
+      <module name="v1_17_R1 (2) (mc.ultimatecore.farm.nms.v1_17_R1)" target="16" />
+      <module name="v1_8_R3" target="8" />
+      <module name="v1_8_R3 (1) (mc.ultimatecore.crafting.nms.v1_8_R3)" target="8" />
+      <module name="v1_8_R3 (2) (mc.ultimatecore.farm.nms.v1_8_R3)" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="UltimateCollections" options="" />
+      <module name="UltimateCraftingNMS" options="" />
+      <module name="UltimateCraftingNMS-v1_17_R1" options="" />
+      <module name="UltimateCraftingPlugin" options="" />
+      <module name="UltimateFarmNMS" options="" />
+      <module name="UltimateFarmPlugin" options="" />
+      <module name="UltimateHelper" options="" />
+      <module name="UltimateSouls" options="" />
+      <module name="UltimateTrades" options="" />
+      <module name="v1_12_R1 (1) (mc.ultimatecore.crafting.nms.v1_12_R1)" options="" />
+      <module name="v1_12_R1 (2) (mc.ultimatecore.farm.nms.v1_12_R1)" options="" />
+      <module name="v1_14_R1 (1) (mc.ultimatecore.crafting.nms.v1_14_R1)" options="" />
+      <module name="v1_14_R1 (2) (mc.ultimatecore.farm.nms.v1_14_R1)" options="" />
+      <module name="v1_15_R1 (1) (mc.ultimatecore.crafting.nms.v1_15_R1)" options="" />
+      <module name="v1_15_R1 (2) (mc.ultimatecore.farm.nms.v1_15_R1)" options="" />
+      <module name="v1_16_R3 (1) (mc.ultimatecore.crafting.nms.v1_16_R3)" options="" />
+      <module name="v1_16_R3 (2) (mc.ultimatecore.farm.nms.v1_16_R3)" options="" />
+      <module name="v1_17_R1" options="" />
+      <module name="v1_8_R3 (1) (mc.ultimatecore.crafting.nms.v1_8_R3)" options="" />
+      <module name="v1_8_R3 (2) (mc.ultimatecore.farm.nms.v1_8_R3)" options="" />
+    </option>
+  </component>
+</project>

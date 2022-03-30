@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.bukkit.event.EventHandler" />
+    </list>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/UltimateAnvil/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCollections/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCoreMenu/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_12_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_14_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_15_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_16_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_17_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_18_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS-v1_8_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingNMS/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/UltimateCraftingPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateCrafting/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_12_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_14_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_15_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_16_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_17_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_18_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS-v1_8_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonNMS/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateDragon/UltimateDragonPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateEnchantment/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_12_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_14_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_15_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_16_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_17_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_18_R1/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateFarm/UltimateFarmNMS-v1_8_R3/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateHelper/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimatePets/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateReforge/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateRunes/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateSkills/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateSouls/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateTalismans/pom.xml" />
+        <option value="$PROJECT_DIR$/UltimateTrades/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="16" project-jdk-type="JavaSDK" />
+</project>
