@@ -17,6 +17,10 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
+# Gradle #
+build
+.gradle
+
 # Building #
 RELEASES/
 /.idea/
