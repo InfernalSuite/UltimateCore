@@ -1,0 +1,47 @@
+package com.infernalsuite.ultimatecore.talismans.commands;
+
+import com.infernalsuite.ultimatecore.talismans.HyperTalismans;
+import com.infernalsuite.ultimatecore.talismans.utils.StringUtils;
+import com.infernalsuite.ultimatecore.talismans.objects.Talisman;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class GiveTalismanCommand extends Command{
+
+    public GiveTalismanCommand() {
+        super(Collections.singletonList("give"), "Create new Item", "hypertalismans.give", true, "/Talismans give <player> <talisman>");
+    }
+
+    @Override
+    public void execute(CommandSender sender, String[] args) {
+        Player p = (Player) sender;
+        if(args.length == 3){
+            Player player = Bukkit.getPlayer(args[1]);
+            if(player != null){
+                String name = args[2];
+                if(HyperTalismans.getInstance().getTalismans().getTalismans().containsKey(name)){
+                    Talisman talisman = HyperTalismans.getInstance().getTalismans().getTalismans().get(name);
+                    player.getInventory().addItem(talisman.getItem());
+                }else{
+                    p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidTalisman").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+                }
+            } else {
+                p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+            }
+        }else{
+            p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+        }
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender commandSender, org.bukkit.command.Command command, String label, String[] args) {
+        if(args.length == 3)
+            return new ArrayList<>(HyperTalismans.getInstance().getTalismans().getTalismans().keySet());
+        return null;
+    }
+}
