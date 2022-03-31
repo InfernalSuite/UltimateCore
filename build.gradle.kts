@@ -41,6 +41,7 @@ allprojects {
         mavenLocal()
         mavenCentral()
 
+        maven("https://libraries.minecraft.net/")
         maven("https://repo.codemc.io/repository/nms/")
         maven("https://repo.codemc.org/repository/maven-public/")
         maven("https://repo.rapture.pw/repository/maven-releases/")
