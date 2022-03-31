@@ -1,8 +1,8 @@
 name: UltimateCore-Trades
 description: UltimateCore's Trades plugin
 main: mc.ultimatecore.trades.HyperTrades
-version: ${version}
-api-version: ${minecraft.api.version}
+version: 4.0.0
+api-version: 1.18
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 depend: [ Vault ]

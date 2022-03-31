@@ -1,8 +1,8 @@
 name: UltimateCore-Talismans
 description: UltimateCore's Talismans plugin
 main: mc.ultimatecore.talismans.HyperTalismans
-version: ${version}
-api-version: ${minecraft.api.version}
+version: 4.0.0
+api-version: 1.18
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore, Vault, UltimateCore-Skills ]

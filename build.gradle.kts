@@ -4,6 +4,15 @@ plugins {
     `java-library`
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
     id("xyz.jpenilla.run-paper") version "1.0.6"
+
+    // TODO:
+    /* id("net.minecrell.plugin-yml.bukkit") apply true
+    // bukkit {
+    //  main = "e"
+    //  name = rootProject.name
+    //  apiVersion = "1.18"
+    //  authors = listOf("authors")
+    }*/
 }
 
 buildscript {

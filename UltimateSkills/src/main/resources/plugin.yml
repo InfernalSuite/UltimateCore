@@ -1,8 +1,8 @@
 name: UltimateCore-Skills
 description: UltimateCore-Skills plugin
 main: mc.ultimatecore.skills.HyperSkills
-version: ${version}
-api-version: ${minecraft.api.version}
+version: 4.0.0
+api-version: 1.18
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore, JetsMinions, UltraMinions, UltimateCore-Farm, UltimateCore-Anvil, UltimateCore-Crafting, UltimateCore-Enchantment, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault, XMaterial, MythicLib, MythicMobs ]
