@@ -93,7 +93,6 @@ allprojects {
 afterEvaluate {
     val moveJars by tasks.register("moveFiles", DefaultTask::class);
 
-    //
     moveJars.doFirst {
        this.project.tasks.runServer {
            pluginJars.setFrom(childProjects.values.map {

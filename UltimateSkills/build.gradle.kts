@@ -15,7 +15,7 @@ dependencies {
     compileOnly("com.zaxxer:HikariCP:5.0.1")
     compileOnly(project(":UltimateHelper"))
     compileOnly(project(":UltimateEnchantment"))
-    compileOnly(project(":UltimateCrafting:UltimateCraftingPlugin"))
-    compileOnly(project(":UltimateFarm:UltimateFarmPlugin"))
+    compileOnly(project(":UltimateCrafting"))
+    compileOnly(project(":UltimateFarm"))
     compileOnly(project(":UltimateAnvil"))
 }
