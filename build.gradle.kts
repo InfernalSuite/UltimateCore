@@ -1,7 +1,9 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
     `java-library`
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
-    id("com.sedmelluq.mass-relocator") version "1.0.0" apply false
+    id("xyz.jpenilla.run-paper") version "1.0.6"
 }
 
 buildscript {
@@ -12,6 +14,10 @@ buildscript {
         classpath("io.freefair.gradle:lombok-plugin:6.3.0")
         classpath("gradle.plugin.com.github.johnrengelman:shadow:7.1.2")
     }
+}
+
+tasks.runServer {
+    minecraftVersion("1.18")
 }
 
 allprojects {
@@ -33,7 +39,6 @@ allprojects {
         maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
         maven("https://jitpack.io")
     }
-
 
     dependencies {
         compileOnly(fileTree("libs").matching {
@@ -60,12 +65,12 @@ allprojects {
     }
 
     val autoRelocate by tasks.register("configureShadowRelocation", com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation::class) {
-        target = tasks.getByName("shadowJar") as com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar?
+        target = tasks.getByName("shadowJar") as ShadowJar?
         val packageName = "${project.group}.${project.name.toLowerCase()}"
         prefix = "$packageName.shaded"
     }
 
-    tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    tasks.withType<ShadowJar> {
         dependsOn(autoRelocate)
     }
 
@@ -74,4 +79,22 @@ allprojects {
             toolchain.languageVersion.set(JavaLanguageVersion.of(17))
         }
     }
+}
+
+afterEvaluate {
+    val moveJars by tasks.register("moveFiles", DefaultTask::class);
+
+    //
+    moveJars.doFirst {
+       this.project.tasks.runServer {
+           pluginJars.setFrom(childProjects.values.map {
+               it.tasks.named<AbstractArchiveTask>("shadowJar").flatMap { shadow -> shadow.archiveFile }.get().asFile
+           })
+       }
+    }
+
+    tasks.runServer {
+        dependsOn(moveJars)
+    }
+
 }

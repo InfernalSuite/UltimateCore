@@ -56,7 +56,7 @@ public class Chances extends YAMLFile{
                 HyperEnchant hyperEnchant = EnchantmentsPlugin.getInstance().getApi().getEnchantmentInstance(enchantment[0]);
                 if(hyperEnchant == null){
                     try {
-                        String enchName = Utils.getEnchantmentKey(XEnchantment.valueOf(enchantment[0]).parseEnchantment());
+                        String enchName = Utils.getEnchantmentKey(XEnchantment.valueOf(enchantment[0]).getEnchant());
                         hyperEnchant = EnchantmentsPlugin.getInstance().getApi().getEnchantmentInstance(enchName);
                         if(hyperEnchant == null) {
                             Bukkit.getConsoleSender().sendMessage(Utils.color("&c[HyperReforge] &c"+enchantment[0] +" is not recognized as an enchantment!"));

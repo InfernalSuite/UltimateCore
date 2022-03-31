@@ -24,3 +24,6 @@ build
 # Building #
 RELEASES/
 /.idea/
+
+# Testing #
+run
