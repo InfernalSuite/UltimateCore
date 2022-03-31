@@ -15,7 +15,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-@Getter
 public class HyperCrafting extends JavaPlugin {
     /*
      * This block prevents the Maven Shade plugin to remove the specified classes
@@ -33,15 +32,25 @@ public class HyperCrafting extends JavaPlugin {
     }
     
     private static HyperCrafting instance;
+    @Getter
     private Config configuration;
+    @Getter
     private Messages messages;
+    @Getter
     private PlayersDataManager playersData;
+    @Getter
     private CommandManager commandManager;
+    @Getter
     private Inventories inventories;
+    @Getter
     private CraftingRecipes craftingRecipes;
+    @Getter
     private NMS nms;
+    @Getter
     private BlackList blackList;
+    @Getter
     private Categories categories;
+    @Getter
     private Commands commands;
     
     public static HyperCrafting getInstance() {
