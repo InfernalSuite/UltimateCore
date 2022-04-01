@@ -48,6 +48,7 @@ allprojects {
         maven("https://repo.glaremasters.me/repository/concuncan/")
         maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
         maven("https://jitpack.io")
+        maven("https://maven.enginehub.org/repo/")
     }
 
     dependencies {
