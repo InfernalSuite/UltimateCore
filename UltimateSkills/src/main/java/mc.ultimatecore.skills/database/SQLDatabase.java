@@ -76,7 +76,13 @@ public abstract class SQLDatabase extends Database {
 
 	@Override
 	public String getPlayerAbilities(OfflinePlayer p) {
-		try (Connection con = this.hikari.getConnection(); PreparedStatement statement = con.prepareStatement("SELECT * FROM " + MySQLDatabase.ABILITIES_TABLE_NAME + " WHERE " + MySQLDatabase.ABILITIES_UUID_COLNAME + "=?")) {
+		try (
+                Connection con = this.hikari.getConnection();
+                PreparedStatement statement = con.prepareStatement(
+                        "SELECT * FROM " + MySQLDatabase.ABILITIES_TABLE_NAME
+                            + " WHERE " + MySQLDatabase.ABILITIES_UUID_COLNAME + "=?"
+                )
+        ) {
 			statement.setString(1, p.getUniqueId().toString());
 			try (ResultSet set = statement.executeQuery()) {
 				if (set.next()) {

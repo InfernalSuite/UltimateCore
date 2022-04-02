@@ -32,7 +32,7 @@ import java.util.Arrays;
 
 @Getter
 public class HyperSkills extends UltimatePlugin {
-    
+
     private Config configuration;
     private Messages messages;
     private Rewards rewards;
@@ -55,11 +55,11 @@ public class HyperSkills extends UltimatePlugin {
     private SpeedManager speedManager;
     private HealthManager healthManager;
     private GSON gson;
-    
+
     public static HyperSkills getInstance() {
         return HyperSkills.getPlugin(HyperSkills.class);
     }
-    
+
     @Override
     public void onEnable() {
         this.gson = new GSON();
@@ -77,11 +77,11 @@ public class HyperSkills extends UltimatePlugin {
         this.manaManager = new ManaManager(this);
         this.speedManager = new SpeedManager(this);
         this.healthManager = new HealthManager(this);
-        registerListeners(new DamageListener(this), new ArmorListener(new ArrayList<>()), new BlockBreakListener(this), new ArmorSetupListener(), new ArmorEquipListener(), new AlchemyListener(this), XMaterial.getVersion() == 8 ? new MobKillListener_Legacy(this) : new MobKillListener(this), new PlayerJoinLeaveListener(this), new EnchantingListener(this), new FishingListener(this), new AlchemyPerks(), new DefenseListener(this), new EnchantingPerks(), new BlockPlaceListener(), new ItemStatsListener(this), new InventoryClickListener());
+        registerListeners(actionBarManager, new DamageListener(this), new ArmorListener(new ArrayList<>()), new BlockBreakListener(this), new ArmorSetupListener(), new ArmorEquipListener(), new AlchemyListener(this), XMaterial.getVersion() == 8 ? new MobKillListener_Legacy(this) : new MobKillListener(this), new PlayerJoinLeaveListener(this), new EnchantingListener(this), new FishingListener(this), new AlchemyPerks(), new DefenseListener(this), new EnchantingPerks(), new BlockPlaceListener(), new ItemStatsListener(this), new InventoryClickListener());
         Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
-    
-    
+
+
     @Override
     public void onDisable() {
         if (skillManager != null) skillManager.disable();
@@ -92,15 +92,15 @@ public class HyperSkills extends UltimatePlugin {
         ultimateItems.save();
         getLogger().info(getDescription().getName() + " Disabled!");
     }
-    
+
     public void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getPluginManager().registerEvents(listener, this));
     }
-    
+
     public void sendErrorMessage(Exception e) {
         e.printStackTrace();
     }
-    
+
     public void loadConfigs() {
         normalItems = new NormalItems(this, "normalitems", false, true);
         ultimateItems = new UltimateItems(this, "ultimateitems", true, true);
@@ -112,7 +112,7 @@ public class HyperSkills extends UltimatePlugin {
         inventories = new Inventories(this, "inventories", true, false);
         skills = new Skills(this, "skills", true, false);
     }
-    
+
     public void reloadConfigs() {
         normalItems.reload();
         ultimateItems.reload();
@@ -124,7 +124,7 @@ public class HyperSkills extends UltimatePlugin {
         inventories.reload();
         skills.reload();
     }
-    
+
     public void sendDebug(String message, DebugType debugType) {
         if (!configuration.debug) return;
         if (debugType == DebugType.LOG)
@@ -132,7 +132,7 @@ public class HyperSkills extends UltimatePlugin {
         else
             Bukkit.getConsoleSender().sendMessage(StringUtils.color(message));
     }
-    
+
     @Override
     public String getPluginName() {
         return getDescription().getName();

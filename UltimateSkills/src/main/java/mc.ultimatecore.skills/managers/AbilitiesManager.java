@@ -62,7 +62,7 @@ public class AbilitiesManager {
     public void loadPlayerData(Player player) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             String strAbilities = plugin.getPluginDatabase().getPlayerAbilities(player);
-            PlayerAbilities playerAbilities = strAbilities != null ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
+            PlayerAbilities playerAbilities = (strAbilities != null && !strAbilities.equals("null")) ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
             for(Ability ability : Ability.values()) {
                 double quantity = playerAbilities.getAbility(ability);
                 if (ability == Ability.Max_Intelligence && quantity < plugin.getConfiguration().initialMana)

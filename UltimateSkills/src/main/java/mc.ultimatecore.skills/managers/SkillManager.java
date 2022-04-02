@@ -1,5 +1,6 @@
 package mc.ultimatecore.skills.managers;
 
+import com.cryptomorin.xseries.*;
 import mc.ultimatecore.skills.HyperSkills;
 import mc.ultimatecore.skills.TempUser;
 import mc.ultimatecore.skills.api.events.SkillsLevelUPEvent;
@@ -280,11 +281,11 @@ public class SkillManager {
     }
 
     public void manageBlockPoints(Player player, Block bl, Material mat, boolean multiplyRewards){
-        byte data = bl.getData();
+        XMaterial material = XBlock.getType(bl);
         String key = mat.toString();
         if(!plugin.getSkillPoints().skillBlocksXP.containsKey(key)) return;
         BlockXP skillXP = plugin.getSkillPoints().skillBlocksXP.get(key);
-        if(data != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) return;
+        if(material.getData() != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) return;
         SkillType skillType = skillXP.getSkillType();
         Skill skill = plugin.getSkills().getAllSkills().get(skillType);
         if (!skill.isEnabled()) return;
