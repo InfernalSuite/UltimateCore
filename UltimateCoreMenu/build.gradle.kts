@@ -12,7 +12,7 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     compileOnly("me.clip:placeholderapi:2.10.9")
     compileOnly("com.zaxxer:HikariCP:5.0.1")
-    compileOnly(project(":UltimateHelper"))
+    implementation(project(":UltimateHelper"))
     compileOnly(project(":UltimateSkills"))
     compileOnly(project(":UltimatePets"))
 
