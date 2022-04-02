@@ -1,6 +1,7 @@
 package mc.ultimatecore.skills.listener.mmoitems;
 
 import de.tr7zw.changeme.nbtapi.NBTItem;
+import lombok.*;
 import mc.ultimatecore.skills.HyperSkills;
 import mc.ultimatecore.skills.objects.abilities.Ability;
 import mc.ultimatecore.skills.utils.ItemStatsUtils;
@@ -13,7 +14,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
+@Data
 public class AbilityUseEventListener implements Listener {
+    private final boolean allowHunger;
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onAbilityUse(AbilityUseEvent e){
@@ -25,7 +28,9 @@ public class AbilityUseEventListener implements Listener {
             double current = HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.Intelligence);
             if(mmoCost > 0){
                 if(current > mmoCost) {
-                    Bukkit.getScheduler().runTaskLater(HyperSkills.getInstance(), () -> player.setFoodLevel(100), 3);
+                    if(!allowHunger) {
+                        Bukkit.getScheduler().runTaskLater(HyperSkills.getInstance(), () -> player.setFoodLevel(100), 3);
+                    }
                     HyperSkills.getInstance().getApi().removeAbility(player.getUniqueId(), Ability.Intelligence, mmoCost);
                 }else {
                     e.setCancelled(true);

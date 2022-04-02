@@ -24,6 +24,7 @@ public class Config extends YAMLFile {
     public boolean healthSystem;
     public boolean openMenuWithSkills;
     public boolean talismanSystem;
+    public boolean allowHunger;
     public String levelUPSound;
     public String gainXPSound;
     public boolean scaledHealth;
@@ -93,6 +94,7 @@ public class Config extends YAMLFile {
         indicatorBlackList = cf.getStringList("damageIndicators.blacklist");
         translatePAPIPlaceholders = cf.getBoolean("translatePAPIPlaceholders");
         getXPInCreative = cf.getBoolean("getXPInCreative");
+        allowHunger = cf.getBoolean("allowHunger", true);
         manaSettings = new ManaSettings(cf.getDouble("manaSettings.percentagePerSecond"), cf.getInt("manaSettings.second"));
         debug = cf.getBoolean("DEBUG");
         jetMinions = cf.getBoolean("addons.jetMinions");

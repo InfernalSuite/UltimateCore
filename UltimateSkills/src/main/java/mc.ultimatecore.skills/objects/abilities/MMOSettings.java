@@ -13,12 +13,16 @@ public class MMOSettings {
     private int hungerID;
     private int statsID;
     private final UUID uuid;
+    private final boolean allowHunger;
 
-    public MMOSettings(Player player) {
+    public MMOSettings(Player player, boolean allowHunger) {
         this.uuid = player.getUniqueId();
+        this.allowHunger = allowHunger;
         startStats(player);
         startHealth(player);
-        startHunger(player);
+        if(!allowHunger) {
+            startHunger(player);
+        }
     }
 
     private void startHealth(Player player) {
@@ -82,6 +86,8 @@ public class MMOSettings {
     public void stop() {
         Bukkit.getScheduler().cancelTask(taskID);
         Bukkit.getScheduler().cancelTask(statsID);
-        Bukkit.getScheduler().cancelTask(hungerID);
+        if(!allowHunger) {
+            Bukkit.getScheduler().cancelTask(hungerID);
+        }
     }
 }

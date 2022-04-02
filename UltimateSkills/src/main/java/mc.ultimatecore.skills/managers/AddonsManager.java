@@ -22,7 +22,7 @@ import java.util.List;
 
 @Getter
 public class AddonsManager extends ManagerImpl {
-    
+
     private MMOItemsAPIManager mmoItems;
     private RegionPluginImpl regionPlugin;
     private MythicMobsAPIManager mythicMobs;
@@ -31,12 +31,12 @@ public class AddonsManager extends ManagerImpl {
     private MVDWPlaceholderAPIManager mvdwPlaceholderAPI;
     private CitizensAPIManager citizensAPIManager;
     private EcoEnchantsAPIManager ecoEnchants;
-    
+
     public AddonsManager(HyperSkills plugin) {
         super(plugin);
         load();
     }
-    
+
     @Override
     public void load() {
         String name = plugin.getDescription().getName();
@@ -58,7 +58,7 @@ public class AddonsManager extends ManagerImpl {
         }
         if (isPlugin("MMOItems") && isPlugin("MythicLib")) {
             mmoItems = new MMOItemsAPIManager("MMOItems & MythicLib");
-            registerListeners(new AbilityUseEventListener());
+            registerListeners(new AbilityUseEventListener(plugin.getConfiguration().allowHunger));
         }
         if (isPlugin("Residence")) {
             regionPlugin = new ResidenceSupportAPIManager("Residence");
@@ -97,30 +97,30 @@ public class AddonsManager extends ManagerImpl {
         if (isPlugin("EcoEnchants"))
             ecoEnchants = new EcoEnchantsAPIManager("EcoEnchants");
     }
-    
+
     public void registerListeners(Listener... listener) {
         for (Listener l : listener)
             Bukkit.getPluginManager().registerEvents(l, HyperSkills.getInstance());
     }
-    
+
     private boolean isPlugin(String name) {
         return Bukkit.getServer().getPluginManager().getPlugin(name) != null;
     }
-    
+
     private String getPluginVersion(String name) {
         return Bukkit.getServer().getPluginManager().getPlugin(name).getDescription().getVersion();
     }
-    
+
     private List<String> getPluginAuthor(String name) {
         return Bukkit.getServer().getPluginManager().getPlugin(name).getDescription().getAuthors();
     }
-    
+
     public boolean isMMOItems() {
         return mmoItems != null;
     }
-    
+
     public boolean isEcoEnchants() {
         return ecoEnchants != null;
     }
-    
+
 }

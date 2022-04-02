@@ -24,6 +24,7 @@ maxSkillLevel: 50
 refreshRankingMinutes: 60
 levelToRank: 15
 byPassWorldGuard: false
+allowHunger: false
 upAndDownPets: true
 manaSystem: true
 actionBar: true

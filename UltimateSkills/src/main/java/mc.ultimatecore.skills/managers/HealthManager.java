@@ -16,16 +16,17 @@ import java.util.UUID;
 
 public class HealthManager implements Listener {
     private final Map<UUID, MMOSettings> players = new HashMap<>();
-
+    private final boolean allowHunger;
     public HealthManager(HyperSkills plugin) {
         plugin.registerListeners(this);
+        allowHunger = plugin.getConfiguration().allowHunger;
         loadAllPlayers();
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     private void onJoin(PlayerEnterEvent e){
         UUID uuid = e.getPlayer().getUniqueId();
-        players.put(uuid, new MMOSettings(e.getPlayer()));
+        players.put(uuid, new MMOSettings(e.getPlayer(), allowHunger));
     }
 
     @EventHandler
@@ -45,6 +46,6 @@ public class HealthManager implements Listener {
     }
 
     private void loadAllPlayers(){
-        Bukkit.getOnlinePlayers().forEach(player -> players.put(player.getUniqueId(), new MMOSettings(player)));
+        Bukkit.getOnlinePlayers().forEach(player -> players.put(player.getUniqueId(), new MMOSettings(player, allowHunger)));
     }
 }
