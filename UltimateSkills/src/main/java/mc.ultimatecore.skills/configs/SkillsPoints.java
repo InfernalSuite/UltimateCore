@@ -64,7 +64,7 @@ public class SkillsPoints extends YAMLFile {
                     SkillType skillType = SkillType.valueOf(getConfig().getString("xpManager.blocks." + id + ".skillType"));
                     Double xp = getConfig().getDouble("xpManager.blocks." + id +".xp");
                     String material = getConfig().getString("xpManager.blocks." + id + ".material");
-                    byte data = Byte.parseByte(Objects.requireNonNull(getConfig().getString("xpManager.blocks." + id +".materialData")));
+                    byte data = Byte.parseByte(Objects.requireNonNull(getConfig().getString("xpManager.blocks." + id +".materialData", "0")));
                     BlockXP blockXP = new BlockXP(id, skillType, xp, data);
                     if(skillBlocksXP == null) skillBlocksXP = new HashMap<>();
                     skillBlocksXP.put(material, blockXP);
