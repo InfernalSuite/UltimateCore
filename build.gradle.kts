@@ -26,7 +26,7 @@ buildscript {
 }
 
 tasks.runServer {
-    minecraftVersion("1.18")
+    minecraftVersion("1.18.2")
 }
 
 allprojects {
