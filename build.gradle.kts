@@ -58,6 +58,7 @@ allprojects {
             include("**/*.jar")
         })
 
+        implementation("org.checkerframework:checker-qual:3.21.3")
         implementation("org.jetbrains:annotations:23.0.0")
     }
 
