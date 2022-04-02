@@ -11,7 +11,7 @@ xpManager:
             skillType: Mining
             xp: 2
             material: IRON_ORE
-            materialData: 0
+            materialData: 0 # remove this line for 1.13+ versions
     #MOBS
     mobs:
         1:
