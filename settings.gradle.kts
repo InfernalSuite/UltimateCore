@@ -10,3 +10,4 @@ fileTree(".") {
 }.forEach {
     include(it)
 }
+include("UC-API")
