@@ -6,26 +6,26 @@ tamingXP: 2
 farming_Cut_Wool: 2
 carpentryXP: 2
 xpManager:
-  blocks:
-    3:
-      skillType: Mining
-      xp: 2
-      material: IRON_ORE
-      materialData: 0
-#MOBS
-  mobs:
-    1:
-      skillType: Combat
-      xp: 2
-      mobName: COW
-  mythicMobs:
-    1:
-      skillType: Combat
-      xp: 20
-      id: SkeletalKnight
-  caughtEntities:
-    1:
-      skillType: Fishing
-      xp: 10
-      id: COD
+    blocks:
+        3:
+            skillType: Mining
+            xp: 2
+            material: IRON_ORE
+            materialData: 0
+    #MOBS
+    mobs:
+        1:
+            skillType: Combat
+            xp: 2
+            mobName: COW
+    mythicMobs:
+        1:
+            skillType: Combat
+            xp: 20
+            id: SkeletalKnight
+    caughtEntities:
+        1:
+            skillType: Fishing
+            xp: 10
+            id: COD
 
