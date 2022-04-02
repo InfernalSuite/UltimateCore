@@ -27,10 +27,11 @@ public class HyperCrafting extends JavaPlugin {
                 v1_15_R1.class,
                 v1_16_R3.class,
                 v1_17_R1.class,
-                v1_18_R1.class
+                v1_18_R1.class,
+                v1_18_R2.class
         };
     }
-    
+
     private static HyperCrafting instance;
     @Getter
     private Config configuration;
@@ -52,11 +53,11 @@ public class HyperCrafting extends JavaPlugin {
     private Categories categories;
     @Getter
     private Commands commands;
-    
+
     public static HyperCrafting getInstance() {
         return instance;
     }
-    
+
     @Override
     public void onEnable() {
         this.nms = setupNMS();
@@ -64,21 +65,21 @@ public class HyperCrafting extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
-        
+
         instance = this;
-        
+
         loadConfigs();
-        
+
         commandManager = new CommandManager("hypercrafting");
-        
+
         registerListeners(new CommandListener(this), new InventoryClickListener(), new CraftingTableListener(this), new PlayerJoinLeaveListener(this));
-        
+
         playersData = new PlayersDataManager();
-        
+
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
-    
-    
+
+
     private NMS setupNMS() {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         try {
@@ -90,7 +91,7 @@ public class HyperCrafting extends JavaPlugin {
         }
         return null;
     }
-    
+
     @Override
     public void onDisable() {
         if (craftingRecipes != null)
@@ -99,17 +100,17 @@ public class HyperCrafting extends JavaPlugin {
             p.closeInventory();
         getLogger().info(getDescription().getName() + " Disabled!");
     }
-    
-    
+
+
     public void sendErrorMessage(Exception e) {
         e.printStackTrace();
     }
-    
+
     public void registerListeners(Listener... listener) {
         for (Listener l : listener)
             Bukkit.getPluginManager().registerEvents(l, this);
     }
-    
+
     public void loadConfigs() {
         configuration = new Config(this, "config", true);
         messages = new Messages(this, "messages", true);
@@ -119,7 +120,7 @@ public class HyperCrafting extends JavaPlugin {
         categories = new Categories(this, "categories", false);
         commands = new Commands(this, "commands", false);
     }
-    
+
     public void reloadConfigs() {
         configuration.reload();
         messages.reload();
