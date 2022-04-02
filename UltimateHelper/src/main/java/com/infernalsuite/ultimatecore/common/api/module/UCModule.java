@@ -1,4 +1,4 @@
-package com.infernalsuite.ultimatecore.helper.api;
+package com.infernalsuite.ultimatecore.common.api.module;
 
 /**
  * Represents a "plugin" within UltimateCore

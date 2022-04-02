@@ -1,7 +1,7 @@
-package com.infernalsuite.ultimatecore.helper;
+package com.infernalsuite.ultimatecore.common;
 
 import com.google.inject.*;
-import com.infernalsuite.ultimatecore.helper.di.*;
+import com.infernalsuite.ultimatecore.common.di.*;
 import me.lucko.helper.plugin.ap.Plugin;
 import org.bukkit.plugin.*;
 import org.bukkit.plugin.java.*;

@@ -1,4 +1,4 @@
-package com.infernalsuite.ultimatecore.helper.di;
+package com.infernalsuite.ultimatecore.common.di;
 
 import java.lang.annotation.*;
 

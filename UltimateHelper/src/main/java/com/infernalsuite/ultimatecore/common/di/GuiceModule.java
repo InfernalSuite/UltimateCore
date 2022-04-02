@@ -1,9 +1,9 @@
-package com.infernalsuite.ultimatecore.helper.di;
+package com.infernalsuite.ultimatecore.common.di;
 
 import com.google.inject.*;
 import com.google.inject.matcher.*;
 import com.google.inject.spi.*;
-import com.infernalsuite.ultimatecore.helper.*;
+import com.infernalsuite.ultimatecore.common.*;
 import org.bukkit.plugin.*;
 import org.bukkit.plugin.java.*;
 import org.checkerframework.checker.nullness.qual.*;
