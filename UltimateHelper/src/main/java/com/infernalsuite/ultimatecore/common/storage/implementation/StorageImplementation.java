@@ -19,4 +19,6 @@ public interface StorageImplementation {
 
     Map<UUID, UCPlayer> loadPlayers(Set<UUID> uuids) throws Exception;
 
+    void savePlayer(UCPlayer player) throws Exception;
+
 }
