@@ -6,6 +6,8 @@ plugins {
 }
 
 repositories {
+    mavenCentral()
+    maven("https://repo.spongepowered.org/maven/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
     maven("https://repo.lucko.me")
 }
@@ -18,6 +20,25 @@ dependencies {
     implementation(project(":UC-API"))
 
     api("com.zaxxer:HikariCP:5.0.1")
+
+    api("com.google.code.gson:gson:2.9.0")
+    api("com.google.guava:guava:31.1-jre")
+
+    api("org.spongepowered:configurate-core:4.1.2") {
+        isTransitive = false
+    }
+    api("org.spongepowered:configurate-yaml:4.1.2") {
+        isTransitive = false
+    }
+    api("org.spongepowered:configurate-gson:4.1.2") {
+        isTransitive = false
+    }
+    api("org.spongepowered:configurate-hocon:4.1.2") {
+        isTransitive = false
+    }
+    api("me.lucko.configurate:configurate-toml:3.7") {
+        isTransitive = false
+    }
 
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
