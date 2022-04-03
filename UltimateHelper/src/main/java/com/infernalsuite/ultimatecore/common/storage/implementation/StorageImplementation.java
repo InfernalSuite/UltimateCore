@@ -15,8 +15,8 @@ public interface StorageImplementation {
 
     void shutdown();
 
-    UCPlayer loadUser(UUID uuid, String username) throws Exception;
+    UCPlayer loadPlayer(UUID uuid, String username) throws Exception;
 
-    Map<UUID, UCPlayer> loadUsers(Set<UUID> uuids) throws Exception;
+    Map<UUID, UCPlayer> loadPlayers(Set<UUID> uuids) throws Exception;
 
 }
