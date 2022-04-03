@@ -31,7 +31,7 @@ public interface PlayerSaveResult {
      * @see Outcome#USERNAME_UPDATED
      * @return the previous username
      */
-    @Nullable String getPreviousName();
+    @Nullable String getPreviousUsername();
 
     /**
      * Gets the other UUIDs involved in the result.
