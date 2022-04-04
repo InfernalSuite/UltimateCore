@@ -10,9 +10,16 @@ import java.util.*;
 public interface UCPlayer {
 
     /**
-     * Gets the users unique ID.
-     * @return the user's UUID
+     * Gets the player's unique ID.
+     * @return the player's UUID
      */
     @NonNull UUID getUniqueId();
+
+    /**
+     * Gets the player's username.
+     * @apiNote returns {@code null} if no username is known for the player
+     * @return the player's username
+     */
+    @Nullable String getUsername();
 
 }
