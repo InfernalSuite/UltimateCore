@@ -1,6 +1,6 @@
 package com.infernalsuite.ultimatecore.common.storage.implementation;
 
-import com.infernalsuite.ultimatecore.api.player.*;
+import com.infernalsuite.ultimatecore.common.player.*;
 import mc.ultimatecore.helper.*;
 
 import java.util.*;
@@ -15,10 +15,10 @@ public interface StorageImplementation {
 
     void shutdown();
 
-    UCPlayer loadPlayer(UUID uuid, String username) throws Exception;
+    UCPlayerImpl loadPlayer(UUID uuid, String username) throws Exception;
 
-    Map<UUID, UCPlayer> loadPlayers(Set<UUID> uuids) throws Exception;
+    Map<UUID, UCPlayerImpl> loadPlayers(Set<UUID> uuids) throws Exception;
 
-    void savePlayer(UCPlayer player) throws Exception;
+    void savePlayer(UCPlayerImpl player) throws Exception;
 
 }
