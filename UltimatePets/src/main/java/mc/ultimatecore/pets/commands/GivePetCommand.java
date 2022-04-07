@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class GivePetCommand extends Command {
 
     public GivePetCommand() {
-        super(Collections.singletonList("give"), "Give specials items", "pets.give", true, "/Pets give [Player] [Pet] [Tier]");
+        super(Collections.singletonList("give"), "Give specials items", "pets.give", false, "/Pets give [Player] [Pet] [Tier]");
     }
 
     /*

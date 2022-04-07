@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class AddXPCommand extends Command {
 
     public AddXPCommand() {
-        super(Collections.singletonList("addxp"), "Add xp to a player's pet.", "pets.addxp", true, "/Pets addxp [Player] [Amount]");
+        super(Collections.singletonList("addxp"), "Add xp to a player's pet.", "pets.addxp", false, "/Pets addxp [Player] [Amount]");
     }
 
     @Override
