@@ -12,7 +12,7 @@ import java.util.List;
 public class GetRuneCommand extends Command {
 
     public GetRuneCommand() {
-        super(Collections.singletonList("giverune"), "Give Rune to a player", "hyperrunes.giverune", true, "/Hyperrunes giverune [player] [name]");
+        super(Collections.singletonList("giverune"), "Give Rune to a player", "hyperrunes.giverune", false, "/Hyperrunes giverune [player] [name]");
     }
 
     /*

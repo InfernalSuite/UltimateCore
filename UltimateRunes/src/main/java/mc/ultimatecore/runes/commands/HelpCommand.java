@@ -5,7 +5,6 @@ import net.md_5.bungee.api.chat.*;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,12 +12,11 @@ import java.util.List;
 public class HelpCommand extends Command {
 
     public HelpCommand() {
-        super(Collections.singletonList("help"), "Displays the plugin's command", "", true, "/Hyperrunes help");
+        super(Collections.singletonList("help"), "Displays the plugin's command", "", false, "/Hyperrunes help");
     }
 
     @Override
-    public void execute(CommandSender cs, String[] args) {
-        Player p = (Player) cs;
+    public void execute(CommandSender sender, String[] args) {
         int page = 1;
         if (args.length == 2) {
             if (!StringUtils.isNumeric(args[1])) {
@@ -28,11 +26,11 @@ public class HelpCommand extends Command {
         }
         int maxpage = (int) Math.ceil(HyperRunes.getInstance().getCommandManager().commands.size() / 18.00);
         int current = 0;
-        p.sendMessage(mc.ultimatecore.runes.utils.StringUtils.color(HyperRunes.getInstance().getMessages().getMessage("helpHeader")));
+        sender.sendMessage(mc.ultimatecore.runes.utils.StringUtils.color(HyperRunes.getInstance().getMessages().getMessage("helpHeader")));
         for (Command command : HyperRunes.getInstance().getCommandManager().commands) {
-            if ((p.hasPermission(command.getPermission()) || command.getPermission().equalsIgnoreCase("") || command.getPermission().equalsIgnoreCase("hyperrunes.")) && command.isEnabled()) {
+            if ((sender.hasPermission(command.getPermission()) || command.getPermission().equalsIgnoreCase("") || command.getPermission().equalsIgnoreCase("hyperrunes.")) && command.isEnabled()) {
                 if (current >= (page - 1) * 18 && current < page * 18)
-                    p.sendMessage(mc.ultimatecore.runes.utils.StringUtils.color(HyperRunes.getInstance().getMessages().getMessage("helpMessage").replace("%command%", command.getUsage()).replace("%description%", command.getDescription())));
+                    sender.sendMessage(mc.ultimatecore.runes.utils.StringUtils.color(HyperRunes.getInstance().getMessages().getMessage("helpMessage").replace("%command%", command.getUsage()).replace("%description%", command.getDescription())));
                 current++;
             }
         }
@@ -51,7 +49,7 @@ public class HelpCommand extends Command {
                 }
             }
         }
-        p.getPlayer().spigot().sendMessage(components);
+        sender.spigot().sendMessage(components);
     }
 
     @Override

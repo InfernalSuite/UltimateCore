@@ -10,7 +10,7 @@ import java.util.List;
 public class ReloadCommand extends Command {
 
     public ReloadCommand() {
-        super(Collections.singletonList("reload"), "Reload all config files", "hyperrunes.reload", true, "/Hyperrunes reload");
+        super(Collections.singletonList("reload"), "Reload all config files", "hyperrunes.reload", false, "/Hyperrunes reload");
     }
 
     @Override
