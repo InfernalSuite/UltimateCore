@@ -1,6 +1,6 @@
 package com.infernalsuite.ultimatecore.common.storage;
 
-import com.infernalsuite.ultimatecore.api.player.*;
+import com.infernalsuite.ultimatecore.common.player.*;
 import com.infernalsuite.ultimatecore.common.storage.implementation.*;
 import com.infernalsuite.ultimatecore.common.util.*;
 import lombok.*;
@@ -66,15 +66,15 @@ public class Storage {
         }
     }
 
-    public CompletableFuture<UCPlayer> loadPlayer(UUID uuid, String username) {
+    public CompletableFuture<UCPlayerImpl> loadPlayer(UUID uuid, String username) {
         return future(() -> this.implementation.loadPlayer(uuid, username));
     }
 
-    public CompletableFuture<Map<UUID, UCPlayer>> loadPlayers(Set<UUID> uuids) {
+    public CompletableFuture<Map<UUID, UCPlayerImpl>> loadPlayers(Set<UUID> uuids) {
         return future(() -> this.implementation.loadPlayers(uuids));
     }
 
-    public CompletableFuture<Void> savePlayer(UCPlayer player) {
+    public CompletableFuture<Void> savePlayer(UCPlayerImpl player) {
         return future(() -> this.implementation.savePlayer(player));
     }
 
