@@ -12,6 +12,7 @@ public enum RuneState {
     INCOMPATIBLE_ITEMS(HyperRunes.getInstance().getMessages().getDescription("incompatibleItemAndRune")),
     INCOMPATIBLE_RUNE_LEVEL(HyperRunes.getInstance().getMessages().getDescription("incompatibleRunesTier")),
     INCOMPATIBLE_RUNE_TYPE(HyperRunes.getInstance().getMessages().getDescription("incompatibleRunesType")),
+    MAX_RUNE_LEVEL(HyperRunes.getInstance().getMessages().getDescription("maxRuneLevel")),
     NO_ERROR_ITEMS(new ArrayList<>()),
     NO_ERROR_RUNES(new ArrayList<>());
 

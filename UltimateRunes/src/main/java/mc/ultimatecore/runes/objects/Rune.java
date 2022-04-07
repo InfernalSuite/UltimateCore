@@ -18,7 +18,7 @@ public class Rune {
     private final RuneEffect effect;
     private final List<String> lore;
     private final RuneType runeType;
-    private final Map<Integer, Integer> requiredRunnecraftingLevel = new HashMap<Integer, Integer>() {{
+    private final Map<Integer, Integer> requiredRunecraftingLevel = new HashMap<Integer, Integer>() {{
         put(1, 2);
         put(2, 4);
         put(3, 6);
@@ -41,7 +41,7 @@ public class Rune {
     }
 
     public int getRequiredLevel(int level) {
-        return requiredRunnecraftingLevel.get(level);
+        return requiredRunecraftingLevel.get(level);
     }
 
     public int getSuccessChance(int level) {

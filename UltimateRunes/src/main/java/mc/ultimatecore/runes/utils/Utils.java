@@ -22,9 +22,9 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class Utils {
-    
+
     private static final TreeMap<Integer, String> map = new TreeMap<>();
-    
+
     static {
         map.put(1000000, "m");
         map.put(900000, "cm");
@@ -50,8 +50,8 @@ public class Utils {
         map.put(1, "I");
         map.put(0, "");
     }
-    
-    
+
+
     public static Item getItemFromConfig(YamlConfiguration yamlConfig, String path) {
         Item item = new Item();
         if (yamlConfig.contains(path + ".material")) item.material = com.cryptomorin.xseries.XMaterial.valueOf(yamlConfig.getString(path + ".material"));
@@ -60,18 +60,18 @@ public class Utils {
         if (yamlConfig.contains(path + ".slot")) item.slot = yamlConfig.getInt(path + ".slot");
         if (yamlConfig.contains(path + ".isGlowing")) item.isGlowing = yamlConfig.getBoolean(path + ".isGlowing");
         if (yamlConfig.contains(path + ".isGlowing")) item.isGlowing = yamlConfig.getBoolean(path + ".isGlowing");
-        
+
         if (yamlConfig.contains(path + ".command")) item.command = yamlConfig.getString(path + ".command");
         if (yamlConfig.contains(path + ".amount")) item.amount = yamlConfig.getInt(path + ".amount");
         return item;
     }
-    
-    
+
+
     public static List<String> color(List<String> strings) {
         return strings.stream().map(StringUtils::color).collect(Collectors.toList());
     }
-    
-    
+
+
     public static final String toRoman(int number) {
         if (number >= 0) {
             int l = map.floorKey(number);
@@ -81,20 +81,20 @@ public class Utils {
         }
         return String.valueOf(number);
     }
-    
+
     public static int randomNumber(int max) {
         return new Random().nextInt(max);
     }
-    
-    
+
+
     public static RuneState manageRunes(RuneTableManager manager) {
         Player player = Bukkit.getPlayer(manager.getUuid());
-        
+
         int runeCraftingLevel = HyperRunes.getInstance().isHyperSkills() ? HyperSkills.getInstance().getApi().getLevel(player.getUniqueId(), SkillType.Runecrafting) : player.getLevel();
-        
+
         NBTItem firstItem = new NBTItem(manager.getFirstItem());
         NBTItem secondItem = new NBTItem(manager.getSecondItem());
-        
+
         if (firstItem.hasKey("runeLevel") && secondItem.hasKey("runeLevel")) {
             int firstRuneLevel = firstItem.getInteger("runeLevel");
             int secondRuneLevel = secondItem.getInteger("runeLevel");
@@ -104,6 +104,7 @@ public class Utils {
             if (!firstRuneName.equalsIgnoreCase(secondRuneName)) return RuneState.INCOMPATIBLE_RUNE_TYPE;
             Rune rune = HyperRunes.getInstance().getRunes().getRuneByName(secondItem.getString("runeName"));
             if (runeCraftingLevel < rune.getRequiredLevel(firstRuneLevel)) return RuneState.NO_REQUIRED_LEVEL;
+            if(!rune.getRequiredRunecraftingLevel().containsKey(firstRuneLevel*2)) return RuneState.MAX_RUNE_LEVEL;
             return RuneState.NO_ERROR_RUNES;
         } else if (!firstItem.hasKey("runeLevel") && secondItem.hasKey("runeLevel")) {
             Rune rune = HyperRunes.getInstance().getRunes().getRuneByName(secondItem.getString("runeName"));
@@ -115,7 +116,7 @@ public class Utils {
             return RuneState.INCOMPATIBLE_ITEMS;
         }
     }
-    
+
     public static ItemStack getRunedItem(ItemStack firstItem, ItemStack secondItem) {
         NBTItem firstNBT = new NBTItem(firstItem);
         NBTItem secondNBT = new NBTItem(secondItem);
@@ -134,14 +135,14 @@ public class Utils {
         item.setItemMeta(meta);
         return item;
     }
-    
-    
+
+
     public static ItemStack getNewRune(ItemStack firstItem) {
         NBTItem firstNBT = new NBTItem(firstItem);
         int firstLevel = firstNBT.getInteger("runeLevel");
         return HyperRunes.getInstance().getRunes().getRune(firstNBT.getString("runeName"), firstLevel * 2);
     }
-    
+
     public static boolean itemCanBeFused(NBTItem firstItem, RuneType runeType) {
         String mat = firstItem.getItem().getType().toString();
         Bukkit.getConsoleSender().sendMessage(mat);
@@ -149,13 +150,13 @@ public class Utils {
             return true;
         } else return runeType == RuneType.BOW && mat.contains("BOW");
     }
-    
+
     public static int getSuccesChance(ItemStack itemStack) {
         NBTItem secondNBT = new NBTItem(itemStack);
         if (!secondNBT.hasKey("runeName"))
             return 0;
         return HyperRunes.getInstance().getRunes().getRuneByName(secondNBT.getString("runeName")).getSuccessChance(secondNBT.getInteger("runeLevel"));
     }
-    
-    
+
+
 }
