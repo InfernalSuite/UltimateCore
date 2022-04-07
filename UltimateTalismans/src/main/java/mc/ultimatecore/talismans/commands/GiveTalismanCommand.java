@@ -14,12 +14,11 @@ import java.util.List;
 public class GiveTalismanCommand extends Command{
 
     public GiveTalismanCommand() {
-        super(Collections.singletonList("give"), "Create new Item", "hypertalismans.give", true, "/Talismans give <player> <talisman>");
+        super(Collections.singletonList("give"), "Create new Item", "hypertalismans.give", false, "/Talismans give <player> <talisman>");
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        Player p = (Player) sender;
         if(args.length == 3){
             Player player = Bukkit.getPlayer(args[1]);
             if(player != null){
@@ -28,13 +27,13 @@ public class GiveTalismanCommand extends Command{
                     Talisman talisman = HyperTalismans.getInstance().getTalismans().getTalismans().get(name);
                     player.getInventory().addItem(talisman.getItem());
                 }else{
-                    p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidTalisman").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+                    sender.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidTalisman").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
                 }
             } else {
-                p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+                sender.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
             }
         }else{
-            p.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
+            sender.sendMessage(StringUtils.color(HyperTalismans.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperTalismans.getInstance().getConfiguration().prefix)));
         }
     }
 
