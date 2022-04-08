@@ -45,6 +45,13 @@ public class UltimatePlugin extends JavaPlugin {
         Player player = getServer().getPlayer(uuid);
         return player != null && player.isOnline();
     }
+
+    public Collection<UUID> getOnlinePlayers() {
+        Collection<? extends Player> players = getServer().getOnlinePlayers();
+        Set<UUID> uuidSet = new HashSet<>(players.size());
+        players.stream().map(Player::getUniqueId).forEach(uuidSet::add);
+        return uuidSet;
+    }
     
     protected void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getPluginManager().registerEvents(listener, this));
