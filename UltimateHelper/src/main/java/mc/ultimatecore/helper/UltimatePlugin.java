@@ -1,5 +1,7 @@
 package mc.ultimatecore.helper;
 
+import com.infernalsuite.ultimatecore.common.storage.*;
+import lombok.*;
 import mc.ultimatecore.helper.objects.messages.ConsoleMessage;
 import mc.ultimatecore.helper.objects.messages.MessageType;
 import org.bukkit.Bukkit;
@@ -10,6 +12,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Arrays;
 
 public class UltimatePlugin extends JavaPlugin {
+
+    @Getter
+    private Storage storage;
     
     @Override
     public void onLoad() {
@@ -26,7 +31,6 @@ public class UltimatePlugin extends JavaPlugin {
         super.onDisable();
         Bukkit.getOnlinePlayers().forEach(Player::closeInventory);
     }
-    
     
     protected void registerListeners(Listener... listeners) {
         Arrays.stream(listeners).forEach(listener -> Bukkit.getPluginManager().registerEvents(listener, this));
