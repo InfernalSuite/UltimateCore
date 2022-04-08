@@ -21,6 +21,8 @@ dependencies {
 
     api("com.zaxxer:HikariCP:5.0.1")
 
+    api("com.github.ben-manes.caffeine:caffeine:3.0.6")
+
     api("com.google.code.gson:gson:2.9.0")
     api("com.google.guava:guava:31.1-jre")
 
