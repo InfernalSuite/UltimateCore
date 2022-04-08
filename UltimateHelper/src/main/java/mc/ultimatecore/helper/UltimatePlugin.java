@@ -1,5 +1,7 @@
 package mc.ultimatecore.helper;
 
+import com.infernalsuite.ultimatecore.common.manager.player.*;
+import com.infernalsuite.ultimatecore.common.player.*;
 import com.infernalsuite.ultimatecore.common.storage.*;
 import lombok.*;
 import mc.ultimatecore.helper.objects.messages.ConsoleMessage;
@@ -15,6 +17,9 @@ public class UltimatePlugin extends JavaPlugin {
 
     @Getter
     private Storage storage;
+
+    @Getter
+    private UCPlayerManager<? extends UCPlayerImpl> playerManager;
     
     @Override
     public void onLoad() {
