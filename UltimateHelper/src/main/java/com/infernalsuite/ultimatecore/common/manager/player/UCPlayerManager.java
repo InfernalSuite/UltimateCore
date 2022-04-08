@@ -18,6 +18,12 @@ public interface UCPlayerManager<T extends UCPlayerImpl> extends Manager<UUID, U
     T getByUsername(String name);
 
     /**
+     * Gets the housekeeper, responsible unloading unneeded players.
+     * @return the housekeeper
+     */
+    PlayerHousekeeper getHousekeeper();
+
+    /**
      * Reloads the data of all online players.
      */
     CompletableFuture<Void> loadAllPlayers();
