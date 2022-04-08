@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 
 public interface UCPlayerManager<T extends UCPlayerImpl> extends Manager<UUID, UCPlayerImpl, T> {
 
-    T getOrMake(UUID id);
+    T getOrMake(UUID id, String username);
 
     /**
      * Gets a player object by name.
