@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @AllArgsConstructor
-public class RecipeBookGUI extends SimpleGUI {
+public class RecipeBookGUI implements SimpleGUI {
 
     private final HyperCrafting plugin;
 

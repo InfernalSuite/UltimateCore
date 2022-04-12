@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 
 @AllArgsConstructor
-public class RecipePreviewGUI extends SimpleGUI {
+public class RecipePreviewGUI implements SimpleGUI {
     
     private final HyperCrafting plugin;
     

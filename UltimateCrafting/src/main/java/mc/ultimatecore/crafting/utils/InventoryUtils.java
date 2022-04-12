@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.jetbrains.annotations.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -216,5 +217,9 @@ public class InventoryUtils {
         m.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         item.setItemMeta(m);
         return item;
+    }
+
+    public static boolean isEmpty(@Nullable ItemStack itemStack) {
+        return itemStack == null || itemStack.getType().isAir();
     }
 }

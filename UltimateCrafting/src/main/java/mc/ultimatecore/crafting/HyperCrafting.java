@@ -3,12 +3,8 @@ package mc.ultimatecore.crafting;
 import lombok.Getter;
 import mc.ultimatecore.crafting.commands.CommandManager;
 import mc.ultimatecore.crafting.configs.*;
-import mc.ultimatecore.crafting.listeners.CommandListener;
-import mc.ultimatecore.crafting.listeners.CraftingTableListener;
-import mc.ultimatecore.crafting.listeners.InventoryClickListener;
-import mc.ultimatecore.crafting.listeners.PlayerJoinLeaveListener;
+import mc.ultimatecore.crafting.listeners.*;
 import mc.ultimatecore.crafting.managers.PlayersDataManager;
-import mc.ultimatecore.crafting.nms.*;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -31,8 +27,6 @@ public class HyperCrafting extends JavaPlugin {
     @Getter
     private CraftingRecipes craftingRecipes;
     @Getter
-    private NMS nms;
-    @Getter
     private BlackList blackList;
     @Getter
     private Categories categories;
@@ -45,36 +39,17 @@ public class HyperCrafting extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        this.nms = setupNMS();
-        if (this.nms == null) {
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
-
         instance = this;
 
         loadConfigs();
 
         commandManager = new CommandManager("hypercrafting");
 
-        registerListeners(new CommandListener(this), new InventoryClickListener(), new CraftingTableListener(this), new PlayerJoinLeaveListener(this));
+        registerListeners(new CommandListener(this), new InventoryClickListener(), new CraftingTableListener(this), new PlayerJoinLeaveListener(this), new InventoryCloseListener(), new InventoryDragListener());
 
         playersData = new PlayersDataManager();
 
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
-    }
-
-
-    private NMS setupNMS() {
-        String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-        try {
-            return (NMS) Class.forName("mc.ultimatecore.crafting.nms." + version).newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            getLogger().warning("Un-Supported Minecraft Version: " + version);
-        }
-        return null;
     }
 
     @Override

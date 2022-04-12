@@ -17,7 +17,7 @@ public class OpenCraftingTable extends Command {
     public boolean execute(CommandSender sender, String[] args) {
         Player p = (Player) sender;
         User user = User.getUser(p);
-        p.openInventory(user.getMainMenu().getInventory());
+        user.getMainMenu();
         return false;
     }
 

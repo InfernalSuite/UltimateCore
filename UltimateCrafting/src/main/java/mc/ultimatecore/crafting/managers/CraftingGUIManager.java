@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.api.events.HyperCraftEvent;
+import mc.ultimatecore.crafting.gui.*;
 import mc.ultimatecore.crafting.objects.AutoReturn;
 import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import mc.ultimatecore.crafting.utils.InventoryUtils;
@@ -20,11 +21,7 @@ import java.util.*;
 public class CraftingGUIManager {
     
     private final List<Integer> craftingSlots;
-    
-    @Getter
-    @Setter
-    private InventoryView inventoryView;
-    
+
     private final Inventory inventory;
     
     @Getter
@@ -38,69 +35,65 @@ public class CraftingGUIManager {
     
     private final HyperCrafting plugin;
     
-    public CraftingGUIManager(Inventory inventory, InventoryView inventoryView) {
+    public CraftingGUIManager(Inventory inventory) {
         this.plugin = HyperCrafting.getInstance();
         this.inventory = inventory;
         this.craftingSlots = new ArrayList<>(plugin.getInventories().craftingSlots);
         this.recipeSlots = new HashMap<>();
         this.autoRecipes = new HashMap<>();
-        this.inventoryView = inventoryView;
     }
     
     public void init(Player player) {
         recipeSlots.clear();
-        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-            if (inventoryView == null || inventory == null) return;
-            for (int i = 1; i <= craftingSlots.size(); i++)
-                inventoryView.setItem(i, inventory.getItem(craftingSlots.get(i - 1)));
-            if (plugin.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes")) {
-                List<CraftingRecipe> craftingRecipes = getAvailableRecipes(player, plugin.getInventories().availableRecipesSlots.size());
-                int index = 0;
-                for (Integer slot : plugin.getInventories().availableRecipesSlots) {
-                    try {
-                        CraftingRecipe craftingRecipe = craftingRecipes.get(index);
-                        inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, craftingRecipe.getResult(), "autoRecipes"));
-                        recipeSlots.put(slot, craftingRecipe.getName());
-                    } catch (IndexOutOfBoundsException e) {
-                        inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().background));
-                    }
-                    index++;
+
+        if (plugin.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes")) {
+            List<CraftingRecipe> craftingRecipes = getAvailableRecipes(player, plugin.getInventories().availableRecipesSlots.size());
+            int index = 0;
+            for (Integer slot : plugin.getInventories().availableRecipesSlots) {
+                try {
+                    CraftingRecipe craftingRecipe = craftingRecipes.get(index);
+                    inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, craftingRecipe.getResult(), "autoRecipes"));
+                    recipeSlots.put(slot, craftingRecipe.getName());
+                } catch (IndexOutOfBoundsException e) {
+                    inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().background));
                 }
-            } else {
-                plugin.getInventories().availableRecipesSlots.forEach(slot -> inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().background)));
+                index++;
             }
-            ItemStack viewItem = inventoryView.getItem(0);
-            Optional<CraftingRecipe> craftingRecipe = plugin.getCraftingRecipes().matchRecipe(player, getItemStackMap());
-            if (craftingRecipe.isPresent() && !craftingRecipe.get().isOverrideRecipe()) {
-                if (!checkRecipe(craftingRecipe.get())) {
-                    inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().recipeNotFound));
-                    colorizeSlots(false);
+        } else {
+            plugin.getInventories().availableRecipesSlots.forEach(slot -> inventory.setItem(slot, InventoryUtils.makeItem(plugin.getInventories().background)));
+        }
+
+        ItemStack viewItem = inventory.getItem(CraftingGUI.RESULT_SLOT);
+        Optional<CraftingRecipe> craftingRecipe = plugin.getCraftingRecipes().matchRecipe(player, getItemStackMap());
+        if (craftingRecipe.isPresent() && !craftingRecipe.get().isOverrideRecipe()) {
+            if (!checkRecipe(craftingRecipe.get())) {
+                inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().recipeNotFound));
+                colorizeSlots(false);
+                return;
+            }
+            if (!craftingRecipe.get().hasPermission(player)) {
+                inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().recipeNoPermission));
+                colorizeSlots(false);
+                return;
+            }
+            colorizeSlots(true);
+            displayItem = craftingRecipe.get().getResult();
+            inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, craftingRecipe.get().getResult(), "temporalCraft"));
+        } else {
+            if (viewItem != null && viewItem.getType() != Material.AIR && !plugin.getBlackList().itemIsBlackListed(viewItem)) {
+                // Fixing usage of custom items for vanilla items
+                if (getItemStackMap().values().stream().anyMatch(itemStack -> itemStack.hasItemMeta() || (itemStack.getItemMeta() != null && (itemStack.getItemMeta().hasEnchants() || itemStack.getItemMeta().hasDisplayName() || itemStack.getItemMeta().hasLore()))))
                     return;
-                }
-                if (!craftingRecipe.get().hasPermission(player)) {
-                    inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().recipeNoPermission));
-                    colorizeSlots(false);
-                    return;
-                }
+
+                displayItem = viewItem;
+                inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, viewItem, "temporalCraft"));
                 colorizeSlots(true);
-                displayItem = craftingRecipe.get().getResult();
-                inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, craftingRecipe.get().getResult(), "temporalCraft"));
             } else {
-                if (viewItem != null && viewItem.getType() != Material.AIR && !plugin.getBlackList().itemIsBlackListed(viewItem)) {
-                    // Fixing usage of custom items for vanilla items
-                    if (getItemStackMap().values().stream().anyMatch(itemStack -> itemStack.hasItemMeta() || (itemStack.getItemMeta() != null && (itemStack.getItemMeta().hasEnchants() || itemStack.getItemMeta().hasDisplayName() || itemStack.getItemMeta().hasLore()))))
-                        return;
-                    
-                    displayItem = viewItem;
-                    inventory.setItem(23, InventoryUtils.makeItem(plugin.getInventories().previewCraftItem, viewItem, "temporalCraft"));
-                    colorizeSlots(true);
-                } else {
-                    inventory.setItem(23, null);
-                    inventory.setItem(23, InventoryUtils.makeItem((plugin.getInventories()).recipeNotFound));
-                    colorizeSlots(false);
-                }
+                inventory.setItem(23, null);
+                inventory.setItem(23, InventoryUtils.makeItem((plugin.getInventories()).recipeNotFound));
+                colorizeSlots(false);
             }
-        }, 0L);
+        }
     }
     
     public AutoReturn makeAutoCraft(Player player, CraftingRecipe craftingRecipe) {
@@ -289,13 +282,5 @@ public class CraftingGUIManager {
     public Inventory getInventory() {
         return inventory;
     }
-    
-    public void remove() {
-        inventoryView.getPlayer().remove();
-    }
-    
-    public void add(InventoryView inventoryView) {
-        this.inventoryView = inventoryView;
-    }
-    
+
 }

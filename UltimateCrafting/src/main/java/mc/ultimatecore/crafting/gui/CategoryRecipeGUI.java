@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public class CategoryRecipeGUI extends SimpleGUI {
+public class CategoryRecipeGUI implements SimpleGUI {
 
     private final HyperCrafting plugin;
 

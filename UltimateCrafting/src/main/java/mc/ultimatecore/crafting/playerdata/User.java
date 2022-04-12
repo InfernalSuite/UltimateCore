@@ -43,8 +43,11 @@ public class User {
     }
 
     public CraftingGUI getMainMenu(){
-        if(craftingGUI == null) craftingGUI = new CraftingGUI(Bukkit.getPlayer(name), HyperCrafting.getInstance());
-        return craftingGUI;
+        Player player = Bukkit.getPlayer(name);
+        CraftingGUI gui = new CraftingGUI();
+        gui.openInventory(player);
+
+       return gui;
     }
 
     public RecipeCreatorGUI getRecipeCreatorGUI(CraftingRecipe craftingRecipe){
