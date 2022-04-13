@@ -1,9 +1,9 @@
-package mc.ultimatecore.crafting.gui;
+package mc.ultimatecore.crafting.gui.crafting;
 
 import mc.ultimatecore.crafting.*;
 import mc.ultimatecore.crafting.api.events.*;
 import mc.ultimatecore.crafting.configs.*;
-import mc.ultimatecore.crafting.managers.*;
+import mc.ultimatecore.crafting.gui.*;
 import mc.ultimatecore.crafting.objects.*;
 import mc.ultimatecore.crafting.utils.*;
 import org.bukkit.*;
@@ -14,12 +14,6 @@ import org.jetbrains.annotations.*;
 
 import java.util.*;
 
-// TODO:
-// Bugs:
-// Crafting result incorrectly appears green at times (put any item in the slot)
-// Moving items out doesn't update crafing menu
-// Preview recipes disappears alot
-//
 public class CraftingGUI implements SimpleGUI {
 
     public static final int RESULT_SLOT = 23;
@@ -31,12 +25,10 @@ public class CraftingGUI implements SimpleGUI {
 
     public boolean isClosed = false;
 
-    public CraftingGUI() {
+    public CraftingGUI(Player player) {
         this.inventoryConfig = HyperCrafting.getInstance().getInventories();
         this.inventory = Bukkit.createInventory(this, this.inventoryConfig.mainMenuSize, Utils.color(this.inventoryConfig.mainMenuTitle));
-
-        this.guiManager = new CraftingGUIManager(inventory);
-
+        this.guiManager = new CraftingGUIManager(player, inventory);
 
         // Populate decoration slots
         for (int slot : this.inventoryConfig.decorationSlots) {
@@ -72,7 +64,7 @@ public class CraftingGUI implements SimpleGUI {
 
     @Override
     public void openInventory(Player player) {
-        guiManager.init(player);
+        guiManager.updateMenu();
         player.openInventory(inventory);
     }
 
@@ -82,7 +74,18 @@ public class CraftingGUI implements SimpleGUI {
 
         Bukkit.getScheduler().runTask(hyperCrafting, () -> {
             if (!isClosed) {
-                guiManager.init((Player) event.getWhoClicked());
+                guiManager.updateMenu();
+            }
+        });
+    }
+
+    @Override
+    public void onUpdatePlayerInventory(InventoryClickEvent event) {
+        HyperCrafting hyperCrafting = HyperCrafting.getInstance();
+
+        Bukkit.getScheduler().runTask(hyperCrafting, () -> {
+            if (!isClosed) {
+                guiManager.updateMenu();
             }
         });
     }
@@ -109,66 +112,44 @@ public class CraftingGUI implements SimpleGUI {
         }
 
         // Handle crafting items by directly clicking on recipes
-        Map<Integer, String> recipeMap = this.guiManager.getRecipeSlots();
-        if (recipeMap.containsKey(slot) && hyperCrafting.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes") && clickType.isLeftClick()) {
-            Optional<CraftingRecipe> craftingRecipe = hyperCrafting.getCraftingRecipes().getRecipeByName(recipeMap.get(slot));
+        CraftingRecipe recipe = this.guiManager.getRecipeSlot(slot);
+        if (recipe != null && hyperCrafting.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes") && clickType.isLeftClick()) {
+            // Don't allow the player to pickup recipe slots if it's normally impossible
+            if (!InventoryUtils.canStackitem(recipe.getResult(), cursor)) {
+                return;
+            }
 
-            if (craftingRecipe.isPresent()) {
-                ItemStack clicked = craftingRecipe.get().getResult().clone();
-
-                // Don't allow the player to pickup recipe slots if it's normally impossible
-                if (cursor != null && cursor.getType() != Material.AIR && !cursor.isSimilar(clicked) || event.isShiftClick() || event.isRightClick()) {
-                    return;
-                }
-
-                AutoReturn autoReturn = this.guiManager.makeAutoCraft(player, craftingRecipe.get());
-                if (autoReturn == AutoReturn.SUCCESS) {
-                    if (!InventoryUtils.isEmpty(cursor)) {
-                        clicked.setAmount(cursor.getAmount() + clicked.getAmount());
-                    }
-
-                    Bukkit.getScheduler().runTask(hyperCrafting, () -> player.setItemOnCursor(clicked));
-                } else if (autoReturn == AutoReturn.NO_ITEMS) {
-                    player.sendMessage(Utils.color(hyperCrafting.getMessages().getMessage("noItems")));
+            if (event.isShiftClick()) {
+                // Attempt to craft until there is no valid recipe
+                while (this.guiManager.canQuickCraft(slot)) {
+                    this.guiManager.quickCraft(recipe, false);
                 }
             } else {
-                return; // If there is no crafting recipe, do nothing!
+                this.guiManager.quickCraft(recipe, true);
             }
+
+            return;
         }
 
-        ItemStack craftedItem = guiManager.getDisplayItem();
+        ItemStack craftedItem = this.guiManager.getResultItem();
         if (slot == RESULT_SLOT) {
-            // If recipe not found don't click
-            if (Utils.matchType(craftedItem, this.inventoryConfig.recipeNotFound.material)) {
+            // If there is no result for the current recipe just cancel
+            if (craftedItem == null) {
                 return;
             }
 
             // If the player can't gather the item don't click
-            if (!canHoldItem(craftedItem, cursor)) {
+            if (!InventoryUtils.canStackitem(craftedItem, cursor)) {
                 return;
             }
 
-            // TODO: Clean up this code
             if (event.isShiftClick()) {
-                if (!reachStackSize(cursor, craftedItem)) {
-                    Bukkit.getServer().getPluginManager().callEvent(new HyperCraftEvent(player, event.getCurrentItem()));
-                    ItemStack newItem = craftedItem.clone();
-                    int maxQuantity = guiManager.getMinItemQuantity(newItem);
-                    for (int i = 0; i < maxQuantity; i++) {
-                        guiManager.removeItem(player, craftedItem, true);
-                    }
-
-                    if (maxQuantity > newItem.getMaxStackSize()) {
-                        for (int i = 0; i < maxQuantity; i++) {
-                            player.getInventory().addItem(newItem);
-                        }
-                    } else {
-                        newItem.setAmount(newItem.getAmount() * maxQuantity);
-                        player.getInventory().addItem(newItem);
-                    }
+                // Attempt to craft until there is no valid recipe
+                while (this.guiManager.hasActiveRecipe()) {
+                    this.guiManager.normalCraft(false);
                 }
             } else {
-                guiManager.removeItem(player, craftedItem, false);
+                this.guiManager.normalCraft(true);
             }
         }
 
@@ -177,20 +158,11 @@ public class CraftingGUI implements SimpleGUI {
         // (We have to do this because that code relies on items that are updated after this event)
         Bukkit.getScheduler().runTask(hyperCrafting, () -> {
             if (!isClosed) {
-                guiManager.init(player);
+                guiManager.updateMenu();
             }
         });
     }
 
-    private boolean canHoldItem(ItemStack itemStack, ItemStack cursor) {
-        return Utils.itemIsNull(cursor) || !Utils.itemIsNull(cursor) && cursor.isSimilar(itemStack);
-    }
-
-    private boolean reachStackSize(ItemStack cursor, ItemStack secondItem) {
-        if (cursor == null || cursor.getType().equals(Material.AIR))
-            return false;
-        return secondItem != null && cursor.getAmount() + secondItem.getAmount() >= cursor.getMaxStackSize();
-    }
 
     @NotNull
     @Override

@@ -16,6 +16,10 @@ public interface SimpleGUI extends InventoryHolder {
 
     }
 
+    default void onUpdatePlayerInventory(InventoryClickEvent event) {
+
+    }
+
     default void onInventoryClose(InventoryCloseEvent event) {
 
     }

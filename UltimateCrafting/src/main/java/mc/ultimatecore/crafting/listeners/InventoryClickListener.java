@@ -11,6 +11,8 @@ public class InventoryClickListener implements Listener {
         Inventory clickedInventory = event.getClickedInventory();
         if (clickedInventory != null && clickedInventory.getHolder() instanceof SimpleGUI) {
             ((SimpleGUI) clickedInventory.getHolder()).onInventoryClick(event);
+        } else if (clickedInventory == event.getView().getBottomInventory() && event.getView().getTopInventory().getHolder() instanceof SimpleGUI) {
+            ((SimpleGUI) event.getView().getTopInventory().getHolder()).onUpdatePlayerInventory(event);
         }
     }
 }

@@ -85,9 +85,9 @@ public class Inventories extends YAMLFile {
     public int categorySize;
     public String categoryTitle;
     
-    public Item succesItem = new Item(XMaterial.LIME_STAINED_GLASS_PANE, 1, "", new ArrayList<>());
+    public Item successItem = new Item(XMaterial.LIME_STAINED_GLASS_PANE, 1, "", new ArrayList<>());
     
-    public Item unsuccesItem = new Item(XMaterial.RED_STAINED_GLASS_PANE, 1, "", new ArrayList<>());
+    public Item unsuccessItem = new Item(XMaterial.RED_STAINED_GLASS_PANE, 1, "", new ArrayList<>());
     
     public Item previewCraftItem = new Item(XMaterial.STONE, 1, "", new ArrayList<>());
     
@@ -123,8 +123,8 @@ public class Inventories extends YAMLFile {
         background = Utils.getItemFromConfig(getConfig(), "buttons.background");
         closeButton = Utils.getItemFromConfig(getConfig(), "buttons.closeButton");
         
-        succesItem = Utils.getItemFromConfig(getConfig(), "mainMenu.successItem");
-        unsuccesItem = Utils.getItemFromConfig(getConfig(), "mainMenu.emptyItem");
+        successItem = Utils.getItemFromConfig(getConfig(), "mainMenu.successItem");
+        unsuccessItem = Utils.getItemFromConfig(getConfig(), "mainMenu.emptyItem");
         
         previewCraftItem = Utils.getItemFromConfig(getConfig(), "mainMenu.previewCraftItem");
         
