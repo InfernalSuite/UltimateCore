@@ -17,4 +17,5 @@ public interface WorldEdit {
     boolean isAsync();
 
     SchematicImpl getSchematic(String name, String fileName, Path path);
+    SchematicImpl getSchematic(String name, Path path);
 }

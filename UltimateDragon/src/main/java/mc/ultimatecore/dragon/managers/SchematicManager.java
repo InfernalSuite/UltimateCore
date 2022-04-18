@@ -42,7 +42,7 @@ public class SchematicManager extends CoreManagerImpl {
         String fileName = file.getName();
         if(fileName.contains(".schematic") || fileName.contains(".schem")){
             String name = fileName.replace(".schematic", "").replace(".schem", "");
-            SchematicImpl worldEditSchematic = plugin.getAddonsManager().getWorldEdit().getSchematic(name, fileName, file.toPath());
+            SchematicImpl worldEditSchematic = plugin.getAddonsManager().getWorldEdit().getSchematic(name, file.toPath());
             schematics.add(worldEditSchematic);
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &aSuccessfully loaded WorldEdit Schematic "+name+"!"));
         }

@@ -10,6 +10,10 @@ public abstract class AbstractWorldEdit implements WorldEdit {
     public SchematicImpl getSchematic(String name, String fileName, Path path) {
         return new SchematicImpl(this, name, fileName, path);
     }
+    @Override
+    public SchematicImpl getSchematic(String name, Path path) {
+        return new SchematicImpl(this, name, path);
+    }
 
     @Override
     public boolean isAsync() {
