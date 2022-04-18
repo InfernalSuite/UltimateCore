@@ -10,5 +10,5 @@ repositories {
 
 dependencies {
     compileOnly("com.sk89q.worldedit:worldedit-bukkit:6.1.4-SNAPSHOT")
-    compileOnly(project(":UltimateHelper"))
+    compileOnly(project(":UltimateHelper:common-versionhook"))
 }

@@ -18,6 +18,7 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.10.9")
     implementation("org.codemc.worldguardwrapper:worldguardwrapper:1.2.0-SNAPSHOT")
 
+    api(project(":UltimateHelper:common-versionhook"))
     implementation(project(":UltimateHelper:v1_8_R3"))
 
 }

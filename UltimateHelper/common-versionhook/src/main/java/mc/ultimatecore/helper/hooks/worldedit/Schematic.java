@@ -11,8 +11,4 @@ public interface Schematic {
 
     File getSchematicFile();
 
-    static SchematicImpl of(String name, String fileName, Path path) {
-        return new SchematicImpl(name, fileName, path);
-    }
-
 }

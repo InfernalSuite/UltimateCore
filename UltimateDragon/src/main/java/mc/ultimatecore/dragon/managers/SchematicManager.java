@@ -3,9 +3,8 @@ package mc.ultimatecore.dragon.managers;
 import lombok.Getter;
 import mc.ultimatecore.dragon.HyperDragons;
 import mc.ultimatecore.dragon.implementations.CoreManagerImpl;
-import mc.ultimatecore.dragon.implementations.SchematicImpl;
-import mc.ultimatecore.dragon.objects.others.WorldEditSchematic;
 import mc.ultimatecore.dragon.utils.StringUtils;
+import mc.ultimatecore.helper.hooks.worldedit.*;
 import org.bukkit.Bukkit;
 
 import java.io.File;
@@ -33,7 +32,7 @@ public class SchematicManager extends CoreManagerImpl {
     @Override
     public void load() {
         Arrays.stream(schematicsFolder.listFiles()).iterator().forEachRemaining(this::loadSchematic);
-        
+
         if(!getSchematic(HyperDragons.getInstance().getConfiguration().schematic).isPresent())
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&c[UltimateCore-Dragon] Schematic "+HyperDragons.getInstance().getConfiguration().schematic)+" wasn't found!");
     }
@@ -43,7 +42,7 @@ public class SchematicManager extends CoreManagerImpl {
         String fileName = file.getName();
         if(fileName.contains(".schematic") || fileName.contains(".schem")){
             String name = fileName.replace(".schematic", "").replace(".schem", "");
-            WorldEditSchematic worldEditSchematic = new WorldEditSchematic(name, fileName);
+            SchematicImpl worldEditSchematic = plugin.getAddonsManager().getWorldEdit().getSchematic(name, fileName, file.toPath());
             schematics.add(worldEditSchematic);
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &aSuccessfully loaded WorldEdit Schematic "+name+"!"));
         }

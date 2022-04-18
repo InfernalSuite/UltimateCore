@@ -3,6 +3,7 @@ package mc.ultimatecore.helper.hooks.worldedit;
 import org.bukkit.*;
 import org.bukkit.plugin.*;
 
+import java.nio.file.*;
 import java.util.concurrent.*;
 
 public interface WorldEdit {
@@ -15,4 +16,5 @@ public interface WorldEdit {
      */
     boolean isAsync();
 
+    SchematicImpl getSchematic(String name, String fileName, Path path);
 }
