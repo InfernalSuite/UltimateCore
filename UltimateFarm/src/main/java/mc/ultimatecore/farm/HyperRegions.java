@@ -24,22 +24,6 @@ import java.util.Optional;
 @Getter
 public class HyperRegions extends UltimatePlugin {
 
-    /*
-     * This block prevents the Maven Shade plugin to remove the specified classes
-     */
-    static {
-        @SuppressWarnings("unused") Class<?>[] classes = new Class<?>[]{
-                v1_8_R3.class,
-                v1_12_R1.class,
-                v1_14_R1.class,
-                v1_15_R1.class,
-                v1_16_R3.class,
-                v1_17_R1.class,
-                v1_18_R1.class,
-                v1_18_R2.class
-        };
-    }
-
     private static HyperRegions instance;
     private Config configuration;
     private Messages messages;

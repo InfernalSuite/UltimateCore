@@ -1,19 +1,16 @@
 package mc.ultimatecore.dragon.managers;
 
-import com.cryptomorin.xseries.XMaterial;
-import lombok.Getter;
-import mc.ultimatecore.dragon.HyperDragons;
-import mc.ultimatecore.dragon.addons.MythicMobsAddon;
-import mc.ultimatecore.dragon.addons.WorldEdit6;
-import mc.ultimatecore.dragon.addons.WorldEdit7;
-import mc.ultimatecore.dragon.implementations.CoreManagerImpl;
-import mc.ultimatecore.dragon.implementations.WorldEditPluginImpl;
-import mc.ultimatecore.dragon.utils.StringUtils;
-import org.bukkit.Bukkit;
+import lombok.*;
+import mc.ultimatecore.dragon.*;
+import mc.ultimatecore.dragon.addons.*;
+import mc.ultimatecore.dragon.implementations.*;
+import mc.ultimatecore.dragon.utils.*;
+import mc.ultimatecore.helper.hooks.worldedit.*;
+import org.bukkit.*;
 
 @Getter
 public class AddonsManager extends CoreManagerImpl {
-    private WorldEditPluginImpl worldEdit;
+    private WorldEdit worldEdit;
     private MythicMobsAddon mythicMobs;
 
     public AddonsManager(HyperDragons plugin) {
@@ -24,9 +21,9 @@ public class AddonsManager extends CoreManagerImpl {
     @Override
     public void load() {
         if(isPlugin("WorldEdit") || isPlugin("FastAsyncWorldEdit") || isPlugin("AsyncWorldEdit"))
-            worldEdit = XMaterial.getVersion() > 13 ? new WorldEdit7("WorldEdit") : new WorldEdit6("WorldEdit");
+            worldEdit = HyperDragons.getInstance().getVersionHook().getWorldEdit();
         else
-            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cWaning WorldEdit is not installed!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cWarning WorldEdit is not installed!"));
         if(isPlugin("MythicMobs"))
             mythicMobs = new MythicMobsAddon();
     }

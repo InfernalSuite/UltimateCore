@@ -16,21 +16,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HyperCrafting extends JavaPlugin {
-    /*
-     * This block prevents the Maven Shade plugin to remove the specified classes
-     */
-    static {
-        @SuppressWarnings("unused") Class<?>[] classes = new Class<?>[]{
-                v1_8_R3.class,
-                v1_12_R1.class,
-                v1_14_R1.class,
-                v1_15_R1.class,
-                v1_16_R3.class,
-                v1_17_R1.class,
-                v1_18_R1.class,
-                v1_18_R2.class
-        };
-    }
 
     private static HyperCrafting instance;
     @Getter

@@ -15,7 +15,7 @@ dependencies {
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_18_R2"))
 
     compileOnly("com.zaxxer:HikariCP:5.0.1")
-    compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
     compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.0-SNAPSHOT")
 
     implementation(project(":UltimateHelper"))

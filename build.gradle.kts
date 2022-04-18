@@ -64,7 +64,6 @@ allprojects {
 
     tasks.withType<JavaCompile> {
         options.encoding = Charsets.UTF_8.name()
-        options.release.set(17)
     }
 
     tasks.withType<Javadoc> {
@@ -87,7 +86,7 @@ allprojects {
 
     java {
         toolchain {
-            toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+            toolchain.languageVersion.set(JavaLanguageVersion.of(11))
         }
     }
 }

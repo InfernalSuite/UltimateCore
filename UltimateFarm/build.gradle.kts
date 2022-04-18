@@ -14,7 +14,7 @@ dependencies {
     implementation(project(":UltimateFarm:UltimateFarmNMS-v1_18_R1"))
     implementation(project(":UltimateFarm:UltimateFarmNMS-v1_18_R2"))
 
-    compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
     implementation(project(":UltimateHelper"))

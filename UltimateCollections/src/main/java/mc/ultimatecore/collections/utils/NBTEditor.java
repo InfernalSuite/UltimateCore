@@ -7,8 +7,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.checkerframework.checker.nullness.qual.*;
 
-import javax.annotation.Nonnull;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -905,7 +905,7 @@ public final class NBTEditor {
         
         protected final Object tag;
         
-        protected NBTCompound(@Nonnull Object tag) {
+        protected NBTCompound(@NonNull Object tag) {
             this.tag = tag;
         }
         
