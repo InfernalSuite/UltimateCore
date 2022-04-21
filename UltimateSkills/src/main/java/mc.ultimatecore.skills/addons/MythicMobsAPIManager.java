@@ -1,8 +1,8 @@
 package mc.ultimatecore.skills.addons;
 
-import io.lumine.xikage.mythicmobs.api.bukkit.BukkitAPIHelper;
-import io.lumine.xikage.mythicmobs.mobs.ActiveMob;
-import io.lumine.xikage.mythicmobs.mobs.MythicMob;
+import io.lumine.mythic.api.mobs.*;
+import io.lumine.mythic.bukkit.*;
+import io.lumine.mythic.core.mobs.*;
 import mc.ultimatecore.skills.implementations.SoftDependImpl;
 import org.bukkit.entity.Entity;
 

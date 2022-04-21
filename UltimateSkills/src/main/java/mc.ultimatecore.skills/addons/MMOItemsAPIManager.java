@@ -18,9 +18,9 @@ public class MMOItemsAPIManager extends SoftDependImpl{
     public void updateStats(UUID uuid, Ability ability, double value, String type) {
         StatMap stats = MMOPlayerData.get(uuid).getStatMap();
         StatInstance attribute = stats.getInstance(ability.getMmoItems());
-        StatModifier modifier = attribute.getAttribute("HC_" + ability + type);
+        StatModifier modifier = attribute.getModifier("HC_" + ability + type);
         if(modifier == null || modifier.getValue() != value)
-            attribute.addModifier("HC_" + ability + type, new StatModifier(value));
+            attribute.addModifier(new StatModifier(modifier.getKey(), modifier.getStat(), value, modifier.getType(), modifier.getSlot(), modifier.getSource()));
     }
 
     public double getStats(UUID uuid, Ability ability) {
@@ -38,7 +38,7 @@ public class MMOItemsAPIManager extends SoftDependImpl{
         } else {
             StatMap stats = MMOPlayerData.get(uuid).getStatMap();
             StatInstance attribute = stats.getInstance(ability.getMmoItems());
-            StatModifier modifier = attribute.getAttribute("MMOItem");
+            StatModifier modifier = attribute.getModifier("MMOItem");
             return modifier == null ? 0 : modifier.getValue();
         }
     }

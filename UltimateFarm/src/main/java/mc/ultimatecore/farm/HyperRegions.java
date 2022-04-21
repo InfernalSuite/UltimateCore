@@ -50,11 +50,11 @@ public class HyperRegions extends UltimatePlugin {
 
         addonsManager = new AddonsManager(this);
 
-//        commandManager = new CommandManager("ultimatefarm");
+        commandManager = new CommandManager("ultimatefarm");
 
-//        commandManager.registerCommands();
+        commandManager.registerCommands();
 
-//        loadNMS();
+        loadNMS();
 
         if (nms == null) {
             setEnabled(false);
