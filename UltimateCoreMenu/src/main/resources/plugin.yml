@@ -2,7 +2,7 @@ name: UltimateCore-Menu
 description: UltimateCore's Menu plugin
 main: mc.ultimatecore.menu.HyperCore
 version: 4.0.0
-api-version: 1.18
+api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore-Crafting, UltimateCore-Skills, UltimateCore-Pets, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault ]

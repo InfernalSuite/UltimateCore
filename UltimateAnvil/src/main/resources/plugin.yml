@@ -2,7 +2,7 @@ name: UltimateCore-Anvil
 description: UltimateCore's Anvil plugin
 main: mc.ultimatecore.anvil.HyperAnvil
 version: 4.0.0
-api-version: 1.18
+api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ HyperEnchants ]

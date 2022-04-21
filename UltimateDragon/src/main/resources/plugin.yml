@@ -2,7 +2,7 @@ name: UltimateCore-Dragon
 description: UltimateCore's Dragon plugin
 main: mc.ultimatecore.dragon.HyperDragons
 version: 4.0.0
-api-version: 1.18
+api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore, Vault, WorldEdit ]

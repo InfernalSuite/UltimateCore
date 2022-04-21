@@ -2,7 +2,7 @@ name: UltimateCore-Farm
 description: UltimateCore's Farm plugin
 main: mc.ultimatecore.farm.HyperRegions
 version: 4.0.0
-api-version: 1.18
+api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore, WorldEdit, WorldGuard, Multiverse-Core, Residence, UltraRegions ]
