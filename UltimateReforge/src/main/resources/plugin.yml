@@ -1,7 +1,7 @@
 name: UltimateCore-Reforge
 description: UltimateCore's Reforge plugin
 main: mc.ultimatecore.reforge.HyperReforge
-version: 4.0.0
+version: 4.5.0
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD

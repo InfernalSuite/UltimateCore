@@ -1,7 +1,7 @@
 name: UltimateCore-Alchemy
 description: UltimateCore's Alchemy plugin
 main: mc.ultimatecore.alchemy.HyperAlchemy
-version: 4.0.0
+version: 4.5.0
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD

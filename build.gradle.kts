@@ -105,5 +105,4 @@ afterEvaluate {
     tasks.runServer {
         dependsOn(moveJars)
     }
-
 }

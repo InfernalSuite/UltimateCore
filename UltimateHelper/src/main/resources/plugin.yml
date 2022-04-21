@@ -1,7 +1,7 @@
 name: UltimateCore
 description: UltimateCore's Helper plugin
 main: mc.ultimatecore.helper.UltimatePlugin
-version: 4.0.0
+version: 4.5.0
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 softdepend: [WorldEdit]
