@@ -20,6 +20,7 @@ dependencies {
 
     api(project(":UltimateHelper:common-versionhook"))
     implementation(project(":UltimateHelper:v1_8_R3"))
+    implementation(project(":UltimateHelper:v1_18_R2"))
 
 }
 

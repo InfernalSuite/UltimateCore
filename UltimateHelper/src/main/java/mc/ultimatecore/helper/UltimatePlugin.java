@@ -23,7 +23,11 @@ public class UltimatePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         super.onEnable();
-        this.versionHook = setupVersionHook();
+        if(Bukkit.getServer().getPluginManager().getPlugin("WorldEdit") != null
+                || Bukkit.getServer().getPluginManager().getPlugin("FastASyncWorldEdit") != null
+                || Bukkit.getServer().getPluginManager().getPlugin("ASyncWorldEdit") != null) {
+            this.versionHook = setupVersionHook();
+        }
     }
     
     @Override
@@ -52,6 +56,7 @@ public class UltimatePlugin extends JavaPlugin {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         switch (version) {
             case "v1_8_R3": return new v1_8_R3();
+            case "v1_18_R2": return new v1_18_R2();
             default: throw new IllegalStateException("Unsupported Minecraft Version");
         }
     }

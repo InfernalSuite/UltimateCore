@@ -6,8 +6,9 @@ group = "mc.ultimatecore"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
 }
 
 dependencies {
-    compileOnly("com.sk89q.worldedit:worldedit-bukkit:6.1.4-SNAPSHOT")
+    compileOnly("com.destroystokyo.paper:paper-api:1.13.1-R0.1-SNAPSHOT")
 }

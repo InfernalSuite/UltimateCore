@@ -10,11 +10,11 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 
 public class AddonsManager {
     @Getter
-    private AureliumAPIManager aurelliumSkills;
+    private AureliumAPIManager aurelliumSkills = null;
     @Getter
-    private boolean hyperSkills;
+    private boolean hyperSkills = false;
     @Getter
-    private Economy economy;
+    private Economy economy = null;
     private final HyperPets plugin;
 
     public AddonsManager(HyperPets plugin) {
@@ -28,7 +28,7 @@ public class AddonsManager {
             aurelliumSkills = new AureliumAPIManager();
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[" + name + "] &aSuccessfully hooked into AureliumSkills!"));
         }
-        if (isPlugin("Vault")){
+        if (isPlugin("Vault")) {
             RegisteredServiceProvider<Economy> rsp = Bukkit.getServicesManager().getRegistration(Economy.class);
             if (rsp != null) this.economy = rsp.getProvider();
         }

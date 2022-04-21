@@ -74,15 +74,15 @@ allprojects {
         filteringCharset = Charsets.UTF_8.name()
     }
 
-    val autoRelocate by tasks.register("configureShadowRelocation", com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation::class) {
-        target = tasks.getByName("shadowJar") as ShadowJar?
-        val packageName = "${project.group}.${project.name.toLowerCase()}"
-        prefix = "$packageName.shaded"
-    }
+//    val autoRelocate by tasks.register("configureShadowRelocation", com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation::class) {
+//        target = tasks.getByName("shadowJar") as ShadowJar?
+//        val packageName = "${project.group}.${project.name.toLowerCase()}"
+//        prefix = "$packageName.shaded"
+//    }
 
-    tasks.withType<ShadowJar> {
-        dependsOn(autoRelocate)
-    }
+//    tasks.withType<ShadowJar> {
+//        dependsOn(autoRelocate)
+//    }
 
     java {
         toolchain {
