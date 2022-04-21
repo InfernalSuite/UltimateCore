@@ -91,19 +91,3 @@ allprojects {
     }
 }
 
-afterEvaluate {
-    val moveJars by tasks.register("moveFiles", DefaultTask::class);
-
-    moveJars.doFirst {
-       this.project.tasks.runServer {
-           pluginJars.setFrom(childProjects.values.map {
-               it.tasks.named<AbstractArchiveTask>("shadowJar").flatMap { shadow -> shadow.archiveFile }.get().asFile
-           })
-       }
-    }
-
-    tasks.runServer {
-        dependsOn(moveJars)
-    }
-
-}

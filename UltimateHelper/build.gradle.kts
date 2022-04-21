@@ -11,6 +11,7 @@ repositories {
 dependencies {
     api(project(":UltimateHelper:common-versionhook"))
     implementation(project(":UltimateHelper:v1_8_R3"))
+    implementation(project(":UltimateHelper:v1_12_R1"))
     implementation(project(":UltimateHelper:v1_18_R2"))
 
     implementation("com.github.cryptomorin:XSeries:8.7.0")
