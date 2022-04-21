@@ -1,4 +1,4 @@
-package mc.ultimatecore.helper.hooks.worldedit;
+package mc.ultimatecore.helper.v1_18_R2.hooks.worldedit;
 
 import com.sk89q.worldedit.*;
 import com.sk89q.worldedit.WorldEdit;
@@ -9,6 +9,8 @@ import com.sk89q.worldedit.function.operation.*;
 import com.sk89q.worldedit.math.*;
 import com.sk89q.worldedit.session.*;
 import com.sk89q.worldedit.world.World;
+import mc.ultimatecore.helper.hooks.worldedit.AbstractWorldEdit;
+import mc.ultimatecore.helper.hooks.worldedit.Schematic;
 import org.bukkit.*;
 import org.bukkit.plugin.*;
 

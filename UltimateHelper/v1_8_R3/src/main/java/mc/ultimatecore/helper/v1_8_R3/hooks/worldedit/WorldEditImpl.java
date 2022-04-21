@@ -1,4 +1,4 @@
-package mc.ultimatecore.helper.hooks.worldedit;
+package mc.ultimatecore.helper.v1_8_R3.hooks.worldedit;
 
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.*;

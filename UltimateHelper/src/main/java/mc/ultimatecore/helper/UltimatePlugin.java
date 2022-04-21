@@ -3,11 +3,14 @@ package mc.ultimatecore.helper;
 import lombok.*;
 import mc.ultimatecore.helper.objects.messages.ConsoleMessage;
 import mc.ultimatecore.helper.objects.messages.MessageType;
+import mc.ultimatecore.helper.v1_8_R3.*;
+import mc.ultimatecore.helper.v1_18_R2.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.lang.reflect.*;
 import java.util.Arrays;
 
 public class UltimatePlugin extends JavaPlugin {
@@ -54,10 +57,12 @@ public class UltimatePlugin extends JavaPlugin {
 
     private VersionHook setupVersionHook() {
         String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-        switch (version) {
-            case "v1_8_R3": return new v1_8_R3();
-            case "v1_18_R2": return new v1_18_R2();
-            default: throw new IllegalStateException("Unsupported Minecraft Version");
+        try {
+            return (VersionHook) Class.forName("mc.ultimatecore.helper." + version + ".VersionHookImpl").getConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | ClassNotFoundException | NoSuchMethodException e) {
+            e.printStackTrace();
+            Bukkit.getPluginManager().disablePlugin(this);
+            return null;
         }
     }
 }

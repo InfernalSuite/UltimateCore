@@ -5,6 +5,7 @@ import mc.ultimatecore.dragon.*;
 import mc.ultimatecore.dragon.addons.*;
 import mc.ultimatecore.dragon.implementations.*;
 import mc.ultimatecore.dragon.utils.*;
+import mc.ultimatecore.helper.*;
 import mc.ultimatecore.helper.hooks.worldedit.*;
 import org.bukkit.*;
 
@@ -21,7 +22,7 @@ public class AddonsManager extends CoreManagerImpl {
     @Override
     public void load() {
         if(isPlugin("WorldEdit") || isPlugin("FastAsyncWorldEdit") || isPlugin("AsyncWorldEdit"))
-            worldEdit = HyperDragons.getInstance().getVersionHook().getWorldEdit();
+            worldEdit = ((UltimatePlugin) Bukkit.getPluginManager().getPlugin("UltimateCore")).getVersionHook().getWorldEdit();
         else
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cWarning WorldEdit is not installed!"));
         if(isPlugin("MythicMobs"))
