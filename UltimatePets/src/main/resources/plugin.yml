@@ -1,7 +1,7 @@
 name: UltimateCore-Pets
 description: UltimateCore's Pets plugin
 main: mc.ultimatecore.pets.HyperPets
-version: 4.5.0
+version: 5.2.4
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD

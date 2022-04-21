@@ -1,4 +1,4 @@
-version = "4.5.0"
+version = "5.2.4"
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")

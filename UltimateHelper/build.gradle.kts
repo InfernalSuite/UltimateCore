@@ -1,4 +1,4 @@
-version = "4.5.0"
+version = "5.2.4"
 
 plugins {
     `java-library`
@@ -12,6 +12,11 @@ dependencies {
     api(project(":UltimateHelper:common-versionhook"))
     implementation(project(":UltimateHelper:v1_8_R3"))
     implementation(project(":UltimateHelper:v1_12_R1"))
+    implementation(project(":UltimateHelper:v1_14_R1"))
+    implementation(project(":UltimateHelper:v1_15_R1"))
+    implementation(project(":UltimateHelper:v1_16_R3"))
+    implementation(project(":UltimateHelper:v1_17_R1"))
+    implementation(project(":UltimateHelper:v1_18_R1"))
     implementation(project(":UltimateHelper:v1_18_R2"))
 
     implementation("com.github.cryptomorin:XSeries:8.7.0")
