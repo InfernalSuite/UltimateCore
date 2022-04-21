@@ -16,8 +16,10 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     public List<mc.ultimatecore.farm.commands.Command> commands = new ArrayList<>();
 
     public CommandManager(String command) {
-        HyperRegions.getInstance().getCommand(command).setExecutor(this);
-        HyperRegions.getInstance().getCommand(command).setTabCompleter(this);
+        if(HyperRegions.getInstance().getCommand(command) != null) {
+            HyperRegions.getInstance().getCommand(command).setExecutor(this);
+            HyperRegions.getInstance().getCommand(command).setTabCompleter(this);
+        }
     }
 
     public void registerCommands() {

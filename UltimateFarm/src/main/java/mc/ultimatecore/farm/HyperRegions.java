@@ -42,28 +42,26 @@ public class HyperRegions extends UltimatePlugin {
     public void onEnable() {
         instance = this;
 
-        loadNMS();
-
-        if (nms == null) {
-            setEnabled(false);
-            return;
-        }
-
-        addonsManager = new AddonsManager(this);
-
         loadConfigs();
 
         registerListeners(new InventoryClickListener(), new CropBreakListener(this));
 
         Bukkit.getScheduler().scheduleAsyncRepeatingTask(getInstance(), this::saveConfigs, 1000L, 1900L);
 
-        commandManager = new CommandManager("ultimatefarm");
+        addonsManager = new AddonsManager(this);
 
-        commandManager.registerCommands();
+//        commandManager = new CommandManager("ultimatefarm");
+
+//        commandManager.registerCommands();
+
+//        loadNMS();
+
+        if (nms == null) {
+            setEnabled(false);
+            return;
+        }
 
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
-
-
     }
 
     private void loadNMS() {

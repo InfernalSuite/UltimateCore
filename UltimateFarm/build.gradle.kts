@@ -1,7 +1,7 @@
 version = "4.0.0"
 
 dependencies {
-    implementation("com.github.cryptomorin:XSeries:8.7.0")
+    implementation("com.github.cryptomorin:XSeries:8.7.1")
     implementation("de.tr7zw:item-nbt-api:2.9.2")
 
     implementation(project(":UltimateFarm:UltimateFarmNMS"))
@@ -18,4 +18,7 @@ dependencies {
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
     implementation(project(":UltimateHelper"))
+}
+repositories {
+    mavenCentral()
 }

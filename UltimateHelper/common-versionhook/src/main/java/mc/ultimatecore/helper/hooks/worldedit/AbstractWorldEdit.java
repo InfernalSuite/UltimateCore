@@ -1,7 +1,6 @@
 package mc.ultimatecore.helper.hooks.worldedit;
 
 import org.bukkit.*;
-
 import java.nio.file.*;
 
 public abstract class AbstractWorldEdit implements WorldEdit {

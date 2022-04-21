@@ -1,6 +1,6 @@
 package mc.ultimatecore.helper;
 
-import mc.ultimatecore.helper.hooks.worldedit.*;
+import mc.ultimatecore.helper.hooks.worldedit.WorldEditImpl;
 
 public class v1_8_R3 implements VersionHook {
 

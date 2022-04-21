@@ -14,3 +14,9 @@ dependencies {
     compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.2.10-SNAPSHOT")
     compileOnly(project(":UltimateHelper:common-versionhook"))
 }
+
+java {
+    toolchain {
+        toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}

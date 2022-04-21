@@ -4,6 +4,7 @@ import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.*;
 import com.sk89q.worldedit.bukkit.*;
 import com.sk89q.worldedit.world.*;
+import mc.ultimatecore.helper.hooks.worldedit.*;
 import org.bukkit.*;
 import org.bukkit.Location;
 import org.bukkit.plugin.*;

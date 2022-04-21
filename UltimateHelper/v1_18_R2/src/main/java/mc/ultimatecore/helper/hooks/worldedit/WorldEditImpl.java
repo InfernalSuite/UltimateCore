@@ -1,16 +1,15 @@
 package mc.ultimatecore.helper.hooks.worldedit;
 
-import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.*;
+import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.bukkit.*;
 import com.sk89q.worldedit.extent.clipboard.*;
 import com.sk89q.worldedit.extent.clipboard.io.*;
 import com.sk89q.worldedit.function.operation.*;
 import com.sk89q.worldedit.math.*;
 import com.sk89q.worldedit.session.*;
-import com.sk89q.worldedit.world.*;
+import com.sk89q.worldedit.world.World;
 import org.bukkit.*;
-import org.bukkit.Location;
 import org.bukkit.plugin.*;
 
 import java.io.*;
@@ -23,8 +22,8 @@ public class WorldEditImpl extends AbstractWorldEdit {
         CompletableFuture<Void> future = new CompletableFuture<>();
         Runnable pasteTask = () -> {
             try {
-                BukkitWorld bukkitWorld = new BukkitWorld(location.getWorld());
-                EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(bukkitWorld, -1);
+                World adaptedWorld = BukkitAdapter.adapt(location.getWorld());
+                EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld, -1);
 
                 ClipboardFormat clipboardFormat = ClipboardFormats.findByFile(schematic.getSchematicFile());
                 if(clipboardFormat != null) {
