@@ -24,8 +24,8 @@ public class UltimatePlugin extends JavaPlugin {
     public void onEnable() {
         super.onEnable();
         if(Bukkit.getServer().getPluginManager().getPlugin("WorldEdit") != null
-                || Bukkit.getServer().getPluginManager().getPlugin("FastASyncWorldEdit") != null
-                || Bukkit.getServer().getPluginManager().getPlugin("ASyncWorldEdit") != null) {
+                || Bukkit.getServer().getPluginManager().getPlugin("FastAsyncWorldEdit") != null
+                || Bukkit.getServer().getPluginManager().getPlugin("AsyncWorldEdit") != null) {
             this.versionHook = setupVersionHook();
         }
     }
