@@ -86,7 +86,7 @@ allprojects {
 
     java {
         toolchain {
-            toolchain.languageVersion.set(JavaLanguageVersion.of(11))
+            toolchain.languageVersion.set(JavaLanguageVersion.of(16))
         }
     }
 }
