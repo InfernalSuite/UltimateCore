@@ -10,13 +10,12 @@ public class MythicMobsAPIManager extends SoftDependImpl {
 
     private final BukkitAPIHelper bukkitAPIHelper;
 
-    public MythicMobsAPIManager(String displayName){
+    public MythicMobsAPIManager(String displayName) {
         super(displayName);
         bukkitAPIHelper = new BukkitAPIHelper();
-
     }
 
-    public MythicMob getMythicMobEntity(Entity entity){
+    public MythicMob getMythicMobEntity(Entity entity) {
         try {
             ActiveMob activeMob = bukkitAPIHelper.getMythicMobInstance(entity);
             if(activeMob == null) return null;
