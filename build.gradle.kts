@@ -1,4 +1,7 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import java.io.FileOutputStream
+import java.util.zip.ZipOutputStream
+import java.util.zip.ZipEntry
+import java.nio.file.Files;
 
 plugins {
     `java-library`
@@ -25,8 +28,26 @@ buildscript {
     }
 }
 
+val bundleJars by tasks.register("bundleJars", DefaultTask::class)
+
+bundleJars.doFirst {
+    val zipFile = buildDir.toPath().resolve("jars.zip")
+
+    ZipOutputStream(FileOutputStream(zipFile.toFile())).use { zipOut ->
+        childProjects.values.map {
+            val path = it.tasks.named<AbstractArchiveTask>("shadowJar").flatMap { shadow -> shadow.archiveFile }.get().asFile.toPath()
+
+            zipOut.putNextEntry(ZipEntry(path.toFile().name))
+            Files.copy(path, zipOut)
+        }
+    }
+}
+
 tasks.runServer {
     minecraftVersion("1.18.2")
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    })
 }
 
 allprojects {
@@ -88,5 +109,21 @@ allprojects {
         toolchain {
             toolchain.languageVersion.set(JavaLanguageVersion.of(16))
         }
+    }
+}
+
+afterEvaluate {
+    val moveJars by tasks.register("moveFiles", DefaultTask::class);
+
+    moveJars.doFirst {
+        this.project.tasks.runServer {
+            pluginJars.setFrom(childProjects.values.map {
+                it.tasks.named<AbstractArchiveTask>("shadowJar").flatMap { shadow -> shadow.archiveFile }.get().asFile
+            })
+        }
+    }
+
+    tasks.runServer {
+        dependsOn(moveJars)
     }
 }
