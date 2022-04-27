@@ -213,7 +213,7 @@ public class InventoryUtils {
     }
 
     public static boolean isEmpty(@Nullable ItemStack itemStack) {
-        return itemStack == null || itemStack.getType().isAir();
+        return itemStack == null || itemStack.getType() == Material.AIR;
     }
 
     // Null if can not stack

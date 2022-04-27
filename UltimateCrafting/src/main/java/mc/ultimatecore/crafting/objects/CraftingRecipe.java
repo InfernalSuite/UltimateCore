@@ -6,14 +6,15 @@ import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.gui.recipeeditor.IndividualRecipeGUI;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.*;
+import org.jetbrains.annotations.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Getter
 @Setter
-public class CraftingRecipe {
+public class CraftingRecipe implements Recipe {
 
     private final String name;
 
@@ -90,12 +91,16 @@ public class CraftingRecipe {
         return quantity;
     }
 
-    public ItemStack getResult(){
+    @Override
+    @NotNull
+    public ItemStack getResult() {
         return result.clone();
     }
 
     public void remove(){
         HyperCrafting.getInstance().getCraftingRecipes().deleteRecipe(this);
     }
+
+
 
 }

@@ -23,6 +23,7 @@ public class CraftingGUIManager {
 
     @Nullable
     private CraftingRecipe activeRecipe = null;
+    private boolean isVanilla = false;
 
     private final Map<Integer, CraftingRecipe> recipeSlots = new HashMap<>();
 
@@ -112,7 +113,21 @@ public class CraftingGUIManager {
     }
 
     void updateActiveRecipe() {
-        this.activeRecipe = plugin.getCraftingRecipes().matchRecipe(player, this.getCraftingItems()).orElse(null); // Update recipe
+        HashMap<Integer, ItemStack> items = this.getCraftingItems();
+        this.activeRecipe = plugin.getCraftingRecipes().matchRecipe(player, items).orElse(null); // Update recipe
+        this.isVanilla = false;
+        if (this.activeRecipe == null) {
+            ItemStack[] itemArray = new ItemStack[9];
+            for (Map.Entry<Integer, ItemStack> item : items.entrySet()) {
+                itemArray[item.getKey()] = item.getValue();
+            }
+
+            Recipe recipe = HyperCrafting.getInstance().getVanillaSource().getRecipe(itemArray, player.getWorld());
+            if (recipe != null) {
+                this.activeRecipe = new CraftingRecipe("Vanilla", recipe.getResult());
+                this.isVanilla = true;
+            }
+        }
     }
 
     public void updateMenu() {
@@ -135,10 +150,20 @@ public class CraftingGUIManager {
         }
 
         // If using normal crafting, remove items from the crafting inventory
-        if (!quickCraft) {
-            this.removeRecipeItems(recipe);
+        if (isVanilla) {
+            ItemStack[] itemArray = new ItemStack[9];
+            for (Map.Entry<Integer, ItemStack> item : this.getCraftingItems().entrySet()) {
+                itemArray[item.getKey()] = item.getValue();
+            }
+
+            ItemStack[] items = HyperCrafting.getInstance().getVanillaSource().getRemainingItemsForCrafting(itemArray, player.getWorld());
+            updateVanillaRecipeCrafingItems(items);
         } else {
-            removePlayerItems(recipe);
+            if (!quickCraft) {
+                this.removeRecipeItems(recipe);
+            } else {
+                removePlayerItems(recipe);
+            }
         }
 
         ItemStack result = recipe.getResult().clone();
@@ -203,7 +228,30 @@ public class CraftingGUIManager {
         return true;
     }
 
-    // Get a map of the items that are being crafted
+    private void updateVanillaRecipeCrafingItems(ItemStack[] itemStacks) {
+        int mappedRecipeSlot = 0;
+        for (Integer slot : validSlots) {
+            ItemStack originalSlot = inventory.getItem(slot);
+            ItemStack leftoverSlot = itemStacks[mappedRecipeSlot];
+            if (!InventoryUtils.isEmpty(originalSlot)) {
+                originalSlot.setAmount(originalSlot.getAmount() - 1);
+                this.inventory.setItem(slot, originalSlot);
+            }
+
+            if (!InventoryUtils.isEmpty(leftoverSlot)) {
+                if (InventoryUtils.isEmpty(originalSlot)) {
+                    this.inventory.setItem(slot, leftoverSlot);
+                } else if (originalSlot.equals(leftoverSlot)) {
+                    leftoverSlot.setAmount(originalSlot.getAmount() + leftoverSlot.getAmount());
+                    this.inventory.setItem(slot, leftoverSlot);
+                }
+            }
+
+            mappedRecipeSlot++;
+        }
+
+    }
+
     private HashMap<Integer, ItemStack> getCraftingItems() {
         int mappedRecipeSlot = 0;
         HashMap<Integer, ItemStack> itemStackMap = new HashMap<>();

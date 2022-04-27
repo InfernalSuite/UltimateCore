@@ -1,7 +1,6 @@
 package mc.ultimatecore.crafting.gui.crafting;
 
 import mc.ultimatecore.crafting.*;
-import mc.ultimatecore.crafting.api.events.*;
 import mc.ultimatecore.crafting.configs.*;
 import mc.ultimatecore.crafting.gui.*;
 import mc.ultimatecore.crafting.objects.*;
