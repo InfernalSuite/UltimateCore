@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class AllRecipesGUI extends SimpleGUI {
+public class AllRecipesGUI implements SimpleGUI {
 
     private final int page;
 

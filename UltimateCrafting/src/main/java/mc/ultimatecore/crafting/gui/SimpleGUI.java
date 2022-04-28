@@ -1,19 +1,31 @@
 package mc.ultimatecore.crafting.gui;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.*;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class SimpleGUI implements InventoryHolder {
-    public abstract void onInventoryClick(InventoryClickEvent e);
+public interface SimpleGUI extends InventoryHolder {
 
-    public void openInventory(Player player){}
+    default void onInventoryDrag(InventoryDragEvent event) {
 
-    @NotNull
-    @Override
-    public Inventory getInventory() {
-        return null;
     }
+
+    default void onInventoryClick(InventoryClickEvent event) {
+
+    }
+
+    default void onUpdatePlayerInventory(InventoryClickEvent event) {
+
+    }
+
+    default void onInventoryClose(InventoryCloseEvent event) {
+
+    }
+
+    default void openInventory(Player player) {
+
+    }
+
 }

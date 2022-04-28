@@ -1,24 +1,18 @@
 package mc.ultimatecore.crafting.utils;
 
-import com.cryptomorin.xseries.XMaterial;
-import de.tr7zw.changeme.nbtapi.NBTCompound;
-import de.tr7zw.changeme.nbtapi.NBTItem;
-import de.tr7zw.changeme.nbtapi.NBTListCompound;
-import mc.ultimatecore.crafting.Item;
-import mc.ultimatecore.crafting.objects.Category;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
+import com.cryptomorin.xseries.*;
+import de.tr7zw.changeme.nbtapi.*;
+import mc.ultimatecore.crafting.*;
+import mc.ultimatecore.crafting.objects.*;
+import org.bukkit.*;
+import org.bukkit.inventory.*;
+import org.bukkit.inventory.meta.*;
+import org.jetbrains.annotations.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class InventoryUtils {
-    
+
     public static ItemStack makeItem(ItemStack item, String name, List<String> lore) {
         ItemMeta m = item.getItemMeta();
         if (item.getItemMeta() == null)
@@ -29,7 +23,7 @@ public class InventoryUtils {
         item.setItemMeta(m);
         return item;
     }
-    
+
     public static ItemStack makeItem(XMaterial material, int amount, String name, List<String> lore) {
         ItemStack item = material.parseItem();
         if (item == null)
@@ -43,7 +37,7 @@ public class InventoryUtils {
         item.setItemMeta(m);
         return item;
     }
-    
+
     public static ItemStack makeItem(Item item, ItemStack it, String nbt) {
         try {
             ItemStack itemStack = it.clone();
@@ -79,12 +73,12 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-    
+
     public static String getNewTitle(String title, ItemMeta meta) {
         if (meta == null || !meta.hasDisplayName()) return "";
         return title.replace("%item_title%", meta.getDisplayName());
     }
-    
+
     public static ItemStack makeItem(Item item) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, item.title, item.lore);
@@ -107,7 +101,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-    
+
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders, Category category) {
         try {
             XMaterial material = XMaterial.valueOf(category.getMaterial());
@@ -131,7 +125,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-    
+
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders) {
         try {
             ItemStack itemstack = makeItem(item.material, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
@@ -154,8 +148,8 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-    
-    
+
+
     public static ItemStack makeItem(Item item, List<Placeholder> placeholders, Material material) {
         try {
             item.material = XMaterial.matchXMaterial(material);
@@ -179,7 +173,7 @@ public class InventoryUtils {
             return makeItem(XMaterial.STONE, item.amount, Utils.processMultiplePlaceholders(item.title, placeholders), Utils.processMultiplePlaceholders(item.lore, placeholders));
         }
     }
-    
+
     public static ItemStack makeItemHidden(Item item) {
         try {
             ItemStack itemstack = makeItemHidden(item.material, item.amount, item.title, item.lore);
@@ -203,8 +197,8 @@ public class InventoryUtils {
             return makeItemHidden(XMaterial.STONE, item.amount, item.title, item.lore);
         }
     }
-    
-    
+
+
     public static ItemStack makeItemHidden(XMaterial material, int amount, String name, List<String> lore) {
         ItemStack item = material.parseItem();
         if (item == null)
@@ -216,5 +210,44 @@ public class InventoryUtils {
         m.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         item.setItemMeta(m);
         return item;
+    }
+
+    public static boolean isEmpty(@Nullable ItemStack itemStack) {
+        return itemStack == null || itemStack.getType() == Material.AIR;
+    }
+
+    // Null if can not stack
+    @Nullable
+    public static ItemStack stackitem(@Nullable ItemStack stackItem, @Nullable ItemStack stackTo) {
+        if (isEmpty(stackTo)) {
+            return stackItem;
+        }
+        if (isEmpty(stackItem)) {
+            return stackTo;
+        }
+
+        if (canStackitem(stackItem, stackTo)) {
+            stackTo.setAmount(stackItem.getAmount() + stackTo.getAmount());
+
+            return stackTo;
+        }
+
+        return null;
+    }
+
+    public static boolean canStackitem(@Nullable ItemStack stackItem, @Nullable ItemStack stackTo) {
+        if (isEmpty(stackTo)) {
+            return true;
+        }
+        if (isEmpty(stackItem)) {
+            return true;
+        }
+
+        if (stackTo.isSimilar(stackItem)) {
+
+            return stackItem.getAmount() + stackTo.getAmount() < stackTo.getMaxStackSize();
+        }
+
+        return false;
     }
 }

@@ -1,7 +1,7 @@
 package mc.ultimatecore.crafting.playerdata;
 
 import mc.ultimatecore.crafting.HyperCrafting;
-import mc.ultimatecore.crafting.gui.CraftingGUI;
+import mc.ultimatecore.crafting.gui.crafting.CraftingGUI;
 import mc.ultimatecore.crafting.gui.recipeeditor.RecipeCreatorGUI;
 import mc.ultimatecore.crafting.objects.CraftingRecipe;
 import org.bukkit.Bukkit;
@@ -43,8 +43,11 @@ public class User {
     }
 
     public CraftingGUI getMainMenu(){
-        if(craftingGUI == null) craftingGUI = new CraftingGUI(Bukkit.getPlayer(name), HyperCrafting.getInstance());
-        return craftingGUI;
+        Player player = Bukkit.getPlayer(name);
+        CraftingGUI gui = new CraftingGUI(player);
+        gui.openInventory(player);
+
+       return gui;
     }
 
     public RecipeCreatorGUI getRecipeCreatorGUI(CraftingRecipe craftingRecipe){

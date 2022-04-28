@@ -1,15 +1,18 @@
 package mc.ultimatecore.crafting.listeners;
 
-import mc.ultimatecore.crafting.gui.SimpleGUI;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
+import mc.ultimatecore.crafting.gui.*;
+import org.bukkit.event.*;
+import org.bukkit.event.inventory.*;
+import org.bukkit.inventory.*;
 
 public class InventoryClickListener implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (event.getClickedInventory() != null && event.getInventory().getHolder() != null)
-            if (event.getInventory().getHolder() instanceof SimpleGUI)
-                ((SimpleGUI) event.getInventory().getHolder()).onInventoryClick(event);
+        Inventory clickedInventory = event.getClickedInventory();
+        if (clickedInventory != null && clickedInventory.getHolder() instanceof SimpleGUI) {
+            ((SimpleGUI) clickedInventory.getHolder()).onInventoryClick(event);
+        } else if (clickedInventory == event.getView().getBottomInventory() && event.getView().getTopInventory().getHolder() instanceof SimpleGUI) {
+            ((SimpleGUI) event.getView().getTopInventory().getHolder()).onUpdatePlayerInventory(event);
+        }
     }
 }
