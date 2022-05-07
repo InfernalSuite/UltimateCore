@@ -1,5 +1,6 @@
 package mc.ultimatecore.crafting.playerdata;
 
+import lombok.*;
 import mc.ultimatecore.crafting.HyperCrafting;
 import mc.ultimatecore.crafting.gui.crafting.CraftingGUI;
 import mc.ultimatecore.crafting.gui.recipeeditor.RecipeCreatorGUI;
@@ -8,18 +9,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
+import java.util.*;
 
+@Data
 public class User {
 
-    public String player;
-    public String name;
-    private transient CraftingGUI craftingGUI;
+    private UUID player;
 
-    public User(OfflinePlayer p) {
-        this.player = p.getUniqueId().toString();
-        this.name = p.getName();
-        HyperCrafting.getInstance().getPlayersData().users.put(this.player, this);
+    public User(UUID uuid) {
+        this.player = uuid;
+        HyperCrafting.getInstance().getPlayersData().users.put(this.player.toString(), this);
     }
 
     public static User getUser(String p) {
@@ -32,7 +31,7 @@ public class User {
         if (p == null) return null;
         if (HyperCrafting.getInstance().getPlayersData().users == null)
             HyperCrafting.getInstance().getPlayersData().users = new HashMap<>();
-        return HyperCrafting.getInstance().getPlayersData().users.containsKey(p.getUniqueId().toString()) ? HyperCrafting.getInstance().getPlayersData().users.get(p.getUniqueId().toString()) : new User(p);
+        return HyperCrafting.getInstance().getPlayersData().users.containsKey(p.getUniqueId().toString()) ? HyperCrafting.getInstance().getPlayersData().users.get(p.getUniqueId().toString()) : new User(p.getUniqueId());
     }
 
     public static boolean userExist(OfflinePlayer p) {
@@ -43,7 +42,7 @@ public class User {
     }
 
     public CraftingGUI getMainMenu(){
-        Player player = Bukkit.getPlayer(name);
+        Player player = Bukkit.getPlayer(getPlayer());
         CraftingGUI gui = new CraftingGUI(player);
         gui.openInventory(player);
 
@@ -51,7 +50,7 @@ public class User {
     }
 
     public RecipeCreatorGUI getRecipeCreatorGUI(CraftingRecipe craftingRecipe){
-        Player player = Bukkit.getPlayer(name);
+        Player player = Bukkit.getPlayer(getPlayer());
         if(player == null) return null;
         return new RecipeCreatorGUI(craftingRecipe);
     }

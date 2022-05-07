@@ -22,7 +22,7 @@ public class CraftingGUI implements SimpleGUI {
     private final CraftingGUIManager guiManager;
     private final Inventory inventory;
 
-    public boolean isClosed = false;
+    public boolean isClosed = true;
 
     public CraftingGUI(Player player) {
         this.inventoryConfig = HyperCrafting.getInstance().getInventories();
@@ -44,7 +44,7 @@ public class CraftingGUI implements SimpleGUI {
 
     @Override
     public void onInventoryClose(InventoryCloseEvent event) {
-        isClosed = true;
+        isClosed = !isClosed;
         Player player = (Player) event.getPlayer();
 
         for (int slot : this.inventoryConfig.craftingSlots) {
