@@ -9,7 +9,7 @@ import java.util.*;
 
 public class PlayerManager {
 
-    public Map<UUID, User> users = new HashMap<>();
+    private final Map<UUID, User> users = new HashMap<>();
     private final HyperCrafting plugin;
 
     public PlayerManager(HyperCrafting plugin) {
