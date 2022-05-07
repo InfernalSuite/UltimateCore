@@ -14,19 +14,22 @@ import java.util.stream.Collectors;
 
 public class RecipePreviewCommand extends Command {
 
-    public RecipePreviewCommand() {
+    private final HyperCrafting plugin;
+
+    public RecipePreviewCommand(HyperCrafting plugin) {
         super(Collections.singletonList("preview"), "View recipe preview", "hypercrafting.preview", true);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         Player p = (Player) sender;
         if(args.length == 2){
-            Optional<CraftingRecipe> craftingRecipe = HyperCrafting.getInstance().getCraftingRecipes().getRecipeByName(args[1]);
+            Optional<CraftingRecipe> craftingRecipe = this.plugin.getCraftingRecipes().getRecipeByName(args[1]);
             if(!craftingRecipe.isPresent()) return false;
-            new RecipePreviewGUI(HyperCrafting.getInstance(), craftingRecipe.get()).openInventory(p);
+            new RecipePreviewGUI(this.plugin, craftingRecipe.get()).openInventory(p);
         }else{
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidArguments").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         return false;
     }
@@ -39,7 +42,7 @@ public class RecipePreviewCommand extends Command {
     @Override
     public List<String> TabComplete(CommandSender cs, org.bukkit.command.Command cmd, String s, String[] args) {
         if(args.length == 2)
-            return HyperCrafting.getInstance().getCraftingRecipes().getRecipes().stream().map(CraftingRecipe::getName).collect(Collectors.toList());
+            return this.plugin.getCraftingRecipes().getRecipes().stream().map(CraftingRecipe::getName).collect(Collectors.toList());
         return null;
     }
 

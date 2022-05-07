@@ -18,8 +18,11 @@ import java.util.List;
 
 public class GiveItemCommand extends Command {
 
-    public GiveItemCommand() {
+    private final HyperCrafting plugin;
+
+    public GiveItemCommand(HyperCrafting plugin) {
         super(Collections.singletonList("give"), "Give Hypixel Items to a player", "hypercrafting.give", true);
+        this.plugin = plugin;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class GiveItemCommand extends Command {
             String name = args[1].replace("_", " ");
             String lore = args[2].replace("_", " ");
             XMaterial xMaterial = XMaterial.valueOf(args[3]);
-            ItemStack newItem = InventoryUtils.makeItem(HyperCrafting.getInstance().getInventories().giveItem,
+            ItemStack newItem = InventoryUtils.makeItem(this.plugin.getInventories().giveItem,
                     Arrays.asList(new Placeholder("name", name), new Placeholder("lore", lore)), xMaterial.parseMaterial());
 
             p.getInventory().addItem(newItem);
@@ -41,7 +44,7 @@ public class GiveItemCommand extends Command {
             p.getInventory().addItem(newItem);
 
         }else{
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidArguments").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         return false;
     }

@@ -14,12 +14,15 @@ import org.bukkit.inventory.Inventory;
 
 public class RecipeCreatorGUI extends GUI implements Listener {
 
+    private final HyperCrafting plugin;
+
     private final CraftingRecipe craftingRecipe;
 
-    public RecipeCreatorGUI(CraftingRecipe craftingRecipe) {
-        super(craftingRecipe.getName());
+    public RecipeCreatorGUI(CraftingRecipe craftingRecipe, HyperCrafting plugin) {
+        super(craftingRecipe.getName(), plugin);
+        this.plugin = plugin;
         this.craftingRecipe = craftingRecipe;
-        HyperCrafting.getInstance().registerListeners(this);
+        plugin.registerListeners(this);
     }
 
     @Override
@@ -42,25 +45,25 @@ public class RecipeCreatorGUI extends GUI implements Listener {
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent e) {
-        if (e.getInventory() == null || !e.getInventory().equals(getInventory())) return;
+        if (!e.getInventory().equals(getInventory())) return;
         Player player = (Player) e.getPlayer();
-        if (isEmpty() || craftingRecipe.getResult() == null || craftingRecipe.getResult().getType() == Material.AIR){
-            if(HyperCrafting.getInstance().getCraftingRecipes().isCreated(craftingRecipe.getName()))
-                Utils.openGUISync(player, craftingRecipe.getIndividualRecipeGUI().getInventory());
+        if (isEmpty() || craftingRecipe.getResult().getType() == Material.AIR){
+            if(this.plugin.getCraftingRecipes().isCreated(craftingRecipe.getName()))
+                Utils.openGUISync(player, craftingRecipe.getIndividualRecipeGUI().getInventory(), this.plugin);
             else
-                player.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("recipeCanceled").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+                player.sendMessage(Utils.color(this.plugin.getMessages().getMessage("recipeCanceled").replace("%prefix%", this.plugin.getConfiguration().prefix)));
             return;
         }
         CraftingRecipe newCraftingRecipe = craftingRecipe;
-        if(HyperCrafting.getInstance().getCraftingRecipes().isCreated(craftingRecipe.getName())) {
-            Utils.openGUISync(player, craftingRecipe.getIndividualRecipeGUI().getInventory());
-            HyperCrafting.getInstance().getCraftingRecipes().removeRecipe(craftingRecipe);
+        if(this.plugin.getCraftingRecipes().isCreated(craftingRecipe.getName())) {
+            Utils.openGUISync(player, craftingRecipe.getIndividualRecipeGUI().getInventory(), this.plugin);
+            this.plugin.getCraftingRecipes().removeRecipe(craftingRecipe);
         }else {
-            player.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("recipeCreated").replace("%recipe_name%", newCraftingRecipe.getName()).replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            player.sendMessage(Utils.color(this.plugin.getMessages().getMessage("recipeCreated").replace("%recipe_name%", newCraftingRecipe.getName()).replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         createRecipe(newCraftingRecipe, getInventory());
-        HyperCrafting.getInstance().getCraftingRecipes().addRecipe(newCraftingRecipe);
-        HyperCrafting.getInstance().getCraftingRecipes().save();
+        this.plugin.getCraftingRecipes().addRecipe(newCraftingRecipe);
+        this.plugin.getCraftingRecipes().save();
         //newCraftingRecipe.registerRecipe();
     }
 

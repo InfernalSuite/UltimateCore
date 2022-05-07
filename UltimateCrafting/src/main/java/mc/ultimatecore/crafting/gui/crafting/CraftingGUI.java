@@ -15,6 +15,8 @@ import java.util.*;
 
 public class CraftingGUI implements SimpleGUI {
 
+    private final HyperCrafting plugin;
+
     public static final int RESULT_SLOT = 23;
 
     private final Inventories inventoryConfig;
@@ -24,10 +26,11 @@ public class CraftingGUI implements SimpleGUI {
 
     public boolean isClosed = true;
 
-    public CraftingGUI(Player player) {
-        this.inventoryConfig = HyperCrafting.getInstance().getInventories();
+    public CraftingGUI(Player player, HyperCrafting plugin) {
+        this.plugin = plugin;
+        this.inventoryConfig = plugin.getInventories();
         this.inventory = Bukkit.createInventory(this, this.inventoryConfig.mainMenuSize, Utils.color(this.inventoryConfig.mainMenuTitle));
-        this.guiManager = new CraftingGUIManager(player, inventory);
+        this.guiManager = new CraftingGUIManager(player, inventory, plugin);
 
         // Populate decoration slots
         for (int slot : this.inventoryConfig.decorationSlots) {
@@ -69,9 +72,7 @@ public class CraftingGUI implements SimpleGUI {
 
     @Override
     public void onInventoryDrag(InventoryDragEvent event) {
-        HyperCrafting hyperCrafting = HyperCrafting.getInstance();
-
-        Bukkit.getScheduler().runTask(hyperCrafting, () -> {
+        Bukkit.getScheduler().runTask(this.plugin, () -> {
             if (!isClosed) {
                 guiManager.updateMenu();
             }
@@ -80,9 +81,7 @@ public class CraftingGUI implements SimpleGUI {
 
     @Override
     public void onUpdatePlayerInventory(InventoryClickEvent event) {
-        HyperCrafting hyperCrafting = HyperCrafting.getInstance();
-
-        Bukkit.getScheduler().runTask(hyperCrafting, () -> {
+        Bukkit.getScheduler().runTask(this.plugin, () -> {
             if (!isClosed) {
                 guiManager.updateMenu();
             }
@@ -96,8 +95,6 @@ public class CraftingGUI implements SimpleGUI {
         int slot = event.getSlot();
         ClickType clickType = event.getClick();
         ItemStack cursor = event.getCursor();
-        HyperCrafting hyperCrafting = HyperCrafting.getInstance();
-
         if (slot == this.inventoryConfig.closeButton.slot) {
             event.setCancelled(true);
             player.closeInventory();
@@ -112,7 +109,7 @@ public class CraftingGUI implements SimpleGUI {
 
         // Handle crafting items by directly clicking on recipes
         CraftingRecipe recipe = this.guiManager.getRecipeSlot(slot);
-        if (recipe != null && hyperCrafting.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes") && clickType.isLeftClick()) {
+        if (recipe != null && this.plugin.getConfiguration().showAvailableRecipes && player.hasPermission("hypercrafting.autorecipes") && clickType.isLeftClick()) {
             // Don't allow the player to pickup recipe slots if it's normally impossible
             if (!InventoryUtils.canStackitem(recipe.getResult(), cursor)) {
                 return;
@@ -155,7 +152,7 @@ public class CraftingGUI implements SimpleGUI {
         // TODO: Don't rely on the bukkit inventory for state.
         // Store the needed items in a map for example, and have proper updating code.
         // (We have to do this because that code relies on items that are updated after this event)
-        Bukkit.getScheduler().runTask(hyperCrafting, () -> {
+        Bukkit.getScheduler().runTask(this.plugin, () -> {
             if (!isClosed) {
                 guiManager.updateMenu();
             }

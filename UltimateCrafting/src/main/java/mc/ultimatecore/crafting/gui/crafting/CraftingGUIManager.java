@@ -27,9 +27,9 @@ public class CraftingGUIManager {
 
     private final Map<Integer, CraftingRecipe> recipeSlots = new HashMap<>();
 
-    public CraftingGUIManager(Player player, Inventory inventory) {
+    public CraftingGUIManager(Player player, Inventory inventory, HyperCrafting plugin) {
         this.player = player;
-        this.plugin = HyperCrafting.getInstance();
+        this.plugin = plugin;
         this.inventory = inventory;
         this.validSlots = new ArrayList<>(plugin.getInventories().craftingSlots);
     }
@@ -122,9 +122,9 @@ public class CraftingGUIManager {
                 itemArray[item.getKey()] = item.getValue();
             }
 
-            Recipe recipe = HyperCrafting.getInstance().getVanillaSource().getRecipe(itemArray, player.getWorld());
+            Recipe recipe = this.plugin.getVanillaSource().getRecipe(itemArray, player.getWorld());
             if (recipe != null) {
-                this.activeRecipe = new CraftingRecipe("Vanilla", recipe.getResult());
+                this.activeRecipe = new CraftingRecipe("Vanilla", recipe.getResult(), this.plugin);
                 this.isVanilla = true;
             }
         }
@@ -156,7 +156,7 @@ public class CraftingGUIManager {
                 itemArray[item.getKey()] = item.getValue();
             }
 
-            ItemStack[] items = HyperCrafting.getInstance().getVanillaSource().getRemainingItemsForCrafting(itemArray, player.getWorld());
+            ItemStack[] items = this.plugin.getVanillaSource().getRemainingItemsForCrafting(itemArray, player.getWorld());
             updateVanillaRecipeCrafingItems(items);
         } else {
             if (!quickCraft) {

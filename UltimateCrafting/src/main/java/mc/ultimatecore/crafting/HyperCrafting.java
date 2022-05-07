@@ -4,13 +4,12 @@ import lombok.Getter;
 import mc.ultimatecore.crafting.commands.CommandManager;
 import mc.ultimatecore.crafting.configs.*;
 import mc.ultimatecore.crafting.listeners.*;
-import mc.ultimatecore.crafting.managers.PlayersDataManager;
+import mc.ultimatecore.crafting.managers.PlayerManager;
 import mc.ultimatecore.crafting.nms.*;
 import mc.ultimatecore.crafting.utils.Utils;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.*;
@@ -23,7 +22,7 @@ public class HyperCrafting extends JavaPlugin {
     @Getter
     private Messages messages;
     @Getter
-    private PlayersDataManager playersData;
+    private PlayerManager playerManager;
     @Getter
     private CommandManager commandManager;
     @Getter
@@ -39,26 +38,24 @@ public class HyperCrafting extends JavaPlugin {
 
     private VanillaCraftingSource nms;
 
-    public static HyperCrafting getInstance() {
-        return INSTANCE;
-    }
-
     @Override
     public void onEnable() {
-        this.INSTANCE = this;
-
         this.loadConfigs();
-        this.commandManager = new CommandManager("hypercrafting");
+        this.commandManager = new CommandManager("hypercrafting", this);
         registerListeners(new CommandListener(this), new InventoryClickListener(), new CraftingTableListener(this), new PlayerJoinLeaveListener(this), new InventoryCloseListener(), new InventoryDragListener());
-        this.playersData = new PlayersDataManager();
+        this.playerManager = new PlayerManager(this);
         this.nms = setupNMS();
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
     }
 
     @Override
     public void onDisable() {
-        if (craftingRecipes != null)
+        if (craftingRecipes != null) {
             craftingRecipes.save();
+            this.craftingRecipes = null;
+        }
+        this.playerManager.purgeUsers();
+        this.playerManager = null;
         for (Player p : Bukkit.getOnlinePlayers())
             p.closeInventory();
         getLogger().info(getDescription().getName() + " Disabled!");

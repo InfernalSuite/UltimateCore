@@ -14,28 +14,31 @@ import java.util.Set;
 
 public abstract class GUI {
 
+    private final HyperCrafting plugin;
     public int scheduler;
     private final Inventory inventory;
     private Set<Integer> decoration;
 
-    public GUI(int size, String name, Set<Integer> decoration) {
+    public GUI(int size, String name, Set<Integer> decoration, HyperCrafting plugin) {
+        this.plugin = plugin;
         this.inventory = Bukkit.createInventory(null, size, Utils.color(name));
         this.decoration = decoration;
-        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(HyperCrafting.getInstance(), this::addContent, 0, 2);
+        scheduler = Bukkit.getScheduler().scheduleAsyncRepeatingTask(plugin, this::addContent, 0, 2);
     }
 
-    public GUI(String name) {
+    public GUI(String name, HyperCrafting plugin) {
+        this.plugin = plugin;
         this.inventory = Bukkit.createInventory(null, InventoryType.DISPENSER, Utils.color(name));
     }
 
     public void addContent() {
         if (inventory.getViewers().isEmpty()) return;
-            for (Integer i : decoration) {
-                if(i == 23) continue;
-                if(inventory.getItem(i) == null || inventory.getItem(i).getType().equals(Material.AIR)) {
-                    setItem(i, InventoryUtils.makeItemHidden(HyperCrafting.getInstance().getInventories().background));
-                }
+        for (Integer i : decoration) {
+            if (i == 23) continue;
+            if (inventory.getItem(i) == null || inventory.getItem(i).getType().equals(Material.AIR)) {
+                setItem(i, InventoryUtils.makeItemHidden(this.plugin.getInventories().background));
             }
+        }
     }
 
     public void setItem(int i, ItemStack itemStack) {

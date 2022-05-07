@@ -13,21 +13,24 @@ import java.util.stream.Collectors;
 
 public class CategoryGUICommand extends Command {
 
-    public CategoryGUICommand() {
+    private final HyperCrafting plugin;
+
+    public CategoryGUICommand(HyperCrafting plugin) {
         super(Collections.singletonList("category"), "Opens specific category gui", "hypercrafting.category", true);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         Player p = (Player) sender;
         if(args.length == 2){
-            Category category = HyperCrafting.getInstance().getCategories().getCategory(args[1]);
+            Category category = this.plugin.getCategories().getCategory(args[1]);
             if(category != null)
-                new CategoryRecipeGUI(HyperCrafting.getInstance(), category, 1).openInventory(p);
+                new CategoryRecipeGUI(this.plugin, category, 1).openInventory(p);
             else
-                p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidCategory").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+                p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidCategory").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }else{
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidArguments").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         return false;
     }
@@ -40,7 +43,7 @@ public class CategoryGUICommand extends Command {
     @Override
     public List<String> TabComplete(CommandSender cs, org.bukkit.command.Command cmd, String s, String[] args) {
         if(args.length == 2)
-            return HyperCrafting.getInstance().getCategories().getAllCategories().stream().map(Category::getKey).collect(Collectors.toList());
+            return this.plugin.getCategories().getAllCategories().stream().map(Category::getKey).collect(Collectors.toList());
         return null;
     }
 

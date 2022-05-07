@@ -10,18 +10,21 @@ import java.util.List;
 
 public class ReloadCommand extends Command {
 
-    public ReloadCommand() {
+    private final HyperCrafting plugin;
+
+    public ReloadCommand(HyperCrafting plugin) {
         super(Collections.singletonList("reload"), "Reload all config files", "hypercrafting.reload", true);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean execute(CommandSender cs, String[] args) {
         Player p = (Player) cs;
         if (args.length == 1) {
-            HyperCrafting.getInstance().reloadConfigs();
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("reloaded").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            this.plugin.reloadConfigs();
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("reloaded").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }else{
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidArguments").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         return false;
     }

@@ -12,11 +12,14 @@ import java.util.stream.Collectors;
 
 public class CraftingRecipes extends YAMLFile{
 
+    private final HyperCrafting plugin;
+
     @Getter
     private List<CraftingRecipe> recipes;
 
-    public CraftingRecipes(HyperCrafting hyperCrafting, String name, boolean loadDefaults) {
-        super(hyperCrafting, name, loadDefaults);
+    public CraftingRecipes(HyperCrafting plugin, String name, boolean loadDefaults) {
+        super(plugin, name, loadDefaults);
+        this.plugin = plugin;
         loadDefaults();
     }
 
@@ -129,7 +132,7 @@ public class CraftingRecipes extends YAMLFile{
                         recipeItems.put(Integer.valueOf(key), getConfig().getItemStack("recipes."+recipeName+"."+key));
                     }
                 }
-                CraftingRecipe craftingRecipe = new CraftingRecipe(recipeName, result, permission, slot, page, category, isOverride);
+                CraftingRecipe craftingRecipe = new CraftingRecipe(recipeName, result, permission, slot, page, category, isOverride, this.plugin);
                 craftingRecipe.setRecipeItems(recipeItems);
                 recipes.add(craftingRecipe);
             }

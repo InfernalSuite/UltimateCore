@@ -1,5 +1,6 @@
 package mc.ultimatecore.crafting.commands;
 
+import mc.ultimatecore.crafting.*;
 import mc.ultimatecore.crafting.playerdata.User;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -9,15 +10,18 @@ import java.util.List;
 
 public class OpenCraftingTable extends Command {
 
-    public OpenCraftingTable() {
+    private HyperCrafting plugin;
+
+    public OpenCraftingTable(HyperCrafting plugin) {
         super(Collections.singletonList("mainmenu"), "Opens the crafting main menu", "hypercrafting.mainmenu", true);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         Player p = (Player) sender;
-        User user = User.getUser(p);
-        user.getMainMenu();
+        User user = this.plugin.getPlayerManager().createOrGetUser(p.getUniqueId());
+        user.getCraftingGUI().openInventory(p);
         return false;
     }
 

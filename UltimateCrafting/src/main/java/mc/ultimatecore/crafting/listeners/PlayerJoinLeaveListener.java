@@ -18,9 +18,9 @@ public class PlayerJoinLeaveListener implements Listener {
     public void onLeave(PlayerKickEvent event) {
         try {
             final Player player = event.getPlayer();
-            User user = User.getUser(player);
-            if(!player.getOpenInventory().getTopInventory().equals(user.getMainMenu().getInventory())) return;
-            Inventory inventory = user.getMainMenu().getInventory();
+            User user = this.plugin.getPlayerManager().createOrGetUser(player.getUniqueId());
+            if(!player.getOpenInventory().getTopInventory().equals(user.getCraftingGUI().getInventory())) return;
+            Inventory inventory = user.getCraftingGUI().getInventory();
             plugin.getInventories().craftingSlots.forEach(slot ->{
                 if(inventory.getItem(slot) != null) player.getInventory().addItem(inventory.getItem(slot));
             });

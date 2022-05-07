@@ -12,25 +12,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandManager implements CommandExecutor, TabCompleter {
+
+    private HyperCrafting plugin;
+
     public List<mc.ultimatecore.crafting.commands.Command> commands = new ArrayList<>();
 
-    public CommandManager(String command) {
-        HyperCrafting.getInstance().getCommand(command).setExecutor(this);
-        HyperCrafting.getInstance().getCommand(command).setTabCompleter(this);
+    public CommandManager(String command, HyperCrafting plugin) {
+        // REGISTER PLUGIN INSTANCE
+        this.plugin = plugin;
+
+        // REGISTER SELF COMMAND
+        if(plugin.getCommand(command) != null) {
+            plugin.getCommand(command).setExecutor(this);
+            plugin.getCommand(command).setTabCompleter(this);
+        }
+
+        // REGISTER COMMANDS
         registerCommands();
     }
 
     public void registerCommands() {
-        registerCommand(new OpenCraftingTable());
-        registerCommand(new HelpCommand());
-        registerCommand(new ReloadCommand());
-        registerCommand(new CreateRecipeCommand());
-        registerCommand(new DelRecipeCommand());
-        registerCommand(new RecipePreviewCommand());
-        registerCommand(new EditorMenuCommand());
-        registerCommand(new RecipeBookCommand());
-        registerCommand(new CategoryGUICommand());
-        registerCommand(new GiveItemCommand());
+        registerCommand(new OpenCraftingTable(this.plugin));
+        registerCommand(new HelpCommand(this.plugin));
+        registerCommand(new ReloadCommand(this.plugin));
+        registerCommand(new CreateRecipeCommand(this.plugin));
+        registerCommand(new DelRecipeCommand(this.plugin));
+        registerCommand(new RecipePreviewCommand(this.plugin));
+        registerCommand(new EditorMenuCommand(this.plugin));
+        registerCommand(new RecipeBookCommand(this.plugin));
+        registerCommand(new CategoryGUICommand(this.plugin));
+        registerCommand(new GiveItemCommand(this.plugin));
 
     }
 
@@ -45,8 +56,8 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String s, String[] args) {
         try {
-            if (!HyperCrafting.getInstance().getConfiguration().mainCommandPerm.equalsIgnoreCase("") && !cs.hasPermission(HyperCrafting.getInstance().getConfiguration().mainCommandPerm)) {
-                cs.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("noPermission").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            if (!this.plugin.getConfiguration().mainCommandPerm.equalsIgnoreCase("") && !cs.hasPermission(this.plugin.getConfiguration().mainCommandPerm)) {
+                cs.sendMessage(Utils.color(this.plugin.getMessages().getMessage("noPermission").replace("%prefix%", this.plugin.getConfiguration().prefix)));
                 return false;
             }
             if (args.length != 0) {
@@ -63,7 +74,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                             command.playSound();
                         } else {
                             // No permission
-                            cs.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("noPermission").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+                            cs.sendMessage(Utils.color(this.plugin.getMessages().getMessage("noPermission").replace("%prefix%", this.plugin.getConfiguration().prefix)));
                         }
                         return true;
                     }
@@ -76,7 +87,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             }
             //cs.sendMessage(Utils.color(HyperCollections.getInstance().getMessages().unknownCommand.replace("%prefix%", HyperCollections.getInstance().getConfiguration().prefix)));
         } catch (Exception e) {
-            HyperCrafting.getInstance().sendErrorMessage(e);
+            this.plugin.sendErrorMessage(e);
         }
         return true;
     }
@@ -101,7 +112,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 }
             }
         } catch (Exception e) {
-            HyperCrafting.getInstance().sendErrorMessage(e);
+            this.plugin.sendErrorMessage(e);
         }
         return null;
     }

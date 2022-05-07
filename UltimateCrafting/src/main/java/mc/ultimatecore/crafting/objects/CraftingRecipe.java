@@ -16,6 +16,7 @@ import java.util.Map;
 @Setter
 public class CraftingRecipe implements Recipe {
 
+    private HyperCrafting plugin;
     private final String name;
 
     private Map<Integer, ItemStack> recipeItems;
@@ -34,16 +35,17 @@ public class CraftingRecipe implements Recipe {
 
     private boolean overrideRecipe;
 
-    public CraftingRecipe(String name, ItemStack result){
+    public CraftingRecipe(String name, ItemStack result, HyperCrafting plugin) {
+        this.plugin = plugin;
         this.name = name;
         this.recipeItems = new HashMap<>();
         this.result = result;
         this.permission = "";
         this.overrideRecipe = false;
-        individualRecipeGUI = new IndividualRecipeGUI(this);
+        individualRecipeGUI = new IndividualRecipeGUI(this, plugin);
     }
 
-    public CraftingRecipe(String name, ItemStack result, String permission, int slot, int page, String category, boolean overrideRecipe){
+    public CraftingRecipe(String name, ItemStack result, String permission, int slot, int page, String category, boolean overrideRecipe, HyperCrafting plugin){
         this.name = name;
         this.result = result;
         this.permission = permission;
@@ -51,7 +53,7 @@ public class CraftingRecipe implements Recipe {
         this.page = page;
         this.category = category;
         this.overrideRecipe = overrideRecipe;
-        individualRecipeGUI = new IndividualRecipeGUI(this);
+        individualRecipeGUI = new IndividualRecipeGUI(this, plugin);
 
     }
 
@@ -98,7 +100,7 @@ public class CraftingRecipe implements Recipe {
     }
 
     public void remove(){
-        HyperCrafting.getInstance().getCraftingRecipes().deleteRecipe(this);
+        this.plugin.getCraftingRecipes().deleteRecipe(this);
     }
 
 

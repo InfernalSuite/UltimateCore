@@ -13,8 +13,11 @@ import java.util.List;
 
 public class HelpCommand extends Command {
 
-    public HelpCommand() {
+    private final HyperCrafting plugin;
+
+    public HelpCommand(HyperCrafting plugin) {
         super(Collections.singletonList("help"), "Displays the plugin's command", "", true);
+        this.plugin = plugin;
     }
 
     @Override
@@ -27,28 +30,28 @@ public class HelpCommand extends Command {
             }
             page = Integer.parseInt(args[1]);
         }
-        int maxpage = (int) Math.ceil(HyperCrafting.getInstance().getCommandManager().commands.size() / 18.00);
+        int maxpage = (int) Math.ceil(this.plugin.getCommandManager().commands.size() / 18.00);
         int current = 0;
-        p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("helpHeader")));
-        for (mc.ultimatecore.crafting.commands.Command command : HyperCrafting.getInstance().getCommandManager().commands) {
+        p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("helpHeader")));
+        for (mc.ultimatecore.crafting.commands.Command command : this.plugin.getCommandManager().commands) {
             if ((p.hasPermission(command.getPermission()) || command.getPermission().equalsIgnoreCase("") || command.getPermission().equalsIgnoreCase("hypercrafting.")) && command.isEnabled()) {
                 if (current >= (page - 1) * 18 && current < page * 18)
-                    p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("helpMessage").replace("%command%", command.getAliases().get(0)).replace("%description%", command.getDescription())));
+                    p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("helpMessage").replace("%command%", command.getAliases().get(0)).replace("%description%", command.getDescription())));
                 current++;
             }
         }
-        BaseComponent[] components = TextComponent.fromLegacyText(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("helpfooter").replace("%maxpage%", maxpage + "").replace("%page%", page + "")));
+        BaseComponent[] components = TextComponent.fromLegacyText(Utils.color(this.plugin.getMessages().getMessage("helpfooter").replace("%maxpage%", maxpage + "").replace("%page%", page + "")));
 
         for (BaseComponent component : components) {
-            if (ChatColor.stripColor(component.toLegacyText()).contains(HyperCrafting.getInstance().getMessages().getMessage("nextPage"))) {
+            if (ChatColor.stripColor(component.toLegacyText()).contains(this.plugin.getMessages().getMessage("nextPage"))) {
                 if (page < maxpage) {
                     component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/hypercrafting help " + (page + 1)));
-                    component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(HyperCrafting.getInstance().getMessages().getMessage("helpPageHoverMessage").replace("%page%", "" + (page + 1))).create()));
+                    component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(this.plugin.getMessages().getMessage("helpPageHoverMessage").replace("%page%", "" + (page + 1))).create()));
                 }
-            } else if (ChatColor.stripColor(component.toLegacyText()).contains(HyperCrafting.getInstance().getMessages().getMessage("previousPage"))) {
+            } else if (ChatColor.stripColor(component.toLegacyText()).contains(this.plugin.getMessages().getMessage("previousPage"))) {
                 if (page > 1) {
                     component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/hypercrafting help " + (page - 1)));
-                    component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(HyperCrafting.getInstance().getMessages().getMessage("helpPageHoverMessage").replace("%page%", "" + (page - 1))).create()));
+                    component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(this.plugin.getMessages().getMessage("helpPageHoverMessage").replace("%page%", "" + (page - 1))).create()));
                 }
             }
         }

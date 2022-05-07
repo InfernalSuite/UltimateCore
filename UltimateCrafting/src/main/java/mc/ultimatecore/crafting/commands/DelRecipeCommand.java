@@ -13,8 +13,11 @@ import java.util.stream.Collectors;
 
 public class DelRecipeCommand extends Command {
 
-    public DelRecipeCommand() {
+    private final HyperCrafting plugin;
+
+    public DelRecipeCommand(HyperCrafting plugin) {
         super(Collections.singletonList("delrecipe"), "Delete a Recipe", "hypercrafting.delrecipe", true);
+        this.plugin = plugin;
     }
 
     @Override
@@ -22,18 +25,18 @@ public class DelRecipeCommand extends Command {
         Player p = (Player) sender;
         if(args.length == 2){
             String name = args[1];
-            Optional<CraftingRecipe> craftingRecipe = HyperCrafting.getInstance().getCraftingRecipes().getRecipeByName(name);
+            Optional<CraftingRecipe> craftingRecipe = this.plugin.getCraftingRecipes().getRecipeByName(name);
             if (craftingRecipe.isPresent()){
-                if(HyperCrafting.getInstance().getCraftingRecipes().removeRecipe(craftingRecipe.get())){
-                    p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("recipeRemoved").replace("%recipe_name%", craftingRecipe.get().getName()).replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+                if(this.plugin.getCraftingRecipes().removeRecipe(craftingRecipe.get())){
+                    p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("recipeRemoved").replace("%recipe_name%", craftingRecipe.get().getName()).replace("%prefix%", this.plugin.getConfiguration().prefix)));
                     return true;
                 }
             }else{
-                p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("notCreated").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+                p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("notCreated").replace("%prefix%", this.plugin.getConfiguration().prefix)));
             }
 
         }else{
-            p.sendMessage(Utils.color(HyperCrafting.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperCrafting.getInstance().getConfiguration().prefix)));
+            p.sendMessage(Utils.color(this.plugin.getMessages().getMessage("invalidArguments").replace("%prefix%", this.plugin.getConfiguration().prefix)));
         }
         return false;
     }
@@ -46,7 +49,7 @@ public class DelRecipeCommand extends Command {
     @Override
     public List<String> TabComplete(CommandSender cs, org.bukkit.command.Command cmd, String s, String[] args) {
         if(args.length == 2)
-            return HyperCrafting.getInstance().getCraftingRecipes().getRecipes().stream().map(CraftingRecipe::getName).collect(Collectors.toList());
+            return this.plugin.getCraftingRecipes().getRecipes().stream().map(CraftingRecipe::getName).collect(Collectors.toList());
         return null;
     }
 

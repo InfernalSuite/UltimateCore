@@ -21,8 +21,8 @@ import java.util.stream.Collectors;
 
 public class Utils {
     
-    public static void openGUISync(Player player, Inventory inventory) {
-        Bukkit.getScheduler().scheduleSyncDelayedTask(HyperCrafting.getInstance(), () -> player.openInventory(inventory), 3L);
+    public static void openGUISync(Player player, Inventory inventory, HyperCrafting plugin) {
+        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> player.openInventory(inventory), 3L);
     }
     
     public static boolean itemIsNull(ItemStack itemStack) {

@@ -17,15 +17,15 @@ public class CraftingTableListener implements Listener {
     private final HyperCrafting plugin;
 
     @EventHandler
-    public void onOpenEnchantmentTable(PlayerInteractEvent e){
+    public void onOpenEnchantmentTable(PlayerInteractEvent event){
         if(!plugin.getConfiguration().setAsDefaultCraftingTable) return;
-        if(e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
-        Block bl = e.getClickedBlock();
+        if(event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
+        Block bl = event.getClickedBlock();
         if(bl == null || !bl.getType().equals(XMaterial.CRAFTING_TABLE.parseMaterial())) return;
-        e.setCancelled(true);
-        Player p = e.getPlayer();
-        User user = User.getUser(p);
-        p.openInventory(user.getMainMenu().getInventory());
+        event.setCancelled(true);
+        Player player = event.getPlayer();
+        User user = this.plugin.getPlayerManager().createOrGetUser(player.getUniqueId());
+        user.getCraftingGUI().openInventory(player);
     }
 
 }

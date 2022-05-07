@@ -10,14 +10,17 @@ import java.util.List;
 
 public class RecipeBookCommand extends Command {
 
-    public RecipeBookCommand() {
+    private final HyperCrafting plugin;
+
+    public RecipeBookCommand(HyperCrafting plugin) {
         super(Collections.singletonList("recipebook"), "Opens the recipe book menu", "hypercrafting.recipebook", true);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         Player p = (Player) sender;
-        new RecipeBookGUI(HyperCrafting.getInstance()).openInventory(p);
+        new RecipeBookGUI(this.plugin).openInventory(p);
         return false;
     }
 
