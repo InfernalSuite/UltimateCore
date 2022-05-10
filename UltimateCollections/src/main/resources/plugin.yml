@@ -1,7 +1,7 @@
 name: UltimateCore-Collections
 description: UltimateCore's Collections plugin
 main: mc.ultimatecore.collections.HyperCollections
-version: 5.2.4
+version: "5.2.5"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
