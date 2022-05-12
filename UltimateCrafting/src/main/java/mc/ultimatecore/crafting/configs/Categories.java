@@ -33,7 +33,12 @@ public class Categories extends YAMLFile {
         for (String key : section.getKeys(false)) {
             try {
                 if (!cf.getBoolean("categories." + key + ".enabled")) continue;
-                String displayName = cf.getString("categories." + key + ".displayName", "Unknown");
+                String displayName = "Unknown";
+                    if(cf.isString("categories." + key + ".displayName")) {
+                        displayName = cf.getString("categories." + key + ".displayName", "Unknown");
+                    }else if(cf.isString("categories." + key + ".displayname")) {
+                        displayName = cf.getString("categories." + key + ".displayname", "Unknown");
+                    }
                 int slot = cf.getInt("categories." + key + ".slot");
                 String material = cf.getString("categories." + key + ".item");
                 categories.put(key, new Category(key, displayName, slot, material));

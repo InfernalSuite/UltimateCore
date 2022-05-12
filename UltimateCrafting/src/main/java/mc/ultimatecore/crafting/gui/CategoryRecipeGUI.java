@@ -65,7 +65,7 @@ public class CategoryRecipeGUI implements SimpleGUI {
         int maxPage = pages.isEmpty() ? 1 : Collections.max(pages);
         Inventory inventory = Bukkit.createInventory(this, plugin.getInventories().categorySize,
                 Utils.color(plugin.getInventories().categoryTitle
-                        .replace("%category%", String.valueOf(category.getDisplayName()))
+                        .replace("%category%", category.getDisplayName())
                         .replace("%max_page%", String.valueOf(maxPage))
                         .replace("%page%", String.valueOf(page))));
         for (Integer slot : plugin.getInventories().categoryDecorationSlots)
