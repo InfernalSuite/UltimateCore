@@ -25,7 +25,9 @@ public class PlayerManager {
     }
 
     public void purgeUsers() {
-        this.users.values().forEach(user -> removeUser(user.getUuid()));
+        if(!this.users.isEmpty()) {
+            this.users.values().forEach(user -> removeUser(user.getUuid()));
+        }
     }
 
     public RecipeCreatorGUI getRecipeCreatorGUI(CraftingRecipe craftingRecipe){
