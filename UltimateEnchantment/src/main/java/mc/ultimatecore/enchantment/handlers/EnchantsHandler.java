@@ -127,10 +127,13 @@ public class EnchantsHandler {
         List<String> newLore = null;
         ItemMeta meta = itemStack.getItemMeta();
         List<String> lore = meta != null && meta.hasLore() ? itemStack.getItemMeta().getLore() : Collections.emptyList();
-        if (plugin.getConfiguration().addInfoOnEnchant)
+        if (plugin.getConfiguration().addInfoOnEnchant) {
             newLore = getNormalLore(enchantments);
-        if (lore != null && meta != null)
+        }
+
+        if (lore != null && meta != null) {
             meta.setLore(plugin.getConfiguration().loreSettings.getToAddLore(lore, newLore));
+        }
         itemStack.setItemMeta(meta);
         return itemStack;
     }

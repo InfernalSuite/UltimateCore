@@ -142,12 +142,12 @@ public class Utils {
         double currentMoney = eco.getBalance(Bukkit.getOfflinePlayer(player));
         double required = hyperEnchant.getRequiredMoney(level);
         int itemLevel = hyperEnchant.getItemLevel(itemStack);
-        String requiredMessage = !hyperEnchant.itemIsEnchanted(itemStack, level) ? itemLevel > 0 ? currentMoney < required ?  EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughMoney") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : currentMoney < required ? EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughMoney") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("alreadyState");
+        String requiredMessage = !hyperEnchant.itemIsEnchanted(itemStack, level) ? currentMoney < required ? EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughMoney") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("alreadyState");
 
         return new ArrayList<>(Arrays.asList(new Placeholder("enchant_name", hyperEnchant.getDisplayName())
                 ,new Placeholder("enchant_level", toRoman(level))
                 ,new Placeholder("state", requiredMessage)
-                ,new Placeholder("enchant_cost", Utils.color(requiredMessage.replace("%cost%", String.valueOf(required)))
+                ,new Placeholder("enchant_cost", Utils.color(requiredMessage.replace("%enchant_cost%", String.valueOf(required)))
                 )));
     }
 
@@ -157,12 +157,12 @@ public class Utils {
         int required = hyperEnchant.getRequiredLevel(level);
         int itemLevel = hyperEnchant.getItemLevel(itemStack);
         int requiredLevel = !hyperEnchant.itemIsEnchanted(itemStack, level) ? itemLevel > 0 ?  getNewRequiredLevel(required) : required : required;
-        String requiredMessage = !hyperEnchant.itemIsEnchanted(itemStack, level) ? itemLevel > 0 ? playerLevel < requiredLevel ?  EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : playerLevel < requiredLevel ? EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("alreadyState");
+        String requiredMessage = !hyperEnchant.itemIsEnchanted(itemStack, level) ? playerLevel < requiredLevel ? EnchantmentsPlugin.getInstance().getMessages().getMessage("notEnoughState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("clickToEnchantState") : EnchantmentsPlugin.getInstance().getMessages().getMessage("alreadyState");
         return new ArrayList<>(Arrays.asList(
                 new Placeholder("enchant_name", hyperEnchant.getDisplayName())
                 ,new Placeholder("enchant_level", toRoman(level))
                 ,new Placeholder("state", requiredMessage)
-                ,new Placeholder("enchant_cost", requiredLevel == required ? Utils.color(EnchantmentsPlugin.getInstance().getMessages().getMessage("normalCost").replace("%cost%", String.valueOf(required))) : Utils.color(EnchantmentsPlugin.getInstance().getMessages().getMessage("replacedCost").replace("%new_cost%", String.valueOf(requiredLevel)).replace("%cost%", String.valueOf(required))))
+                ,new Placeholder("enchant_cost", requiredLevel == required ? Utils.color(EnchantmentsPlugin.getInstance().getMessages().getMessage("normalCost").replace("%enchant_cost%", String.valueOf(required))) : Utils.color(EnchantmentsPlugin.getInstance().getMessages().getMessage("replacedCost").replace("%new_cost%", String.valueOf(requiredLevel)).replace("%enchant_cost%", String.valueOf(required))))
 
         ));
     }

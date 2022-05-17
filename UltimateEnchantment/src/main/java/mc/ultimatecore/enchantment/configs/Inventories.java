@@ -28,7 +28,7 @@ public class Inventories extends YAMLFile{
 
     //SUBMENU
     public Item levelEnchantBook = new Item(XMaterial.ENCHANTED_BOOK, 1, "&fEnchanted Book", Arrays.asList("&9%enchant_name% %enchant_level%", "&7%enchant_description%", "", "&7Cost: &3%enchant_cost%", "", "%state%"));
-    public Item moneyEnchantBook = new Item(XMaterial.ENCHANTED_BOOK, 1, "&fEnchanted Book", Arrays.asList("&9%enchant_name% %enchant_level%", "&7%enchant_description%", "", "&7Cost: &3%enchant_cost%$", "", "%state%"));
+    public Item moneyEnchantBook = new Item(XMaterial.ENCHANTED_BOOK, 1, "&fEnchanted Book", Arrays.asList("&9%enchant_name% %enchant_level%", "&7%enchant_description%", "", "&7Cost: &3$%enchant_cost%", "", "%state%"));
 
 
 
