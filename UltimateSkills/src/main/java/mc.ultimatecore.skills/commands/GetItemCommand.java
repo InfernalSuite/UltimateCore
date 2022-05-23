@@ -18,27 +18,30 @@ public class GetItemCommand extends HyperCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        if(args.length == 3){
-            try {
-                Player player = Bukkit.getPlayer(args[1]);
-                String name = args[2];
-                if(!HyperSkills.getInstance().getUltimateItems().ultimateItems.containsKey(name)){
-                    if(sender instanceof Player)
-                        sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidItem").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
-                }else{
-                    if (player != null) {
-                        UltimateItem nbtItem = HyperSkills.getInstance().getUltimateItems().ultimateItems.get(name);
-                        player.getInventory().addItem(nbtItem.getItem());
-                    } else{
-                        if(sender instanceof Player)
-                            sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
-                    }
-                }
-            }catch (Exception e){ }
-        } else {
+        if (args.length != 3) {
             if(sender instanceof Player)
                 sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidArguments").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
+            return;
         }
+
+        try {
+            Player player = Bukkit.getPlayer(args[1]);
+            String name = args[2];
+            if(!HyperSkills.getInstance().getUltimateItems().ultimateItems.containsKey(name)){
+                if(sender instanceof Player)
+                    sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidItem").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
+                return;
+            }
+
+            if (player == null) {
+                if(sender instanceof Player)
+                    sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
+                return;
+            }
+
+            UltimateItem nbtItem = HyperSkills.getInstance().getUltimateItems().ultimateItems.get(name);
+            player.getInventory().addItem(nbtItem.getItem());
+        } catch (Exception ignored){ }
     }
 
     @Override
