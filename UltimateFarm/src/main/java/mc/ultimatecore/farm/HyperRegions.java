@@ -97,7 +97,7 @@ public class HyperRegions extends UltimatePlugin {
     public void loadConfigs() {
         configuration = new Config(this, "config", true);
         guardians = new Guardians(this, "guardians", false);
-        farmManager = XMaterial.isNewVersion() ? new RegionsManager(this, "regionsManager", false) : new RegionsManager(this, "regionManager", false);
+        farmManager = XMaterial.supports(13) ? new RegionsManager(this, "regionsManager", false) : new RegionsManager(this, "regionManager", false);
         inventories = new Inventories();
         messages = new Messages();
     }

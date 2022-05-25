@@ -21,7 +21,7 @@ public class BlockPlaceListener implements Listener {
         Player player = e.getPlayer();
         if(player.isOp()) return;
         Block bl = e.getBlock();
-        if (XMaterial.isNewVersion()) {
+        if (XMaterial.supports(13)) {
             if (bl.getBlockData() instanceof Ageable && !bl.getType().toString().contains("SUGAR_CANE"))
                 return;
         } else {
