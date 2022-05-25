@@ -2,7 +2,7 @@ package mc.ultimatecore.skills.listener;
 
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.changeme.nbtapi.NBTItem;
-import mc.ultimatecore.skills.HyperSkills;
+import mc.ultimatecore.skills.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Player;
@@ -30,7 +30,7 @@ public class BlockPlaceListener implements Listener {
             if (bl.getState().getData() instanceof NetherWarts)
                 return;
         }
-        bl.setMetadata("COLLECTED", new FixedMetadataValue(HyperSkills.getInstance(), "UUID"));
+        bl.setMetadata(Constants.PLACED_BLOCK_KEY, new FixedMetadataValue(HyperSkills.getInstance(), "UUID"));
     }
 
     @EventHandler

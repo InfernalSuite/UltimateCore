@@ -1,7 +1,7 @@
 package mc.ultimatecore.skills.listener.skills;
 
 import lombok.AllArgsConstructor;
-import mc.ultimatecore.skills.HyperSkills;
+import mc.ultimatecore.skills.*;
 import mc.ultimatecore.skills.objects.SkillType;
 import mc.ultimatecore.skills.objects.perks.Perk;
 import org.bukkit.Material;
@@ -29,7 +29,7 @@ public class BlockBreakListener implements Listener {
         Block bl = e.getClickedBlock();
         Player player = e.getPlayer();
         if(bl == null) return;
-        if (bl.hasMetadata("COLLECTED")) return;
+        if (bl.hasMetadata(Constants.PLACED_BLOCK_KEY)) return;
         if(e.isCancelled()) return;
         double miningSpeed = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Mining_Speed);
         if(miningSpeed < 1) return;
@@ -42,7 +42,7 @@ public class BlockBreakListener implements Listener {
         Block bl = e.getBlock();
         Player player = e.getPlayer();
         try {
-            if (bl.hasMetadata("COLLECTED")) return;
+            if (bl.hasMetadata(Constants.PLACED_BLOCK_KEY)) return;
             if(e.isCancelled()) return;
             Material mat = bl.getType();
             plugin.getSkillManager().manageBlockPoints(player, bl, mat, true);
