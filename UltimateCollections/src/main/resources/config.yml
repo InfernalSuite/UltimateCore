@@ -15,3 +15,8 @@ xpToRank: 15
 rankPlaceholder: "&a%xp% &7(Top &e%top_percentage%%&e)"
 noRankPlaceholder: "&8N/A"
 debug: false
+
+
+# byPassPlace refers to allowing to place blocks that count towards collections. For skills check the skills config
+byPassPlaceRequireCreative: true
+byPassPlaceCheckPermission: "ultimate.collections.admin.place"

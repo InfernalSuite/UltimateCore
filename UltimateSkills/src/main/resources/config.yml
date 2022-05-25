@@ -17,6 +17,11 @@ damageIndicators:
     indicator: "&f✧%damage%&f✧"
   blacklist:
     - ZOMBIE
+
+# byPassPlace refers to allowing to place blocks that count towards skills. For collections check the collections config
+byPassPlaceRequireCreative: true
+byPassPlaceCheckPermission: "ultimate.skills.admin.place"
+
 translatePAPIPlaceholders: false
 prefix: "&e&lSkills &7"
 useDefaultSkillsXP: true #This will load default skillspoints from plugin
