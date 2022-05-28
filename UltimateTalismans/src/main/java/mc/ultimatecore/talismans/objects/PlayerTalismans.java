@@ -136,7 +136,11 @@ public class PlayerTalismans {
     }
 
     private boolean isInRegion(Player player, RegionTalisman talisman){
-        return HyperTalismans.getInstance().getAddonsManager().getRegionPlugin().isInRegion(player.getLocation(), talisman.getRegions());
+        if(HyperTalismans.getInstance().getAddonsManager().getRegionPlugin() != null) {
+            return HyperTalismans.getInstance().getAddonsManager().getRegionPlugin().isInRegion(player.getLocation(), talisman.getRegions());
+        }else{
+            return false;
+        }
     }
 
     public Optional<String> hasTalisman(String name){
