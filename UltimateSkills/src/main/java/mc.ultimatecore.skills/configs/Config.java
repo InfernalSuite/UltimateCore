@@ -1,5 +1,6 @@
 package mc.ultimatecore.skills.configs;
 
+import lombok.*;
 import mc.ultimatecore.helper.UltimatePlugin;
 import mc.ultimatecore.helper.files.YAMLFile;
 import mc.ultimatecore.skills.enums.Status;
@@ -12,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Getter
 public class Config extends YAMLFile {
     public String prefix;
     public int maxSkillLevel;
@@ -27,6 +29,8 @@ public class Config extends YAMLFile {
     public boolean allowHunger;
     public String levelUPSound;
     public String gainXPSound;
+    private boolean byPassPlaceRequireCreative;
+    private String byPassPlaceCheckPermission;
     public boolean scaledHealth;
     public boolean useDefaultSkillsXP;
     public int initialHealth;
@@ -61,6 +65,10 @@ public class Config extends YAMLFile {
         indicators = new HashMap<>();
         YamlConfiguration cf = getConfig();
         //------------------------------------------------//
+        byPassPlaceRequireCreative = cf.getBoolean("byPassPlaceRequireCreative");
+        byPassPlaceCheckPermission = cf.getString("byPassPlaceCheckPermission");
+
+
         prefix = cf.getString("prefix");
         useDefaultSkillsXP = cf.getBoolean("useDefaultSkillsXP");
         maxSkillLevel = cf.getInt("maxSkillLevel");

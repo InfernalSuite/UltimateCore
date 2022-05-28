@@ -22,7 +22,7 @@ public enum RuneEffect {
     }
 
     public String getParticle(){
-        if(XMaterial.isNewVersion())
+        if(XMaterial.supports(13))
             return v1_14;
         else
             return legacy;

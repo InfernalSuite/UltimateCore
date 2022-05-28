@@ -2,10 +2,12 @@ package mc.ultimatecore.collections.listeners.collections;
 
 import com.cryptomorin.xseries.XMaterial;
 import lombok.AllArgsConstructor;
-import mc.ultimatecore.collections.HyperCollections;
+import mc.ultimatecore.collections.*;
+import mc.ultimatecore.collections.configs.*;
 import mc.ultimatecore.collections.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
+import mc.ultimatecore.helper.utils.*;
+import org.bukkit.*;
+import org.bukkit.block.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -43,7 +45,7 @@ public class CollectionsListener implements Listener {
             this.countdown.put(p.getUniqueId(), System.currentTimeMillis() + 150L);
             setMetadataAround(p);
         }
-        if (e.getBlock().hasMetadata("COLLECTED"))
+        if (e.getBlock().hasMetadata(Constants.PLACED_BLOCK_KEY))
             setMetadataAround(p);
     }
 
@@ -81,7 +83,16 @@ public class CollectionsListener implements Listener {
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent e) {
-        e.getBlock().setMetadata("COLLECTED", new FixedMetadataValue(this.plugin, "UUID"));
+
+        Player player = e.getPlayer();
+        Config config = plugin.getConfiguration();
+        boolean needsCreative = config.isByPassPlaceRequireCreative();
+        String permission = config.getByPassPlaceCheckPermission();
+        if(player.hasPermission(permission) && (!needsCreative || player.getGameMode() == GameMode.CREATIVE)) return;
+
+        Block bl = e.getBlock();
+        if(!BlockUtils.needsPlacementTagging(bl)) return;
+        bl.setMetadata(Constants.PLACED_BLOCK_KEY, new FixedMetadataValue(this.plugin, "UUID"));
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -140,7 +151,7 @@ public class CollectionsListener implements Listener {
                 for (Entity item : l.getWorld().getNearbyEntities(l, 5.0D, 5.0D, 5.0D)) {
                     if (item instanceof Item) {
                         Item i = (Item) item;
-                        i.setMetadata("COLLECTED", new FixedMetadataValue(plugin, "UUID"));
+                        i.setMetadata(Constants.PLACED_BLOCK_KEY, new FixedMetadataValue(plugin, "UUID"));
                     }
                 }
                 cancel();
@@ -149,11 +160,11 @@ public class CollectionsListener implements Listener {
     }
 
     public void setMetadata(Item i) {
-        i.setMetadata("COLLECTED", new FixedMetadataValue(plugin, "UUID"));
+        i.setMetadata(Constants.PLACED_BLOCK_KEY, new FixedMetadataValue(plugin, "UUID"));
     }
 
     public boolean checkHas(Item i) {
-        return !i.hasMetadata("COLLECTED");
+        return !i.hasMetadata(Constants.PLACED_BLOCK_KEY);
     }
 
 }
