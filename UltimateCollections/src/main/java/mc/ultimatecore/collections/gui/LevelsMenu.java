@@ -3,7 +3,7 @@ package mc.ultimatecore.collections.gui;
 import mc.ultimatecore.collections.HyperCollections;
 import mc.ultimatecore.collections.configs.Inventories;
 import mc.ultimatecore.collections.objects.Collection;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import mc.ultimatecore.collections.utils.InventoryUtils;
 import mc.ultimatecore.collections.utils.StringUtils;
 import mc.ultimatecore.collections.utils.Utils;
@@ -47,7 +47,7 @@ public class LevelsMenu implements GUI {
         Inventory inventory = Bukkit.createInventory(this, HyperCollections.getInstance().getInventories().getLevelsMenuSize(), StringUtils.color(HyperCollections.getInstance().getInventories().getLevelsMenuTitle().replace("%collection_name%", collection.getName())));
         for (int i = 0; i < inventory.getSize(); i++)
             inventory.setItem(i, InventoryUtils.makeItem(HyperCollections.getInstance().getInventories().getBackground()));
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int i = 0;
         int level = playerCollection.getLevel(collection.getKey());
         Inventories inventories = HyperCollections.getInstance().getInventories();

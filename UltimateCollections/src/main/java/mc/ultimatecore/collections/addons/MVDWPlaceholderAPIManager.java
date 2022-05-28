@@ -2,7 +2,7 @@ package mc.ultimatecore.collections.addons;
 
 import be.maximvdw.placeholderapi.PlaceholderAPI;
 import mc.ultimatecore.collections.HyperCollections;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import org.bukkit.entity.Player;
 
 public class MVDWPlaceholderAPIManager {
@@ -16,7 +16,7 @@ public class MVDWPlaceholderAPIManager {
             if (player == null) {
                 return "0";
             }
-            PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+            PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
             return playerCollection.getAllUnlocked() + "";
         });
         PlaceholderAPI.registerPlaceholder(HyperCollections.getInstance(), "collections_total", e -> {
@@ -30,19 +30,19 @@ public class MVDWPlaceholderAPIManager {
                 Player player = e.getPlayer();
                 if (player == null)
                     return "0";
-                return HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId()).getRankPosition(key) + "";
+                return HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId()).getRankPosition(key) + "";
             });
             PlaceholderAPI.registerPlaceholder(HyperCollections.getInstance(), "collections_level_" + key, e -> {
                 Player player = e.getPlayer();
                 if (player == null)
                     return "0";
-                return HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId()).getLevel(key) + "";
+                return HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId()).getLevel(key) + "";
             });
             PlaceholderAPI.registerPlaceholder(HyperCollections.getInstance(), "collections_xp_" + key, e -> {
                 Player player = e.getPlayer();
                 if (player == null)
                     return "0";
-                return HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId()).getXP(key) + "";
+                return HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId()).getXP(key) + "";
             });
         }
     }

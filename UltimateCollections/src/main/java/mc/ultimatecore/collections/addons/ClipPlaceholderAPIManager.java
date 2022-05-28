@@ -1,7 +1,7 @@
 package mc.ultimatecore.collections.addons;
 
 import mc.ultimatecore.collections.HyperCollections;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -98,7 +98,7 @@ public class ClipPlaceholderAPIManager extends PlaceholderExpansion {
         if (player == null || identifier == null) {
             return "";
         }
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
         switch (identifier) {
             case "unlocked":
                 return playerCollection.getAllUnlocked() + "";

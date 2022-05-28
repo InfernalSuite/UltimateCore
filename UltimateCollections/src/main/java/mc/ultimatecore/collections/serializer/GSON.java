@@ -2,7 +2,7 @@ package mc.ultimatecore.collections.serializer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import mc.ultimatecore.collections.serializer.adapters.EnumTypeAdapter;
 import mc.ultimatecore.collections.serializer.adapters.PlayerCollectionsAdapter;
 
@@ -15,16 +15,16 @@ public class GSON {
         this.adapter = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping()
                                           .registerTypeAdapterFactory(EnumTypeAdapter.ENUM_FACTORY)
                                           .enableComplexMapKeySerialization()
-                                          .registerTypeAdapter(PlayerCollections.class, new PlayerCollectionsAdapter())
+                                          .registerTypeAdapter(PlayerCollection.class, new PlayerCollectionsAdapter())
                                           .create();
     }
     
-    public String toString(PlayerCollections pd) {
-        return this.adapter.toJson(pd, PlayerCollections.class);
+    public String toString(PlayerCollection pd) {
+        return this.adapter.toJson(pd, PlayerCollection.class);
     }
     
-    public PlayerCollections fromString(String data) {
-        return adapter.fromJson(data, PlayerCollections.class);
+    public PlayerCollection fromString(String data) {
+        return adapter.fromJson(data, PlayerCollection.class);
     }
     
 }

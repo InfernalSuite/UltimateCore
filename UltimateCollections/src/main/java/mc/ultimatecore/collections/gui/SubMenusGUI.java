@@ -3,7 +3,7 @@ package mc.ultimatecore.collections.gui;
 import mc.ultimatecore.collections.HyperCollections;
 import mc.ultimatecore.collections.objects.Category;
 import mc.ultimatecore.collections.objects.Collection;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import mc.ultimatecore.collections.utils.InventoryUtils;
 import mc.ultimatecore.collections.utils.Placeholder;
 import mc.ultimatecore.collections.utils.StringUtils;
@@ -43,7 +43,7 @@ public class SubMenusGUI implements GUI {
             } else {
                 if (menuItems.containsKey(e.getSlot())) {
                     Collection collection = menuItems.get(e.getSlot());
-                    PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+                    PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
                     if (playerCollection.getXP(collection.getKey()) > 0)
                         player.openInventory(new LevelsMenu(uuid, collection).getInventory());
                     else
@@ -61,7 +61,7 @@ public class SubMenusGUI implements GUI {
         for (Collection collection : HyperCollections.getInstance().getCollections().collections.values()) {
             if (!collection.getCategory().equals(this.category)) continue;
             String key = collection.getKey();
-            PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+            PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
             if (playerCollection.getXP(key) > 0) {
                 inventory.setItem(collection.getSlot(), InventoryUtils.makeItem(HyperCollections.getInstance().getInventories().getSubMenuItems().get("unlockedItem"), Utils.getCollectionPlaceholders(uuid, collection), playerCollection.getLevel(key) + 1, collection, true));
             } else {

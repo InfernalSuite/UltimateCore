@@ -1,6 +1,6 @@
 package mc.ultimatecore.collections.database;
 
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import mc.ultimatecore.helper.UltimatePlugin;
 import mc.ultimatecore.helper.implementations.DatabaseImpl;
 import org.bukkit.OfflinePlayer;
@@ -18,7 +18,7 @@ public abstract class Database extends DatabaseImpl {
     
     public abstract String getPlayerCollections(OfflinePlayer player);
     
-    public abstract void savePlayerCollections(OfflinePlayer player, PlayerCollections playerCollections);
+    public abstract void savePlayerCollections(OfflinePlayer player, PlayerCollection playerCollection);
     
     public abstract void addIntoDatabase(OfflinePlayer player);
     

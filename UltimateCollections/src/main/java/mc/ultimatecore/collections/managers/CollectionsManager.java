@@ -1,31 +1,39 @@
 package mc.ultimatecore.collections.managers;
 
-import mc.ultimatecore.collections.HyperCollections;
-import mc.ultimatecore.collections.api.events.CollectionsLevelUPEvent;
-import mc.ultimatecore.collections.api.events.CollectionsUnlockEvent;
+import mc.ultimatecore.collections.*;
+import mc.ultimatecore.collections.api.events.*;
+import mc.ultimatecore.collections.objects.*;
 import mc.ultimatecore.collections.objects.Collection;
-import mc.ultimatecore.collections.objects.DebugType;
-import mc.ultimatecore.collections.objects.PlayerCollections;
-import mc.ultimatecore.collections.utils.HyperSound;
-import mc.ultimatecore.collections.utils.Utils;
+import mc.ultimatecore.collections.utils.*;
 import net.md_5.bungee.api.chat.*;
-import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
+import org.bukkit.*;
+import org.bukkit.entity.*;
 
 import java.util.*;
 
 public class CollectionsManager {
 
     private final HyperCollections plugin;
-    private final Map<UUID, PlayerCollections> collectionsCache = new HashMap<>();
     private int task;
     public int playersQuantity;
+    private final Map<UUID, PlayerCollection> collectionsCache = new HashMap<>();
 
     public CollectionsManager(HyperCollections plugin) {
         this.plugin = plugin;
-        this.loadPlayerDataOnEnable();
-        this.updateTop10();
+    }
+
+    public PlayerCollection createOrGetUser(UUID uuid) {
+        return collectionsCache.computeIfAbsent(uuid, x -> new PlayerCollection(uuid));
+    }
+
+    public void removeCacheEntry(UUID uuid) {
+        this.collectionsCache.remove(uuid);
+    }
+
+    public void purgeCache() {
+        if(!this.collectionsCache.isEmpty()) {
+            this.collectionsCache.values().forEach(collection -> removeCacheEntry(collection.getUuid()));
+        }
     }
 
     public void stopUpdating() {
@@ -81,51 +89,11 @@ public class CollectionsManager {
     public void loadPlayerData(Player player) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             String strCollections = plugin.getPluginDatabase().getPlayerCollections(player);
-            PlayerCollections playerCollections = strCollections != null ? plugin.getGson().fromString(strCollections) : new PlayerCollections();
-            collectionsCache.put(player.getUniqueId(), playerCollections);
+            PlayerCollection playerCollection = strCollections != null ? plugin.getGson().fromString(strCollections) : new PlayerCollection(player.getUniqueId());
+            collectionsCache.put(player.getUniqueId(), playerCollection);
             this.plugin.sendDebug(String.format("Loaded Collections of player %s from database", player.getName()), DebugType.LOG);
         });
     }
-
-
-    public Integer getLevel(OfflinePlayer p, String key) {
-        return collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections()).getLevel(key);
-    }
-
-    public Integer getXP(OfflinePlayer p, String key) {
-        return collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections()).getXP(key);
-    }
-
-    public void setLevel(OfflinePlayer p, String key, int level) {
-        if (p.isOnline())
-            collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections()).setLevel(key, level);
-    }
-
-    public void setXP(OfflinePlayer p, String key, int xp) {
-        if (p.isOnline()) {
-            collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections()).setXP(key, xp);
-            checkLevelUp(p, key);
-        }
-    }
-
-    public void addLevel(OfflinePlayer p, String key, int level) {
-        if (p.isOnline())
-            collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections()).addLevel(key, level);
-    }
-
-
-    public PlayerCollections getPlayerCollections(OfflinePlayer p) {
-        if (!p.isOnline()) {
-            return new PlayerCollections();
-        } else {
-            return collectionsCache.getOrDefault(p.getUniqueId(), new PlayerCollections());
-        }
-    }
-
-    public PlayerCollections getPlayerCollections(UUID uuid) {
-        return collectionsCache.getOrDefault(uuid, new PlayerCollections());
-    }
-
 
     private void updateCollectionsTop() {
         this.plugin.sendDebug("Starting updating Collections Top", DebugType.LOG);
@@ -136,31 +104,30 @@ public class CollectionsManager {
             for (UUID uuid : uuids) {
                 boolean fromSQL = false;
                 OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
-                PlayerCollections playerCollections = collectionsCache.getOrDefault(uuid, null);
-                if (playerCollections == null) {
+                PlayerCollection playerCollection = collectionsCache.getOrDefault(uuid, null);
+                if (playerCollection == null) {
                     String strSkills = plugin.getPluginDatabase().getPlayerCollections(offlinePlayer);
                     if (strSkills == null) continue;
                     fromSQL = true;
-                    playerCollections = plugin.getGson().fromString(strSkills);
+                    playerCollection = plugin.getGson().fromString(strSkills);
                 }
-                if (playerCollections.getXP(key) > plugin.getConfiguration().getXpToRank().doubleValue()) {
-                    playerCollections.setRankPosition(key, rank);
+                if (playerCollection.getXP(key) > plugin.getConfiguration().getXpToRank().doubleValue()) {
+                    playerCollection.setRankPosition(key, rank);
                     rank++;
                     playersQuantity++;
                 }
-                if (fromSQL) plugin.getPluginDatabase().savePlayerCollections(offlinePlayer, playerCollections);
+                if (fromSQL) plugin.getPluginDatabase().savePlayerCollections(offlinePlayer, playerCollection);
             }
         }
         this.plugin.sendDebug("Collections Top updated!", DebugType.LOG);
     }
-
 
     public void addXP(OfflinePlayer p, String key, int xp) {
         if (p.isOnline())
             if (xp > 0) {
                 Player player = p.getPlayer();
                 if (player == null) return;
-                PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+                PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
                 Collection collection = HyperCollections.getInstance().getCollections().getCollection(key);
                 if (collection == null) return;
                 if (playerCollection.getLevel(key) < collection.getMaxLevel()) {
@@ -192,7 +159,7 @@ public class CollectionsManager {
         Player player = offlinePlayer.getPlayer();
         if (player == null) return;
         Collection collection = plugin.getCollections().getCollection(key);
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
         int level = playerCollection.getLevel(key);
         int currentXP = playerCollection.getXP(key);
         Double maxXP = collection.getRequirement(level + 1);
@@ -205,7 +172,7 @@ public class CollectionsManager {
     }
 
     private void levelUp(String key, Player player, Collection collection) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(player.getUniqueId());
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
         int level = playerCollection.getLevel(key);
         List<String> commands = collection.getCommands(level);
         if (commands != null) {
@@ -236,4 +203,5 @@ public class CollectionsManager {
             }
         }
     }
+
 }

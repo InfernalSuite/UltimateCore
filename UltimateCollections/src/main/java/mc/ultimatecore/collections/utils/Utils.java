@@ -6,7 +6,7 @@ import mc.ultimatecore.collections.HyperCollections;
 import mc.ultimatecore.collections.Item;
 import mc.ultimatecore.collections.objects.Category;
 import mc.ultimatecore.collections.objects.Collection;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -70,7 +70,7 @@ public class Utils {
     }
     
     public static List<Placeholder> getCategoriesPlaceholder(UUID uuid, Category category) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int xp = playerCollection.getUnlocked(category);
         int maxXP = category != null ? HyperCollections.getInstance().getCollections().getCollectionQuantity(category).size() : 100;
         int currentPercentage = getPlayerPercentage(xp, maxXP);
@@ -81,7 +81,7 @@ public class Utils {
     }
     
     public static List<Placeholder> getTopPlaceholders(UUID uuid, Category category) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int xp = playerCollection.getUnlocked(category);
         int maxXP = category != null ? HyperCollections.getInstance().getCollections().getCollectionQuantity(category).size() : 100;
         int currentPercentage = getPlayerPercentage(xp, maxXP);
@@ -92,7 +92,7 @@ public class Utils {
             add(new Placeholder("progress_bar", getProgressBar(currentPercentage)));
             add(new Placeholder("max_xp", String.valueOf(maxXP)));
             for (String collection : HyperCollections.getInstance().getCollections().getCollectionQuantity(category)) {
-                PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+                PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
                 int rankPosition = playerCollection.getRankPosition(collection);
                 String percentage = String.valueOf(round((rankPosition / playersQuantity) * 100));
                 add(new Placeholder(collection + "_RANK_PLACEHOLDER", rankPosition == -1 ?
@@ -108,7 +108,7 @@ public class Utils {
     }
     
     public static List<Placeholder> getGlobalPlaceHolders(UUID uuid) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int xp = playerCollection.getAllUnlocked();
         int maxXP = HyperCollections.getInstance().getCollections().getCollectionQuantity();
         int currentPercentage = getPlayerPercentage(xp, maxXP);
@@ -119,7 +119,7 @@ public class Utils {
     }
     
     public static List<Placeholder> getCollectionPlaceholders(UUID uuid, Collection collection) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int level = playerCollection.getLevel(collection.getKey()) + 1;
         level = Math.min(level, 9);
         int xp = playerCollection.getXP(collection.getKey());
@@ -135,7 +135,7 @@ public class Utils {
     }
     
     public static List<Placeholder> getCollectionPlaceholders(UUID uuid, Collection collection, int level) {
-        PlayerCollections playerCollection = HyperCollections.getInstance().getCollectionsManager().getPlayerCollections(uuid);
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(uuid);
         int xp = playerCollection.getXP(collection.getKey());
         Double maxXP = collection.getRequirement(level);
         int currentPercentage = maxXP == null ? 0 : getPlayerPercentage(xp, maxXP.intValue());

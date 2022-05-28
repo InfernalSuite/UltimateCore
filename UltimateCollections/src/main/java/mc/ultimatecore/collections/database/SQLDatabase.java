@@ -2,7 +2,7 @@ package mc.ultimatecore.collections.database;
 
 import mc.ultimatecore.collections.HyperCollections;
 import mc.ultimatecore.collections.database.implementations.MySQLDatabase;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
@@ -51,8 +51,8 @@ public abstract class SQLDatabase extends Database {
     }
     
     @Override
-    public void savePlayerCollections(OfflinePlayer p, PlayerCollections playerCollections) {
-        this.execute("UPDATE " + MySQLDatabase.COLLECTIONS_TABLE_NAME + " SET Data =? WHERE " + MySQLDatabase.COLLECTIONS_UUID_COLNAME + "=?", plugin.getGson().toString(playerCollections), p.getUniqueId().toString());
+    public void savePlayerCollections(OfflinePlayer p, PlayerCollection playerCollection) {
+        this.execute("UPDATE " + MySQLDatabase.COLLECTIONS_TABLE_NAME + " SET Data =? WHERE " + MySQLDatabase.COLLECTIONS_UUID_COLNAME + "=?", plugin.getGson().toString(playerCollection), p.getUniqueId().toString());
     }
     
     @Override

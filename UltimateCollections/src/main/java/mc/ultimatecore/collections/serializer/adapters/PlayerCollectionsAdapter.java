@@ -2,21 +2,22 @@ package mc.ultimatecore.collections.serializer.adapters;
 
 import com.google.gson.*;
 import mc.ultimatecore.collections.HyperCollections;
-import mc.ultimatecore.collections.objects.PlayerCollections;
+import mc.ultimatecore.collections.objects.PlayerCollection;
 
 import java.lang.reflect.Type;
+import java.util.*;
 import java.util.logging.Level;
 
-public class PlayerCollectionsAdapter implements JsonSerializer<PlayerCollections>, JsonDeserializer<PlayerCollections> {
+public class PlayerCollectionsAdapter implements JsonSerializer<PlayerCollection>, JsonDeserializer<PlayerCollection> {
     
     @Override
-    public JsonElement serialize(PlayerCollections playerCollections, Type type, JsonSerializationContext jsonSerializationContext) {
+    public JsonElement serialize(PlayerCollection playerCollection, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject object = new JsonObject();
         try {
             for (String key : HyperCollections.getInstance().getCollections().getCollections().keySet()) {
-                object.add(key + "_LEVEL", new JsonPrimitive(playerCollections.getLevel(key)));
-                object.add(key + "_XP", new JsonPrimitive(playerCollections.getXP(key)));
-                object.add(key + "_RANK", new JsonPrimitive(playerCollections.getRankPosition(key)));
+                object.add(key + "_LEVEL", new JsonPrimitive(playerCollection.getLevel(key)));
+                object.add(key + "_XP", new JsonPrimitive(playerCollection.getXP(key)));
+                object.add(key + "_RANK", new JsonPrimitive(playerCollection.getRankPosition(key)));
             }
             return object;
         } catch (Exception ex) {
@@ -28,10 +29,10 @@ public class PlayerCollectionsAdapter implements JsonSerializer<PlayerCollection
     
     
     @Override
-    public PlayerCollections deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+    public PlayerCollection deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
         JsonObject object = jsonElement.getAsJsonObject();
         try {
-            PlayerCollections playerSkills = new PlayerCollections();
+            PlayerCollection playerSkills = new PlayerCollection(UUID.randomUUID());
             for (String key : HyperCollections.getInstance().getCollections().getCollections().keySet()) {
                 if (object.has(key + "_LEVEL"))
                     playerSkills.setLevel(key, object.get(key + "_LEVEL").getAsInt());
