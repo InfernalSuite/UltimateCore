@@ -15,19 +15,19 @@ import java.util.UUID;
 public class ArmorEquipListener implements Listener {
     @EventHandler
     public void onArmorEquip(ArmorEquipEvent e) {
-        if(e.isCancelled()) return;
+        if (e.isCancelled()) return;
         Player player = e.getPlayer();
         UUID uuid = player.getUniqueId();
         NBTItem armor;
         if (e.getNewArmorPiece() != null && e.getNewArmorPiece().getType() != Material.AIR) {
             armor = new NBTItem(e.getNewArmorPiece());
-            if(Utils.hasEffectInHand(armor.getItem())) return;
+            if (Utils.hasEffectInHand(armor.getItem())) return;
             ItemStatsUtils.getItemAbilities(armor, false).forEach((ability, value) -> HyperSkills.getInstance().getApi().addArmorAbility(uuid, ability, value));
             ItemStatsUtils.getItemPerks(armor, false).forEach((perk, value) -> HyperSkills.getInstance().getApi().addArmorPerk(uuid, perk, value));
         }
         if (e.getOldArmorPiece() != null && e.getOldArmorPiece().getType() != Material.AIR) {
             armor = new NBTItem(e.getOldArmorPiece());
-            if(Utils.hasEffectInHand(armor.getItem())) return;
+            if (Utils.hasEffectInHand(armor.getItem())) return;
             ItemStatsUtils.getItemAbilities(armor, false).forEach((ability, value) -> HyperSkills.getInstance().getApi().removeArmorAbility(uuid, ability, value));
             ItemStatsUtils.getItemPerks(armor, false).forEach((perk, value) -> HyperSkills.getInstance().getApi().removeArmorPerk(uuid, perk, value));
         }

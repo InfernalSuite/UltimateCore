@@ -23,7 +23,7 @@ public class NewItemCommand extends HyperCommand {
         Player p = (Player) sender;
         if(args.length == 2){
             ItemStack result = p.getItemInHand();
-            if (result != null && result.getType() != Material.AIR) {
+            if (result.getType() != Material.AIR) {
                 String name = args[1];
                 if (!HyperSkills.getInstance().getUltimateItems().ultimateItems.containsKey(name)){
                     UltimateItem ultimateItem = new UltimateItem(name, result.clone());
