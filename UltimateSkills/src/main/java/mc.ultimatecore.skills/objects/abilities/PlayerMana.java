@@ -12,17 +12,15 @@ public class PlayerMana {
     private int taskID;
     private final UUID uuid;
 
-    public PlayerMana(Player player){
-        this.uuid = player.getUniqueId();
-        init();
-    }
+    public PlayerMana(UUID uuid) {
+        this.uuid = uuid;
 
-    private void init(){
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         ManaSettings manaSettings = HyperSkills.getInstance().getConfiguration().manaSettings;
         this.taskID = scheduler.scheduleAsyncRepeatingTask(HyperSkills.getInstance(), () -> {
-            if (!manageMana(manaSettings))
+            if (!manageMana(manaSettings)) {
                 stop();
+            }
         }, 0L, manaSettings.getSecondAmount() * 20L);
     }
 
@@ -37,7 +35,7 @@ public class PlayerMana {
         if(currentMana > maxMana)
             playerAbilities.setAbility(Ability.Intelligence, maxMana);
         if(currentMana < maxMana)
-            playerAbilities.setAbility(Ability.Intelligence, newMana > maxMana ? maxMana : newMana);
+            playerAbilities.setAbility(Ability.Intelligence, Math.min(newMana, maxMana));
         return true;
     }
 

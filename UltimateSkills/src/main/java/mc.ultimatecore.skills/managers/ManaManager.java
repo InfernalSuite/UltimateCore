@@ -25,7 +25,7 @@ public class ManaManager implements Listener {
     private void onJoin(PlayerEnterEvent e){
         if(!HyperSkills.getInstance().getConfiguration().manaSystem) return;
         UUID uuid = e.getPlayer().getUniqueId();
-        manaCache.put(uuid, new PlayerMana(e.getPlayer()));
+        manaCache.put(uuid, new PlayerMana(e.getPlayer().getUniqueId()));
     }
 
     @EventHandler
@@ -47,6 +47,6 @@ public class ManaManager implements Listener {
     }
 
     private void loadAllPlayers(){
-        Bukkit.getOnlinePlayers().forEach(player -> manaCache.put(player.getUniqueId(), new PlayerMana(player)));
+        Bukkit.getOnlinePlayers().forEach(player -> manaCache.put(player.getUniqueId(), new PlayerMana(player.getUniqueId())));
     }
 }
