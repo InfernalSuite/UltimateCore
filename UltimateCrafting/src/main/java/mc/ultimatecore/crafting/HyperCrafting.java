@@ -13,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.*;
+import java.util.*;
 
 public class HyperCrafting extends JavaPlugin {
 
@@ -38,11 +39,14 @@ public class HyperCrafting extends JavaPlugin {
 
     private VanillaCraftingSource nms;
 
+    @Getter
+    private final List<Integer> craftingSlots = Arrays.asList(10, 11, 12, 19, 20, 21, 28, 29, 30);
+
     @Override
     public void onEnable() {
         this.loadConfigs();
         this.commandManager = new CommandManager("hypercrafting", this);
-        registerListeners(new CommandListener(this), new InventoryClickListener(), new CraftingTableListener(this), new PlayerJoinLeaveListener(this), new InventoryCloseListener(), new InventoryDragListener());
+        registerListeners(new CommandListener(this), new InventoryClickListener(this), new CraftingTableListener(this), new PlayerJoinLeaveListener(this), new InventoryCloseListener(this), new InventoryDragListener());
         this.playerManager = new PlayerManager(this);
         this.nms = setupNMS();
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));

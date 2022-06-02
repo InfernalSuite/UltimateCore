@@ -1,6 +1,7 @@
 package mc.ultimatecore.crafting.listeners;
 
 import mc.ultimatecore.crafting.gui.*;
+import org.bukkit.*;
 import org.bukkit.event.*;
 import org.bukkit.event.inventory.*;
 import org.bukkit.inventory.*;

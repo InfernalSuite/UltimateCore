@@ -4,6 +4,7 @@ import lombok.*;
 import mc.ultimatecore.crafting.*;
 import mc.ultimatecore.crafting.gui.crafting.CraftingGUI;
 import org.bukkit.Bukkit;
+import org.bukkit.inventory.*;
 
 import java.util.*;
 
