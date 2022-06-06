@@ -19,9 +19,11 @@ public class MMOItemsAPIManager extends SoftDependImpl{
         StatMap stats = MMOPlayerData.get(uuid).getStatMap();
         StatInstance attribute = stats.getInstance(ability.getMmoItems());
         StatModifier modifier = attribute.getModifier("HC_" + ability + type);
-        if(modifier == null || modifier.getValue() != value) {
-            if(modifier.getKey() != null) {
-                attribute.addModifier(new StatModifier(modifier.getKey(), modifier.getStat(), value, modifier.getType(), modifier.getSlot(), modifier.getSource()));
+        if(modifier != null) {
+            if(modifier.getValue() != value) {
+                if (modifier.getKey() != null) {
+                    attribute.addModifier(new StatModifier(modifier.getKey(), modifier.getStat(), value, modifier.getType(), modifier.getSlot(), modifier.getSource()));
+                }
             }
         }
     }
