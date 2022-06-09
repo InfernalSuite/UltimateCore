@@ -140,4 +140,16 @@ public class HyperSkillsAPIImpl implements HyperSkillsAPI {
         double armorPerk = Math.max(playerPerks.getArmorPerk(perk), 0);
         return playerPerks.getPerk(perk) + armorPerk;
     }
+
+    @Override
+    public boolean useMana(UUID uuid, int quantity) {
+        // needs implementation
+        return false;
+    }
+
+    @Override
+    public double getMana(UUID uuid) {
+        // needs implementation
+        return 0;
+    }
 }

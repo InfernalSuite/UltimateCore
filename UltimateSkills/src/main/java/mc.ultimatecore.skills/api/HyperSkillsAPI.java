@@ -195,4 +195,14 @@ public interface HyperSkillsAPI {
      * @return return skill rank
      */
     double getRank(UUID uuid, SkillType skillType);
+
+    /**
+     * Method to use Mana
+     * @param uuid UUID
+     * @param quantity Quantity to use up
+     * @return successful
+     */
+    boolean useMana(UUID uuid, int quantity);
+
+    double getMana(UUID uuid);
 }
