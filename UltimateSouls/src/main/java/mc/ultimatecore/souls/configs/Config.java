@@ -20,6 +20,10 @@ public class Config extends YAMLFile {
         add("pex user %player% group set king");
         add("eco give %player% 1000");
     }};
+
+    public int syncDelay;
+
+    public boolean debug;
     
     public Config(UltimatePlugin plugin, String name, boolean defaults, boolean save) {
         super(plugin, name, defaults, save);
@@ -40,8 +44,10 @@ public class Config extends YAMLFile {
         soulFoundSound = getConfig().getString("soulFoundSound");
         soulAlreadyFoundSound = getConfig().getString("soulAlreadyFoundSound");
         mainCommandPerm = getConfig().getString("mainCommandPerm");
+        debug = getConfig().getBoolean("debug");
         allSoulsFound_Reward = getConfig().getStringList("allSoulsFound_Reward");
         tiaClaimSound = getConfig().getString("tiaClaimSound");
+        syncDelay = getConfig().getInt("database.syncDelay");
     }
     
     

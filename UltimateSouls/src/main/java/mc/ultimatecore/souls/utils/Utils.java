@@ -5,10 +5,7 @@ import com.cryptomorin.xseries.XSound;
 import mc.ultimatecore.souls.HyperSouls;
 import mc.ultimatecore.souls.Item;
 import mc.ultimatecore.souls.objects.Soul;
-import org.bukkit.Bukkit;
-import org.bukkit.Effect;
-import org.bukkit.Location;
-import org.bukkit.Particle;
+import org.bukkit.*;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -18,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.stream.*;
 
 public class Utils {
     
@@ -58,6 +56,14 @@ public class Utils {
                 new Placeholder("x", location != null ? String.valueOf(location.getBlockX()) : "*"),
                 new Placeholder("y", location != null ? String.valueOf(location.getBlockY()) : "*"),
                 new Placeholder("z", location != null ? String.valueOf(location.getBlockZ()) : "*")));
+    }
+
+    public static String color(String string) {
+        return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
+    public static List<String> color(List<String> strings) {
+        return strings.stream().map(Utils::color).collect(Collectors.toList());
     }
     
     public static void playSound(Player player, String sound) {

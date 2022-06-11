@@ -4,6 +4,7 @@ import mc.ultimatecore.pets.HyperPets;
 import mc.ultimatecore.pets.objects.DebugType;
 import mc.ultimatecore.pets.objects.PetData;
 import mc.ultimatecore.pets.objects.Tier;
+import mc.ultimatecore.skills.objects.perks.*;
 import org.bukkit.Bukkit;
 
 import java.util.ArrayList;
@@ -65,7 +66,8 @@ public class PetsManager {
     }
 
     public void loadPetData(int petUUID) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load Data of Pet %s from database", petUUID), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             PetData petData = new PetData();
             double xp = this.plugin.getPluginDatabase().getPetXP(petUUID);
             int level = this.plugin.getPluginDatabase().getPetLevel(petUUID);
@@ -77,23 +79,31 @@ public class PetsManager {
             petData.setPetUUID(petUUID);
             petData.setTier(tier != null ? tier : plugin.getTiers().first());
             petsCache.put(petUUID, petData);
-            if (plugin.getConfiguration().debug)
+            if (plugin.getConfiguration().debug) {
                 this.plugin.sendDebug(String.format("Loaded Data of Pet %s from database", petUUID), DebugType.LOG);
-        });
+            }
+        }, plugin.getConfiguration().syncDelay);
     }
 
     public void loadPetDataSync(int petUUID) {
-        PetData petData = new PetData();
-        double xp = this.plugin.getPluginDatabase().getPetXP(petUUID);
-        int level = this.plugin.getPluginDatabase().getPetLevel(petUUID);
-        String name = this.plugin.getPluginDatabase().getPetName(petUUID);
-        Tier tier = this.plugin.getPluginDatabase().getPetTier(petUUID);
-        petData.setLevel(level);
-        petData.setXp(xp);
-        petData.setPetName(name);
-        petData.setPetUUID(petUUID);
-        petData.setTier(tier != null ? tier : plugin.getTiers().first());
-        petsCache.put(petUUID, petData);
+        this.plugin.sendDebug(String.format("Attempting to load Data of Pet %s from database", petUUID), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+            PetData petData = new PetData();
+            double xp = this.plugin.getPluginDatabase().getPetXP(petUUID);
+            int level = this.plugin.getPluginDatabase().getPetLevel(petUUID);
+            String name = this.plugin.getPluginDatabase().getPetName(petUUID);
+            Tier tier = this.plugin.getPluginDatabase().getPetTier(petUUID);
+            petData.setLevel(level);
+            petData.setXp(xp);
+            petData.setPetName(name);
+            petData.setPetUUID(petUUID);
+            petData.setTier(tier != null ? tier : plugin.getTiers().first());
+            petsCache.put(petUUID, petData);
+            if (plugin.getConfiguration().debug) {
+                this.plugin.sendDebug(String.format("Loaded Data of Pet %s from database sync", petUUID), DebugType.LOG);
+            }
+        }, plugin.getConfiguration().syncDelay);
+
     }
 
 

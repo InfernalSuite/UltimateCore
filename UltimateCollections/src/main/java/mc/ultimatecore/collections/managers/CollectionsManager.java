@@ -87,12 +87,13 @@ public class CollectionsManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load Collections of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             String strCollections = plugin.getPluginDatabase().getPlayerCollections(player);
             PlayerCollection playerCollection = strCollections != null ? plugin.getGson().fromString(strCollections) : new PlayerCollection(player.getUniqueId());
             collectionsCache.put(player.getUniqueId(), playerCollection);
             this.plugin.sendDebug(String.format("Loaded Collections of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().getSyncDelay());
     }
 
     private void updateCollectionsTop() {

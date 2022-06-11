@@ -20,3 +20,5 @@ debug: false
 # byPassPlace refers to allowing to place blocks that count towards collections. For skills check the skills config
 byPassPlaceRequireCreative: true
 byPassPlaceCheckPermission: "ultimate.collections.admin.place"
+database:
+    syncDelay: 100

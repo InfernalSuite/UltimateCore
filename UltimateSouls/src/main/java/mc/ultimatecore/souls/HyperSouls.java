@@ -14,7 +14,8 @@ import mc.ultimatecore.souls.gui.SoulEditGUI;
 import mc.ultimatecore.souls.listeners.*;
 import mc.ultimatecore.souls.managers.AddonsManager;
 import mc.ultimatecore.souls.managers.DatabaseManager;
-import mc.ultimatecore.souls.utils.StringUtils;
+import mc.ultimatecore.souls.objects.*;
+import mc.ultimatecore.souls.utils.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -103,6 +104,14 @@ public class HyperSouls extends UltimatePlugin {
         messages.reload();
         tiaSystem.reload();
         inventories.reload();
+    }
+
+    public void sendDebug(String message, DebugType debugType) {
+        if (!configuration.debug) return;
+        if (debugType == DebugType.LOG)
+            getLogger().info(message);
+        else
+            Bukkit.getConsoleSender().sendMessage(Utils.color(message));
     }
     
     @Override

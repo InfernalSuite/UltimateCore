@@ -4,6 +4,7 @@ import mc.ultimatecore.pets.HyperPets;
 import mc.ultimatecore.pets.objects.DebugType;
 import mc.ultimatecore.pets.objects.PetData;
 import mc.ultimatecore.pets.playerdata.User;
+import mc.ultimatecore.skills.objects.perks.*;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -58,7 +59,8 @@ public class UserManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load Pets of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             User user = new User(player.getUniqueId());
             int spawnedID = this.plugin.getPluginDatabase().getSpawnedID(player);
             String inventoryPets = this.plugin.getPluginDatabase().getInventoryPets(player);
@@ -74,7 +76,7 @@ public class UserManager {
                 }
             });
             this.plugin.sendDebug(String.format("Loaded Pets of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
 
     public User getUser(OfflinePlayer p) {

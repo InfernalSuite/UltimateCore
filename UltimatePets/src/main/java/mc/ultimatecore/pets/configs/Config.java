@@ -20,6 +20,8 @@ public class Config extends YAMLFile {
     public int blockBreakXP;
     public boolean debug;
 
+    public int syncDelay;
+
     public Config(HyperPets hyperPets, String name, boolean defaults, boolean save) {
         super(hyperPets, name, defaults, save);
         loadDefaults();
@@ -43,6 +45,7 @@ public class Config extends YAMLFile {
         skillsXP = (int) getConfig().getDouble("xp.skillsPoints");
         blockBreakXP = (int) getConfig().getDouble("xp.blockBreak");
         debug = getConfig().getBoolean("DEBUG");
+        syncDelay = getConfig().getInt("database.syncDelay");
         //------------------------------------------------//
     }
 }

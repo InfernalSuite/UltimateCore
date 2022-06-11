@@ -1,5 +1,6 @@
 package mc.ultimatecore.talismans.managers;
 
+import mc.ultimatecore.skills.objects.perks.*;
 import mc.ultimatecore.talismans.HyperTalismans;
 import mc.ultimatecore.talismans.api.events.PlayerEnterEvent;
 import mc.ultimatecore.talismans.gui.TalismanBagGUI;
@@ -66,7 +67,8 @@ public class UserManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load Tailsmans of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             BagTalismans bagTalismans = new BagTalismans(player.getUniqueId());
             String talismans = this.plugin.getPluginDatabase().getBagTalismans(player);
             if (talismans != null)
@@ -74,7 +76,7 @@ public class UserManager {
             bagCache.put(player.getUniqueId(), bagTalismans);
             Bukkit.getScheduler().runTask(plugin, () -> Bukkit.getPluginManager().callEvent(new PlayerEnterEvent(player)));
             this.plugin.sendDebug(String.format("Loaded talismans of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
 
 

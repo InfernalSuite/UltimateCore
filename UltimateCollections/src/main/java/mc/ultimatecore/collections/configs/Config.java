@@ -28,6 +28,8 @@ public class Config extends YAMLFile {
     private boolean byPassPlaceRequireCreative;
     private String byPassPlaceCheckPermission;
 
+    private int syncDelay;
+
     public Config(HyperCollections plugin, String name, boolean defaults, boolean save) {
         super(plugin, name, defaults, save);
         loadDefaults();
@@ -54,5 +56,6 @@ public class Config extends YAMLFile {
         debug = getConfig().getBoolean("debug");
         jetMinions = getConfig().getBoolean("addons.jetMinions");
         ultraMinions = getConfig().getBoolean("addons.ultraMinions");
+        syncDelay = getConfig().getInt("database.syncDelay");
     }
 }

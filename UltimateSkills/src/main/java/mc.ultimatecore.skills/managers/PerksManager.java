@@ -59,12 +59,13 @@ public class PerksManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load perks of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             String strPerks = plugin.getPluginDatabase().getPlayerPerks(player);
             PlayerPerks playerPerks = strPerks != null ? plugin.getGson().fromStringPerks(strPerks) : new PlayerPerks();
             perksCache.put(player.getUniqueId(), playerPerks);
             this.plugin.sendDebug(String.format("Loaded perks of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
 
     public Double getPerk(UUID uuid, Perk key) {

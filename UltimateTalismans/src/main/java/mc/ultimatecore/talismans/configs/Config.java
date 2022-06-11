@@ -6,6 +6,7 @@ import mc.ultimatecore.helper.files.YAMLFile;
 public class Config extends YAMLFile {
     public String prefix;
     public boolean debug;
+    public int syncDelay;
 
     public Config(UltimatePlugin plugin, String name, boolean defaults, boolean save) {
         super(plugin, name, defaults, save);
@@ -23,6 +24,7 @@ public class Config extends YAMLFile {
         //------------------------------------------------//
         prefix = getConfig().getString("prefix");
         debug = getConfig().getBoolean("DEBUG");
+        syncDelay = getConfig().getInt("database.syncDelay");
 
         //------------------------------------------------//
     }

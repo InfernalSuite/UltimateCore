@@ -1,7 +1,7 @@
 package mc.ultimatecore.souls.managers;
 
 import mc.ultimatecore.souls.HyperSouls;
-import mc.ultimatecore.souls.objects.PlayerSouls;
+import mc.ultimatecore.souls.objects.*;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -48,9 +48,7 @@ public class DatabaseManager {
     }
     
     public void addIntoTable(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-            this.plugin.getPluginDatabase().addIntoPlayerDatabase(player);
-        });
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> this.plugin.getPluginDatabase().addIntoPlayerDatabase(player));
     }
     
     private void loadPlayerDataOnEnable() {
@@ -58,7 +56,8 @@ public class DatabaseManager {
     }
     
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load Souls of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             PlayerSouls user = new PlayerSouls();
             String playerSouls = this.plugin.getPluginDatabase().getPlayerSouls(player);
             int exchanged = this.plugin.getPluginDatabase().getExchanged(player);
@@ -66,7 +65,7 @@ public class DatabaseManager {
             user.setSoulsExchanged(exchanged);
             playerCache.put(player.getUniqueId(), user);
             this.plugin.getLogger().info(String.format("Loaded Souls of player %s from database", player.getName()));
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
     
     public PlayerSouls getSoulsData(OfflinePlayer p) {

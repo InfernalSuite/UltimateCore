@@ -48,6 +48,7 @@ public class Config extends YAMLFile {
     public boolean debug;
     public boolean jetMinions;
     public boolean ultraMinions;
+    public int syncDelay;
 
     public Config(UltimatePlugin plugin, String name, boolean defaults, boolean save) {
         super(plugin, name, defaults, save);
@@ -107,6 +108,7 @@ public class Config extends YAMLFile {
         debug = cf.getBoolean("DEBUG");
         jetMinions = cf.getBoolean("addons.jetMinions");
         ultraMinions = cf.getBoolean("addons.ultraMinions");
+        syncDelay = cf.getInt("database.syncDelay");
         //------------------------------------------------//
     }
 }

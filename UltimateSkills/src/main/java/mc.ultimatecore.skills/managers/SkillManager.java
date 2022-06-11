@@ -7,7 +7,7 @@ import mc.ultimatecore.skills.api.events.SkillsLevelUPEvent;
 import mc.ultimatecore.skills.api.events.SkillsXPGainEvent;
 import mc.ultimatecore.skills.listener.perks.DoubleItemPerks;
 import mc.ultimatecore.skills.objects.*;
-import mc.ultimatecore.skills.objects.perks.Perk;
+import mc.ultimatecore.skills.objects.perks.*;
 import mc.ultimatecore.skills.objects.xp.BlockXP;
 import mc.ultimatecore.skills.utils.StringUtils;
 import mc.ultimatecore.skills.utils.Utils;
@@ -97,12 +97,13 @@ public class SkillManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        this.plugin.sendDebug(String.format("Attempting to load skills of player %s from database", player.getName()), DebugType.LOG);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             String strSkills = plugin.getPluginDatabase().getPlayerSkills(player);
             PlayerSkills playerSkills = strSkills != null ? plugin.getGson().fromStringSkills(strSkills) : new PlayerSkills();
             skillsCache.put(player.getUniqueId(), playerSkills);
             this.plugin.sendDebug(String.format("Loaded Skills of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
 
     public Integer getLevel(UUID uuid, SkillType key) {

@@ -15,3 +15,5 @@ mysql:
   database: dbName
   username: dbUser
   password: dbPass
+database:
+    syncDelay: 100
