@@ -69,7 +69,7 @@ public class Levels extends YAMLFile {
                         ConfigurationSection abilitiesSection = getConfig().getConfigurationSection("levels."+pet+"."+tier+"."+levelSection+".petAbilities");
                         if(abilitiesSection != null)
                             for (String ability : abilitiesSection.getKeys(false))
-                                petAbilities.put(Ability.valueOf(ability), getConfig().getDouble("levels."+pet+"."+tier+"."+levelSection+".petAbilities."+ability));
+                                petAbilities.put(Ability.valueOf(ability.toUpperCase()), getConfig().getDouble("levels."+pet+"."+tier+"."+levelSection+".petAbilities."+ability));
                         Map<Perk, Double> petPerks = new HashMap<>();
                         ConfigurationSection petsSection = getConfig().getConfigurationSection("levels."+pet+"."+tier+"."+levelSection+".petPerks");
                         if(petsSection != null)

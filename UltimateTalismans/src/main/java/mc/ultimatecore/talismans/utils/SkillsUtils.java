@@ -14,7 +14,7 @@ public class SkillsUtils {
         for(String key : fileConfiguration.getStringList(path)){
             String[] split = key.split(":");
             if(split.length != 2) continue;
-            Ability ability = Ability.valueOf(split[0]);
+            Ability ability = Ability.valueOf(split[0].toUpperCase());
             double value = Double.parseDouble(split[1]);
             map.put(ability, value);
         }

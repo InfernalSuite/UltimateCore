@@ -78,7 +78,7 @@ public class NormalItems extends YAMLFile {
                         try {
                             String[] split = value.split(":");
                             if (split.length == 2) {
-                                Ability ability = Ability.valueOf(split[0]);
+                                Ability ability = Ability.valueOf(split[0].toUpperCase());
                                 Double amount = Double.parseDouble(split[1]);
                                 stats.put(ability, amount);
                             }
