@@ -62,12 +62,12 @@ public class ItemStatsListener implements Listener {
             if(mmoCost > 0) return;
             double manaCost = ItemStatsUtils.getManaCost(nbtItem) + mmoCost;
             if(manaCost < 1) return;
-            double currentMana = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.Intelligence);
+            double currentMana = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.INTELLIGENCE);
             if(manaCost > currentMana){
                 e.setCancelled(true);
                 return;
             }
-            plugin.getApi().removeAbility(player.getUniqueId(), Ability.Intelligence, manaCost);
+            plugin.getApi().removeAbility(player.getUniqueId(), Ability.INTELLIGENCE, manaCost);
         }
     }
 

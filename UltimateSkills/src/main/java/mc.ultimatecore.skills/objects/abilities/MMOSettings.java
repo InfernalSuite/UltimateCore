@@ -54,7 +54,7 @@ public class MMOSettings {
         if (player == null || !player.isOnline()) return false;
         if(!HyperSkills.getInstance().getAddonsManager().isMMOItems()){
               double scaled = player.getHealthScale();
-              double health = HyperSkills.getInstance().getApi().getTotalAbility(uuid, Ability.Health);
+              double health = HyperSkills.getInstance().getApi().getTotalAbility(uuid, Ability.HEALTH);
               double newScale = Utils.getScale(health - 100);
               if(HyperSkills.getInstance().getConfiguration().scaledHealth && scaled != newScale)
                   player.setHealthScale(newScale);

@@ -65,13 +65,13 @@ public class AbilitiesManager {
             PlayerAbilities playerAbilities = (strAbilities != null && !strAbilities.equals("null")) ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
             for(Ability ability : Ability.values()) {
                 double quantity = playerAbilities.getAbility(ability);
-                if (ability == Ability.Max_Intelligence && quantity < plugin.getConfiguration().initialMana)
+                if (ability == Ability.MAX_INTELLIGENCE && quantity < plugin.getConfiguration().initialMana)
                     quantity = plugin.getConfiguration().initialMana;
-                if (ability == Ability.Defense && quantity < plugin.getConfiguration().initialDefense)
+                if (ability == Ability.DEFENSE && quantity < plugin.getConfiguration().initialDefense)
                     quantity = plugin.getConfiguration().initialDefense;
                 playerAbilities.setAbility(ability, quantity);
             }
-            playerAbilities.setAbility(Ability.Intelligence, playerAbilities.getAbility(Ability.Max_Intelligence));
+            playerAbilities.setAbility(Ability.INTELLIGENCE, playerAbilities.getAbility(Ability.MAX_INTELLIGENCE));
             abilitiesCache.put(player.getUniqueId(), playerAbilities);
             ItemStatsUtils.setupArmorAbilities(player);
             Bukkit.getScheduler().runTask(plugin, () -> Bukkit.getPluginManager().callEvent(new PlayerEnterEvent(player)));

@@ -26,7 +26,7 @@ public class PlayerSpeed {
     private boolean updateSpeed(Player player) {
         if (player == null || !player.isOnline())
             return false;
-        float newSpeed = Utils.calculateSpeed(HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.Speed));
+        float newSpeed = Utils.calculateSpeed(HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.SPEED));
         if(newSpeed != last)
             Bukkit.getScheduler().runTask(HyperSkills.getInstance(), () -> player.setWalkSpeed(newSpeed));
         this.last = newSpeed;

@@ -34,19 +34,19 @@ public class Utils {
         }
         HyperSkillsAPI api = HyperSkills.getInstance().getApi();
         return new ArrayList<>(Arrays.asList(
-                new Placeholder("defense", roundStr(api.getTotalAbility(uuid, Ability.Defense))),
-                new Placeholder("crit_chance", roundStr(api.getTotalAbility(uuid, Ability.Crit_Chance))),
-                new Placeholder("crit_damage", roundStr(api.getTotalAbility(uuid, Ability.Crit_Damage))),
-                new Placeholder("health", roundStr(api.getTotalAbility(uuid, Ability.Health))),
-                new Placeholder("pet_luck", roundStr(api.getTotalAbility(uuid, Ability.Pet_Luck))),
-                new Placeholder("speed", roundStr(api.getTotalAbility(uuid, Ability.Speed))),
-                new Placeholder("strength", roundStr(api.getTotalAbility(uuid, Ability.Strength))),
+                new Placeholder("defense", roundStr(api.getTotalAbility(uuid, Ability.DEFENSE))),
+                new Placeholder("crit_chance", roundStr(api.getTotalAbility(uuid, Ability.CRIT_CHANCE))),
+                new Placeholder("crit_damage", roundStr(api.getTotalAbility(uuid, Ability.CRIT_DAMAGE))),
+                new Placeholder("health", roundStr(api.getTotalAbility(uuid, Ability.HEALTH))),
+                new Placeholder("pet_luck", roundStr(api.getTotalAbility(uuid, Ability.PET_LUCK))),
+                new Placeholder("speed", roundStr(api.getTotalAbility(uuid, Ability.SPEED))),
+                new Placeholder("strength", roundStr(api.getTotalAbility(uuid, Ability.STRENGTH))),
                 new Placeholder("player", offlinePlayer.getName()),
-                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.Max_Intelligence))),
-                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.Max_Intelligence))),
+                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE))),
+                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE))),
                 new Placeholder("current_pet", currentPet),
 
-                new Placeholder("intelligence", round(api.getTotalAbility(uuid, Ability.Intelligence)))));
+                new Placeholder("intelligence", round(api.getTotalAbility(uuid, Ability.INTELLIGENCE)))));
     }
 
     private static String round(double str) {

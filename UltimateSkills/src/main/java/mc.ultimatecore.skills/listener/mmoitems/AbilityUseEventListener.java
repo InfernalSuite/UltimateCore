@@ -25,13 +25,13 @@ public class AbilityUseEventListener implements Listener {
         if (itemStack != null && itemStack.getType() != Material.AIR) {
             NBTItem nbtItem = new NBTItem(itemStack);
             Double mmoCost = ItemStatsUtils.getMMOManaCost(nbtItem);
-            double current = HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.Intelligence);
+            double current = HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.INTELLIGENCE);
             if(mmoCost > 0){
                 if(current > mmoCost) {
                     if(!allowHunger) {
                         Bukkit.getScheduler().runTaskLater(HyperSkills.getInstance(), () -> player.setFoodLevel(100), 3);
                     }
-                    HyperSkills.getInstance().getApi().removeAbility(player.getUniqueId(), Ability.Intelligence, mmoCost);
+                    HyperSkills.getInstance().getApi().removeAbility(player.getUniqueId(), Ability.INTELLIGENCE, mmoCost);
                 }else {
                     e.setCancelled(true);
                 }

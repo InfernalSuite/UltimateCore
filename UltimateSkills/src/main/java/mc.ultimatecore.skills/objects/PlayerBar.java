@@ -61,8 +61,8 @@ public class PlayerBar {
         }
         HyperSkillsAPI api = HyperSkills.getInstance().getApi();
         String actionBar;
-        double defense = api.getTotalAbility(uuid, Ability.Defense);
-        double maxHealth = api.getTotalAbility(uuid, Ability.Health);
+        double defense = api.getTotalAbility(uuid, Ability.DEFENSE);
+        double maxHealth = api.getTotalAbility(uuid, Ability.HEALTH);
         double currentHealth = Utils.getHealth(player);
         if(currentHealth > maxHealth)
             currentHealth = maxHealth;
@@ -71,15 +71,15 @@ public class PlayerBar {
                     .replace("%health%", round(currentHealth))
                     .replace("%maxhealth%", round(maxHealth))
                     .replace("%defense%", round(defense))
-                    .replace("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.Max_Intelligence)))
-                    .replace("%intelligence%", round(api.getTotalAbility(uuid, Ability.Intelligence))));
+                    .replace("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE)))
+                    .replace("%intelligence%", round(api.getTotalAbility(uuid, Ability.INTELLIGENCE))));
         else
             actionBar = StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("actionBarMessage_NoDefense")
                     .replace("%health%", round(currentHealth))
                     .replace("%maxhealth%", round(maxHealth))
                     .replace("%defense%", round(defense))
-                    .replace("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.Max_Intelligence)))
-                    .replace("%intelligence%", round(api.getTotalAbility(uuid, Ability.Intelligence))));
+                    .replace("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE)))
+                    .replace("%intelligence%", round(api.getTotalAbility(uuid, Ability.INTELLIGENCE))));
         Utils.sendActionBar(player, actionBar);
     }
 
@@ -90,18 +90,18 @@ public class PlayerBar {
         Skill skill = HyperSkills.getInstance().getSkills().getAllSkills().get(skillType);
         int level = HyperSkills.getInstance().getApi().getLevel(uuid, skillType);
         Double maxXP = HyperSkills.getInstance().getRequirements().getLevelRequirement(skillType, level);
-        double maxHealth = api.getTotalAbility(uuid, Ability.Health);
+        double maxHealth = api.getTotalAbility(uuid, Ability.HEALTH);
         double currentHealth = Utils.getHealth(player);
         String message = StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("xpGainMessage")
                 .replaceAll("%health%", round(currentHealth))
                 .replaceAll("%maxhealth%", round(maxHealth))
-                .replaceAll("%defense%", round(api.getTotalAbility(uuid, Ability.Defense)))
+                .replaceAll("%defense%", round(api.getTotalAbility(uuid, Ability.DEFENSE)))
                 .replaceAll("%displayname%", skill.getName())
                 .replaceAll("%xp%", round(amount))
                 .replaceAll("%current_xp%", round(api.getXP(uuid, skillType)))
                 .replaceAll("%max_xp%", round(maxXP))
-                .replaceAll("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.Max_Intelligence)))
-                .replaceAll("%intelligence%", round(api.getTotalAbility(uuid, Ability.Intelligence))));
+                .replaceAll("%max_intelligence%", round(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE)))
+                .replaceAll("%intelligence%", round(api.getTotalAbility(uuid, Ability.INTELLIGENCE))));
         Utils.sendActionBar(player, message);
     }
 

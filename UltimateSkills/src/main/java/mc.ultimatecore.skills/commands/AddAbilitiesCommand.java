@@ -7,9 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AddAbilitiesCommand extends HyperCommand {
@@ -22,7 +20,7 @@ public class AddAbilitiesCommand extends HyperCommand {
     public void execute(CommandSender sender, String[] args) {
         if (args.length == 4) {
             try {
-                Ability ability = Ability.valueOf(args[2]);
+                Ability ability = Ability.valueOf(args[2].toUpperCase());
                 Double quantity = Double.valueOf(args[3]);
                 Player player = Bukkit.getPlayer(args[1]);
                 if (player != null) {
@@ -49,9 +47,20 @@ public class AddAbilitiesCommand extends HyperCommand {
 
     @Override
     public List<String> onTabComplete(CommandSender commandSender, org.bukkit.command.Command command, String label, String[] args) {
-        if(args.length == 3)
-            return Arrays.stream(Ability.values()).map(Ability::getName).collect(Collectors.toList());
-        return null;
+        List<String> completes = new ArrayList<>();
+        if(args.length == 3) {
+            completes.clear();
+            String arg = args[0];
+            if(arg != null) {
+                arg = arg.toLowerCase();
+            }
+            for(Ability ability : Ability.values()) {
+                if(arg == null || ability.getName().toLowerCase().startsWith(arg)) {
+                    completes.add(ability.getName());
+                }
+            }
+        }
+        return completes;
     }
 
 }

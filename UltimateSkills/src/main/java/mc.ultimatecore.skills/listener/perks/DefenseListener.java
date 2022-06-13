@@ -22,8 +22,8 @@ public class DefenseListener implements Listener {
                 return;
             if(plugin.getAddonsManager().getCitizensAPIManager() != null && plugin.getAddonsManager().getCitizensAPIManager().isNPCEntity(e.getEntity())) return;
             Player player = ((Player)e.getEntity());
-            double health = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.Health);
-            double defense = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.Defense);
+            double health = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.HEALTH);
+            double defense = plugin.getApi().getTotalAbility(player.getUniqueId(), Ability.DEFENSE);
             double newDamage = Utils.getDamage(defense, health, e.getDamage());
             e.setDamage(newDamage);
         }

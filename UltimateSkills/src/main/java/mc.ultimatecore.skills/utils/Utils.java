@@ -123,16 +123,16 @@ public final class Utils {
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
         HyperSkillsAPI api = HyperSkills.getInstance().getApi();
         return new ArrayList<>(Arrays.asList(
-                new Placeholder("defense", roundStr(api.getTotalAbility(uuid, Ability.Defense))),
-                new Placeholder("crit_chance", roundStr(api.getTotalAbility(uuid, Ability.Crit_Chance))),
-                new Placeholder("crit_damage", roundStr(api.getTotalAbility(uuid, Ability.Crit_Damage))),
-                new Placeholder("health", roundStr(api.getTotalAbility(uuid, Ability.Health))),
-                new Placeholder("pet_luck", roundStr(api.getTotalAbility(uuid, Ability.Pet_Luck))),
-                new Placeholder("speed", roundStr(api.getTotalAbility(uuid, Ability.Speed))),
-                new Placeholder("strength", roundStr(api.getTotalAbility(uuid, Ability.Strength))),
+                new Placeholder("defense", roundStr(api.getTotalAbility(uuid, Ability.DEFENSE))),
+                new Placeholder("crit_chance", roundStr(api.getTotalAbility(uuid, Ability.CRIT_CHANCE))),
+                new Placeholder("crit_damage", roundStr(api.getTotalAbility(uuid, Ability.CRIT_DAMAGE))),
+                new Placeholder("health", roundStr(api.getTotalAbility(uuid, Ability.HEALTH))),
+                new Placeholder("pet_luck", roundStr(api.getTotalAbility(uuid, Ability.PET_LUCK))),
+                new Placeholder("speed", roundStr(api.getTotalAbility(uuid, Ability.SPEED))),
+                new Placeholder("strength", roundStr(api.getTotalAbility(uuid, Ability.STRENGTH))),
                 new Placeholder("player", offlinePlayer.getName()),
-                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.Max_Intelligence))),
-                new Placeholder("intelligence", roundStr(api.getTotalAbility(uuid, Ability.Intelligence)))));
+                new Placeholder("max_intelligence", roundStr(api.getTotalAbility(uuid, Ability.MAX_INTELLIGENCE))),
+                new Placeholder("intelligence", roundStr(api.getTotalAbility(uuid, Ability.INTELLIGENCE)))));
     }
 
     public static String roundStr(Double d) {
@@ -345,7 +345,7 @@ public final class Utils {
     }
 
     public static double getHealth(Player player) {
-        double totalHealth = HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.Health);
+        double totalHealth = HyperSkills.getInstance().getApi().getTotalAbility(player.getUniqueId(), Ability.HEALTH);
         double perHeart = totalHealth / player.getMaxHealth();
         double health = player.getHealth();
         return Math.nextUp(Math.min(health * perHeart, totalHealth));

@@ -6,6 +6,7 @@ import io.lumine.mythic.lib.api.stat.StatMap;
 import io.lumine.mythic.lib.api.stat.modifier.StatModifier;
 import mc.ultimatecore.skills.implementations.SoftDependImpl;
 import mc.ultimatecore.skills.objects.abilities.Ability;
+import org.bukkit.*;
 
 import java.util.UUID;
 
@@ -19,6 +20,8 @@ public class MMOItemsAPIManager extends SoftDependImpl{
         StatMap stats = MMOPlayerData.get(uuid).getStatMap();
         StatInstance attribute = stats.getInstance(ability.getMmoItems());
         StatModifier modifier = attribute.getModifier("HC_" + ability + type);
+        Bukkit.broadcastMessage("MODIFIER: " + modifier);
+//        Bukkit.broadcastMessage("UPDATING STATS FOR: " + uuid + " AB: " + ability.getName());
         if(modifier != null) {
             if(modifier.getValue() != value) {
                 if (modifier.getKey() != null) {
@@ -30,6 +33,7 @@ public class MMOItemsAPIManager extends SoftDependImpl{
 
     public double getStats(UUID uuid, Ability ability) {
         if (MMOPlayerData.get(uuid) == null) {
+            Bukkit.broadcastMessage("NO DATA FOUND FOR: " + uuid + " AB: " + ability.getName());
             return 0;
         } else {
             StatMap stats = MMOPlayerData.get(uuid).getStatMap();
