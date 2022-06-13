@@ -77,7 +77,7 @@ public class MMOSettings {
         PlayerAbilities playerAbilities = HyperSkills.getInstance().getAbilitiesManager().getPlayerAbilities(uuid);
         for(Ability ability : Ability.values()){
             HyperSkills.getInstance().getAddonsManager().getMmoItems().updateStats(uuid, ability, playerAbilities.getAbility(ability), "_NORMAL");
-//            HyperSkills.getInstance().getAddonsManager().getMmoItems().updateStats(uuid, ability, playerAbilities.getArmorAbility(ability), "_ARMOR");
+            HyperSkills.getInstance().getAddonsManager().getMmoItems().updateStats(uuid, ability, playerAbilities.getArmorAbility(ability), "_ARMOR");
         }
         return true;
     }

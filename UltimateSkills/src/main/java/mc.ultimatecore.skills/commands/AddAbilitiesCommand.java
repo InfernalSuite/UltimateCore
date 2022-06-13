@@ -48,9 +48,20 @@ public class AddAbilitiesCommand extends HyperCommand {
     @Override
     public List<String> onTabComplete(CommandSender commandSender, org.bukkit.command.Command command, String label, String[] args) {
         List<String> completes = new ArrayList<>();
-        if(args.length == 3) {
+        if(args.length == 2) {
             completes.clear();
-            String arg = args[0];
+            String arg = args[1];
+            if(arg != null) {
+                arg = arg.toLowerCase();
+            }
+            for(Player player : Bukkit.getOnlinePlayers()) {
+                if(arg == null || player.getName().toLowerCase().startsWith(arg)) {
+                    completes.add(player.getName());
+                }
+            }
+        }else if(args.length == 3) {
+            completes.clear();
+            String arg = args[2];
             if(arg != null) {
                 arg = arg.toLowerCase();
             }
