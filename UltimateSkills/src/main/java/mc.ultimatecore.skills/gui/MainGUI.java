@@ -54,16 +54,22 @@ public class MainGUI implements GUI {
     @Override
     public Inventory getInventory() {
         Inventory inventory = Bukkit.createInventory(this, plugin.getInventories().getMainMenuSize(), StringUtils.color(plugin.getInventories().getMainMenuTitle()));
-        for (int i = 0; i < inventory.getSize(); i++)
+
+        for (int i = 0; i < inventory.getSize(); i++) {
             inventory.setItem(i, InventoryUtils.makeItem(plugin.getInventories().getBackground()));
+        }
+
         for (SkillType skillType : SkillType.values()) {
             Skill skill = plugin.getSkills().getAllSkills().get(skillType);
             if(!skill.isEnabled()) continue;
             int level = plugin.getSkillManager().getLevel(uuid, skillType);
             inventory.setItem(skill.getSlot(), InventoryUtils.makeItem(plugin.getInventories().getMainMenuSkillItem(), Utils.getSkillsPlaceHolders(uuid, skillType), skillType, level+1));
         }
-        if(plugin.getInventories().isMainMenuBackEnabled())
+
+        if(plugin.getInventories().isMainMenuBackEnabled()) {
             inventory.setItem(plugin.getInventories().getMainMenuBack().slot, InventoryUtils.makeItem(plugin.getInventories().getMainMenuBack()));
+        }
+        
         inventory.setItem(plugin.getInventories().getShowRanking().slot, InventoryUtils.makeItem(plugin.getInventories().getShowRanking()));
         Item item = new Item(plugin.getInventories().getMainMenuStatsItem());
         item.headOwner = Bukkit.getOfflinePlayer(uuid).getName();

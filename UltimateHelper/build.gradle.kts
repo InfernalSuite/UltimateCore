@@ -18,6 +18,7 @@ dependencies {
     implementation(project(":UltimateHelper:v1_17_R1"))
     implementation(project(":UltimateHelper:v1_18_R1"))
     implementation(project(":UltimateHelper:v1_18_R2"))
+    implementation(project(":UltimateHelper:v1_19_R1"))
 
     implementation("com.github.cryptomorin:XSeries:8.7.0")
     implementation("de.tr7zw:item-nbt-api:2.9.2")
