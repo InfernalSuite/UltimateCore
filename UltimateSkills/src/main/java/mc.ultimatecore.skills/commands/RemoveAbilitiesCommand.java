@@ -31,9 +31,10 @@ public class RemoveAbilitiesCommand extends HyperCommand {
                             .replace("%ability%", ability.toString())
                             .replace("%quantity%", String.valueOf(quantity))
                             .replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
-                } else{
-                    if(sender instanceof Player)
-                    sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
+                }else{
+                    if(sender instanceof Player) {
+                        sender.sendMessage(StringUtils.color(HyperSkills.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperSkills.getInstance().getConfiguration().prefix)));
+                    }
                 }
             } catch (NumberFormatException e) {
                 if(sender instanceof Player)
