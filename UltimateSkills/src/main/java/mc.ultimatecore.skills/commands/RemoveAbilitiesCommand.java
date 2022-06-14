@@ -20,7 +20,7 @@ public class RemoveAbilitiesCommand extends HyperCommand {
     public void execute(CommandSender sender, String[] args) {
         if (args.length == 4) {
             try {
-                Ability ability = Ability.valueOf(args[2]);
+                Ability ability = Ability.valueOf(args[2].toUpperCase());
                 Double quantity = Double.valueOf(args[3]);
                 Player player = Bukkit.getPlayer(args[1]);
                 if (player != null) {

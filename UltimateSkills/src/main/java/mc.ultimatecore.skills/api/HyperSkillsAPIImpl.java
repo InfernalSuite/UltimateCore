@@ -86,10 +86,10 @@ public class HyperSkillsAPIImpl implements HyperSkillsAPI {
         double total = Math.max(0, simpleAbility + extraAbility);
         if (plugin.getAddonsManager().isMMOItems()) {
             if(ability == Ability.HEALTH) {
-                total += plugin.getAddonsManager().getMmoItems().getStats(uuid, ability) + 80;
+                total += plugin.getAddonsManager().getMmoItems().getStats(uuid, ability);
             }
         }
-        return ability == Ability.HEALTH ? total + 100 : total;
+        return ability == Ability.HEALTH ? total + 80 : total;
     }
 
 
@@ -153,7 +153,6 @@ public class HyperSkillsAPIImpl implements HyperSkillsAPI {
 
     @Override
     public double getMana(UUID uuid) {
-        // needs implementation
-        return 0;
+        return getTotalAbility(uuid, Ability.INTELLIGENCE);
     }
 }
