@@ -2,7 +2,7 @@ version = "5.2.5"
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.1")
-    implementation("de.tr7zw:item-nbt-api:2.9.2")
+    implementation("de.tr7zw:item-nbt-api:2.10.0")
 
     implementation(project(":UltimateFarm:UltimateFarmNMS"))
     implementation(project(":UltimateFarm:UltimateFarmNMS-v1_8_R3"))
@@ -21,4 +21,10 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+tasks {
+    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+        relocate("de.tr7zw", "mc.ultimatecore.farm.depends")
+    }
 }

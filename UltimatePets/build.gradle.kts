@@ -6,7 +6,7 @@ repositories {
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")
-    implementation("de.tr7zw:item-nbt-api:2.9.2")
+    implementation("de.tr7zw:item-nbt-api:2.10.0")
     implementation("com.zaxxer:HikariCP:5.0.1")
 
     compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
@@ -15,4 +15,10 @@ dependencies {
     compileOnly("com.github.Archy-X:AureliumSkills:Beta1.1.3")
     compileOnly(project(":UltimateSkills"))
     implementation(project(":UltimateHelper"))
+}
+
+tasks {
+    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+        relocate("de.tr7zw", "mc.ultimatecore.pets.depends")
+    }
 }

@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 version = "5.2.5"
 
 repositories {
@@ -7,7 +9,7 @@ repositories {
 
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")
-    implementation("de.tr7zw:item-nbt-api:2.9.2")
+    implementation("de.tr7zw:item-nbt-api:2.10.0")
     implementation("com.zaxxer:HikariCP:5.0.1")
 
     compileOnly("io.lumine:MythicLib:1.3.1")
@@ -19,4 +21,10 @@ dependencies {
     compileOnly(project(":UltimateCrafting"))
     compileOnly(project(":UltimateFarm"))
     compileOnly(project(":UltimateAnvil"))
+}
+
+tasks {
+    named<ShadowJar>("shadowJar") {
+        relocate("de.tr7zw", "mc.ultimatecore.skills.depends")
+    }
 }
