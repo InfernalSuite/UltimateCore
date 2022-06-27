@@ -27,6 +27,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
+import java.util.concurrent.*;
 
 @Getter
 public class HyperPets extends UltimatePlugin {
@@ -67,10 +68,16 @@ public class HyperPets extends UltimatePlugin {
 
         pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
 
-        pluginDatabase.createTablesAsync().thenRun(() -> {
-            petsManager = new PetsManager(this);
-            userManager = new UserManager(this);
-        });
+        try {
+            pluginDatabase.createTablesAsync().get();
+        } catch (InterruptedException | ExecutionException e) {
+            Bukkit.shutdown();
+            return;
+        }
+
+
+        petsManager = new PetsManager(this);
+        userManager = new UserManager(this);
 
         registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener(), new TeleportListener(userManager));
 
