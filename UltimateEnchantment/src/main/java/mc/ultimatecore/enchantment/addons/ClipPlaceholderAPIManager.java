@@ -53,7 +53,7 @@ public class ClipPlaceholderAPIManager extends PlaceholderExpansion {
             if (identifier.equals("name_" + hyperEnchant.getEnchantmentName()))
                 return hyperEnchant.getDisplayName();
             else if (identifier.equals("lore_" + hyperEnchant.getEnchantmentName()))
-                return String.join(" ", hyperEnchant.getDescription());
+                return String.join(" ", hyperEnchant.getDescription(0));
         }
         return null;
     }

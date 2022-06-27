@@ -153,27 +153,38 @@ public class EnchantsHandler {
         ItemMeta meta = itemStack.getItemMeta();
         List<String> lore = meta != null && meta.hasLore() ? itemStack.getItemMeta().getLore() : Collections.emptyList();
         List<String> newLore = new ArrayList<>();
-        if (lore != null && meta != null) {
-            for (String line : lore) {
-                boolean add = true;
-                for (HyperEnchant hyperEnchant : enchantments.keySet()) {
-                    String unLine = Utils.uncolor(line);
-                    String unColorName = Utils.uncolor(Utils.color(hyperEnchant.getDisplayName()));
-                    if (unLine.contains(unColorName) || unLine.contains(hyperEnchant.getEnchantmentName())) {
-                        add = false;
-                        continue;
-                    }
-                    for (String descriptionLine : hyperEnchant.getDescription()) {
-                        String uncolorDesc = Utils.uncolor(descriptionLine);
-                        if (unLine.contains(uncolorDesc))
-                            add = false;
-                    }
-                }
-                if (add)
-                    newLore.add(Utils.color(line));
-            }
-            meta.setLore(newLore);
+
+        if (lore == null || meta == null) {
+            return itemStack;
         }
+
+        for (String line : lore) {
+            boolean add = true;
+            for (HyperEnchant hyperEnchant : enchantments.keySet()) {
+                String unLine = Utils.uncolor(line);
+                String unColorName = Utils.uncolor(Utils.color(hyperEnchant.getDisplayName()));
+                if (unLine.contains(unColorName) || unLine.contains(hyperEnchant.getEnchantmentName())) {
+                    add = false;
+                    continue;
+                }
+                var level = 1;
+                do {
+                    for (String descriptionLine : hyperEnchant.getDescription(level)) {
+                        String uncolorDesc = Utils.uncolor(descriptionLine);
+                        if (unLine.contains(uncolorDesc)) {
+                            add = false;
+                        }
+                    }
+                    level++;
+                } while (hyperEnchant.supportsLevelDescriptions() && level <= hyperEnchant.getMaxLevel());
+            }
+
+            if (add) {
+                newLore.add(Utils.color(line));
+            }
+        }
+
+        meta.setLore(newLore);
         itemStack.setItemMeta(meta);
         return itemStack;
     }
@@ -249,16 +260,18 @@ public class EnchantsHandler {
 
     private List<String> getNormalLore(Map<HyperEnchant, Integer> enchantments) {
         List<String> newLore = new ArrayList<>();
-        for (HyperEnchant hyperEnchant : enchantments.keySet())
+        for (var entry : enchantments.entrySet()) {
+            var hyperEnchant = entry.getKey();
             plugin.getConfiguration().infoToEnchantedItem.forEach(line -> {
                 if (line.contains("%enchant_description%")) {
-                    hyperEnchant.getDescription().forEach(desLine -> newLore.add(Utils.color(line.replace("%enchant_description%", desLine))));
+                    hyperEnchant.getDescription(entry.getValue()).forEach(desLine -> newLore.add(Utils.color(line.replace("%enchant_description%", desLine))));
                 } else {
                     newLore.add(Utils.color(line
                             .replace("%enchant_level%", Utils.toRoman(enchantments.get(hyperEnchant)))
                             .replace("%enchant_name%", hyperEnchant.getDisplayName())));
                 }
             });
+        }
         return newLore;
     }
 

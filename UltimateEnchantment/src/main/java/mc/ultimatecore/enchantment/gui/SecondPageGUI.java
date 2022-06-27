@@ -61,12 +61,12 @@ public class SecondPageGUI extends GUI implements Listener {
                     if (hyperEnchant.isUseMoney()) {
                         setItem(slot,
                                 InventoryUtils.makeItemHidden(plugin.getInventories().moneyEnchantBook,
-                                        Utils.getMoneyPlaceholders(uuid, hyperEnchant, i, itemStack), hyperEnchant, itemStack));
+                                        Utils.getMoneyPlaceholders(uuid, hyperEnchant, i, itemStack), enchantObject.withLevel(enchantObject.getLevel()+1), itemStack));
                     }
                     else {
                         setItem(slot,
                                 InventoryUtils.makeItemHidden(plugin.getInventories().levelEnchantBook,
-                                        Utils.getEnchantPlaceholders(uuid, hyperEnchant, i, itemStack), hyperEnchant, itemStack));
+                                        Utils.getEnchantPlaceholders(uuid, hyperEnchant, i, itemStack), enchantObject.withLevel(enchantObject.getLevel()+1), itemStack));
                     }
                     toClickSlots.put(slot, i);
                 }catch (IndexOutOfBoundsException e){

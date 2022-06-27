@@ -10,7 +10,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.Map;
+import java.util.*;
+import java.util.stream.*;
 
 public class HyperEcoEnchant extends HyperEnchant {
 
@@ -63,4 +64,13 @@ public class HyperEcoEnchant extends HyperEnchant {
         return EcoUtils.instance(enchantmentName);
     }
 
+    @Override
+    public List<String> getDescription(int level) {
+        return super.getDescription(level).stream().map(line -> line.replace("%value%%", EcoUtils.instance(getEnchantmentName()).getPlaceholder(level))).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean supportsLevelDescriptions() {
+        return true;
+    }
 }

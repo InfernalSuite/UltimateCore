@@ -87,7 +87,7 @@ public class Utils {
     }
 
     public static String uncolor(String string) {
-        return ChatColor.stripColor(string);
+        return ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', string));
     }
 
     public static List<String> translateDescription(String description){

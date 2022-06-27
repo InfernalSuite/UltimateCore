@@ -2,9 +2,7 @@ package mc.ultimatecore.enchantment.enchantments;
 
 import com.cryptomorin.xseries.XEnchantment;
 import de.tr7zw.changeme.nbtapi.NBTItem;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import mc.ultimatecore.enchantment.EnchantmentsPlugin;
 import mc.ultimatecore.enchantment.enchantments.hooks.HyperAdvancedEnchantment;
 import org.bukkit.enchantments.Enchantment;
@@ -29,6 +27,7 @@ public abstract class HyperEnchant {
 
     protected final String enchantmentName;
 
+    @Getter(AccessLevel.NONE)
     protected final List<String> description;
 
     protected final Map<Integer, Integer> requiredLevel;
@@ -76,4 +75,16 @@ public abstract class HyperEnchant {
         return XEnchantment.valueOf(enchantmentName.toUpperCase()).getEnchant();
     }
 
+    /**
+     *
+     * @param level
+     * @return
+     */
+    public List<String> getDescription(int level) {
+        return description;
+    }
+
+    public boolean supportsLevelDescriptions() {
+        return false;
+    }
 }

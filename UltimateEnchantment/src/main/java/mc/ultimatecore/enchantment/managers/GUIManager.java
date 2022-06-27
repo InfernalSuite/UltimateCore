@@ -90,9 +90,9 @@ public class GUIManager {
                     HyperEnchant hyperEnchant = hyperEnchants.get(i);
                     int finalSlot = plugin.getInventories().bookSlots.get(slot);
                     if (bokShelfPower >= hyperEnchant.getRequiredBookShelf()) {
-                        tasks.runTask(plugin, () -> inventory.setItem(finalSlot, InventoryUtils.makeItemHidden(plugin.getInventories().availableBook, Utils.getEnchantPlaceholders(hyperEnchant), hyperEnchant)));
+                        tasks.runTask(plugin, () -> inventory.setItem(finalSlot, InventoryUtils.makeItemHidden(plugin.getInventories().availableBook, Utils.getEnchantPlaceholders(hyperEnchant), new EnchantObject(hyperEnchant, 1))));
                     } else {
-                        tasks.runTask(plugin, () -> inventory.setItem(finalSlot, InventoryUtils.makeItemHidden(plugin.getInventories().notAvailableBook, Utils.getEnchantPlaceholders(hyperEnchant), hyperEnchant)));
+                        tasks.runTask(plugin, () -> inventory.setItem(finalSlot, InventoryUtils.makeItemHidden(plugin.getInventories().notAvailableBook, Utils.getEnchantPlaceholders(hyperEnchant), new EnchantObject(hyperEnchant, 1))));
                     }
                     enchantsMap.put(finalSlot, new EnchantObject(hyperEnchant));
                     slot++;

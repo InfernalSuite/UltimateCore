@@ -8,6 +8,7 @@ import mc.ultimatecore.enchantment.EnchantmentsPlugin;
 import mc.ultimatecore.enchantment.Item;
 import mc.ultimatecore.enchantment.enchantments.HyperEnchant;
 import mc.ultimatecore.enchantment.enums.EnchantState;
+import mc.ultimatecore.enchantment.object.*;
 import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -21,7 +22,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class InventoryUtils {
-    public static ItemStack makeItemHidden(Item item, List<Placeholder> placeholders, HyperEnchant hyperEnchant, ItemStack itemStack) {
+    public static ItemStack makeItemHidden(Item item, List<Placeholder> placeholders, EnchantObject enchantObject, ItemStack itemStack) {
+        var hyperEnchant = enchantObject.getHyperEnchant();
         try {
             Optional<Enchantment> conflict = hyperEnchant.hasEnchantmentConflicts(itemStack);
             String key = conflict.map(Utils::getEnchantmentKey).orElse(null);
@@ -35,7 +37,7 @@ public class InventoryUtils {
                     continue;
                 }
                 if(line.contains("%enchant_description%")){
-                    hyperEnchant.getDescription().forEach(desLine -> lore.add(Utils.color(line.replace("%enchant_description%", desLine))));
+                    hyperEnchant.getDescription(enchantObject.getLevel()).forEach(desLine -> lore.add(Utils.color(line.replace("%enchant_description%", desLine))));
                     continue;
                 }
                 lore.add(line);
@@ -87,12 +89,13 @@ public class InventoryUtils {
         }
     }
 
-    public static ItemStack makeItemHidden(Item item, List<Placeholder> placeholders, HyperEnchant hyperEnchant) {
+    public static ItemStack makeItemHidden(Item item, List<Placeholder> placeholders, EnchantObject enchantObject) {
+        var hyperEnchant = enchantObject.getHyperEnchant();
         try {
             List<String> lore = new ArrayList<>();
             for(String line : item.lore){
                 if(line.contains("%enchant_description%")){
-                    hyperEnchant.getDescription().forEach(desLine -> lore.add(Utils.color(line.replace("%enchant_description%", desLine))));
+                    hyperEnchant.getDescription(enchantObject.getLevel()).forEach(desLine -> lore.add(Utils.color(line.replace("%enchant_description%", desLine))));
                     continue;
                 }
                 lore.add(line);
