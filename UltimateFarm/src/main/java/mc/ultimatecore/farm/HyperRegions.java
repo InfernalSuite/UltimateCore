@@ -68,7 +68,7 @@ public class HyperRegions extends UltimatePlugin {
         try {
             nms = (NMS) Class.forName("mc.ultimatecore.farm.nms." + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]).newInstance();
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-            getLogger().info("Unsupported Version Detected: " + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]);
+            getLogger().warning("Unsupported Version Detected: " + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]);
         }
     }
 

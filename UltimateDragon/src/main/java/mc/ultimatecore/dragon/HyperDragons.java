@@ -92,7 +92,7 @@ public class HyperDragons extends UltimatePlugin {
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            getLogger().warning("Un-Supported Minecraft Version: " + version);
+            getLogger().warning("Unsupported Version Detected: " + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]);
         }
         return null;
     }
