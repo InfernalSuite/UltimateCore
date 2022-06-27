@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 @Getter
 public class HyperPets extends UltimatePlugin {
-    
+
     private static HyperPets instance;
     private Config configuration;
     private Messages messages;
@@ -46,38 +46,38 @@ public class HyperPets extends UltimatePlugin {
     private PetsLeveller petsLeveller;
     private HyperPetsAPI api;
     private AddonsManager addonsManager;
-    
+
     @Override
     public void onEnable() {
         instance = this;
-        
+
         loadNms();
-        
+
         addonsManager = new AddonsManager(this);
-        
+
         loadConfigs();
-        
+
         commandManager = new CommandManager("pets");
-        
+
         petsLeveller = new PetsLeveller(this);
-        
+
         api = new HyperPetsAPIImpl(this);
-        
+
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
-        
+
         pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
-        
+
         pluginDatabase.createTablesAsync().thenRun(() -> {
             petsManager = new PetsManager(this);
             userManager = new UserManager(this);
         });
-        
-        registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener());
-        
+
+        registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener(), new TeleportListener(userManager));
+
         Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
-        
+
     }
-    
+
     @Override
     public void onDisable() {
         for (Player p : Bukkit.getOnlinePlayers()) {
@@ -90,7 +90,7 @@ public class HyperPets extends UltimatePlugin {
         if (petsManager != null) petsManager.disable();
         getLogger().info(getDescription().getName() + " Disabled!");
     }
-    
+
     public void loadNms() {
         try {
             nms = (NMS) Class.forName("mc.ultimatecore.pets.nms." + Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3]).newInstance();
@@ -102,17 +102,17 @@ public class HyperPets extends UltimatePlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
     }
-    
+
     public void sendErrorMessage(Exception e) {
         e.printStackTrace();
     }
-    
+
     public void registerListeners(Listener... listener) {
         for (Listener l : listener)
             Bukkit.getPluginManager().registerEvents(l, this);
     }
-    
-    
+
+
     public void loadConfigs() {
         levels = new Levels(this, "levels", false, false);
         tiers = new Tiers(this, "tiers", false, false);
@@ -121,7 +121,7 @@ public class HyperPets extends UltimatePlugin {
         inventories = new Inventories(this, "inventories", true, false);
         pets = new Pets(this, "pets", false, false);
     }
-    
+
     public void reloadConfigs() {
         levels.reload();
         tiers.reload();
@@ -130,11 +130,11 @@ public class HyperPets extends UltimatePlugin {
         inventories.reload();
         pets.reload();
     }
-    
+
     public static HyperPets getInstance() {
         return instance;
     }
-    
+
     public void sendDebug(String message, DebugType debugType) {
         if (!configuration.debug) return;
         if (debugType == DebugType.LOG)
@@ -142,7 +142,7 @@ public class HyperPets extends UltimatePlugin {
         else
             Bukkit.getConsoleSender().sendMessage(Utils.color(message));
     }
-    
+
     @Override
     public String getPluginName() {
         return getDescription().getName();
