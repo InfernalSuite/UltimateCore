@@ -3,12 +3,10 @@ package mc.ultimatecore.crafting.listeners;
 import lombok.*;
 import mc.ultimatecore.crafting.*;
 import mc.ultimatecore.crafting.gui.*;
-import org.bukkit.*;
+import mc.ultimatecore.crafting.gui.crafting.*;
 import org.bukkit.event.*;
 import org.bukkit.event.inventory.*;
 import org.bukkit.inventory.*;
-
-import java.util.*;
 
 @AllArgsConstructor
 public class InventoryCloseListener implements Listener {
@@ -18,7 +16,7 @@ public class InventoryCloseListener implements Listener {
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
         Inventory inventory = event.getInventory();
-        if (inventory.getHolder() instanceof SimpleGUI) {
+        if (inventory.getHolder() instanceof CraftingGUI) {
             Inventory topInventory = event.getView().getTopInventory();
             for (Integer craftingSlot : this.plugin.getCraftingSlots()) {
                 if(topInventory.getItem(craftingSlot) != null) {
