@@ -443,6 +443,20 @@ levelsMenu:
         - '&7Total Collected: &e%current_xp%'
       slot: 4
       isGlowing: false
+    previousPage:
+        material: ARROW
+        amount: 1
+        title: '&ePrevious Page'
+        lore: [ ]
+        slot: 45
+        isGlowing: false
+    nextPage:
+        material: ARROW
+        amount: 1
+        title: '&eNext Page'
+        lore: [ ]
+        slot: 53
+        isGlowing: false
 background:
   material: BLACK_STAINED_GLASS_PANE
   amount: 1

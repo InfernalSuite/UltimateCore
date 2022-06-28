@@ -8,6 +8,7 @@ import mc.ultimatecore.collections.utils.InventoryUtils;
 import mc.ultimatecore.collections.utils.Placeholder;
 import mc.ultimatecore.collections.utils.StringUtils;
 import mc.ultimatecore.collections.utils.Utils;
+import mc.ultimatecore.helper.utils.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -20,18 +21,18 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class SubMenusGUI implements GUI {
-    
+
     private final HashMap<Integer, Collection> menuItems = new HashMap<>();
-    
+
     private final UUID uuid;
-    
+
     private final Category category;
-    
+
     public SubMenusGUI(UUID uuid, Category category) {
         this.uuid = uuid;
         this.category = category;
     }
-    
+
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
         if (e.getCurrentItem() != null) {
@@ -45,14 +46,14 @@ public class SubMenusGUI implements GUI {
                     Collection collection = menuItems.get(e.getSlot());
                     PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
                     if (playerCollection.getXP(collection.getKey()) > 0)
-                        player.openInventory(new LevelsMenu(uuid, collection).getInventory());
+                        player.openInventory(new LevelsMenu(uuid, collection, Pageables.of(0, 9)).getInventory());
                     else
                         player.sendMessage(Utils.color(HyperCollections.getInstance().getMessages().getMessage("collectionLocked")));
                 }
             }
         }
     }
-    
+
     @Override
     public @NotNull Inventory getInventory() {
         Inventory inventory = Bukkit.createInventory(this, HyperCollections.getInstance().getInventories().getSubMenuSize(), StringUtils.color(HyperCollections.getInstance().getInventories().getSubMenuTitles().get(category.getName())));

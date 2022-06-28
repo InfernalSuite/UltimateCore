@@ -13,8 +13,8 @@ import java.util.List;
 
 @Getter
 public class Inventories extends YAMLFile {
-    
-    private HashMap<String, Item> items;
+
+    private HashMap<String, Item> levelMenuItems;
     //MAIN MENU
     private String mainMenuTitle;
     private int mainMenuSize;
@@ -22,47 +22,51 @@ public class Inventories extends YAMLFile {
     private List<Item> mainMenu;
     private Item mainMenuBack;
     private boolean mainMenuBackEnabled;
-    
+
     //TOP MENU
     private String topMenuTitle;
     private int topMenuSize;
     private Item topMenuItem;
     private List<Item> topMenu;
-    
+
     //SUB MENU
     private int subMenuSize;
     private HashMap<String, String> subMenuTitles;
     private List<Integer> subMenuDecoration;
     private HashMap<String, Item> subMenuItems;
-    
+
     //LEVELS MENU
     private String levelsMenuTitle;
     private int levelsMenuSize;
     private List<Integer> levelsMenuSlots;
-    
+
     //BUTTONS
     private Item background;
     private Item previousPage;
     private Item closeButton;
     private boolean backButtons;
-    
+
     public Inventories(HyperCollections plugin, String name, boolean defaults, boolean save) {
         super(plugin, name, defaults, save);
         loadItems();
     }
-    
+
     @Override
     public void reload() {
         super.reload();
         loadItems();
     }
-    
+
     private void loadItems() {
-        items = new HashMap<>();
+        levelMenuItems = new HashMap<>();
         topMenu = new ArrayList<>();
         mainMenu = new ArrayList<>();
         subMenuItems = new HashMap<>();
+
+
+
         ConfigurationSection configurationSection = getConfig().getConfigurationSection("");
+
         if (configurationSection == null) return;
         for (String inventoryName : configurationSection.getKeys(false)) {
             ConfigurationSection newConfigSection = getConfig().getConfigurationSection(inventoryName + ".items");
@@ -78,8 +82,8 @@ public class Inventories extends YAMLFile {
                     topMenu.add(Utils.getItemFromConfig(getConfig(), inventoryName + ".items." + item));
                 else if (inventoryName.equals("subMenu"))
                     subMenuItems.put(item, Utils.getItemFromConfig(getConfig(), inventoryName + ".items." + item));
-                else
-                    items.put(item, Utils.getItemFromConfig(getConfig(), inventoryName + ".items." + item));
+                else if (inventoryName.equals("levelsMenu"))
+                    levelMenuItems.put(item, Utils.getItemFromConfig(getConfig(), inventoryName + ".items." + item));
             }
         }
         //MAIN MENU
@@ -108,15 +112,15 @@ public class Inventories extends YAMLFile {
         mainMenuBack = Utils.getItemFromConfig(getConfig(), "main-menu-back");
         mainMenuBackEnabled = getConfig().getBoolean("main-menu-back.enabled");
     }
-    
+
     public Item getItem(String key) {
-        return items.get(key);
+        return levelMenuItems.get(key);
     }
-    
+
     public List<Item> getTopMenu() {
         return topMenu;
     }
-    
+
     public List<Item> getMainMenu() {
         return mainMenu;
     }
