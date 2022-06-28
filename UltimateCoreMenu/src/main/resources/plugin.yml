@@ -6,6 +6,8 @@ api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore-Crafting, UltimateCore-Skills, UltimateCore-Pets, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault ]
+depend:
+    - UltimateCore
 commands:
   hypercore:
     description: UltimateCore's Menu main command

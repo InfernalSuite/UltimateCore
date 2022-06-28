@@ -5,4 +5,20 @@ version: "5.2.6"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 softdepend: [WorldEdit]
-load: POSTWORLD
+loadbefore:
+    - UltimateCore-Alchemy
+    - UltimateCore-Anvil
+    - UltimateCore-Collections
+    - UltimateCore-Menu
+    - UltimateCore-Crafting
+    - UltimateCore-Dragon
+    - UltimateCore-Enchantment
+    - UltimateCore-Farm
+    - UltimateCore-Pets
+    - UltimateCore-Reforge
+    - UltimateCore-Runes
+    - UltimateCore-Skills
+    - UltimateCore-Souls
+    - UltimateCore-Talismans
+    - UltimateCore-Trades
+load: STARTUP

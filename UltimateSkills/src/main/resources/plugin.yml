@@ -5,7 +5,9 @@ version: "5.2.6"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
-softdepend: [ UltimateCore, JetsMinions, UltraMinions, UltimateCore-Farm, UltimateCore-Anvil, UltimateCore-Crafting, UltimateCore-Enchantment, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault, XMaterial, MythicLib, MythicMobs ]
+softdepend: [ JetsMinions, UltraMinions, UltimateCore-Farm, UltimateCore-Anvil, UltimateCore-Crafting, UltimateCore-Enchantment, WorldEdit, WorldGuard, PlaceholderAPI, MVdWPlaceholderAPI, Vault, XMaterial, MythicLib, MythicMobs ]
+depend:
+    - UltimateCore
 commands:
   skills:
     description: UltimateCore's Skills main command

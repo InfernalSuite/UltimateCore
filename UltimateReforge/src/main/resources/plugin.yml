@@ -6,6 +6,8 @@ api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
 softdepend: [ UltimateCore-Enchantment ]
+depend:
+    - UltimateCore
 commands:
   hyperreforge:
     description: Main plugin command

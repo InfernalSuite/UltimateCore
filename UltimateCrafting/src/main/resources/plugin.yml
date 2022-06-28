@@ -4,6 +4,8 @@ main: mc.ultimatecore.crafting.HyperCrafting
 version: "5.2.6"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
+depend:
+    - UltimateCore
 load: POSTWORLD
 commands:
   hypercrafting:

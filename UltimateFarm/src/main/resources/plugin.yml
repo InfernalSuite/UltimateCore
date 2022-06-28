@@ -5,7 +5,9 @@ version: "5.2.6"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
-softdepend: [ UltimateCore, WorldEdit, WorldGuard, Multiverse-Core, Residence, UltraRegions ]
+softdepend: [ WorldEdit, WorldGuard, Multiverse-Core, Residence, UltraRegions ]
+depend:
+    - UltimateCore
 commands:
   ultimatefarm:
     aliases: [ "ucfarm" ]
