@@ -24,7 +24,7 @@ public class CraftingGUI implements SimpleGUI {
     private final CraftingGUIManager guiManager;
     private final Inventory inventory;
 
-    public boolean isClosed = true;
+    private boolean isClosed = true;
 
     public CraftingGUI(Player player, HyperCrafting plugin) {
         this.plugin = plugin;
@@ -68,6 +68,7 @@ public class CraftingGUI implements SimpleGUI {
     public void openInventory(Player player) {
         guiManager.updateMenu();
         player.openInventory(inventory);
+        isClosed = false;
     }
 
     @Override

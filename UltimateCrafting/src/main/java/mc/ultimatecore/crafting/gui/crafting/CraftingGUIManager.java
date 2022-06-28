@@ -116,17 +116,20 @@ public class CraftingGUIManager {
         HashMap<Integer, ItemStack> items = this.getCraftingItems();
         this.activeRecipe = plugin.getCraftingRecipes().matchRecipe(player, items).orElse(null); // Update recipe
         this.isVanilla = false;
-        if (this.activeRecipe == null) {
-            ItemStack[] itemArray = new ItemStack[9];
-            for (Map.Entry<Integer, ItemStack> item : items.entrySet()) {
-                itemArray[item.getKey()] = item.getValue();
-            }
 
-            Recipe recipe = this.plugin.getVanillaSource().getRecipe(itemArray, player.getWorld());
-            if (recipe != null) {
-                this.activeRecipe = new CraftingRecipe("Vanilla", recipe.getResult(), this.plugin);
-                this.isVanilla = true;
-            }
+        if (this.activeRecipe != null) {
+            return;
+        }
+
+        ItemStack[] itemArray = new ItemStack[9];
+        for (Map.Entry<Integer, ItemStack> item : items.entrySet()) {
+            itemArray[item.getKey()] = item.getValue();
+        }
+
+        Recipe recipe = this.plugin.getVanillaSource().getRecipe(itemArray, player.getWorld());
+        if (recipe != null) {
+            this.activeRecipe = new CraftingRecipe("Vanilla", recipe.getResult(), this.plugin);
+            this.isVanilla = true;
         }
     }
 
