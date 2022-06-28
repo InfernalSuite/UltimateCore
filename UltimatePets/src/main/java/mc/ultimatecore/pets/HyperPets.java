@@ -1,33 +1,26 @@
 package mc.ultimatecore.pets;
 
-import lombok.Getter;
-import mc.ultimatecore.helper.UltimatePlugin;
-import mc.ultimatecore.helper.database.Credentials;
-import mc.ultimatecore.helper.database.DatabaseType;
-import mc.ultimatecore.pets.api.HyperPetsAPI;
-import mc.ultimatecore.pets.api.HyperPetsAPIImpl;
-import mc.ultimatecore.pets.armorequipevent.ArmorListener;
-import mc.ultimatecore.pets.commands.CommandManager;
+import lombok.*;
+import mc.ultimatecore.helper.*;
+import mc.ultimatecore.helper.database.*;
+import mc.ultimatecore.pets.api.*;
+import mc.ultimatecore.pets.armorequipevent.*;
+import mc.ultimatecore.pets.commands.*;
 import mc.ultimatecore.pets.configs.*;
-import mc.ultimatecore.pets.database.Database;
-import mc.ultimatecore.pets.database.implementations.MySQLDatabase;
-import mc.ultimatecore.pets.database.implementations.SQLiteDatabase;
+import mc.ultimatecore.pets.database.*;
+import mc.ultimatecore.pets.database.implementations.*;
 import mc.ultimatecore.pets.listeners.*;
-import mc.ultimatecore.pets.listeners.pets.SkillsHookListener;
-import mc.ultimatecore.pets.managers.AddonsManager;
-import mc.ultimatecore.pets.managers.PetsLeveller;
-import mc.ultimatecore.pets.managers.PetsManager;
-import mc.ultimatecore.pets.managers.UserManager;
-import mc.ultimatecore.pets.nms.NMS;
-import mc.ultimatecore.pets.objects.DebugType;
-import mc.ultimatecore.pets.playerdata.User;
-import mc.ultimatecore.pets.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
+import mc.ultimatecore.pets.listeners.pets.*;
+import mc.ultimatecore.pets.managers.*;
+import mc.ultimatecore.pets.nms.*;
+import mc.ultimatecore.pets.objects.*;
+import mc.ultimatecore.pets.playerdata.*;
+import mc.ultimatecore.pets.utils.*;
+import org.bukkit.*;
+import org.bukkit.entity.*;
+import org.bukkit.event.*;
 
-import java.util.ArrayList;
-import java.util.concurrent.*;
+import java.util.*;
 
 @Getter
 public class HyperPets extends UltimatePlugin {
@@ -68,21 +61,25 @@ public class HyperPets extends UltimatePlugin {
 
         pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
 
-        try {
-            pluginDatabase.createTablesAsync().get();
-        } catch (InterruptedException | ExecutionException e) {
-            Bukkit.shutdown();
-            return;
-        }
+//        try {
+//            pluginDatabase.createTablesAsync().get();
+//        } catch (InterruptedException | ExecutionException e) {
+//            Bukkit.shutdown();
+//            return;
+//        }
 
 
-        petsManager = new PetsManager(this);
-        userManager = new UserManager(this);
+//        petsManager = new PetsManager(this);
+//        userManager = new UserManager(this);
 
-        registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener(), new TeleportListener(userManager));
+        pluginDatabase.createTablesAsync().thenRun(() -> {
+            petsManager = new PetsManager(this);
+            userManager = new UserManager(this);
 
-        Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
+            registerListeners(new InventoryClickListener(), addonsManager.isHyperSkills() ? new SkillsHookListener(this) : new BlockBreakListener(this), new ArmorListener(new ArrayList<>()), new PetEquipListener(), new PetClickListener(), new PlayerJoinLeaveListener(this), new PetRegisterListener(), new TeleportListener(userManager));
 
+            Bukkit.getConsoleSender().sendMessage(Utils.color("&e" + getDescription().getName() + " Has been enabled!"));
+        });
     }
 
     @Override
