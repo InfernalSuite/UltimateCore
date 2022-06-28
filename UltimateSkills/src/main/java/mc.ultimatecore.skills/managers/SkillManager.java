@@ -1,22 +1,16 @@
 package mc.ultimatecore.skills.managers;
 
 import com.cryptomorin.xseries.*;
-import mc.ultimatecore.skills.HyperSkills;
-import mc.ultimatecore.skills.TempUser;
-import mc.ultimatecore.skills.api.events.SkillsLevelUPEvent;
-import mc.ultimatecore.skills.api.events.SkillsXPGainEvent;
-import mc.ultimatecore.skills.listener.perks.DoubleItemPerks;
+import mc.ultimatecore.skills.*;
+import mc.ultimatecore.skills.api.events.*;
+import mc.ultimatecore.skills.listener.perks.*;
 import mc.ultimatecore.skills.objects.*;
 import mc.ultimatecore.skills.objects.perks.*;
-import mc.ultimatecore.skills.objects.xp.BlockXP;
-import mc.ultimatecore.skills.utils.StringUtils;
-import mc.ultimatecore.skills.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
+import mc.ultimatecore.skills.objects.xp.*;
+import mc.ultimatecore.skills.utils.*;
+import org.bukkit.*;
+import org.bukkit.block.*;
+import org.bukkit.entity.*;
 
 import java.util.*;
 
@@ -178,7 +172,7 @@ public class SkillManager {
         Double currentXP = playerSkills.getXP(skillType);
         Double maxXP = plugin.getRequirements().getLevelRequirement(skillType, level);
         new HyperSound(plugin.getConfiguration().gainXPSound, 1, 1).play(player);
-        if (currentXP >= maxXP) {
+        if (currentXP >= maxXP && maxXP != 0D) {
             SkillsLevelUPEvent event = new SkillsLevelUPEvent(player, skillType, level+1);
             Bukkit.getServer().getPluginManager().callEvent(event);
             if (event.isCancelled())
@@ -190,29 +184,35 @@ public class SkillManager {
             else
                 playerSkills.setXP(skillType, 0d);
             levelUp(player, skillType, level);
+            checkLevelUp(player, skillType);
         }
     }
 
     private void levelUp(Player player, SkillType skill, int level) {
         List<String> commands = plugin.getRewards().getCommandRewards(skill, level);
-        if (commands != null)
-            commands.forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName())));
-        List<String> messages = plugin.getMessages().getLevelUPMessage();
-        if (messages != null) {
-            for (String line : messages) {
-                if (line.contains("%level_rewards%")) {
-                    for(String placeholderLine : plugin.getRewards().getRewardPlaceholders(skill, level)){
-                        player.sendMessage(StringUtils.color(placeholderLine.replaceAll("%previous_level%", Utils.toRoman(level))
-                                .replaceAll("%level%", Utils.toRoman(level + 1))
-                                .replaceAll("%next_level%", Utils.toRoman(level + 1))));
-                    }
-                } else {
-                    player.sendMessage(StringUtils.color(line.replaceAll("%previous_level%", Utils.toRoman(level))
-                            .replaceAll("%level%", Utils.toRoman(level + 1))
-                            .replaceAll("%next_level%", Utils.toRoman(level + 1))
-                            .replaceAll("%money_reward%", Utils.toRoman(0))));
+        if (commands == null) {
+            return;
+        }
+        commands.forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName())));
 
-                }
+        List<String> messages = plugin.getMessages().getLevelUPMessage();
+        if (messages == null) {
+            return;
+        }
+        for (String line : messages) {
+            if (!line.contains("%level_rewards%")) {
+                player.sendMessage(StringUtils.color(line.replaceAll("%previous_level%", Utils.toRoman(level))
+                        .replaceAll("%level%", Utils.toRoman(level + 1))
+                        .replaceAll("%next_level%", Utils.toRoman(level + 1))
+                        .replaceAll("%money_reward%", Utils.toRoman(0))));
+            }
+            if (plugin.getRewards().getCommandRewards(skill, level) == null) {
+                return;
+            }
+            for (String placeholderLine : plugin.getRewards().getRewardPlaceholders(skill, level)) {
+                player.sendMessage(StringUtils.color(placeholderLine.replaceAll("%previous_level%", Utils.toRoman(level))
+                        .replaceAll("%level%", Utils.toRoman(level + 1))
+                        .replaceAll("%next_level%", Utils.toRoman(level + 1))));
             }
         }
     }
