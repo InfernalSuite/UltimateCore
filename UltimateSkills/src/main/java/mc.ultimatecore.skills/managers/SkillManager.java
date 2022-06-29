@@ -1,16 +1,23 @@
 package mc.ultimatecore.skills.managers;
 
-import com.cryptomorin.xseries.*;
-import mc.ultimatecore.skills.*;
-import mc.ultimatecore.skills.api.events.*;
-import mc.ultimatecore.skills.listener.perks.*;
+import com.cryptomorin.xseries.XBlock;
+import com.cryptomorin.xseries.XMaterial;
+import mc.ultimatecore.skills.HyperSkills;
+import mc.ultimatecore.skills.TempUser;
+import mc.ultimatecore.skills.api.events.SkillsLevelUPEvent;
+import mc.ultimatecore.skills.api.events.SkillsXPGainEvent;
+import mc.ultimatecore.skills.listener.perks.DoubleItemPerks;
 import mc.ultimatecore.skills.objects.*;
-import mc.ultimatecore.skills.objects.perks.*;
-import mc.ultimatecore.skills.objects.xp.*;
-import mc.ultimatecore.skills.utils.*;
-import org.bukkit.*;
-import org.bukkit.block.*;
-import org.bukkit.entity.*;
+import mc.ultimatecore.skills.objects.perks.Perk;
+import mc.ultimatecore.skills.objects.xp.BlockXP;
+import mc.ultimatecore.skills.utils.StringUtils;
+import mc.ultimatecore.skills.utils.Utils;
+import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 
 import java.util.*;
 
@@ -284,29 +291,57 @@ public class SkillManager {
     public void manageBlockPoints(Player player, Block bl, Material mat, boolean multiplyRewards){
         XMaterial material = XBlock.getType(bl);
         String key = mat.toString();
-        if(!plugin.getSkillPoints().skillBlocksXP.containsKey(key)) return;
+        if(!plugin.getSkillPoints().skillBlocksXP.containsKey(key)) {
+            return;
+        }
+
         BlockXP skillXP = plugin.getSkillPoints().skillBlocksXP.get(key);
-        if(material.getData() != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) return;
+        if(material.getData() != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) {
+            return;
+        }
+
         SkillType skillType = skillXP.getSkillType();
         Skill skill = plugin.getSkills().getAllSkills().get(skillType);
-        if (!skill.isEnabled()) return;
-        if (player.getGameMode().equals(GameMode.CREATIVE) && !skill.isXpInCreative()) return;
-        if(Utils.isInBlockedWorld(bl.getWorld().getName(), skillType)) return;
-        if(Utils.isInBlockedRegion(bl.getLocation(), skillType)) return;
-        double xp = key.contains("SUGAR_CANE") || key.contains("CACTUS") ? skillXP.getXp() * Utils.getBlockQuantity(bl, mat) : skillXP.getXp();
-        if(xp <= 0) return;
-        if(multiplyRewards){
-            double percentage = -1;
-            if(skillType == SkillType.Farming)
-                percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Crop_Chance);
-            else if(skillType == SkillType.Mining)
-                percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Ore_Chance);
-            else if(skillType == SkillType.Foraging)
-                percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Log_Chance);
-            if(percentage == -1) return;
-            if(Utils.hasSkillTouch(player)) return;
-            DoubleItemPerks.multiplyRewards(player, skillType, bl, percentage, plugin.getAddonsManager().isEcoEnchants() && plugin.getAddonsManager().getEcoEnchants().hasEnchantment(player.getItemInHand(), "telekinesis"));
+        if (!skill.isEnabled()) {
+            return;
         }
+        if (player.getGameMode().equals(GameMode.CREATIVE) && !skill.isXpInCreative()) {
+            return;
+        }
+        if(Utils.isInBlockedWorld(bl.getWorld().getName(), skillType)) {
+            return;
+        }
+        if(Utils.isInBlockedRegion(bl.getLocation(), skillType)) {
+            return;
+        }
+
+        double xp = key.contains("SUGAR_CANE") || key.contains("CACTUS") ? skillXP.getXp() * Utils.getBlockQuantity(bl, mat) : skillXP.getXp();
+        if(xp <= 0) {
+            return;
+        }
+        if (!multiplyRewards) {
+            plugin.getSkillManager().addXP(player.getUniqueId(), skillType, xp);
+            return;
+        }
+
+        double percentage = -1;
+        if (skillType == SkillType.Farming) {
+            percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Crop_Chance);
+        } else if (skillType == SkillType.Mining) {
+            percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Ore_Chance);
+        } else if (skillType == SkillType.Foraging) {
+            percentage = plugin.getApi().getTotalPerk(player.getUniqueId(), Perk.Log_Chance);
+        }
+
+        if (percentage == -1) {
+            return;
+        }
+        // Players complained about silk touch not applying mining exp
+        // so i've added a config value for that
+        if (Utils.hasSkillTouch(player) && !plugin.getConfiguration().getXPwithFortune) {
+            return;
+        }
+        DoubleItemPerks.multiplyRewards(player, skillType, bl, percentage, plugin.getAddonsManager().isEcoEnchants() && plugin.getAddonsManager().getEcoEnchants().hasEnchantment(player.getItemInHand(), "telekinesis"));
         plugin.getSkillManager().addXP(player.getUniqueId(), skillType, xp);
     }
 

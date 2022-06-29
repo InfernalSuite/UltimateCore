@@ -40,6 +40,7 @@ talismanSystem: true
 resetDataConfirm: true
 resetDataMessage: true
 getXPInCreative: true
+getXPwithFortune: true
 rankInformation:
   UNRANKED:
     - "&7Rankings requires skill level 15"
