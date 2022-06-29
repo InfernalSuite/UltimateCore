@@ -34,7 +34,7 @@ public class PlayerCollection {
     }
 
     public void addLevel(String collection, int quantity) {
-        this.playerXP.put(collection, this.getLevel(collection) + quantity);
+        this.playerLevel.put(collection, this.getLevel(collection) + quantity);
         HyperCollections.getInstance().getCollectionsManager().checkLevelUp(Bukkit.getOfflinePlayer(this.uuid), collection);
     }
 

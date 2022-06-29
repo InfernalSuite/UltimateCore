@@ -124,51 +124,67 @@ public class CollectionsManager {
     }
 
     public void addXP(OfflinePlayer p, String key, int xp) {
-        if (p.isOnline())
-            if (xp > 0) {
-                Player player = p.getPlayer();
-                if (player == null) return;
-                PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
-                Collection collection = HyperCollections.getInstance().getCollections().getCollection(key);
-                if (collection == null) return;
-                if (playerCollection.getLevel(key) < collection.getMaxLevel()) {
-                    double currentXP = playerCollection.getXP(key);
-                    if (currentXP == 0) {
-                        CollectionsUnlockEvent event = new CollectionsUnlockEvent(player, key);
-                        Bukkit.getServer().getPluginManager().callEvent(event);
-                        if (event.isCancelled()) return;
-                        String name = collection.getName();
-                        BaseComponent[] components = TextComponent.fromLegacyText(Utils.color(HyperCollections.getInstance().getMessages().getMessage("collectionUnlocked")
-                                .replace("%collection_name%", name)));
-                        ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/collections levelmenu " + key);
-                        HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(Utils.color(HyperCollections.getInstance().getMessages().getMessage("collectionUnlockedHoverMessage")
-                                .replace("%collection_name%", name))).create());
-                        for (BaseComponent component : components) {
-                            component.setClickEvent(clickEvent);
-                            component.setHoverEvent(hoverEvent);
-                        }
-                        player.getPlayer().spigot().sendMessage(components);
-                    }
-                    playerCollection.addXP(key, xp);
-                    checkLevelUp(player, key);
-                }
+        if (!p.isOnline() || xp <= 0) {
+            return;
+        }
+
+        Player player = p.getPlayer();
+        if (player == null) {
+            return;
+        }
+
+        PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
+        Collection collection = HyperCollections.getInstance().getCollections().getCollection(key);
+        if (collection == null || playerCollection.getLevel(key) >= collection.getMaxLevel()) {
+            return;
+        }
+
+
+        double currentXP = playerCollection.getXP(key);
+        if (currentXP == 0) {
+            CollectionsUnlockEvent event = new CollectionsUnlockEvent(player, key);
+            Bukkit.getServer().getPluginManager().callEvent(event);
+            if (event.isCancelled()) {
+                return;
             }
+
+            String name = collection.getName();
+            BaseComponent[] components = TextComponent.fromLegacyText(Utils.color(HyperCollections.getInstance().getMessages().getMessage("collectionUnlocked")
+                    .replace("%collection_name%", name)));
+            ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/collections levelmenu " + key);
+            HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(Utils.color(HyperCollections.getInstance().getMessages().getMessage("collectionUnlockedHoverMessage")
+                    .replace("%collection_name%", name))).create());
+            for (BaseComponent component : components) {
+                component.setClickEvent(clickEvent);
+                component.setHoverEvent(hoverEvent);
+            }
+            player.getPlayer().spigot().sendMessage(components);
+        }
+
+        playerCollection.addXP(key, xp);
+        checkLevelUp(player, key);
     }
 
     public void checkLevelUp(OfflinePlayer offlinePlayer, String key) {
-        if (!offlinePlayer.isOnline()) return;
+        if (!offlinePlayer.isOnline()) {
+            return;
+        }
+
         Player player = offlinePlayer.getPlayer();
-        if (player == null) return;
+        if (player == null) {
+            return;
+        }
         Collection collection = plugin.getCollections().getCollection(key);
         PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
         int level = playerCollection.getLevel(key);
         int currentXP = playerCollection.getXP(key);
         Double maxXP = collection.getRequirement(level + 1);
-        if (currentXP >= maxXP) {
+        if (maxXP != null && currentXP >= maxXP) {
             new HyperSound(HyperCollections.getInstance().getConfiguration().getLevelUPSound(), 1, 1).play(player);
             playerCollection.addLevel(key, 1);
             Bukkit.getServer().getPluginManager().callEvent(new CollectionsLevelUPEvent(player, key, level + 1));
             levelUp(key, player, collection);
+            checkLevelUp(offlinePlayer, key);
         }
     }
 
@@ -177,30 +193,35 @@ public class CollectionsManager {
         int level = playerCollection.getLevel(key);
         List<String> commands = collection.getCommands(level);
         if (commands != null) {
-            for (String command : commands)
+            for (String command : commands) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName()));
+            }
         }
-        List<String> messages = HyperCollections.getInstance().getMessages().getLevelUPMessage();
-        if (messages != null) {
-            for (String line : messages) {
-                if (line.contains("%level_rewards%")) {
-                    List<String> placeholders = collection.getRewards(level);
-                    if (placeholders != null) {
-                        for (String placeholderLine : placeholders)
-                            player.sendMessage(Utils.color(placeholderLine
-                                    .replaceAll("%previous_level%", Utils.toRoman(level))
-                                    .replaceAll("%current_level%", Utils.toRoman(level + 1))
-                                    .replaceAll("%collection_name%", collection.getName())
-                                    .replaceAll("%money_reward%", Utils.toRoman(0))));
-                    }
-                } else {
-                    player.sendMessage(Utils.color(line
-                            .replaceAll("%current_level%", Utils.toRoman(level))
-                            .replaceAll("%previous_level%", Utils.toRoman(level - 1))
-                            .replaceAll("%collection_name%", collection.getName())
-                            .replaceAll("%money_reward%", Utils.toRoman(0))));
 
-                }
+        List<String> messages = HyperCollections.getInstance().getMessages().getLevelUPMessage();
+        if (messages == null) {
+            return;
+        }
+
+        for (String line : messages) {
+            if (!line.contains("%level_rewards%")) {
+                player.sendMessage(Utils.color(line
+                        .replaceAll("%current_level%", Utils.toRoman(level))
+                        .replaceAll("%previous_level%", Utils.toRoman(level - 1))
+                        .replaceAll("%collection_name%", collection.getName())
+                        .replaceAll("%money_reward%", Utils.toRoman(0))));
+                continue;
+            }
+            List<String> placeholders = collection.getRewards(level);
+            if (placeholders == null) {
+                continue;
+            }
+            for (String placeholderLine : placeholders) {
+                player.sendMessage(Utils.color(placeholderLine
+                        .replaceAll("%previous_level%", Utils.toRoman(level))
+                        .replaceAll("%current_level%", Utils.toRoman(level + 1))
+                        .replaceAll("%collection_name%", collection.getName())
+                        .replaceAll("%money_reward%", Utils.toRoman(0))));
             }
         }
     }
