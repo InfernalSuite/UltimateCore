@@ -197,29 +197,31 @@ public class SkillManager {
 
     private void levelUp(Player player, SkillType skill, int level) {
         List<String> commands = plugin.getRewards().getCommandRewards(skill, level);
-        if (commands == null) {
-            return;
+        if (commands != null) {
+            commands.forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName())));
         }
-        commands.forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName())));
 
         List<String> messages = plugin.getMessages().getLevelUPMessage();
         if (messages == null) {
             return;
         }
+
         for (String line : messages) {
             if (!line.contains("%level_rewards%")) {
                 player.sendMessage(StringUtils.color(line.replaceAll("%previous_level%", Utils.toRoman(level))
-                        .replaceAll("%level%", Utils.toRoman(level + 1))
-                        .replaceAll("%next_level%", Utils.toRoman(level + 1))
-                        .replaceAll("%money_reward%", Utils.toRoman(0))));
+                  .replaceAll("%level%", Utils.toRoman(level + 1))
+                  .replaceAll("%next_level%", Utils.toRoman(level + 1))
+                  .replaceAll("%money_reward%", Utils.toRoman(0))));
+                continue;
             }
-            if (plugin.getRewards().getCommandRewards(skill, level) == null) {
-                return;
+
+            if(plugin.getRewards().getRewardPlaceholders(skill, level) == null) {
+                continue;
             }
             for (String placeholderLine : plugin.getRewards().getRewardPlaceholders(skill, level)) {
                 player.sendMessage(StringUtils.color(placeholderLine.replaceAll("%previous_level%", Utils.toRoman(level))
-                        .replaceAll("%level%", Utils.toRoman(level + 1))
-                        .replaceAll("%next_level%", Utils.toRoman(level + 1))));
+                  .replaceAll("%level%", Utils.toRoman(level + 1))
+                  .replaceAll("%next_level%", Utils.toRoman(level + 1))));
             }
         }
     }
