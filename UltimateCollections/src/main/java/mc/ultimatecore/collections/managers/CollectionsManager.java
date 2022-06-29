@@ -135,7 +135,12 @@ public class CollectionsManager {
 
         PlayerCollection playerCollection = HyperCollections.getInstance().getCollectionsManager().createOrGetUser(player.getUniqueId());
         Collection collection = HyperCollections.getInstance().getCollections().getCollection(key);
-        if (collection == null || playerCollection.getLevel(key) >= collection.getMaxLevel()) {
+        if (collection == null) {
+            return;
+        }
+
+        if(playerCollection.getLevel(key) >= collection.getMaxLevel()) {
+            playerCollection.addXP(key, xp);
             return;
         }
 
