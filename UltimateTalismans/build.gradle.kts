@@ -1,4 +1,4 @@
-version = "5.2.6"
+version = "5.2.7"
 
 repositories {
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")

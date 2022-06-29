@@ -1,7 +1,8 @@
+
 import java.io.FileOutputStream
-import java.util.zip.ZipOutputStream
+import java.nio.file.Files
 import java.util.zip.ZipEntry
-import java.nio.file.Files;
+import java.util.zip.ZipOutputStream
 
 plugins {
     `java-library`
@@ -44,7 +45,7 @@ bundleJars.doFirst {
 }
 
 tasks.runServer {
-    minecraftVersion("1.18.2")
+    minecraftVersion("1.19")
     javaLauncher.set(javaToolchains.launcherFor {
         languageVersion.set(JavaLanguageVersion.of(17))
     })
