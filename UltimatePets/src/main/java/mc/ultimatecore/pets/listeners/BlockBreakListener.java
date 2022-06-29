@@ -19,7 +19,7 @@ public class BlockBreakListener implements Listener {
         Player player = e.getPlayer();
         User user = plugin.getUserManager().getUser(player);
         if(user.getPlayerPet() == null) return;
-        if(plugin.getConfiguration().blockBreakXP <= 0) return;
+        if(plugin.getConfiguration().blockBreakXP <= 0D) return;
         plugin.getPetsLeveller().addXP(player, plugin.getConfiguration().blockBreakXP);
     }
 

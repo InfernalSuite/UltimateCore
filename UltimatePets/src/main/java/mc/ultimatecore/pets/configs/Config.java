@@ -16,8 +16,8 @@ public class Config extends YAMLFile {
     public String selectedPetName = "&a%pet_name%";
     public String selectedPetNone = "&cNone";
     public Map<Tier, Item> petItems = new HashMap<>();
-    public int skillsXP;
-    public int blockBreakXP;
+    public double skillsXP;
+    public double blockBreakXP;
     public boolean debug;
 
     public int syncDelay;

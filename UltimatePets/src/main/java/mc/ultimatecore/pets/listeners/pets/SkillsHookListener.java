@@ -18,8 +18,13 @@ public class SkillsHookListener implements Listener {
     public void blockBreak(SkillsXPGainEvent e) {
         Player player = e.getPlayer();
         User user = plugin.getUserManager().getUser(player);
-        if(user.getPlayerPet() == null) return;
-        if(plugin.getConfiguration().skillsXP <= 0) return;
+        if(user.getPlayerPet() == null) {
+            return;
+        }
+        if(plugin.getConfiguration().skillsXP <= 0D) {
+            return;
+        }
+
         plugin.getPetsLeveller().addXP(player, plugin.getConfiguration().skillsXP);
     }
 
