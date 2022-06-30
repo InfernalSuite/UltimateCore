@@ -48,7 +48,6 @@ public class PetsLeveller {
     }
 
     public void manageXP(Player player, Pet pet, double toAddXP) {
-        System.out.println(plugin.getAddonsManager().isHyperSkills());
         User user = plugin.getUserManager().getUser(player);
         PlayerPet petManager = user.getPlayerPet();
         PetData petData = user.getPlayerPet().getPetData();
