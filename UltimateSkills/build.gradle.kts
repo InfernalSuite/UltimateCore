@@ -1,6 +1,6 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
-version = "5.2.7"
+version = "5.2.8"
 
 repositories {
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")

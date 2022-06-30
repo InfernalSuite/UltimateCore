@@ -1,7 +1,7 @@
 name: UltimateCore-Crafting
 description: UltimateCore's Crafting plugin
 main: mc.ultimatecore.crafting.HyperCrafting
-version: "5.2.7"
+version: "5.2.8"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 depend:

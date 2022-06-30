@@ -1,4 +1,4 @@
-version = "5.2.7"
+version = "5.2.8"
 
 plugins {
     `java-library`

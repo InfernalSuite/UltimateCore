@@ -1,7 +1,7 @@
 name: UltimateCore-Souls
 description: UltimateCore's Souls plugin
 main: mc.ultimatecore.souls.HyperSouls
-version: "5.2.7"
+version: "5.2.8"
 api-version: 1.13
 authors: [ EduardWayland, ZubeySweet ]
 load: POSTWORLD
