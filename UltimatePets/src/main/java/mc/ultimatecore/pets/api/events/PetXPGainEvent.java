@@ -10,9 +10,9 @@ public class PetXPGainEvent extends PlayerEvent {
 
     private final Pet pet;
 
-    private final int xpAmount;
+    private final double xpAmount;
 
-    public PetXPGainEvent(Player player, Pet pet, int xpAmount) {
+    public PetXPGainEvent(Player player, Pet pet, double xpAmount) {
         super(player);
         this.pet = pet;
         this.xpAmount = xpAmount;
@@ -26,7 +26,7 @@ public class PetXPGainEvent extends PlayerEvent {
         return pet;
     }
 
-    public int getXpAmount() {
+    public double getXpAmount() {
         return xpAmount;
     }
 }

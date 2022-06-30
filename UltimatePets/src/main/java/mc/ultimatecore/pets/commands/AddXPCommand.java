@@ -24,7 +24,7 @@ public class AddXPCommand extends Command {
         if(args.length == 3){
             try {
                 Player player = Bukkit.getPlayer(args[1]);
-                int va = Integer.parseInt(args[2]);
+                double va = Double.parseDouble(args[2]);
                 if(player == null){
                     sender.sendMessage(Utils.color(HyperPets.getInstance().getMessages().getMessage("invalidPlayer").replace("%prefix%", HyperPets.getInstance().getConfiguration().prefix)));
                 }else{

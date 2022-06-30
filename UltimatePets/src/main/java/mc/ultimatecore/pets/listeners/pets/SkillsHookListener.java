@@ -21,7 +21,7 @@ public class SkillsHookListener implements Listener {
         if(user.getPlayerPet() == null) {
             return;
         }
-        if(plugin.getConfiguration().skillsXP <= 0D) {
+        if(plugin.getConfiguration().skillsXP <= 0.0D) {
             return;
         }
 

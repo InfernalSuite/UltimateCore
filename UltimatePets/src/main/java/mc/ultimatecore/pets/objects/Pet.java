@@ -31,7 +31,7 @@ public class Pet {
     public Double getLevelRequirement(String tier, int level){
         if(petLevels.containsKey(tier))
             return petLevels.get(tier).getRequirement(level);
-        return 0D;
+        return 0.0D;
     }
 
     public int getMaxLevel(String tier){

@@ -19,7 +19,7 @@ public class PetsLeveller {
     private final HyperPets plugin;
 
     public void addXP(Player player, double xp) {
-        if (xp == 0D) {
+        if (xp == 0.0D) {
             return;
         }
 
@@ -48,6 +48,7 @@ public class PetsLeveller {
     }
 
     public void manageXP(Player player, Pet pet, double toAddXP) {
+        System.out.println(plugin.getAddonsManager().isHyperSkills());
         User user = plugin.getUserManager().getUser(player);
         PlayerPet petManager = user.getPlayerPet();
         PetData petData = user.getPlayerPet().getPetData();
@@ -61,7 +62,7 @@ public class PetsLeveller {
         }
         //Adding New XP
         petData.addXP(toAddXP);
-        Bukkit.getServer().getPluginManager().callEvent(new PetXPGainEvent(player, pet, (int) toAddXP));
+        Bukkit.getServer().getPluginManager().callEvent(new PetXPGainEvent(player, pet, toAddXP));
         double xp = petData.getXp();
         double maxXP = pet.getLevelRequirement(tier.getName(), level);
         if (xp < maxXP) {
