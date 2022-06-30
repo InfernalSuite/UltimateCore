@@ -1,23 +1,16 @@
 package mc.ultimatecore.skills.managers;
 
-import com.cryptomorin.xseries.XBlock;
-import com.cryptomorin.xseries.XMaterial;
-import mc.ultimatecore.skills.HyperSkills;
-import mc.ultimatecore.skills.TempUser;
-import mc.ultimatecore.skills.api.events.SkillsLevelUPEvent;
-import mc.ultimatecore.skills.api.events.SkillsXPGainEvent;
-import mc.ultimatecore.skills.listener.perks.DoubleItemPerks;
+import com.cryptomorin.xseries.*;
+import mc.ultimatecore.skills.*;
+import mc.ultimatecore.skills.api.events.*;
+import mc.ultimatecore.skills.listener.perks.*;
 import mc.ultimatecore.skills.objects.*;
-import mc.ultimatecore.skills.objects.perks.Perk;
-import mc.ultimatecore.skills.objects.xp.BlockXP;
-import mc.ultimatecore.skills.utils.StringUtils;
-import mc.ultimatecore.skills.utils.Utils;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
+import mc.ultimatecore.skills.objects.perks.*;
+import mc.ultimatecore.skills.objects.xp.*;
+import mc.ultimatecore.skills.utils.*;
+import org.bukkit.*;
+import org.bukkit.block.*;
+import org.bukkit.entity.*;
 
 import java.util.*;
 
@@ -34,7 +27,7 @@ public class SkillManager {
         this.updateTop10();
     }
 
-    public void disable(){
+    public void disable() {
         savePlayerDataOnDisable();
         stopUpdating();
     }
@@ -56,7 +49,7 @@ public class SkillManager {
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
                 PlayerSkills playerSkills = skillsCache.getOrDefault(uuid, null);
-                if(playerSkills != null)
+                if (playerSkills != null)
                     this.plugin.getPluginDatabase().savePlayerSkills(Bukkit.getOfflinePlayer(uuid), playerSkills);
 
                 if (removeFromCache)
@@ -66,7 +59,7 @@ public class SkillManager {
             });
         } else {
             PlayerSkills playerSkills = skillsCache.getOrDefault(uuid, null);
-            if(playerSkills != null)
+            if (playerSkills != null)
                 this.plugin.getPluginDatabase().savePlayerSkills(Bukkit.getOfflinePlayer(uuid), playerSkills);
 
             if (removeFromCache)
@@ -80,7 +73,7 @@ public class SkillManager {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
         for (UUID uuid : skillsCache.keySet()) {
             PlayerSkills playerSkills = skillsCache.getOrDefault(uuid, null);
-            if(playerSkills != null)
+            if (playerSkills != null)
                 this.plugin.getPluginDatabase().savePlayerSkills(Bukkit.getOfflinePlayer(uuid), playerSkills);
         }
         skillsCache.clear();
@@ -141,21 +134,29 @@ public class SkillManager {
 
     public void addXP(UUID uuid, SkillType skillType, double xp) {
         Player player = Bukkit.getPlayer(uuid);
-        if (player != null)
-            if (xp != 0D) {
-                PlayerSkills playerSkills = plugin.getSkillManager().getPlayerSkills(player);
-                xp*= Utils.getMultiplier(player, skillType);
-                if (playerSkills.getLevel(skillType) < plugin.getConfiguration().maxSkillLevel) {
-                    SkillsXPGainEvent event = new SkillsXPGainEvent(player, skillType, xp);
-                    Bukkit.getServer().getPluginManager().callEvent(event);
-                    if (event.isCancelled())
-                        return;
-                    playerSkills.addXP(skillType, xp);
-                    if(plugin.getConfiguration().actionBarXP)
-                        plugin.getActionBarManager().sendXPActionBar(player, skillType, xp);
-                    checkLevelUp(player, skillType);
-                }
-            }
+        if (player == null) {
+            return;
+        }
+        if (xp == 0D) {
+            return;
+        }
+
+        PlayerSkills playerSkills = plugin.getSkillManager().getPlayerSkills(player);
+        xp *= Utils.getMultiplier(player, skillType);
+        SkillsXPGainEvent event = new SkillsXPGainEvent(player, skillType, xp);
+        Bukkit.getServer().getPluginManager().callEvent(event);
+        if (event.isCancelled()) {
+            return;
+        }
+        playerSkills.addXP(skillType, xp);
+        if (plugin.getConfiguration().actionBarXP) {
+            plugin.getActionBarManager().sendXPActionBar(player, skillType, xp);
+        }
+
+        if (playerSkills.getLevel(skillType) >= plugin.getConfiguration().maxSkillLevel) {
+            return;
+        }
+        checkLevelUp(player, skillType);
     }
 
     public void setXP(UUID uuid, SkillType skillType, double xp) {
@@ -165,7 +166,7 @@ public class SkillManager {
                 PlayerSkills playerSkills = plugin.getSkillManager().getPlayerSkills(player);
                 if (playerSkills.getLevel(skillType) < plugin.getConfiguration().maxSkillLevel) {
                     playerSkills.setXP(skillType, xp);
-                    if(plugin.getConfiguration().actionBarXP)
+                    if (plugin.getConfiguration().actionBarXP)
                         plugin.getActionBarManager().sendXPActionBar(player, skillType, xp);
                     checkLevelUp(player, skillType);
                 }
@@ -173,26 +174,31 @@ public class SkillManager {
     }
 
 
-    public void checkLevelUp(Player player, SkillType skillType){
+    public void checkLevelUp(Player player, SkillType skillType) {
         PlayerSkills playerSkills = plugin.getSkillManager().getPlayerSkills(player);
         int level = playerSkills.getLevel(skillType);
         Double currentXP = playerSkills.getXP(skillType);
         Double maxXP = plugin.getRequirements().getLevelRequirement(skillType, level);
         new HyperSound(plugin.getConfiguration().gainXPSound, 1, 1).play(player);
-        if (currentXP >= maxXP && maxXP != 0D) {
-            SkillsLevelUPEvent event = new SkillsLevelUPEvent(player, skillType, level+1);
-            Bukkit.getServer().getPluginManager().callEvent(event);
-            if (event.isCancelled())
-                return;
-            new HyperSound(plugin.getConfiguration().levelUPSound, 1, 1).play(player);
-            playerSkills.addLevel(skillType, 1);
-            if(currentXP - maxXP > 0)
-                playerSkills.setXP(skillType, currentXP - maxXP);
-            else
-                playerSkills.setXP(skillType, 0d);
-            levelUp(player, skillType, level);
-            checkLevelUp(player, skillType);
+        if (currentXP < maxXP || maxXP == 0D) {
+            return;
         }
+        if(level >= plugin.getConfiguration().maxSkillLevel) {
+            return;
+        }
+        SkillsLevelUPEvent event = new SkillsLevelUPEvent(player, skillType, level + 1);
+        Bukkit.getServer().getPluginManager().callEvent(event);
+        if (event.isCancelled())
+            return;
+        new HyperSound(plugin.getConfiguration().levelUPSound, 1, 1).play(player);
+        playerSkills.addLevel(skillType, 1);
+        if (currentXP - maxXP > 0) {
+            playerSkills.setXP(skillType, currentXP - maxXP);
+        }else {
+            playerSkills.setXP(skillType, 0d);
+        }
+        levelUp(player, skillType, level);
+        checkLevelUp(player, skillType);
     }
 
     private void levelUp(Player player, SkillType skill, int level) {
@@ -209,19 +215,19 @@ public class SkillManager {
         for (String line : messages) {
             if (!line.contains("%level_rewards%")) {
                 player.sendMessage(StringUtils.color(line.replaceAll("%previous_level%", Utils.toRoman(level))
-                  .replaceAll("%level%", Utils.toRoman(level + 1))
-                  .replaceAll("%next_level%", Utils.toRoman(level + 1))
-                  .replaceAll("%money_reward%", Utils.toRoman(0))));
+                        .replaceAll("%level%", Utils.toRoman(level + 1))
+                        .replaceAll("%next_level%", Utils.toRoman(level + 1))
+                        .replaceAll("%money_reward%", Utils.toRoman(0))));
                 continue;
             }
 
-            if(plugin.getRewards().getRewardPlaceholders(skill, level) == null) {
+            if (plugin.getRewards().getRewardPlaceholders(skill, level) == null) {
                 continue;
             }
             for (String placeholderLine : plugin.getRewards().getRewardPlaceholders(skill, level)) {
                 player.sendMessage(StringUtils.color(placeholderLine.replaceAll("%previous_level%", Utils.toRoman(level))
-                  .replaceAll("%level%", Utils.toRoman(level + 1))
-                  .replaceAll("%next_level%", Utils.toRoman(level + 1))));
+                        .replaceAll("%level%", Utils.toRoman(level + 1))
+                        .replaceAll("%next_level%", Utils.toRoman(level + 1))));
             }
         }
     }
@@ -248,23 +254,23 @@ public class SkillManager {
         playersQuantity = 0;
         Set<UUID> uuids = plugin.getPluginDatabase().getAllPlayers();
         Map<SkillType, List<RankPlayer>> rankPlayerMap = new HashMap<>();
-        for(SkillType skillType : SkillType.values()) {
+        for (SkillType skillType : SkillType.values()) {
             List<RankPlayer> rankPlayers = new ArrayList<>();
             for (UUID uuid : uuids) {
                 PlayerSkills playerSkills = getDatabaseSkills(uuid);
-                if(playerSkills != null && playerSkills.getLevel(skillType) > plugin.getConfiguration().levelToRank)
+                if (playerSkills != null && playerSkills.getLevel(skillType) > plugin.getConfiguration().levelToRank)
                     rankPlayers.add(new RankPlayer(uuid, skillType, playerSkills.getSkillValue(skillType)));
             }
-            playersQuantity=+rankPlayers.size();
+            playersQuantity = +rankPlayers.size();
             rankPlayerMap.put(skillType, rankPlayers);
         }
-        for(SkillType skillType : rankPlayerMap.keySet()){
+        for (SkillType skillType : rankPlayerMap.keySet()) {
             List<RankPlayer> rankPlayers = rankPlayerMap.get(skillType);
             rankPlayers.sort((o1, o2) -> (int) (o2.getPoints() - o1.getPoints()));
             int i = 1;
-            for(RankPlayer rankPlayer : rankPlayers){
+            for (RankPlayer rankPlayer : rankPlayers) {
                 PlayerSkills playerSkills = getDatabaseSkills(rankPlayer.getUuid());
-                if(playerSkills == null) continue;
+                if (playerSkills == null) continue;
                 playerSkills.setRankPosition(skillType, i);
                 i++;
             }
@@ -272,11 +278,11 @@ public class SkillManager {
         this.plugin.sendDebug("Skill Top updated!", DebugType.LOG);
     }
 
-    private PlayerSkills getDatabaseSkills(UUID uuid){
+    private PlayerSkills getDatabaseSkills(UUID uuid) {
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
-        if(skillsCache.containsKey(uuid)){
+        if (skillsCache.containsKey(uuid)) {
             return skillsCache.get(uuid);
-        }else{
+        } else {
             String strSkills = plugin.getPluginDatabase().getPlayerSkills(offlinePlayer);
             if (strSkills != null)
                 return plugin.getGson().fromStringSkills(strSkills);
@@ -284,21 +290,21 @@ public class SkillManager {
         return null;
     }
 
-    public int getOptionalPlayers(){
-        if(skillsCache.size() == 0)
+    public int getOptionalPlayers() {
+        if (skillsCache.size() == 0)
             return 1;
         return skillsCache.size();
     }
 
-    public void manageBlockPoints(Player player, Block bl, Material mat, boolean multiplyRewards){
+    public void manageBlockPoints(Player player, Block bl, Material mat, boolean multiplyRewards) {
         XMaterial material = XBlock.getType(bl);
         String key = mat.toString();
-        if(!plugin.getSkillPoints().skillBlocksXP.containsKey(key)) {
+        if (!plugin.getSkillPoints().skillBlocksXP.containsKey(key)) {
             return;
         }
 
         BlockXP skillXP = plugin.getSkillPoints().skillBlocksXP.get(key);
-        if(material.getData() != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) {
+        if (material.getData() != skillXP.getMaterialData() && skillXP.getMaterialData() != -1) {
             return;
         }
 
@@ -310,15 +316,15 @@ public class SkillManager {
         if (player.getGameMode().equals(GameMode.CREATIVE) && !skill.isXpInCreative()) {
             return;
         }
-        if(Utils.isInBlockedWorld(bl.getWorld().getName(), skillType)) {
+        if (Utils.isInBlockedWorld(bl.getWorld().getName(), skillType)) {
             return;
         }
-        if(Utils.isInBlockedRegion(bl.getLocation(), skillType)) {
+        if (Utils.isInBlockedRegion(bl.getLocation(), skillType)) {
             return;
         }
 
         double xp = key.contains("SUGAR_CANE") || key.contains("CACTUS") ? skillXP.getXp() * Utils.getBlockQuantity(bl, mat) : skillXP.getXp();
-        if(xp <= 0) {
+        if (xp <= 0) {
             return;
         }
         if (!multiplyRewards) {
