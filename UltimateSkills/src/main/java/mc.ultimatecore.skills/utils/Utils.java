@@ -198,7 +198,7 @@ public final class Utils {
         int level = playerSkills.getLevel(skill);
         Double xp = playerSkills.getXP(skill);
         Double maxXP = HyperSkills.getInstance().getRequirements().getLevelRequirement(skill, level);
-        double currentPercentage = getCurrentPercentage(xp, maxXP);
+        double currentPercentage = maxXP == null ? 0 : getCurrentPercentage(xp, maxXP);
         return new ArrayList<>(Arrays.asList(new Placeholder("current_percentage", String.valueOf(round(currentPercentage))),
                 new Placeholder("next_level", Utils.toRoman(level + 1)),
                 new Placeholder("current_xp", String.valueOf(xp)),
@@ -214,7 +214,7 @@ public final class Utils {
         int level = playerSkills.getLevel(skill);
         Double xp = playerSkills.getXP(skill);
         Double maxXP = HyperSkills.getInstance().getRequirements().getLevelRequirement(skill, level);
-        double currentPercentage = getCurrentPercentage(xp, maxXP);
+        double currentPercentage = maxXP == null ? 0 : getCurrentPercentage(xp, maxXP);
         int rankPosition = playerSkills.getRankPosition(skill);
         int playersQuantity = HyperSkills.getInstance().getSkillManager().playersQuantity == 0 ? HyperSkills.getInstance().getSkillManager().getOptionalPlayers() : HyperSkills.getInstance().getSkillManager().playersQuantity;
         return new ArrayList<>(Arrays.asList(new Placeholder("current_percentage", String.valueOf(round(currentPercentage))),
@@ -237,7 +237,7 @@ public final class Utils {
         PlayerSkills playerSkills = HyperSkills.getInstance().getSkillManager().getPlayerSkills(uuid);
         Double xp = playerSkills.getXP(skill);
         Double maxXP = HyperSkills.getInstance().getRequirements().getLevelRequirement(skill, level);
-        double currentPercentage = getCurrentPercentage(xp, maxXP);
+        double currentPercentage = maxXP == null ? 0 : getCurrentPercentage(xp, maxXP);
         return new ArrayList<>(Arrays.asList(new Placeholder("current_percentage", String.valueOf(round(currentPercentage))),
                 new Placeholder("next_level", Utils.toRoman(level + 1)),
                 new Placeholder("current_xp", String.valueOf(xp)),
@@ -316,11 +316,13 @@ public final class Utils {
 
     public static String getProgressBar(int percentage) {
         StringBuilder bar = new StringBuilder();
-        int current = getPercentageQuantity(percentage);
-        for (int i = 0; i < current; i++)
+        int current = Math.min(getPercentageQuantity(percentage), 20);
+        for (int i = 0; i < current; i++) {
             bar.append("&a-");
-        for (int i = 0; i < 20 - current; i++)
+        }
+        for (int i = 0; i < 20 - current; i++) {
             bar.append("&f-");
+        }
         return bar.toString();
     }
 
