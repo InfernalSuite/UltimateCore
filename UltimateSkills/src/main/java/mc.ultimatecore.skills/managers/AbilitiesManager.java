@@ -60,7 +60,7 @@ public class AbilitiesManager {
     }
 
     public void loadPlayerData(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+        Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
             String strAbilities = plugin.getPluginDatabase().getPlayerAbilities(player);
             PlayerAbilities playerAbilities = (strAbilities != null && !strAbilities.equals("null")) ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
             for(Ability ability : Ability.values()) {
@@ -76,7 +76,7 @@ public class AbilitiesManager {
             ItemStatsUtils.setupArmorAbilities(player);
             Bukkit.getScheduler().runTask(plugin, () -> Bukkit.getPluginManager().callEvent(new PlayerEnterEvent(player)));
             this.plugin.sendDebug(String.format("Loaded abilities of player %s from database", player.getName()), DebugType.LOG);
-        });
+        }, plugin.getConfiguration().syncDelay);
     }
 
     public Double getAbility(UUID uuid, Ability key) {
