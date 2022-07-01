@@ -2,24 +2,28 @@ rewards:
   1:
     enabled: true
     damageDone: 75
+    dragon: "kid_dragon"
     commands:
       - "eco give %player% 15000"
       - "skills addxp %player% Runecrafting %dragon_xp%"
   2:
     enabled: true
     damageDone: 50
+    dragon: "normal_dragon"
     commands:
       - "eco give %player% 5000"
       - "skills addxp %player% Runecrafting %dragon_xp%"
   3:
     enabled: true
     damageDone: 25
+    dragon: "normal_dragon"
     commands:
       - "eco give %player% 1000"
       - "skills addxp %player% Runecrafting %dragon_xp%"
   4:
     enabled: true
     damageDone: 10
+    dragon: "ancient_dragon"
     commands:
       - "eco give %player% 100"
       - "skills addxp %player% Runecrafting %dragon_xp%"
