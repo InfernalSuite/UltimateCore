@@ -1,19 +1,15 @@
 package mc.ultimatecore.dragon.objects.others;
 
-import lombok.RequiredArgsConstructor;
-import mc.ultimatecore.dragon.HyperDragons;
-import mc.ultimatecore.dragon.objects.DragonPlayer;
-import mc.ultimatecore.dragon.objects.EventPlayer;
-import mc.ultimatecore.dragon.objects.implementations.IHyperDragon;
-import mc.ultimatecore.dragon.objects.rewards.DragonReward;
-import mc.ultimatecore.dragon.utils.StringUtils;
-import mc.ultimatecore.dragon.utils.Utils;
-import org.bukkit.Bukkit;
+import lombok.*;
+import mc.ultimatecore.dragon.*;
+import mc.ultimatecore.dragon.objects.*;
+import mc.ultimatecore.dragon.objects.implementations.*;
+import mc.ultimatecore.dragon.objects.rewards.*;
+import mc.ultimatecore.dragon.utils.*;
+import org.bukkit.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.*;
 
 @RequiredArgsConstructor
 public class FinalPart {
@@ -49,7 +45,7 @@ public class FinalPart {
                 if(eventPlayer.getPlayer() != null)
                     eventPlayer.getPlayer().sendMessage(message);
             }
-            Optional<DragonReward> reward = getPlayerReward(eventPlayer);
+            Optional<DragonReward> reward = getPlayerReward(eventPlayer, hyperDragon);
             reward.ifPresent(dragonReward -> dragonReward.getCommands().forEach(command -> Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), command.replace("%dragon_xp%", Utils.doubleToStr(hyperDragon.getXp()))
                     .replace("%player%", eventPlayer.getName()))));
             rank++;
@@ -58,9 +54,10 @@ public class FinalPart {
     }
 
 
-    private Optional<DragonReward> getPlayerReward(EventPlayer eventPlayer){
+    private Optional<DragonReward> getPlayerReward(EventPlayer eventPlayer, IHyperDragon dragon){
         List<DragonReward> dragonRewards = new ArrayList<>(plugin.getRewards().getDragonRewards());
         dragonRewards.sort((o1, o2) -> o2.getDamageDone() - o1.getDamageDone());
+        dragonRewards = dragonRewards.stream().filter(p -> p.getDragon().equalsIgnoreCase(dragon.getId())).collect(Collectors.toList());
         return dragonRewards.stream()
                 .filter(dragonReward -> eventPlayer.getDamage() >= dragonReward.getDamageDone())
                 .findFirst();
