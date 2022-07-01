@@ -10,4 +10,5 @@ import java.util.List;
 public class DragonReward {
     private final int damageDone;
     private final List<String> commands;
+    private final String dragon;
 }

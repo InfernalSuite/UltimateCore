@@ -37,7 +37,7 @@ public class Rewards extends YAMLFile {
             if(!getConfig().getBoolean("rewards." + key + ".enabled")) continue;
             int damageDone = cf.getInt("rewards." + key + ".damageDone");
             List<String> commands = cf.getStringList("rewards." + key + ".commands");
-            DragonReward dragonReward = new DragonReward(damageDone, commands);
+            DragonReward dragonReward = new DragonReward(damageDone, commands, cf.getString("rewards." + key + ".dragon"));
             dragonRewards.add(dragonReward);
             loaded++;
         }
