@@ -3,6 +3,7 @@ version = "5.2.8"
 dependencies {
     implementation("com.github.cryptomorin:XSeries:8.7.0")
     implementation("de.tr7zw:item-nbt-api:2.10.0")
+    implementation("com.zaxxer:HikariCP:5.0.1")
 
     implementation(project(":UltimateDragon:UltimateDragonNMS"))
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_8_R3"))
@@ -15,7 +16,6 @@ dependencies {
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_18_R2"))
     implementation(project(":UltimateDragon:UltimateDragonNMS-v1_19_R1"))
 
-    compileOnly("com.zaxxer:HikariCP:5.0.1")
     compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
 
     compileOnly(project(":UltimateHelper"))
