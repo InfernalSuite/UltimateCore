@@ -9,11 +9,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.UUID;
+import java.util.*;
 
 public class UserManager {
     private final HyperPets plugin;
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
+
     private final HashMap<UUID, User> playerCache = new HashMap<>();
 
     public UserManager(HyperPets plugin) {
@@ -26,6 +27,7 @@ public class UserManager {
     }
 
     public void savePlayerData(Player player) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
         UUID uuid = player.getUniqueId();
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             if(playerCache.containsKey(uuid)){
@@ -41,6 +43,8 @@ public class UserManager {
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
         for (UUID uuid : playerCache.keySet()){
+            if(_currentlyLoading.contains(uuid)) return;
+
             this.plugin.getPluginDatabase().setInventoryPets(Bukkit.getOfflinePlayer(uuid), playerCache.get(uuid).getInventoryPetsStr());
             this.plugin.getPluginDatabase().setSpawnedID(Bukkit.getOfflinePlayer(uuid), playerCache.get(uuid).getSpawnedID());
         }
@@ -59,23 +63,30 @@ public class UserManager {
     }
 
     public void loadPlayerData(Player player) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        _currentlyLoading.add(player.getUniqueId());
+
         this.plugin.sendDebug(String.format("Attempting to load Pets of player %s from database", player.getName()), DebugType.LOG);
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
-            User user = new User(player.getUniqueId());
-            int spawnedID = this.plugin.getPluginDatabase().getSpawnedID(player);
-            String inventoryPets = this.plugin.getPluginDatabase().getInventoryPets(player);
-            user.setSpawnedID(spawnedID);
-            user.setInventoryPetsStr(inventoryPets);
-            playerCache.put(player.getUniqueId(), user);
-            if (user.getSpawnedID() != -1)
-                HyperPets.getInstance().getPetsManager().loadPetDataSync(user.getSpawnedID());
-            Bukkit.getScheduler().runTask(plugin, () -> {
-                if (user.getSpawnedID() != -1) {
-                    PetData petData = HyperPets.getInstance().getPetsManager().getPetDataByID(user.getSpawnedID());
-                    user.setPlayerPet(player.getUniqueId(), petData.getPetUUID()).createPet();
-                }
-            });
-            this.plugin.sendDebug(String.format("Loaded Pets of player %s from database", player.getName()), DebugType.LOG);
+            try {
+                User user = new User(player.getUniqueId());
+                int spawnedID = this.plugin.getPluginDatabase().getSpawnedID(player);
+                String inventoryPets = this.plugin.getPluginDatabase().getInventoryPets(player);
+                user.setSpawnedID(spawnedID);
+                user.setInventoryPetsStr(inventoryPets);
+                playerCache.put(player.getUniqueId(), user);
+                if (user.getSpawnedID() != -1)
+                    HyperPets.getInstance().getPetsManager().loadPetDataSync(user.getSpawnedID());
+                Bukkit.getScheduler().runTask(plugin, () -> {
+                    if (user.getSpawnedID() != -1) {
+                        PetData petData = HyperPets.getInstance().getPetsManager().getPetDataByID(user.getSpawnedID());
+                        user.setPlayerPet(player.getUniqueId(), petData.getPetUUID()).createPet();
+                    }
+                });
+                this.plugin.sendDebug(String.format("Loaded Pets of player %s from database", player.getName()), DebugType.LOG);
+            } finally {
+                _currentlyLoading.remove(player.getUniqueId());
+            }
         }, plugin.getConfiguration().syncDelay);
     }
 

@@ -7,15 +7,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class DatabaseManager {
     private final HyperDragons plugin;
     private final Map<UUID, DragonPlayer> dragonCache = new HashMap<>();
-
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
     public DatabaseManager(HyperDragons plugin) {
         this.plugin = plugin;
         this.loadPlayerDataOnEnable();
@@ -26,6 +23,7 @@ public class DatabaseManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -46,9 +44,12 @@ public class DatabaseManager {
 
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
-        for (UUID uuid : dragonCache.keySet())
-            if(dragonCache.containsKey(uuid))
+        for (UUID uuid : dragonCache.keySet()) {
+            if(_currentlyLoading.contains(uuid)) return;
+            if(dragonCache.containsKey(uuid)) {
                 this.plugin.getDatabase().setRecord(Bukkit.getOfflinePlayer(uuid), dragonCache.get(uuid).getRecord());
+            }
+        }
 
         dragonCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all player data to database - record", DebugType.LOG);
@@ -65,12 +66,18 @@ public class DatabaseManager {
     }
 
     public void loadPlayerData(Player player) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        _currentlyLoading.add(player.getUniqueId());
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-            DragonPlayer dragonPlayer = new DragonPlayer(player.getUniqueId());
-            double record = this.plugin.getDatabase().getRecord(player);
-            dragonPlayer.setRecord(record);
-            dragonCache.put(player.getUniqueId(), dragonPlayer);
-            this.plugin.sendDebug(String.format("Loaded Record of player %s from database", player.getName()), DebugType.LOG);
+            try {
+                DragonPlayer dragonPlayer = new DragonPlayer(player.getUniqueId());
+                double record = this.plugin.getDatabase().getRecord(player);
+                dragonPlayer.setRecord(record);
+                dragonCache.put(player.getUniqueId(), dragonPlayer);
+                this.plugin.sendDebug(String.format("Loaded Record of player %s from database", player.getName()), DebugType.LOG);
+            } finally {
+                _currentlyLoading.remove(player.getUniqueId());
+            }
         });
     }
 
