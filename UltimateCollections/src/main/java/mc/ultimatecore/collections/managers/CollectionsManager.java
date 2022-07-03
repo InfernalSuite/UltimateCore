@@ -17,6 +17,7 @@ public class CollectionsManager {
     private int task;
     public int playersQuantity;
     private final Map<UUID, PlayerCollection> collectionsCache = new HashMap<>();
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
 
     public CollectionsManager(HyperCollections plugin) {
         this.plugin = plugin;
@@ -49,6 +50,7 @@ public class CollectionsManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -70,8 +72,11 @@ public class CollectionsManager {
 
     public void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
-        for (UUID uuid : collectionsCache.keySet())
+        for (UUID uuid : collectionsCache.keySet()) {
+            if(_currentlyLoading.contains(uuid)) return;
+
             this.plugin.getPluginDatabase().savePlayerCollections(Bukkit.getOfflinePlayer(uuid), collectionsCache.get(uuid));
+        }
         collectionsCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all player data to database - collections", DebugType.LOG);
     }
@@ -87,12 +92,18 @@ public class CollectionsManager {
     }
 
     public void loadPlayerData(Player player) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        _currentlyLoading.add(player.getUniqueId());
         this.plugin.sendDebug(String.format("Attempting to load Collections of player %s from database", player.getName()), DebugType.LOG);
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
-            String strCollections = plugin.getPluginDatabase().getPlayerCollections(player);
-            PlayerCollection playerCollection = strCollections != null ? plugin.getGson().fromString(strCollections) : new PlayerCollection(player.getUniqueId());
-            collectionsCache.put(player.getUniqueId(), playerCollection);
-            this.plugin.sendDebug(String.format("Loaded Collections of player %s from database", player.getName()), DebugType.LOG);
+            try {
+                String strCollections = plugin.getPluginDatabase().getPlayerCollections(player);
+                PlayerCollection playerCollection = strCollections != null ? plugin.getGson().fromString(strCollections) : new PlayerCollection(player.getUniqueId());
+                collectionsCache.put(player.getUniqueId(), playerCollection);
+                this.plugin.sendDebug(String.format("Loaded Collections of player %s from database", player.getName()), DebugType.LOG);
+            } finally {
+                _currentlyLoading.remove(player.getUniqueId());
+            }
         }, plugin.getConfiguration().getSyncDelay());
     }
 

@@ -17,6 +17,7 @@ import java.util.*;
 public class SkillManager {
     public final Map<UUID, TempUser> tempUsers = new HashMap<>();
     private final HyperSkills plugin;
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
     private final Map<UUID, PlayerSkills> skillsCache = new HashMap<>();
     private int task;
     public int playersQuantity;
@@ -45,6 +46,7 @@ public class SkillManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -72,9 +74,11 @@ public class SkillManager {
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
         for (UUID uuid : skillsCache.keySet()) {
+            if(_currentlyLoading.contains(uuid)) return;
             PlayerSkills playerSkills = skillsCache.getOrDefault(uuid, null);
-            if (playerSkills != null)
+            if (playerSkills != null) {
                 this.plugin.getPluginDatabase().savePlayerSkills(Bukkit.getOfflinePlayer(uuid), playerSkills);
+            }
         }
         skillsCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all player data to database - skills", DebugType.LOG);
@@ -91,12 +95,18 @@ public class SkillManager {
     }
 
     public void loadPlayerData(Player player) {
+        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        _currentlyLoading.add(player.getUniqueId());
         this.plugin.sendDebug(String.format("Attempting to load skills of player %s from database", player.getName()), DebugType.LOG);
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
-            String strSkills = plugin.getPluginDatabase().getPlayerSkills(player);
-            PlayerSkills playerSkills = strSkills != null ? plugin.getGson().fromStringSkills(strSkills) : new PlayerSkills();
-            skillsCache.put(player.getUniqueId(), playerSkills);
-            this.plugin.sendDebug(String.format("Loaded Skills of player %s from database", player.getName()), DebugType.LOG);
+            try {
+                String strSkills = plugin.getPluginDatabase().getPlayerSkills(player);
+                PlayerSkills playerSkills = strSkills != null ? plugin.getGson().fromStringSkills(strSkills) : new PlayerSkills();
+                skillsCache.put(player.getUniqueId(), playerSkills);
+                this.plugin.sendDebug(String.format("Loaded Skills of player %s from database", player.getName()), DebugType.LOG);
+            } finally {
+                _currentlyLoading.remove(player.getUniqueId());
+            }
         }, plugin.getConfiguration().syncDelay);
     }
 
