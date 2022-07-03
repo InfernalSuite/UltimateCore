@@ -1,21 +1,17 @@
 package mc.ultimatecore.dragon.listeners;
 
-import com.cryptomorin.xseries.XSound;
-import lombok.RequiredArgsConstructor;
-import mc.ultimatecore.dragon.HyperDragons;
-import mc.ultimatecore.dragon.objects.HyperDragon;
-import mc.ultimatecore.dragon.objects.event.DragonBallEvent;
-import mc.ultimatecore.dragon.objects.implementations.IDragonEvent;
-import mc.ultimatecore.dragon.objects.implementations.IHyperDragon;
-import mc.ultimatecore.dragon.utils.Utils;
-import org.bukkit.EntityEffect;
-import org.bukkit.Location;
+import com.cryptomorin.xseries.*;
+import lombok.*;
+import mc.ultimatecore.dragon.*;
+import mc.ultimatecore.dragon.objects.*;
+import mc.ultimatecore.dragon.objects.event.*;
+import mc.ultimatecore.dragon.objects.implementations.*;
+import mc.ultimatecore.dragon.utils.*;
+import org.bukkit.*;
 import org.bukkit.entity.*;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
+import org.bukkit.event.*;
 import org.bukkit.event.entity.*;
-import org.bukkit.projectiles.ProjectileSource;
+import org.bukkit.projectiles.*;
 
 @RequiredArgsConstructor
 public class DragonListener implements Listener {
@@ -125,33 +121,39 @@ public class DragonListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOW)
     public void onExplode(EntityDamageByEntityEvent e) {
-        if (e.getEntity() instanceof EnderDragon) {
-            if (e.getDamager() instanceof Fireball) { //changed from dragonfireball
-                e.setCancelled(true);
-            } else {
-                Player player = null;
-                if (e.getDamager() instanceof Player)
-                    player = (Player) e.getDamager();
-                else if (e.getDamager() instanceof Arrow && ((Arrow) e.getDamager()).getShooter() instanceof Player)
-                    player = (Player) ((Arrow) e.getDamager()).getShooter();
-                if (player == null) return;
-                double damage = e.getDamage();
-                IHyperDragon hyperDragon = plugin.getDragonManager().getDragonGame().getHyperDragon();
-                EnderDragon enderDragon = plugin.getDragonManager().getDragonGame().getEnderDragon().get();
-                //Managing Player Top Damage
-                plugin.getDragonManager().getDragonGame().managePlayerDamage(player, damage);
-                //Managing last player
-                plugin.getDragonManager().setLast(player.getUniqueId());
-                //Managing Dragon Health
-                if (hyperDragon instanceof HyperDragon) {
-                    if (enderDragon.getHealth() > 0.0D) {
-                        e.setCancelled(true);
-                        enderDragon.setHealth(Utils.getNewHealth(hyperDragon.getHealth(), enderDragon.getHealth(), damage));
-                        enderDragon.playEffect(EntityEffect.HURT);
-                        enderDragon.getWorld().playSound(enderDragon.getLocation(), XSound.ENTITY_ENDER_DRAGON_HURT.parseSound(), 100.0F, 1.0F);
-                    }
-                }
-            }
+        if (!(e.getEntity() instanceof EnderDragon)) {
+            return;
         }
+        if (e.getDamager() instanceof Fireball) { //changed from dragonfireball
+            e.setCancelled(true);
+            return;
+        }
+
+        Player player = null;
+        if (e.getDamager() instanceof Player) {
+            player = (Player) e.getDamager();
+        } else if (e.getDamager() instanceof Arrow && ((Arrow) e.getDamager()).getShooter() instanceof Player) {
+            player = (Player) ((Arrow) e.getDamager()).getShooter();
+        }
+
+        if (player == null) {
+            return;
+        }
+        double damage = e.getDamage();
+        IHyperDragon hyperDragon = plugin.getDragonManager().getDragonGame().getHyperDragon();
+        EnderDragon enderDragon = plugin.getDragonManager().getDragonGame().getEnderDragon().get();
+        //Managing Player Top Damage
+        plugin.getDragonManager().getDragonGame().managePlayerDamage(player, damage);
+        //Managing last player
+        plugin.getDragonManager().setLast(player.getUniqueId());
+        //Managing Dragon Health
+        if (!(hyperDragon instanceof HyperDragon) || !(enderDragon.getHealth() > 0.0D)) {
+            return;
+        }
+        e.setCancelled(true);
+        enderDragon.setHealth(Utils.getNewHealth(hyperDragon.getHealth(), enderDragon.getHealth(), damage));
+        enderDragon.playEffect(EntityEffect.HURT);
+        enderDragon.getWorld().playSound(enderDragon.getLocation(), XSound.ENTITY_ENDER_DRAGON_HURT.parseSound(), 100.0F, 1.0F);
+
     }
 }
