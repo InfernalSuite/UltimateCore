@@ -45,7 +45,7 @@ bundleJars.doFirst {
 }
 
 tasks.runServer {
-    minecraftVersion("1.19")
+    minecraftVersion("1.17.1")
     javaLauncher.set(javaToolchains.launcherFor {
         languageVersion.set(JavaLanguageVersion.of(17))
     })
