@@ -9,6 +9,8 @@ import mc.ultimatecore.helper.*;
 import mc.ultimatecore.helper.hooks.worldedit.*;
 import org.bukkit.*;
 
+import java.lang.reflect.*;
+
 @Getter
 public class AddonsManager extends CoreManagerImpl {
     private WorldEdit worldEdit;
@@ -22,7 +24,7 @@ public class AddonsManager extends CoreManagerImpl {
     @Override
     public void load() {
         if(isPlugin("WorldEdit") || isPlugin("FastAsyncWorldEdit") || isPlugin("AsyncWorldEdit"))
-            worldEdit = ((UltimatePlugin) Bukkit.getPluginManager().getPlugin("UltimateCore")).getVersionHook().getWorldEdit();
+            worldEdit = loadWorldEdit().getWorldEdit();
         else
             Bukkit.getConsoleSender().sendMessage(StringUtils.color("&e[UltimateCore-Dragon] &cWarning WorldEdit is not installed!"));
         if(isPlugin("MythicMobs"))
@@ -40,5 +42,16 @@ public class AddonsManager extends CoreManagerImpl {
 
     public boolean isMythicMobs(){
         return mythicMobs != null;
+    }
+
+    private VersionHook loadWorldEdit() {
+        String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
+        try {
+            return (VersionHook) Class.forName("mc.ultimatecore.helper." + version + ".VersionHookImpl").getConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | ClassNotFoundException | NoSuchMethodException e) {
+            e.printStackTrace();
+            Bukkit.getPluginManager().disablePlugin(this.plugin);
+            return null;
+        }
     }
 }
