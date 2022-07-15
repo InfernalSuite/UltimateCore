@@ -8,13 +8,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class PerksManager {
     private final HyperSkills plugin;
-    private final Map<UUID, PlayerPerks> perksCache = new HashMap<>();
+    public final Map<UUID, PlayerPerks> perksCache = new HashMap<>();
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
 
     public PerksManager(HyperSkills plugin) {
         this.plugin = plugin;
@@ -26,6 +25,9 @@ public class PerksManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -42,8 +44,12 @@ public class PerksManager {
 
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
-        for (UUID uuid : perksCache.keySet())
+        for (UUID uuid : perksCache.keySet()) {
+            if (_currentlyLoading.contains(uuid)) {
+                continue;
+            }
             this.plugin.getPluginDatabase().savePlayerPerks(Bukkit.getOfflinePlayer(uuid), perksCache.get(uuid));
+        }
         perksCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all player data to database - perks", DebugType.LOG);
     }
@@ -59,12 +65,22 @@ public class PerksManager {
     }
 
     public void loadPlayerData(Player player) {
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
+        _currentlyLoading.add(player.getUniqueId());
         this.plugin.sendDebug(String.format("Attempting to load perks of player %s from database", player.getName()), DebugType.LOG);
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
-            String strPerks = plugin.getPluginDatabase().getPlayerPerks(player);
-            PlayerPerks playerPerks = strPerks != null ? plugin.getGson().fromStringPerks(strPerks) : new PlayerPerks();
-            perksCache.put(player.getUniqueId(), playerPerks);
-            this.plugin.sendDebug(String.format("Loaded perks of player %s from database", player.getName()), DebugType.LOG);
+            try {
+                String strPerks = plugin.getPluginDatabase().getPlayerPerks(player);
+                PlayerPerks playerPerks = strPerks != null ? plugin.getGson().fromStringPerks(strPerks) : new PlayerPerks();
+                perksCache.put(player.getUniqueId(), playerPerks);
+                this.plugin.sendDebug(String.format("Loaded perks of player %s from database", player.getName()), DebugType.LOG);
+            }  catch(Exception e) {
+                System.out.println("[DEBUG LoadPlayerData Perks] " + e.getMessage());
+            } finally {
+                _currentlyLoading.remove(player.getUniqueId());
+            }
         }, plugin.getConfiguration().syncDelay);
     }
 

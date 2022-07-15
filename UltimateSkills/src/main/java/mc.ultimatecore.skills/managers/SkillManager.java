@@ -10,6 +10,7 @@ import mc.ultimatecore.skills.objects.xp.*;
 import mc.ultimatecore.skills.utils.*;
 import org.bukkit.*;
 import org.bukkit.block.*;
+import org.bukkit.command.*;
 import org.bukkit.entity.*;
 
 import java.util.*;
@@ -46,7 +47,9 @@ public class SkillManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
-        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -74,7 +77,9 @@ public class SkillManager {
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
         for (UUID uuid : skillsCache.keySet()) {
-            if(_currentlyLoading.contains(uuid)) return;
+            if (_currentlyLoading.contains(uuid)) {
+                continue;
+            }
             PlayerSkills playerSkills = skillsCache.getOrDefault(uuid, null);
             if (playerSkills != null) {
                 this.plugin.getPluginDatabase().savePlayerSkills(Bukkit.getOfflinePlayer(uuid), playerSkills);
@@ -95,7 +100,9 @@ public class SkillManager {
     }
 
     public void loadPlayerData(Player player) {
-        if(_currentlyLoading.contains(player.getUniqueId())) return;
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
         _currentlyLoading.add(player.getUniqueId());
         this.plugin.sendDebug(String.format("Attempting to load skills of player %s from database", player.getName()), DebugType.LOG);
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
@@ -193,7 +200,7 @@ public class SkillManager {
         if (currentXP < maxXP || maxXP == 0D) {
             return;
         }
-        if(level >= plugin.getConfiguration().maxSkillLevel) {
+        if (level >= plugin.getConfiguration().maxSkillLevel) {
             return;
         }
         SkillsLevelUPEvent event = new SkillsLevelUPEvent(player, skillType, level + 1);
@@ -204,7 +211,7 @@ public class SkillManager {
         playerSkills.addLevel(skillType, 1);
         if (currentXP - maxXP > 0) {
             playerSkills.setXP(skillType, currentXP - maxXP);
-        }else {
+        } else {
             playerSkills.setXP(skillType, 0d);
         }
         levelUp(player, skillType, level);
@@ -212,15 +219,31 @@ public class SkillManager {
     }
 
     private void levelUp(Player player, SkillType skill, int level) {
+        System.out.println("[DEBUG REWARD CHECK#-1] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
+
         List<String> commands = plugin.getRewards().getCommandRewards(skill, level);
         if (commands != null) {
-            commands.forEach(command -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName())));
+            for (String command : commands) {
+                try {
+                    var t = Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName()));
+                    System.out.println("[DEBUG REWARD CHECK#0 | COMMAND EXECUTION: ~" + command + "~ Result: " + t + "] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
+                } catch (CommandException e) {
+                    System.err.println("ERROR");
+                    System.err.println("[DEBUG REWARD CHECK#0 | COMMAND EXECUTION CATCH] " + command.replaceAll("%player%", player.getName()));
+                    e.printStackTrace();
+                }
+                   }
+        } else {
+            System.out.println("[DEBUG REWARD CHECK#1 | NO COMMAND] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
         }
 
         List<String> messages = plugin.getMessages().getLevelUPMessage();
         if (messages == null) {
+            System.out.println("[DEBUG REWARD CHECK#1 | NO MESSAGE] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
             return;
         }
+
+        System.out.println("[DEBUG REWARD CHECK#3] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
 
         for (String line : messages) {
             if (!line.contains("%level_rewards%")) {

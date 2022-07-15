@@ -24,6 +24,7 @@ public class PlayerJoinLeaveListener implements Listener {
             if(!plugin.getAddonsManager().isMMOItems())
                 AttributeUtils.manageAttribute(player, 20, HyperSkills.getInstance());
 
+            // Stats
             plugin.getAbilitiesManager().addIntoTable(event.getPlayer());
             plugin.getAbilitiesManager().loadPlayerData(event.getPlayer());
 

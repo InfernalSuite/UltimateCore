@@ -10,13 +10,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class AbilitiesManager {
     private final HyperSkills plugin;
     private final Map<UUID, PlayerAbilities> abilitiesCache = new HashMap<>();
+    private final Set<UUID> _currentlyLoading = new HashSet<>();
 
     public AbilitiesManager(HyperSkills plugin) {
         this.plugin = plugin;
@@ -28,6 +27,9 @@ public class AbilitiesManager {
     }
 
     public void savePlayerData(Player player, boolean removeFromCache, boolean async) {
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
         UUID uuid = player.getUniqueId();
         if (async) {
             Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -45,8 +47,12 @@ public class AbilitiesManager {
 
     private void savePlayerDataOnDisable() {
         this.plugin.sendDebug("[PLUGIN DISABLE] Saving all player data", DebugType.LOG);
-        for (UUID uuid : abilitiesCache.keySet())
+        for (UUID uuid : abilitiesCache.keySet()) {
+            if (_currentlyLoading.contains(uuid)) {
+                continue;
+            }
             this.plugin.getPluginDatabase().savePlayerAbilities(Bukkit.getOfflinePlayer(uuid), abilitiesCache.get(uuid));
+        }
         abilitiesCache.clear();
         this.plugin.sendDebug("[PLUGIN DISABLE] Saved all player data to database - abilities", DebugType.LOG);
     }
@@ -60,22 +66,30 @@ public class AbilitiesManager {
     }
 
     public void loadPlayerData(Player player) {
+        if (_currentlyLoading.contains(player.getUniqueId())) {
+            return;
+        }
+        _currentlyLoading.add(player.getUniqueId());
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, () -> {
-            String strAbilities = plugin.getPluginDatabase().getPlayerAbilities(player);
-            PlayerAbilities playerAbilities = (strAbilities != null && !strAbilities.equals("null")) ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
-            for(Ability ability : Ability.values()) {
-                double quantity = playerAbilities.getAbility(ability);
-                if (ability == Ability.MAX_INTELLIGENCE && quantity < plugin.getConfiguration().initialMana)
-                    quantity = plugin.getConfiguration().initialMana;
-                if (ability == Ability.DEFENSE && quantity < plugin.getConfiguration().initialDefense)
-                    quantity = plugin.getConfiguration().initialDefense;
-                playerAbilities.setAbility(ability, quantity);
+            try {
+                String strAbilities = plugin.getPluginDatabase().getPlayerAbilities(player);
+                PlayerAbilities playerAbilities = (strAbilities != null && !strAbilities.equals("null")) ? plugin.getGson().fromStringAbilities(strAbilities) : new PlayerAbilities();
+                for (Ability ability : Ability.values()) {
+                    double quantity = playerAbilities.getAbility(ability);
+                    if (ability == Ability.MAX_INTELLIGENCE && quantity < plugin.getConfiguration().initialMana)
+                        quantity = plugin.getConfiguration().initialMana;
+                    if (ability == Ability.DEFENSE && quantity < plugin.getConfiguration().initialDefense)
+                        quantity = plugin.getConfiguration().initialDefense;
+                    playerAbilities.setAbility(ability, quantity);
+                }
+                playerAbilities.setAbility(Ability.INTELLIGENCE, playerAbilities.getAbility(Ability.MAX_INTELLIGENCE));
+                abilitiesCache.put(player.getUniqueId(), playerAbilities);
+                ItemStatsUtils.setupArmorAbilities(player);
+                Bukkit.getScheduler().runTask(plugin, () -> Bukkit.getPluginManager().callEvent(new PlayerEnterEvent(player)));
+                this.plugin.sendDebug(String.format("Loaded abilities of player %s from database", player.getName()), DebugType.LOG);
+            }  finally {
+                _currentlyLoading.remove(player.getUniqueId());
             }
-            playerAbilities.setAbility(Ability.INTELLIGENCE, playerAbilities.getAbility(Ability.MAX_INTELLIGENCE));
-            abilitiesCache.put(player.getUniqueId(), playerAbilities);
-            ItemStatsUtils.setupArmorAbilities(player);
-            Bukkit.getScheduler().runTask(plugin, () -> Bukkit.getPluginManager().callEvent(new PlayerEnterEvent(player)));
-            this.plugin.sendDebug(String.format("Loaded abilities of player %s from database", player.getName()), DebugType.LOG);
         }, plugin.getConfiguration().syncDelay);
     }
 
