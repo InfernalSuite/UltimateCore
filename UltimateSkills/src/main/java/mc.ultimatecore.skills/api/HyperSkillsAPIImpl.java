@@ -7,7 +7,7 @@ import mc.ultimatecore.skills.objects.abilities.Ability;
 import mc.ultimatecore.skills.objects.perks.Perk;
 import mc.ultimatecore.skills.objects.perks.PlayerPerks;
 
-import java.util.UUID;
+import java.util.*;
 
 @AllArgsConstructor
 public class HyperSkillsAPIImpl implements HyperSkillsAPI {
@@ -114,7 +114,15 @@ public class HyperSkillsAPIImpl implements HyperSkillsAPI {
 
     @Override
     public void addPerk(UUID uuid, Perk perk, double quantity) {
-        plugin.getPerksManager().getPlayerPerks(uuid).addPerk(perk, quantity);
+        try {
+            var t = plugin.getPerksManager();
+            var x = t.getPlayerPerks(uuid);
+            x.addPerk(perk, quantity);
+        }catch (Exception e) {
+            var t = plugin.getPerksManager();
+            System.out.println("[DEBUG ADDPERK 1]" + uuid);
+            System.out.println("[DEBUG ADDPERK 2]" + Arrays.toString(t.perksCache.keySet().toArray()));
+        }
     }
 
     @Override
