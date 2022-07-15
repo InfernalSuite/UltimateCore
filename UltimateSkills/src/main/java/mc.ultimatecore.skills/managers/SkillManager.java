@@ -219,31 +219,21 @@ public class SkillManager {
     }
 
     private void levelUp(Player player, SkillType skill, int level) {
-        System.out.println("[DEBUG REWARD CHECK#-1] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
-
         List<String> commands = plugin.getRewards().getCommandRewards(skill, level);
         if (commands != null) {
             for (String command : commands) {
                 try {
                     var t = Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replaceAll("%player%", player.getName()));
-                    System.out.println("[DEBUG REWARD CHECK#0 | COMMAND EXECUTION: ~" + command + "~ Result: " + t + "] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
                 } catch (CommandException e) {
-                    System.err.println("ERROR");
-                    System.err.println("[DEBUG REWARD CHECK#0 | COMMAND EXECUTION CATCH] " + command.replaceAll("%player%", player.getName()));
                     e.printStackTrace();
                 }
-                   }
-        } else {
-            System.out.println("[DEBUG REWARD CHECK#1 | NO COMMAND] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
+            }
         }
 
         List<String> messages = plugin.getMessages().getLevelUPMessage();
         if (messages == null) {
-            System.out.println("[DEBUG REWARD CHECK#1 | NO MESSAGE] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
             return;
         }
-
-        System.out.println("[DEBUG REWARD CHECK#3] Player: " + player.getName() + "[" + player.getUniqueId() + "] Skill: " + skill + " Level: " + level);
 
         for (String line : messages) {
             if (!line.contains("%level_rewards%")) {
