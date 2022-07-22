@@ -14,6 +14,7 @@ dependencies {
     implementation(project(":UltimateCrafting:UltimateCraftingNMS-v1_17_R1"))
     implementation(project(":UltimateCrafting:UltimateCraftingNMS-v1_18_R1"))
     implementation(project(":UltimateCrafting:UltimateCraftingNMS-v1_18_R2"))
+    implementation(project(":UltimateCrafting:UltimateCraftingNMS-v1_19_R1"))
 
     compileOnly("org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT")
 }
