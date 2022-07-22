@@ -369,7 +369,7 @@ public class SkillManager {
         }
         // Players complained about silk touch not applying mining exp
         // so i've added a config value for that
-        if (Utils.hasSkillTouch(player) && !plugin.getConfiguration().getXPwithFortune) {
+        if (Utils.hasSkillTouch(player) && !plugin.getConfiguration().getXPwithSilktouch) {
             return;
         }
         DoubleItemPerks.multiplyRewards(player, skillType, bl, percentage, plugin.getAddonsManager().isEcoEnchants() && plugin.getAddonsManager().getEcoEnchants().hasEnchantment(player.getItemInHand(), "telekinesis"));

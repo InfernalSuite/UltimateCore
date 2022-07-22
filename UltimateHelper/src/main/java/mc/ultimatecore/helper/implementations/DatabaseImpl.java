@@ -25,6 +25,8 @@ public abstract class DatabaseImpl {
             this.hikari = new HikariDataSource(new MySQL(plugin).getDatabase(credentials));
         else
             this.hikari = new HikariDataSource(new SQLite(plugin).getDatabase());
+
+
         this.createTables();
         
     }

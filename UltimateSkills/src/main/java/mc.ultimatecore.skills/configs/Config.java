@@ -44,7 +44,7 @@ public class Config extends YAMLFile {
     public Map<Status, List<String>> rankInformation;
     public List<String> indicatorBlackList;
     public boolean getXPInCreative;
-    public boolean getXPwithFortune;
+    public boolean getXPwithSilktouch;
     public ManaSettings manaSettings;
     public boolean debug;
     public boolean jetMinions;
@@ -104,7 +104,7 @@ public class Config extends YAMLFile {
         indicatorBlackList = cf.getStringList("damageIndicators.blacklist");
         translatePAPIPlaceholders = cf.getBoolean("translatePAPIPlaceholders");
         getXPInCreative = cf.getBoolean("getXPInCreative");
-        getXPwithFortune = cf.getBoolean("getXPwithFortune");
+        getXPwithSilktouch = cf.getBoolean("getXPwithSilktouch");
         allowHunger = cf.getBoolean("allowHunger", true);
         manaSettings = new ManaSettings(cf.getDouble("manaSettings.percentagePerSecond"), cf.getInt("manaSettings.second"));
         debug = cf.getBoolean("DEBUG");
