@@ -25,7 +25,7 @@ public class v1_19_R1 implements VanillaCraftingSource {
 
             @Override
             public net.minecraft.world.item.ItemStack a(EntityHuman entityHuman, int i) {
-                return null;
+                return net.minecraft.world.item.ItemStack.b;
             }
 
             @Override
