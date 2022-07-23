@@ -40,7 +40,7 @@ public class v1_19_R1 implements VanillaCraftingSource {
             crafting.b(i, CraftItemStack.asNMSCopy(craftingMatrix[i]));
         }
 
-        net.minecraft.world.item.ItemStack[] nmsItems = MinecraftServer.getServer().aE().c(Recipes.a, crafting, ((CraftWorld) world).getHandle()).toArray(new net.minecraft.world.item.ItemStack[0]);
+        net.minecraft.world.item.ItemStack[] nmsItems = MinecraftServer.getServer().at.b().e().c(Recipes.a, crafting, ((CraftWorld) world).getHandle()).toArray(new net.minecraft.world.item.ItemStack[0]);
         ItemStack[] bukkitItems = new ItemStack[nmsItems.length];
         for (int i = 0; i < nmsItems.length; i++) {
             bukkitItems[i] = CraftItemStack.asBukkitCopy(nmsItems[i]);
