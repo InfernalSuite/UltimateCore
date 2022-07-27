@@ -4,8 +4,8 @@ messages:
   notEnoughMoney: "&cYou don't have enough money!"
   notEnoughPower: "&cYou don't have enough bookshelfpower!"
   alreadyState: "&cAlready Enchanted!"
-  normalCost: "&9%cost% Levels"
-  replacedCost: "&9&m%cost%&9 %new_cost% Levels"
+  normalCost: '&9%enchant_cost% Levels'
+  replacedCost: '&9&m%enchant_cost%&9 %new_cost% Levels'
   moneyCost: "&6$%cost%"
   invalidCommand: "%prefix% &7Invalid Command!"
   invalidArguments: "%prefix% &7Invalid Arguments!"
