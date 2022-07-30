@@ -1,6 +1,6 @@
 package mc.ultimatecore.helper.database;
 
 public enum DatabaseType {
-    MYSQL,
-    SQLITE
+    MySQL,
+    SQLite
 }
