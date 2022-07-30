@@ -19,7 +19,7 @@ public class Credentials {
         String userName = config.getString("mysql.username");
         String password = config.getString("mysql.password");
         int port = config.getInt("mysql.port");
-        DatabaseType databaseType = DatabaseType.valueOf(config.getString("database_type").toUpperCase());
+        DatabaseType databaseType = DatabaseType.valueOf(config.getString("database_type"));
         
         Validate.notNull(host);
         Validate.notNull(dbName);
