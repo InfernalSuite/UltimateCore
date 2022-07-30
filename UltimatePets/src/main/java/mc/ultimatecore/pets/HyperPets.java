@@ -59,7 +59,7 @@ public class HyperPets extends UltimatePlugin {
 
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
 
-        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
+        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
 
 //        try {
 //            pluginDatabase.createTablesAsync().get();

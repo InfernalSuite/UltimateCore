@@ -65,7 +65,7 @@ public class HyperDragons extends UltimatePlugin {
         loadFiles();
         //Database
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
-        database = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
+        database = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
         //Managers
         addonsManager = new AddonsManager(this);
         schematicManager = new SchematicManager(this);

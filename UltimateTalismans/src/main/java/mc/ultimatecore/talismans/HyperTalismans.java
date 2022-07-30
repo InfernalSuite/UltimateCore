@@ -53,7 +53,7 @@ public class HyperTalismans extends UltimatePlugin {
         loadConfigs();
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
         setupSkills();
-        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
+        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
         this.addonsManager = new AddonsManager(this);
         this.userManager = new UserManager(this);
         this.commandManager = new CommandManager(this);

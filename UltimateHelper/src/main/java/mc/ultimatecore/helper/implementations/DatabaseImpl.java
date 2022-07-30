@@ -21,7 +21,7 @@ public abstract class DatabaseImpl {
     public abstract void createTables();
     
     public void connect(Credentials credentials) {
-        if (credentials.getDatabaseType() == DatabaseType.MYSQL)
+        if (credentials.getDatabaseType() == DatabaseType.MySQL)
             this.hikari = new HikariDataSource(new MySQL(plugin).getDatabase(credentials));
         else
             this.hikari = new HikariDataSource(new SQLite(plugin).getDatabase());

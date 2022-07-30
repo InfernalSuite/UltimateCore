@@ -65,7 +65,7 @@ public class HyperSkills extends UltimatePlugin {
         this.gson = new GSON();
         loadConfigs();
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
-        this.pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
+        this.pluginDatabase = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
         this.api = new HyperSkillsAPIImpl(this);
         this.skillManager = new SkillManager(this);
         this.perksManager = new PerksManager(this);

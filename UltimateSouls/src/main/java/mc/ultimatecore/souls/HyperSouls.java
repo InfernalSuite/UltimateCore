@@ -52,7 +52,7 @@ public class HyperSouls extends UltimatePlugin {
         
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
         
-        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials, "Player_Souls") : new SQLiteDatabase(this, credentials);
+        pluginDatabase = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials, "Player_Souls") : new SQLiteDatabase(this, credentials);
         
         pluginDatabase.createTablesAsync().thenRun(() -> databaseManager = new DatabaseManager(this));
         

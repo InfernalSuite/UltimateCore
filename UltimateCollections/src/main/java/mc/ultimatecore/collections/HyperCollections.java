@@ -55,7 +55,7 @@ public class HyperCollections extends UltimatePlugin {
         this.commandManager = new CommandManager("collections");
         this.gson = new GSON();
         Credentials credentials = Credentials.fromConfig(configuration.getConfig());
-        this.pluginDatabase = credentials.getDatabaseType() == DatabaseType.MYSQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
+        this.pluginDatabase = credentials.getDatabaseType() == DatabaseType.MySQL ? new MySQLDatabase(this, credentials) : new SQLiteDatabase(this, credentials);
         this.collectionsManager = new CollectionsManager(this);
         this.addonsManager = new AddonsManager(this);
         this.api = new HyperCollectionsAPIImpl(this);
