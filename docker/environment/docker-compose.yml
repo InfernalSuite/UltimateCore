@@ -1,6 +1,12 @@
-version: '3.3'
+version: '3.7'
 services:
-    db:
+    #redis:
+    #  image: redis:latest
+    #  environment:
+    #    - TZ=Europe/Berlin
+    #  ports:
+    #    - 6379:6379
+    mysql:
         image: mysql:8
         restart: always
         environment:
