@@ -222,8 +222,8 @@ public class CraftingGUIManager {
         List<ItemStack> playerItems = Arrays.asList(player.getInventory().getStorageContents());
 
         for (ItemStack itemStack : craftingRecipe.getRecipeItems().values()) {
-            // If the quantity is lesser than the required recipe, false!
-            if (Utils.getItemQuantity(playerItems, itemStack) < itemStack.getAmount()) {
+            // If the quantity is lesser than the required recipe, false!outputs the value of your inventory
+            if (Utils.getItemQuantity(playerItems, itemStack) < Utils.getItemQuantity(craftingRecipe.getRecipeItems().values(), itemStack)) {
                 return false;
             }
         }
