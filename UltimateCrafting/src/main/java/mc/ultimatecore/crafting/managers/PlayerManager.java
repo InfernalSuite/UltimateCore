@@ -25,8 +25,15 @@ public class PlayerManager {
     }
 
     public void purgeUsers() {
-        if(!this.users.isEmpty()) {
-            this.users.values().forEach(user -> removeUser(user.getUuid()));
+        if (this.users == null) {
+            return;
+        }
+        if (this.users.isEmpty()) {
+            return;
+        }
+        for (Iterator<User> iterator = this.users.values().iterator(); iterator.hasNext(); ) {
+            User value = iterator.next();
+            this.users.remove(value);
         }
     }
 
